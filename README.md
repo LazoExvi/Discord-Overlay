@@ -133,14 +133,3 @@ Layout:
 
 Run `python scripts/build_grammar_seed.py` after adding real combat lines to
 `scripts/grammar-samples.txt`; names are masked before anything is written.
-
-### Publishing a release
-
-1. Bump `__version__` in `discord_overlay/__init__.py` and commit.
-2. Tag and push: `git tag v1.0.1 && git push origin main v1.0.1`.
-3. The **Release installer** workflow builds the installer and portable zip on a
-   GitHub Windows runner and publishes them on the Releases page. Invited
-   collaborators can download them while signed in to GitHub.
-
-"Run workflow" on the Actions tab builds the current commit as a pre-release
-without tagging.
