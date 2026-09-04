@@ -64,8 +64,12 @@ try {
 
     if ($Installer) {
         $Iscc = Get-Command iscc.exe -ErrorAction SilentlyContinue
-        $IsccPath = if ($Iscc) { $Iscc.Source } else { "${env:ProgramFiles(x86)}\Inno Setup 6\ISCC.exe" }
-        if (-not (Test-Path -LiteralPath $IsccPath)) { throw "Inno Setup 6 (ISCC.exe) was not found" }
+        $Candidates = @(
+            "${env:ProgramFiles(x86)}\Inno Setup 6\ISCC.exe",
+            "$env:LOCALAPPDATA\Programs\Inno Setup 6\ISCC.exe"
+        )
+        $IsccPath = if ($Iscc) { $Iscc.Source } else { $Candidates | Where-Object { Test-Path -LiteralPath $_ } | Select-Object -First 1 }
+        if (-not $IsccPath) { throw "Inno Setup 6 (ISCC.exe) was not found" }
         Invoke-Native "Inno Setup" { & $IsccPath "/DAppVersion=$Version" (Join-Path $Root "packaging\DiscordOverlay.iss") }
         Write-Host "Installer: packaging\output\DiscordOverlay-Setup-$Version.exe"
     }

@@ -33,9 +33,31 @@ jobs:
             throw "Tag ${{ github.ref_name }} does not match __version__ $version"
           }
 
+      # Prebuilt PyInstaller bootloaders are shared by thousands of programs, including
+      # malware, so antivirus heuristics learn to distrust them. Compiling the bootloader
+      # here gives this app a unique one.
+      - uses: ilammy/msvc-dev-cmd@v1
+      - name: Compile PyInstaller bootloader from source
+        shell: pwsh
+        run: |
+          py -3.12 -m venv .build-venv
+          .\.build-venv\Scripts\python.exe -m pip install --upgrade pip wheel setuptools
+          .\.build-venv\Scripts\python.exe -m pip install --no-binary pyinstaller "pyinstaller>=6.16,<7"
+
       - name: Build folder and installer
         shell: pwsh
         run: .\scripts\build_windows.ps1 -Variant directml -Installer
+
+      - name: Scan build with Windows Defender
+        shell: pwsh
+        run: |
+          $mp = (Get-ChildItem "C:\ProgramData\Microsoft\Windows Defender\Platform\*\MpCmdRun.exe" | Sort-Object FullName | Select-Object -Last 1).FullName
+          & $mp -SignatureUpdate | Out-Null
+          foreach ($target in @("dist\DiscordOverlay", "packaging\output")) {
+            $result = & $mp -Scan -ScanType 3 -File (Resolve-Path $target) -DisableRemediation
+            $result | Select-String "found|Threat  "
+            if ($result -match "found [1-9]") { throw "Defender flagged $target; see above" }
+          }
 
       - name: Create portable zip
         shell: pwsh
