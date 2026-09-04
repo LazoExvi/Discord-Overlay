@@ -6,8 +6,7 @@ and drives sound, speech, and on-screen timer alerts from the recognized text. I
 never reads game logs, inspects process memory, injects code, hooks the client,
 or sends input to the game.
 
-This repository is private and shared by invitation. There is no license server,
-no update check, and no telemetry.
+Free to use. There is no license server, no update check, and no telemetry.
 
 ![Discord Overlay main window](docs/screenshot.png)
 
@@ -51,7 +50,7 @@ Windows SmartScreen shows "Windows protected your PC" for any program that is no
 signed with a code-signing certificate and has not yet been downloaded by many
 people. Discord Overlay is not signed. A code-signing certificate costs a few
 hundred dollars a year and requires identity verification, and that will not be
-done for this private project. The warning does not mean anything harmful was
+done for this free project. The warning does not mean anything harmful was
 detected; it only means Windows does not recognize the publisher. Click **More
 info**, then **Run anyway**. Some antivirus products flag Python programs bundled
 with PyInstaller for the same reason; if yours does, allow the `DiscordOverlay`

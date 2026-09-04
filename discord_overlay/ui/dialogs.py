@@ -52,7 +52,7 @@ class AboutWindow(ctk.CTkToplevel):
                 row=row, column=1, padx=(0, 16), pady=9, sticky="ew")
         ctk.CTkButton(self, text="Open diagnostics folder", command=open_diagnostics_folder, width=190,
                       **theme.STEEL_BUTTON).grid(row=3, column=0, padx=24, pady=(20, 6))
-        ctk.CTkLabel(self, text="Shared privately. No license, no telemetry, no update checks.",
+        ctk.CTkLabel(self, text="Free to use. No license, no telemetry, no update checks.",
                      text_color=theme.MUTED).grid(row=4, column=0, padx=28, pady=(12, 20))
 
 
