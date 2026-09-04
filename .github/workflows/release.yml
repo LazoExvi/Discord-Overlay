@@ -62,24 +62,25 @@ jobs:
           & $python -m PyInstaller --version
           if ($LASTEXITCODE -ne 0) { throw "PyInstaller is not importable after install" }
 
-      - name: Build folder and installer
+      # No installer: Defender's cloud reputation check flags unsigned installers of
+      # bundled Python apps on download, while the same program in a zip passes. The
+      # app offers to add a Start Menu shortcut on first launch instead.
+      - name: Build folder
         shell: pwsh
-        run: .\scripts\build_windows.ps1 -Variant directml -Installer
+        run: .\scripts\build_windows.ps1 -Variant directml
 
       - name: Scan build with Windows Defender
         shell: pwsh
         run: |
           $mp = (Get-ChildItem "C:\ProgramData\Microsoft\Windows Defender\Platform\*\MpCmdRun.exe" | Sort-Object FullName | Select-Object -Last 1).FullName
           & $mp -SignatureUpdate | Out-Null
-          foreach ($target in @("dist\DiscordOverlay", "packaging\output")) {
-            $result = & $mp -Scan -ScanType 3 -File (Resolve-Path $target) -DisableRemediation
-            $result | Select-String "found|Threat  "
-            if ($result -match "found [1-9]") { throw "Defender flagged $target; see above" }
-          }
+          $result = & $mp -Scan -ScanType 3 -File (Resolve-Path "dist\DiscordOverlay") -DisableRemediation
+          $result | Select-String "found|Threat  "
+          if ($result -match "found [1-9]") { throw "Defender flagged the build; see above" }
 
-      - name: Create portable zip
+      - name: Create zip
         shell: pwsh
-        run: Compress-Archive -Path dist\DiscordOverlay -DestinationPath "DiscordOverlay-${{ steps.version.outputs.version }}-portable.zip"
+        run: Compress-Archive -Path dist\DiscordOverlay -DestinationPath "DiscordOverlay-${{ steps.version.outputs.version }}.zip"
 
       - name: Publish release
         shell: pwsh
@@ -87,20 +88,22 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           $version = "${{ steps.version.outputs.version }}"
-          $installer = "packaging/output/DiscordOverlay-Setup-$version.exe"
-          $zip = "DiscordOverlay-$version-portable.zip"
+          $zip = "DiscordOverlay-$version.zip"
           $notes = @"
-          **Install:** download ``DiscordOverlay-Setup-$version.exe`` and run it. No Python needed.
-          Windows may show "Windows protected your PC" because the installer is not code-signed:
-          click **More info**, then **Run anyway**.
+          **Install:** download ``DiscordOverlay-$version.zip``, right-click it and choose **Extract All**, then open the
+          extracted folder and run ``DiscordOverlay.exe``. No Python needed. On first launch it offers to add itself to
+          your Start Menu.
 
-          The portable zip is the same program without an installer: unzip anywhere and run ``DiscordOverlay.exe``.
+          Windows may show "Windows protected your PC" because the program is not code-signed: click **More info**,
+          then **Run anyway**.
+
+          **Updating:** extract the new zip over the old folder, or delete the old folder. Your settings are kept.
 
           GPU acceleration uses DirectML and works on NVIDIA, AMD, and Intel graphics; it falls back to CPU automatically.
           "@
           if ("${{ github.ref_type }}" -eq "tag") {
-            gh release create "${{ github.ref_name }}" $installer $zip --title "Discord Overlay $version" --notes $notes
+            gh release create "${{ github.ref_name }}" $zip --title "Discord Overlay $version" --notes $notes
           } else {
             $tag = "build-${{ github.run_number }}"
-            gh release create $tag $installer $zip --title "Discord Overlay $version (build ${{ github.run_number }})" --notes $notes --prerelease --target ${{ github.sha }}
+            gh release create $tag $zip --title "Discord Overlay $version (build ${{ github.run_number }})" --notes $notes --prerelease --target ${{ github.sha }}
           }

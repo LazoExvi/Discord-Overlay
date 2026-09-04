@@ -24,6 +24,7 @@ from ..models import CombatEvent, EventKind, OCRLine, Region
 from ..paths import ensure_app_directories
 from ..performance import CapabilityResult
 from ..scanner import ScannerWorker
+from .. import shortcuts
 from ..speech import SpeechPlayer
 from ..timers import TimerManager, TimerNotification, render_template
 from ..triggers import BUILTIN_PREFIX, TriggerMatch, is_builtin_sound
@@ -509,8 +510,30 @@ class App(ctk.CTk):
     # -- hardware setup -------------------------------------------------------
 
     def _maybe_show_setup(self) -> None:
+        self._maybe_offer_shortcut()
         if not self.settings.setup_completed:
             self.show_hardware_setup()
+
+    def _maybe_offer_shortcut(self) -> None:
+        """Once, for the portable build: offer a Start Menu entry so it feels installed."""
+        if self.settings.shortcut_prompted or not shortcuts.is_frozen():
+            return
+        self.settings.shortcut_prompted = True
+        self.settings.save()
+        if shortcuts.shortcut_exists(shortcuts.start_menu_dir()):
+            return
+        if messagebox.askyesno("Add to Start Menu",
+                               f"Add {APP_NAME} to your Start Menu so you can launch it without opening this folder?\n\n"
+                               "You can add or remove shortcuts later under Settings.", parent=self):
+            self.add_shortcut(shortcuts.start_menu_dir(), "Start Menu")
+
+    def add_shortcut(self, directory: Path, label: str) -> None:
+        try:
+            shortcuts.create_shortcut(directory)
+        except OSError as exc:
+            messagebox.showerror("Shortcut failed", str(exc), parent=self)
+            return
+        self.set_status(f"{label} shortcut created", theme.GREEN)
 
     def show_hardware_setup(self) -> None:
         if self._setup_wizard is not None:

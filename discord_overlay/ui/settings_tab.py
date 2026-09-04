@@ -5,7 +5,7 @@ from tkinter import messagebox, simpledialog
 
 import customtkinter as ctk
 
-from .. import __version__
+from .. import __version__, shortcuts
 from ..config import TimerBoard
 from . import theme
 from .dialogs import AboutWindow, GroupFilterEditor, open_diagnostics_folder
@@ -162,6 +162,10 @@ class SettingsTab:
         footer.grid(row=13, column=0, columnspan=3, padx=20, pady=(12, 18), sticky="ew")
         ctk.CTkButton(footer, text="About Discord Overlay", command=lambda: AboutWindow(self.app), width=170,
                       **theme.STEEL_BUTTON).pack(side="left")
+        ctk.CTkButton(footer, text="Start Menu shortcut", width=150, **theme.STEEL_BUTTON,
+                      command=lambda: self.app.add_shortcut(shortcuts.start_menu_dir(), "Start Menu")).pack(side="left", padx=(10, 0))
+        ctk.CTkButton(footer, text="Desktop shortcut", width=140, **theme.STEEL_BUTTON,
+                      command=lambda: self.app.add_shortcut(shortcuts.desktop_dir(), "Desktop")).pack(side="left", padx=(10, 0))
         ctk.CTkButton(footer, text="Open diagnostics", command=open_diagnostics_folder, width=150, **theme.STEEL_BUTTON).pack(
             side="left", padx=10)
         ctk.CTkLabel(footer, text=f"Version {__version__} • Windows 10/11 x64", text_color=theme.MUTED).pack(side="right", padx=4)

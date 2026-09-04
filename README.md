@@ -13,20 +13,23 @@ Free to use. There is no license server, no update check, and no telemetry.
 ## Install (no Python needed)
 
 1. Open the **[Releases](../../releases/latest)** page and download
-   `DiscordOverlay-Setup-<version>.exe`.
-2. Run it. Windows may say "Windows protected your PC" because the installer is not
-   code-signed: click **More info**, then **Run anyway**. It installs for your user
-   only, needs no admin rights, and adds a Start Menu shortcut.
-3. Launch **Discord Overlay** and follow the first-time setup: select the combat
-   region, run the capability test, and apply its recommended scan interval.
-4. In game, make a chat tab that contains only combat messages, ideally on a black,
+   `DiscordOverlay-<version>.zip`.
+2. Right-click the zip and choose **Extract All**, putting the folder anywhere you
+   like (Documents works well). Open the folder and run `DiscordOverlay.exe`.
+   Windows may say "Windows protected your PC" because the program is not
+   code-signed: click **More info**, then **Run anyway**.
+3. On first launch, accept the offer to add **Discord Overlay** to your Start Menu
+   (you can also add Start Menu or desktop shortcuts later under Settings).
+4. Follow the first-time setup: select the combat region, run the capability test,
+   and apply its recommended scan interval.
+5. In game, make a chat tab that contains only combat messages, ideally on a black,
    opaque background with a larger font.
-5. Click **Start monitoring** before you pull.
+6. Click **Start monitoring** before you pull.
 
-The installer uses DirectML for GPU acceleration, which works on NVIDIA, AMD, and
-Intel graphics and falls back to CPU automatically. A portable zip (unzip and run
-`DiscordOverlay.exe`) is attached to every release as well. To update, install the
-newer version over the old one; your settings are kept.
+The build uses DirectML for GPU acceleration, which works on NVIDIA, AMD, and Intel
+graphics and falls back to CPU automatically. To update, extract the new zip over
+the old folder (or delete the old folder); your settings are kept because they live
+outside the program folder.
 
 ## Run from source (optional)
 
@@ -44,7 +47,7 @@ gold rectangles; click one to reuse it. Right-click clears them.
 
 Settings live in `%LOCALAPPDATA%\DiscordOverlay` and survive updates and uninstalls.
 
-### Why Windows warns about the installer
+### Why Windows warns about the program
 
 Windows SmartScreen shows "Windows protected your PC" for any program that is not
 signed with a code-signing certificate and has not yet been downloaded by many
