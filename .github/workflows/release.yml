@@ -40,9 +40,26 @@ jobs:
       - name: Compile PyInstaller bootloader from source
         shell: pwsh
         run: |
+          $ErrorActionPreference = "Continue"
           py -3.12 -m venv .build-venv
-          .\.build-venv\Scripts\python.exe -m pip install --upgrade pip wheel setuptools
-          .\.build-venv\Scripts\python.exe -m pip install --no-binary pyinstaller "pyinstaller>=6.16,<7"
+          $python = (Resolve-Path .\.build-venv\Scripts\python.exe).Path
+          & $python -m pip install --upgrade pip wheel setuptools
+          & $python -m pip download --no-binary :all: --no-deps "pyinstaller>=6.16,<7" -d pyinstaller-src
+          $tarball = Get-ChildItem pyinstaller-src\pyinstaller-*.tar.gz | Select-Object -First 1
+          tar -xzf $tarball.FullName -C pyinstaller-src
+          $source = Get-ChildItem pyinstaller-src -Directory | Select-Object -First 1
+          # The tarball ships prebuilt bootloaders; remove them so waf must compile fresh ones.
+          Remove-Item -Recurse -Force (Join-Path $source.FullName "PyInstaller\bootloader\Windows-64bit-intel") -ErrorAction SilentlyContinue
+          Push-Location (Join-Path $source.FullName "bootloader")
+          & $python .\waf all --target-arch=64bit
+          if ($LASTEXITCODE -ne 0) { throw "Bootloader build failed" }
+          Pop-Location
+          $built = Join-Path $source.FullName "PyInstaller\bootloader\Windows-64bit-intel\run.exe"
+          if (-not (Test-Path $built)) { throw "waf produced no bootloader" }
+          Write-Host "Compiled bootloader: $((Get-FileHash $built -Algorithm SHA256).Hash)"
+          & $python -m pip install --no-build-isolation --no-deps $source.FullName
+          & $python -m pip install "pyinstaller-hooks-contrib" "altgraph" "pefile" "pywin32-ctypes" "packaging"
+          & $python -m PyInstaller --version
 
       - name: Build folder and installer
         shell: pwsh
