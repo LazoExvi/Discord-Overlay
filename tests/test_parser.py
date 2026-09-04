@@ -219,6 +219,17 @@ def test_real_capture_lines_parse_with_expected_parties():
         assert (event.actor, event.action, event.target, event.amount) == expected, text
 
 
+def test_lines_missing_their_actor_are_credited_to_unknown():
+    truncated = parse("hits a rat for 5 points of damage.")
+    assert (truncated.actor, truncated.target, truncated.kind) == ("Unknown", "rat", EventKind.DAMAGE_OTHER)
+    assert parse("5 points of damage.").actor == "Unknown"
+    assert parse("a hits a rat for 5 points of damage.").actor == "Unknown"
+    assert parse(". crushes YOU for 9 points of damage.").actor == "Unknown"
+    assert parse("heals you for 20 Health.").actor == "Unknown"
+    # Real names are untouched, including short ones.
+    assert parse("Ax hits a rat for 5 points of damage.").actor == "Ax"
+
+
 def test_non_combat_lines_are_ignored():
     for text in ("Starting to attack.", "a spiderling loses interest in Quorion.", "Matchacakes begins casting Flameburst."):
         assert parse(text) is None

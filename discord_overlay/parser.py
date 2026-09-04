@@ -412,7 +412,12 @@ class CombatTextParser:
         return fragment.group("name") if fragment else actor
 
     def _pretty_name(self, value: str) -> str:
-        value = re.sub(r"^(?:a|an|the)\s+", "", value.strip(" .,!"), flags=re.IGNORECASE)
+        value = re.sub(r"^(?:a|an|the)\s+", "", value.strip(" .,!:;-"), flags=re.IGNORECASE)
         if _is_your_pet(value):
             return "Pet"
-        return self.player_name if value.casefold() in {"you", "your"} else value
+        if value.casefold() in {"you", "your"}:
+            return self.player_name
+        # OCR sometimes loses the start of a line; never credit an empty or article-only name.
+        if not re.search(r"[A-Za-z0-9]", value) or value.casefold() in {"a", "an", "the"}:
+            return "Unknown"
+        return value

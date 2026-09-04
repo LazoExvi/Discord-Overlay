@@ -52,7 +52,7 @@ def repair_line(repairer: LineRepairer, parser: CombatTextParser, line: OCRLine,
     third-party hit parses as DAMAGE_OTHER with a real target and is learned as a
     template rather than rewritten.
     """
-    degraded = event is None or event.target == "Unknown"
+    degraded = event is None or "Unknown" in (event.actor, event.target)
     fix = repairer.repair(line.text, degraded)
     if fix is None:
         if event is not None and not degraded:

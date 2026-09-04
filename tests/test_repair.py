@@ -102,6 +102,16 @@ def test_repair_hook_marks_events_and_learns_clean_lines():
     assert (event.kind, event.actor, event.target, event.amount) == (EventKind.DAMAGE_OUT, "Sean", "snake", 505)
 
 
+def test_missing_actor_counts_as_degraded_so_repair_may_restore_it():
+    repairer = LineRepairer()
+    parser = CombatTextParser("Raan")
+    for text in ("Sean punches a snake for 501 points of damage", "Sean punches a snake for 505 points of damage"):
+        repair_line(repairer, parser, OCRLine(text, 0.9), parser.parse(text, 0.9))
+    line = OCRLine("punches a snake for 77 points of damage", 0.8)
+    event, used = repair_line(repairer, parser, line, parser.parse(line.text, 0.8))
+    assert used == "Sean punches a snake for 77 points of damage" and event.actor == "Sean" and event.repaired
+
+
 def test_masked_templates_generalize_to_new_targets_and_contain_no_names():
     repairer = LineRepairer()
     parser = CombatTextParser("Sean")
