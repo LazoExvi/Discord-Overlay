@@ -16,6 +16,9 @@ def test_create_and_remove_shortcut(tmp_path):
     link = shortcuts.create_shortcut(tmp_path)
     assert link.is_file() and link.name == "Discord Overlay.lnk"
     assert shortcuts.shortcut_exists(tmp_path)
+    assert shortcuts.shortcut_target(tmp_path).lower() == shortcuts.launch_target()[0].lower()
+    assert shortcuts.repair_shortcuts() == []  # not frozen: nothing to do
     assert shortcuts.remove_shortcut(tmp_path)
+    assert shortcuts.shortcut_target(tmp_path) is None
     assert not shortcuts.shortcut_exists(tmp_path)
     assert not shortcuts.remove_shortcut(tmp_path)

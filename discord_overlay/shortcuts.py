@@ -66,6 +66,37 @@ def create_shortcut(directory: Path) -> Path:
     return link
 
 
+def shortcut_target(directory: Path) -> str | None:
+    """The program an existing shortcut launches, or None if there is no shortcut."""
+    link = directory / SHORTCUT_NAME
+    if sys.platform != "win32" or not link.is_file():
+        return None
+    script = ("$shell = New-Object -ComObject WScript.Shell; "
+              f"$shell.CreateShortcut('{_ps(str(link))}').TargetPath")
+    result = subprocess.run(
+        ["powershell.exe", "-NoLogo", "-NoProfile", "-NonInteractive", "-Command", script],
+        capture_output=True, text=True, timeout=30, check=False,
+        creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0),
+    )
+    return result.stdout.strip() or None if result.returncode == 0 else None
+
+
+def repair_shortcuts() -> list[Path]:
+    """After the program moved (a new version extracted elsewhere), repoint existing shortcuts."""
+    if not is_frozen():
+        return []
+    program = launch_target()[0]
+    repaired = []
+    for directory in (start_menu_dir(), desktop_dir()):
+        target = shortcut_target(directory)
+        if target and os.path.normcase(target) != os.path.normcase(program):
+            try:
+                repaired.append(create_shortcut(directory))
+            except OSError:
+                pass
+    return repaired
+
+
 def remove_shortcut(directory: Path) -> bool:
     link = directory / SHORTCUT_NAME
     if link.is_file():

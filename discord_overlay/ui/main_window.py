@@ -516,7 +516,11 @@ class App(ctk.CTk):
 
     def _maybe_offer_shortcut(self) -> None:
         """Once, for the portable build: offer a Start Menu entry so it feels installed."""
-        if self.settings.shortcut_prompted or not shortcuts.is_frozen():
+        if not shortcuts.is_frozen():
+            return
+        if shortcuts.repair_shortcuts():
+            self.set_status("Shortcuts updated to this version's location", theme.GREEN)
+        if self.settings.shortcut_prompted:
             return
         self.settings.shortcut_prompted = True
         self.settings.save()
