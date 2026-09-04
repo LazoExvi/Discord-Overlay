@@ -211,8 +211,12 @@ def test_mini_overlay_settings_round_trip_and_clamp(app_data):
     settings.mini_overlay_stats = ["HPS", "bogus", "hps", "duration", "dps", "damage", "incoming"]
     settings._sanitize()
     assert settings.mini_overlay_stats == ["hps", "duration", "dps", "damage"]
+    settings.pet_names = [" Ssssteve ", "", "Xanartik"]
+    settings._sanitize()
+    assert settings.pet_names == ["Ssssteve", "Xanartik"]
     settings.add_character("Alt", copy_current=False)
     settings.switch_character("Alt")
+    assert settings.pet_names == []  # per character
     assert not settings.mini_overlay_enabled and settings.mini_overlay_geometry == ""  # per character
     assert settings.mini_overlay_rows == 12  # shared
     settings.save()

@@ -70,9 +70,10 @@ check what the program does or build it yourself.
   of 10-second DPS.
 - A chronological **Log** with raw OCR text and confidence, exportable to CSV along
   with the Combatants summary.
-- Pets are learned automatically from `Your pet Name …` lines. Choose whether pet
-  damage merges into your row, and whether damage shields credit the wearer or a
-  single `Damage Shield` actor.
+- Pets are learned automatically from `Your pet Name …` lines, and their earlier
+  lines are re-attributed once learned. You can also list pet names per character
+  under Settings. Choose whether pet damage merges into your row, and whether
+  damage shields credit the wearer or a single `Damage Shield` actor.
 - A **mini meter overlay**: a compact always-on-top window with up to four header
   stats of your choice (encounter DPS, 10-second DPS, damage, healing by default;
   incoming, HPS, and duration are also available) plus the top actor bars, for use

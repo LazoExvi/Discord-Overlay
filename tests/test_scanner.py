@@ -72,6 +72,14 @@ def test_scanner_emits_engine_ocr_events_and_triggers(app_data, tmp_path):
     assert any(kind == "ocr" and len(value[0]) == 2 for kind, value in messages)
 
 
+def test_scanner_announces_learned_pets(app_data, tmp_path):
+    settings = Settings(active_character="Raan", region=Region(0, 0, 200, 100))
+    frames = [["baseline"], ["Ssssteve hits a rat for 10 points of damage."],
+              ["Your pet Ssssteve bites a rat for 4 points of damage."]]
+    messages = run_worker(settings, frames, tmp_path)
+    assert [value for kind, value in messages if kind == "pet"] == ["Ssssteve"]
+
+
 def test_scanner_reports_engine_failures_instead_of_dying(app_data, tmp_path):
     def boom(_settings):
         raise RuntimeError("no models")

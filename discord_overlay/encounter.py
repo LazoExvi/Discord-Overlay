@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import csv
+import re
 import time
 from collections import deque
 from dataclasses import astuple, dataclass
@@ -112,6 +113,21 @@ class EncounterTracker:
             self._finish_segment()
             return True
         return False
+
+    def mark_pet(self, name: str) -> int:
+        """Re-attribute earlier events from ``name`` as the player's pet; returns how many changed."""
+        key = re.sub(r"[^a-z0-9]", "", name.casefold())
+        if not key:
+            return 0
+        changed = 0
+        for event in self.events:
+            if event.is_pet or re.sub(r"[^a-z0-9]", "", event.actor.casefold()) != key:
+                continue
+            event.is_pet = True
+            if event.kind == EventKind.DAMAGE_OTHER:
+                event.kind = EventKind.DAMAGE_OUT
+            changed += 1
+        return changed
 
     def reset(self) -> None:
         self.events.clear()

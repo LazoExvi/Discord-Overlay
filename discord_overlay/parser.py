@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import re
 import time
+from collections.abc import Iterable
 from datetime import datetime
 from difflib import SequenceMatcher
 
@@ -154,12 +155,17 @@ def split_possessive(value: str) -> tuple[str, str] | None:
     return None
 
 
-def _is_your_pet(value: str) -> bool:
-    return re.sub(r"[^a-z]", "", value.casefold()) == "yourpet"
+def _letters(value: str) -> str:
+    return re.sub(r"[^a-z]", "", value.casefold())
 
 
 def _pet_key(value: str) -> str:
     return re.sub(r"[^a-z0-9]", "", value.casefold())
+
+
+def normalize_quotes(text: str) -> str:
+    """OCR renders apostrophes as backticks or acute accents; the grammar needs a plain one."""
+    return text.replace("`", "'").replace("´", "'").replace("’", "'").replace("‘", "'")
 
 
 def _split_verb(text: str) -> tuple[str, str, str] | None:
@@ -181,34 +187,49 @@ def _strip_offhand(target: str, action: str) -> tuple[str, str]:
 class CombatTextParser:
     """Stateful parser: remembers learned pet names for later attribution."""
 
-    def __init__(self, player_name: str = "You") -> None:
+    def __init__(self, player_name: str = "You", pet_names: Iterable[str] = ()) -> None:
         self.player_name = player_name.strip() or "You"
         self._known_pets: set[str] = set()
+        self._new_pets: list[str] = []
+        for name in pet_names:
+            self._remember_pet(str(name), announce=False)
 
     # -- learning -------------------------------------------------------------
 
     def observe(self, text: str) -> None:
         """Learn ``Your pet <Name>`` aliases from any visible line without counting it."""
-        text = repair_ocr_spacing(re.sub(r"\s+", " ", text).strip())
+        text = repair_ocr_spacing(re.sub(r"\s+", " ", normalize_quotes(text)).strip())
         for pattern in (_PET_POSSESSIVE, _PET_ACTION, _PET_TARGET):
             match = pattern.search(text)
             if match:
                 self._remember_pet(match.group("name"))
                 return
 
-    def _remember_pet(self, name: str) -> None:
+    def pop_new_pets(self) -> list[str]:
+        """Pet names learned since the last call, so earlier events can be re-attributed."""
+        names, self._new_pets = self._new_pets, []
+        return names
+
+    def _remember_pet(self, name: str, announce: bool = True) -> None:
         key = _pet_key(name)
-        if key and key not in {"pet", "yourpet"}:
+        if key and key not in {"pet", "yourpet"} and key not in self._known_pets:
             self._known_pets.add(key)
+            if announce:
+                self._new_pets.append(name.strip())
 
     def _is_known_pet(self, name: str) -> bool:
         return _pet_key(name) in self._known_pets
+
+    def _is_your_pet(self, value: str) -> bool:
+        """``your pet`` / ``yourpet`` / ``<player>'s pet`` all mean the player's pet."""
+        letters = _letters(value)
+        return letters in {"yourpet", _letters(self.player_name) + "spet"}
 
     # -- parsing --------------------------------------------------------------
 
     def parse(self, text: str, confidence: float = 1.0,
               timestamp: float | None = None) -> CombatEvent | None:
-        text = repair_ocr_spacing(re.sub(r"\s+", " ", text).strip())
+        text = repair_ocr_spacing(re.sub(r"\s+", " ", normalize_quotes(text)).strip())
         self.observe(text)
         now = time.monotonic() if timestamp is None else timestamp
         wall = datetime.now()
@@ -354,6 +375,9 @@ class CombatTextParser:
         if parts:
             actor_text, verb, target_text = parts
             action = verb.title()
+            if self._is_your_pet(actor_text):  # "Raan's pet hits ..."
+                target_text, action = _strip_offhand(target_text, action)
+                return "Pet", self._pretty_name(target_text), action, EventKind.DAMAGE_OUT, True
             possessive = split_possessive(actor_text)
             if possessive:
                 actor_text, ability = possessive
@@ -365,7 +389,7 @@ class CombatTextParser:
         actor_is_player = actor_text.strip().casefold() in {"you", self.player_name.casefold()}
         actor_is_pet = self._is_known_pet(actor_text)
         target_is_player = target_text.strip().casefold() == "you"
-        target_is_pet = _is_your_pet(target_text)
+        target_is_pet = self._is_your_pet(target_text)
         actor = self._pretty_name(actor_text)
         target = self._pretty_name(target_text)
         if actor_is_player:
@@ -413,7 +437,7 @@ class CombatTextParser:
 
     def _pretty_name(self, value: str) -> str:
         value = re.sub(r"^(?:a|an|the)\s+", "", value.strip(" .,!:;-"), flags=re.IGNORECASE)
-        if _is_your_pet(value):
+        if self._is_your_pet(value):
             return "Pet"
         if value.casefold() in {"you", "your"}:
             return self.player_name

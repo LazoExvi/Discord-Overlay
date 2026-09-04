@@ -230,6 +230,26 @@ def test_lines_missing_their_actor_are_credited_to_unknown():
     assert parse("Ax hits a rat for 5 points of damage.").actor == "Ax"
 
 
+def test_backtick_apostrophes_and_players_pet_are_understood():
+    event = parse("Ssssteve`s Frenzy hits a rat for 5 points of damage.")
+    assert (event.actor, event.action) == ("Ssssteve", "Frenzy")
+    event = parse("Raan`s pet hits a rat for 3 points of damage.")
+    assert (event.kind, event.actor, event.is_pet) == (EventKind.DAMAGE_OUT, "Pet", True)
+    event = parse("a rat bites Raan's pet for 3 points of damage.")
+    assert (event.kind, event.target) == (EventKind.DAMAGE_IN, "Pet")
+
+
+def test_configured_pet_names_and_learned_pet_announcements():
+    parser = CombatTextParser("Raan", pet_names=["Xanartik"])
+    event = parser.parse("Xanartik hits a rat for 10 points of damage.")
+    assert (event.kind, event.is_pet) == (EventKind.DAMAGE_OUT, True)
+    assert parser.pop_new_pets() == []  # configured names are not announced
+    parser.parse("Ssssteve hits a rat for 10 points of damage.")
+    parser.parse("Your pet Ssssteve bites a rat for 4 points of damage.")
+    assert parser.pop_new_pets() == ["Ssssteve"]
+    assert parser.pop_new_pets() == []
+
+
 def test_non_combat_lines_are_ignored():
     for text in ("Starting to attack.", "a spiderling loses interest in Quorion.", "Matchacakes begins casting Flameburst."):
         assert parse(text) is None

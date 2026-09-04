@@ -5,7 +5,8 @@ main window drains on the Tk thread:
 
 ``status`` str, ``engine`` (provider, detail), ``preview`` BGR frame,
 ``ocr`` (lines, seconds, repaired_total), ``event`` CombatEvent,
-``trigger`` TriggerMatch, ``error`` str, ``stopped`` worker.
+``trigger`` TriggerMatch, ``pet`` newly learned pet name, ``error`` str,
+``stopped`` worker.
 """
 from __future__ import annotations
 
@@ -135,7 +136,7 @@ class ScannerWorker:
             engine = self._make_engine()
             self._put("engine", (engine.provider, engine.provider_detail))
             capture = self._capture or ScreenCapture()
-            parser = CombatTextParser(settings.player_name)
+            parser = CombatTextParser(settings.player_name, settings.pet_names)
             repairer, template_path = self._make_repairer()
             trigger_engine = TriggerEngine(settings.effective_triggers())
             sources = build_sources(settings, trigger_engine)
@@ -194,3 +195,5 @@ class ScannerWorker:
                 self._put("trigger", match)
             if event is not None:
                 self._put("event", event)
+        for name in parser.pop_new_pets():
+            self._put("pet", name)  # lets the tracker re-attribute this pet's earlier lines

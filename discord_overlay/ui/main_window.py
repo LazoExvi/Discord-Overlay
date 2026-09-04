@@ -658,6 +658,10 @@ class App(ctk.CTk):
                     self._add_event(value)
                 elif kind == "trigger":
                     self._trigger_fired(value)
+                elif kind == "pet":
+                    if self.tracker.mark_pet(value):
+                        self._refresh_metrics()
+                    self.set_status(f"Learned pet: {value}", theme.GREEN)
                 elif kind == "ocr":
                     self._show_ocr_summary(*value)
                 elif kind == "status":

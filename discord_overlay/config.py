@@ -31,7 +31,7 @@ SPEECH_MODES = ("queue", "interrupt")
 CHARACTER_FIELDS: tuple[str, ...] = (
     "region", "region_history", "timer_boards", "timer_layout", "timer_visual_size",
     "active_trigger_profile", "trigger_states", "actor_filter_enabled", "allowed_actor_names",
-    "mini_overlay_enabled", "mini_overlay_geometry",
+    "pet_names", "mini_overlay_enabled", "mini_overlay_geometry",
 )
 MINI_METRICS = ("damage", "healing")
 # Header stats the mini meter can show; the user picks up to MINI_STAT_SLOTS of them.
@@ -150,6 +150,7 @@ class Settings:
     trigger_states: dict[str, bool] = field(default_factory=dict)  # trigger id -> enabled, per character
     actor_filter_enabled: bool = False
     allowed_actor_names: list[str] = field(default_factory=list)
+    pet_names: list[str] = field(default_factory=list)
     mini_overlay_enabled: bool = False
     mini_overlay_geometry: str = ""
 
@@ -243,6 +244,7 @@ class Settings:
         self.mini_overlay_geometry = str(self.mini_overlay_geometry or "")
         self.active_trigger_profile = str(self.active_trigger_profile or "Default").strip() or "Default"
         self.allowed_actor_names = [str(n).strip() for n in self.allowed_actor_names if str(n).strip()]
+        self.pet_names = [str(n).strip() for n in (self.pet_names or []) if str(n).strip()]
         known_ids = {trigger.id for trigger in self.triggers}
         self.trigger_states = {
             str(key): bool(value) for key, value in dict(self.trigger_states or {}).items() if str(key) in known_ids

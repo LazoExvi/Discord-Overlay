@@ -97,13 +97,22 @@ class SettingsTab:
         self.group_button = ctk.CTkButton(body, text="", command=self.show_group_filter, width=150, **theme.STEEL_BUTTON)
         self.group_button.grid(row=6, column=2, padx=20, pady=8)
         ctk.CTkCheckBox(body, text="Combine pet damage with mine", variable=self.combine_pet_var, **theme.CHECKBOX).grid(
-            row=7, column=0, columnspan=2, padx=20, pady=8, sticky="w")
+            row=7, column=0, padx=20, pady=8, sticky="w")
+        pet_row = ctk.CTkFrame(body, fg_color="transparent")
+        pet_row.grid(row=7, column=1, columnspan=2, padx=8, pady=8, sticky="ew")
+        pet_row.grid_columnconfigure(1, weight=1)
+        ctk.CTkLabel(pet_row, text="Pet names", text_color=theme.MUTED).grid(row=0, column=0, padx=(0, 8))
+        self.pet_names_entry = ctk.CTkEntry(pet_row, placeholder_text="Comma separated, e.g. Ssssteve, Xanartik")
+        self.pet_names_entry.grid(row=0, column=1, sticky="ew")
+        theme.note(body, ("Pets are learned automatically from \"Your pet <Name>\" lines. Listing them here attributes "
+                          "their damage to you from the first line and is saved per character."), 650).grid(
+            row=8, column=1, columnspan=2, padx=8, pady=(0, 4), sticky="w")
         ctk.CTkCheckBox(body, text="Attribute damage shields to buff wearer (off = one Damage Shield actor)",
-                        variable=self.shield_wearer_var, **theme.CHECKBOX).grid(row=8, column=0, columnspan=2, padx=20, pady=8, sticky="w")
+                        variable=self.shield_wearer_var, **theme.CHECKBOX).grid(row=8, column=0, padx=20, pady=8, sticky="w")
         ctk.CTkCheckBox(body, text="Use GPU acceleration when available", variable=self.gpu_var, **theme.CHECKBOX).grid(
-            row=9, column=0, columnspan=2, padx=20, pady=8, sticky="w")
+            row=9, column=0, padx=20, pady=8, sticky="w")
         ctk.CTkCheckBox(body, text="Repair lines partly hidden by the mouse cursor", variable=self.repair_var,
-                        **theme.CHECKBOX).grid(row=9, column=2, padx=20, pady=8, sticky="w")
+                        **theme.CHECKBOX).grid(row=9, column=1, columnspan=2, padx=8, pady=8, sticky="w")
 
     def _build_timer_boards(self, body) -> None:
         frame = ctk.CTkFrame(body, fg_color=theme.PANEL_2, corner_radius=10)
@@ -212,6 +221,8 @@ class SettingsTab:
         self.board_menu.configure(values=names)
         self.board_menu.set(names[0])
         self.load_board_controls(names[0])
+        self.pet_names_entry.delete(0, "end")
+        self.pet_names_entry.insert(0, ", ".join(self.settings.pet_names))
         self.refresh_group_button()
 
     def refresh_group_button(self) -> None:
@@ -257,6 +268,7 @@ class SettingsTab:
         s.scan_interval, s.encounter_timeout, s.rolling_window, s.min_confidence = interval, timeout, rolling, confidence
         s.always_on_top = bool(self.topmost_var.get())
         s.combine_pet_damage = bool(self.combine_pet_var.get())
+        s.pet_names = [name.strip() for name in self.pet_names_entry.get().split(",") if name.strip()]
         s.damage_shields_by_wearer = bool(self.shield_wearer_var.get())
         s.prefer_gpu = bool(self.gpu_var.get())
         s.repair_occluded_lines = bool(self.repair_var.get())

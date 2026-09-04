@@ -82,6 +82,16 @@ def test_pet_damage_combined_or_separate():
     assert {row.actor for row in separate.actor_totals()} == {"Raan", "Pet"}
 
 
+def test_marking_a_pet_re_attributes_its_earlier_damage():
+    tracker = EncounterTracker(player_name="Raan")
+    tracker.add(_event("Raan", 100, EventKind.DAMAGE_OUT))
+    tracker.add(_event("Ssssteve", 40))  # parsed before the pet was known: DAMAGE_OTHER
+    assert {row.actor for row in tracker.actor_totals(now=10.5)} == {"Raan", "Ssssteve"}
+    assert tracker.mark_pet("ssssteve") == 1 and tracker.mark_pet("Ssssteve") == 0
+    assert [(row.actor, row.damage) for row in tracker.actor_totals(now=10.5)] == [("Raan", 140)]
+    assert tracker.snapshot(now=10.5).total_out == 140
+
+
 def test_damage_shields_toggle_between_wearer_and_separate_entity():
     def shield(actor, amount, kind=EventKind.DAMAGE_OUT):
         return _event(actor, amount, kind, is_damage_shield=True)
