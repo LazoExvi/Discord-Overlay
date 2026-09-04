@@ -1,0 +1,40 @@
+[project]
+name = "discord-overlay"
+dynamic = ["version"]
+description = "Screen-only OCR combat parser with alerts, overlays, and timers"
+requires-python = ">=3.11"
+dependencies = [
+  "customtkinter>=5.2,<6",
+  "mss>=10,<11",
+  "numpy>=2.0,<3",
+  "opencv-python-headless>=4.10,<5",
+  "Pillow>=11,<12",
+  "pygame-ce>=2.5,<3",
+  "rapidocr>=3.4,<4",
+]
+
+[project.optional-dependencies]
+nvidia = ["onnxruntime-gpu[cuda,cudnn]>=1.29,<1.30"]
+directml = ["onnxruntime-directml>=1.24,<1.25"]
+cpu = ["onnxruntime>=1.20,<2"]
+dev = ["pytest>=8,<9", "pyinstaller>=6.16,<7"]
+
+[project.scripts]
+discord-overlay = "discord_overlay.app:main"
+
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["discord_overlay*"]
+
+[tool.setuptools.package-data]
+discord_overlay = ["assets/*.png", "assets/*.ico", "assets/*.txt"]
+
+[tool.setuptools.dynamic]
+version = {attr = "discord_overlay.__version__"}
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

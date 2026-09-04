@@ -1,0 +1,7 @@
+customtkinter>=5.2,<6
+mss>=10,<11
+numpy>=2.0,<3
+opencv-python-headless>=4.10,<5
+Pillow>=11,<12
+pygame-ce>=2.5,<3
+rapidocr>=3.4,<4

@@ -1,0 +1,53 @@
+# Real combat-log lines captured from play sessions (one per line).
+# Used by scripts/build_grammar_seed.py; names are masked before anything is shipped.
+a rotting skeleton's Strike hits Snubert for 1 point of damage.
+a rotting skeleton hits Snubert for 1 point of damage.
+a rotting skeleton hits Snubert for 2 points of damage.
+Snubert crushes a rotting skeleton for 1 point of damage.
+a rotting skeleton hits Matchacakes for 1 point of damage.
+Matchacakes pierces a rotting skeleton for 1 point of damage.
+a spiderling loses interest in Quorion.
+Training's Round Kick hits a fire beetle for 9 points of damage.
+a fire beetle has been slain by Training!
+a rotting skeleton hits Matchacakes for 3 points of damage.
+Starting to attack.
+You try to pierce a rotting skeleton, but miss!
+Snubert crushes a rotting skeleton for 8 points of damage.
+a spiderling has been slain by Quorion!
+Matchacakes begins casting Flameburst.
+Matchacakes's Flameburst hits a rotting skeleton for 5 points of Fire Damage.
+a rotting skeleton's Strike hits Matchacakes for 2 points of damage.
+Snubert begins casting Life Drain.
+Training punches a fire beetle for 2 points of damage.
+Willmont's Stab hits a spiderling for 2 points of damage.
+Snubert's casting is interrupted.
+Training's Celestial Strike hits a fire beetle for 5 points of damage.
+Training is filled with celestial fury.
+a large rat has been slain by Maizel!
+Training punches a fire beetle for 1 point of damage.
+a rotting skeleton kicks Snubert.
+Training's Celestial Strike hits a fire beetle for 11 points of damage.
+Adacan crushes a dunes scarab for 4 points of damage.
+a dunes scarab has been slain by Adacan!
+Stopped attacking.
+Vekis's Round Kick hits a large rat for 8 points of damage.
+a large rat has been slain by Vekis!
+You punch a desert bat for 1 point of damage.
+a desert bat bites YOU for 4 points of damage.
+You try to punch a desert bat, but miss!
+a desert bat bites YOU for 3 points of damage.
+Ebola crushes a rotten sharpshooter for 59 points of damage.
+You taunt a rotten sharpshooter.
+Pitborn begins casting Ghostly Wrath.
+Ebola's Infused Slash VI hits a rotten sharpshooter for 40 points of damage.
+Ebola slashes a rotten sharpshooter with their offhand for 30 points of damage.
+The warmth of the campfire leaves you.
+Your Rend VI hits a rotten sharpshooter for 120 points of damage.
+Ouch crushes a rotten sharpshooter for 77 points of damage.
+Ouch crushes a rotten sharpshooter for 189 points of damage.
+Raan bites a rotten sharpshooter for 42 points of damage.
+a rotten sharpshooter looks mentally exhausted.
+Player's Censuring Strike V hits a rotten sharpshooter for 88 points of damage.
+Raan bites a rotten sharpshooter with their offhand for 56 points of damage.
+a rotten sharpshooter looks angry at Raan.
+a large rat claws Snubert for 3 points of damage.
