@@ -52,18 +52,9 @@ people. Discord Overlay is not signed. A code-signing certificate costs a few
 hundred dollars a year and requires identity verification, and that will not be
 done for this free project. The warning does not mean anything harmful was
 detected; it only means Windows does not recognize the publisher. Click **More
-info**, then **Run anyway**.
-
-Occasionally Windows Defender goes further and reports a detection such as
-`Trojan:Win32/Wacatac.B!ml`. The `!ml` suffix means a machine-learning guess, not
-a matched virus signature; unsigned installers of Python programs trip it
-regularly. Every release build is scanned with Defender before it is published,
-and you can check a file yourself on [VirusTotal](https://www.virustotal.com). If
-your copy is still flagged, use the portable zip from the same release instead,
-or report the file to Microsoft as a false positive at
-<https://www.microsoft.com/wdsi/filesubmission>, which usually clears it within a
-day. The complete source is in this repository if you want to check what the
-program does or build it yourself.
+info**, then **Run anyway**. Every release build is scanned with Windows Defender
+before it is published. The complete source is in this repository if you want to
+check what the program does or build it yourself.
 
 ## What you get
 
