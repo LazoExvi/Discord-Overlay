@@ -57,9 +57,10 @@ jobs:
           $built = Join-Path $source.FullName "PyInstaller\bootloader\Windows-64bit-intel\run.exe"
           if (-not (Test-Path $built)) { throw "waf produced no bootloader" }
           Write-Host "Compiled bootloader: $((Get-FileHash $built -Algorithm SHA256).Hash)"
-          & $python -m pip install --no-build-isolation --no-deps $source.FullName
-          & $python -m pip install "pyinstaller-hooks-contrib" "altgraph" "pefile" "pywin32-ctypes" "packaging"
+          & $python -m pip install $source.FullName
+          if ($LASTEXITCODE -ne 0) { throw "Installing the compiled PyInstaller failed" }
           & $python -m PyInstaller --version
+          if ($LASTEXITCODE -ne 0) { throw "PyInstaller is not importable after install" }
 
       - name: Build folder and installer
         shell: pwsh
