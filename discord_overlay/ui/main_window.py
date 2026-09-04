@@ -157,9 +157,16 @@ class App(ctk.CTk):
         self.start_button.grid(row=2, column=0, columnspan=2, padx=20, pady=(6, 6), sticky="ew")
         ctk.CTkButton(sidebar, text="Select region", command=self.select_region, height=34, corner_radius=10,
                       **theme.STEEL_BUTTON).grid(row=3, column=0, columnspan=2, padx=20, pady=(0, 4), sticky="ew")
+        self.mini_button = ctk.CTkButton(sidebar, text="", command=self.toggle_mini_overlay, height=32, corner_radius=10,
+                                         **theme.STEEL_BUTTON)
+        self.mini_button.grid(row=4, column=0, padx=(20, 3), pady=(0, 4), sticky="ew")
+        self.arrange_button = ctk.CTkButton(sidebar, text="Move overlays", command=self.toggle_arrange, height=32,
+                                            corner_radius=10, **theme.QUIET_BUTTON)
+        self.arrange_button.grid(row=4, column=1, padx=(3, 20), pady=(0, 4), sticky="ew")
+        self._refresh_mini_button()
 
         metrics = ctk.CTkFrame(sidebar, fg_color="transparent")
-        metrics.grid(row=4, column=0, columnspan=2, padx=15, pady=(12, 0), sticky="ew")
+        metrics.grid(row=5, column=0, columnspan=2, padx=15, pady=(10, 0), sticky="ew")
         metrics.grid_columnconfigure((0, 1), weight=1)
         self.dps_card = MetricCard(metrics, "Encounter DPS", theme.ACCENT)
         self.rolling_card = MetricCard(metrics, "10s DPS", theme.CYAN)
@@ -174,7 +181,7 @@ class App(ctk.CTk):
         self.duration_card.grid(row=3, column=0, columnspan=2, padx=4, pady=4, sticky="ew")
 
         spark_card = theme.card(sidebar)
-        spark_card.grid(row=5, column=0, columnspan=2, padx=19, pady=(8, 0), sticky="ew")
+        spark_card.grid(row=6, column=0, columnspan=2, padx=19, pady=(8, 0), sticky="ew")
         spark_card.grid_columnconfigure(0, weight=1)
         ctk.CTkLabel(spark_card, text="10S DPS TREND", text_color=theme.MUTED, font=theme.display_font(10), anchor="w").grid(
             row=0, column=0, padx=12, pady=(8, 0), sticky="w")
@@ -183,16 +190,51 @@ class App(ctk.CTk):
 
         ctk.CTkButton(sidebar, text="Export current data (CSV)", command=self.export_csv, fg_color="transparent",
                       border_width=1, border_color=theme.BORDER, hover_color=theme.PANEL_2, corner_radius=10).grid(
-            row=6, column=0, columnspan=2, padx=20, pady=(14, 5), sticky="ew")
+            row=7, column=0, columnspan=2, padx=20, pady=(12, 5), sticky="ew")
         self.running_totals_var = ctk.BooleanVar(value=self.settings.keep_running_totals)
         ctk.CTkCheckBox(sidebar, text="Keep running totals until Reset", variable=self.running_totals_var,
                         command=self._running_totals_changed, text_color=theme.TEXT, font=theme.font(12), **theme.CHECKBOX).grid(
-            row=7, column=0, columnspan=2, padx=20, pady=(7, 1), sticky="w")
+            row=8, column=0, columnspan=2, padx=20, pady=(6, 1), sticky="w")
         ctk.CTkLabel(sidebar, text="Combines fights; idle time is excluded.", text_color=theme.DIM, font=theme.font(10),
-                     anchor="w").grid(row=8, column=0, columnspan=2, padx=45, pady=(0, 5), sticky="ew")
+                     anchor="w").grid(row=9, column=0, columnspan=2, padx=45, pady=(0, 4), sticky="ew")
         ctk.CTkButton(sidebar, text="Reset", command=self.reset_encounter, height=32, corner_radius=10, **theme.QUIET_BUTTON).grid(
-            row=9, column=0, columnspan=2, padx=20, pady=(4, 16), sticky="ew")
-        sidebar.grid_rowconfigure(10, weight=1)
+            row=10, column=0, columnspan=2, padx=20, pady=(2, 14), sticky="ew")
+        sidebar.grid_rowconfigure(11, weight=1)
+
+    # -- mini overlay ---------------------------------------------------------
+
+    def _refresh_mini_button(self) -> None:
+        on = self.settings.mini_overlay_enabled
+        self.mini_button.configure(text="Mini meter: On" if on else "Mini meter: Off",
+                                   **(theme.ACCENT_BUTTON if on else theme.STEEL_BUTTON))
+
+    def toggle_mini_overlay(self) -> None:
+        self.overlays.set_mini_enabled(not self.settings.mini_overlay_enabled)
+        self._refresh_mini_button()
+        if self.settings.mini_overlay_enabled:
+            self._render_mini()
+            self.set_status("Mini meter shown. Use Move overlays to place it.", theme.GREEN)
+        else:
+            self.set_status("Mini meter hidden", theme.MUTED)
+
+    def toggle_arrange(self) -> None:
+        if self.overlays.arranging:
+            self.overlays.lock()
+        else:
+            self.overlays.arrange()
+        self._refresh_arrange_button()
+
+    def _refresh_arrange_button(self) -> None:
+        if self.overlays.arranging:
+            self.arrange_button.configure(text="Lock overlays", **theme.ACCENT_BUTTON)
+        else:
+            self.arrange_button.configure(text="Move overlays", **theme.QUIET_BUTTON)
+
+    def _render_mini(self) -> None:
+        if not self.settings.mini_overlay_enabled and self.overlays.mini is None:
+            return
+        rows = self.tracker.actor_totals()
+        self.overlays.render_mini(self.tracker.snapshot(), rows)
 
     def _build_preview_bar(self, content) -> None:
         bar = theme.card(content, height=126)
@@ -405,6 +447,7 @@ class App(ctk.CTk):
         self.overlays.reset_for_character()
         self.tracker.player_name = self.settings.player_name
         self._refresh_character_menu()
+        self._refresh_mini_button()
         self.settings_tab.refresh_character_fields()
         self.alerts.refresh_profiles()
         self.alerts.refresh()
@@ -632,6 +675,8 @@ class App(ctk.CTk):
         now = time.monotonic()
         if self.running or self.tracker.active or self.sparkline.samples:
             self.sparkline.add(now, self.tracker.snapshot(now).rolling_dps)
+        self._render_mini()
+        self._refresh_arrange_button()
         for notification in self.timers.tick(now):
             self._timer_notification(notification)
         self.overlays.render(now)

@@ -32,8 +32,27 @@ class SettingsTab:
         self._build_scan_settings(body)
         self._build_options(body)
         self._build_timer_boards(body)
+        self._build_mini_overlay(body)
         self._build_hardware(body)
         self.refresh_from_settings()
+
+    def _build_mini_overlay(self, body) -> None:
+        frame = ctk.CTkFrame(body, fg_color=theme.PANEL_2, corner_radius=10)
+        frame.grid(row=11, column=0, columnspan=3, padx=20, pady=(12, 0), sticky="ew")
+        frame.grid_columnconfigure((0, 1, 2, 3), weight=1)
+        ctk.CTkLabel(frame, text="MINI METER OVERLAY", text_color=theme.ACCENT, font=theme.font(bold=True), anchor="w").grid(
+            row=0, column=0, columnspan=4, padx=16, pady=(11, 2), sticky="ew")
+        theme.note(frame, ("A compact always-on-top meter for use while playing. Toggle it with the sidebar button; "
+                           "use Move overlays to drag and resize it, then Lock overlays for click-through. Its position "
+                           "is saved per character."), 760).grid(row=1, column=0, columnspan=4, padx=16, pady=(0, 8), sticky="ew")
+        for column, label in enumerate(("Show", "Rows", "Opacity (%)")):
+            theme.note(frame, label).grid(row=2, column=column, padx=16, pady=(2, 3), sticky="w")
+        self.mini_metric_menu = ctk.CTkOptionMenu(frame, values=["Damage", "Healing"], width=150, **theme.MENU)
+        self.mini_metric_menu.grid(row=3, column=0, padx=16, pady=(0, 12), sticky="w")
+        self.mini_rows_menu = ctk.CTkOptionMenu(frame, values=[str(v) for v in range(1, 13)], width=90, **theme.MENU)
+        self.mini_rows_menu.grid(row=3, column=1, padx=16, pady=(0, 12), sticky="w")
+        self.mini_opacity_entry = ctk.CTkEntry(frame, width=100)
+        self.mini_opacity_entry.grid(row=3, column=2, padx=16, pady=(0, 12), sticky="w")
 
     # -- construction ---------------------------------------------------------
 
@@ -129,7 +148,7 @@ class SettingsTab:
 
     def _build_hardware(self, body) -> None:
         frame = ctk.CTkFrame(body, fg_color=theme.PANEL_2, corner_radius=10)
-        frame.grid(row=11, column=0, columnspan=3, padx=20, pady=(12, 0), sticky="ew")
+        frame.grid(row=12, column=0, columnspan=3, padx=20, pady=(12, 0), sticky="ew")
         frame.grid_columnconfigure(0, weight=1)
         ctk.CTkLabel(frame, text="OCR performance profile", text_color=theme.TEXT, font=theme.font(bold=True), anchor="w").grid(
             row=0, column=0, padx=16, pady=(12, 2), sticky="ew")
@@ -140,7 +159,7 @@ class SettingsTab:
         ctk.CTkButton(frame, text="Save settings", command=self.app.save_settings, width=120, **theme.ACCENT_BUTTON).grid(
             row=0, column=2, rowspan=2, padx=(0, 14), pady=12)
         footer = ctk.CTkFrame(body, fg_color="transparent")
-        footer.grid(row=12, column=0, columnspan=3, padx=20, pady=(12, 18), sticky="ew")
+        footer.grid(row=13, column=0, columnspan=3, padx=20, pady=(12, 18), sticky="ew")
         ctk.CTkButton(footer, text="About Discord Overlay", command=lambda: AboutWindow(self.app), width=170,
                       **theme.STEEL_BUTTON).pack(side="left")
         ctk.CTkButton(footer, text="Open diagnostics", command=open_diagnostics_folder, width=150, **theme.STEEL_BUTTON).pack(
@@ -162,6 +181,10 @@ class SettingsTab:
         self.close_enabled_var.set(s.overlay_close_enabled)
         self.modifier1_menu.set(s.overlay_close_modifier1.title())
         self.modifier2_menu.set(s.overlay_close_modifier2.title())
+        self.mini_metric_menu.set(s.mini_overlay_metric.title())
+        self.mini_rows_menu.set(str(s.mini_overlay_rows))
+        self.mini_opacity_entry.delete(0, "end")
+        self.mini_opacity_entry.insert(0, f"{s.mini_overlay_opacity * 100:.0f}")
         self.refresh_character_fields()
         self.refresh_hardware_label()
 
@@ -204,8 +227,14 @@ class SettingsTab:
         modifier2 = self.modifier2_menu.get().casefold()
         if modifier2 != "none" and modifier1 == modifier2:
             raise ValueError("Choose two different overlay-close modifiers, or set the second to None.")
+        mini_opacity = float(self.mini_opacity_entry.get()) / 100.0
+        if not 0.2 <= mini_opacity <= 1.0:
+            raise ValueError("Mini meter opacity must be between 20 and 100 percent.")
         self.store_board_controls()
         s = self.settings
+        s.mini_overlay_metric = self.mini_metric_menu.get().casefold()
+        s.mini_overlay_rows = int(self.mini_rows_menu.get())
+        s.mini_overlay_opacity = mini_opacity
         s.scan_interval, s.encounter_timeout, s.rolling_window, s.min_confidence = interval, timeout, rolling, confidence
         s.always_on_top = bool(self.topmost_var.get())
         s.combine_pet_damage = bool(self.combine_pet_var.get())

@@ -126,6 +126,27 @@ def main() -> int:
         app.overlays.hide()
         app.settings_tab.apply_to_settings()
 
+    def mini_meter() -> None:
+        app.toggle_mini_overlay()
+        assert app.settings.mini_overlay_enabled and app.overlays.mini is not None
+        app._render_mini()
+        app.update_idletasks()
+        assert app.overlays.mini.state() != "withdrawn"
+        assert app.overlays.mini.rows, "mini meter shows no actor rows"
+        app.toggle_arrange()
+        assert app.overlays.arranging and app.overlays.mini.edit_mode
+        app.toggle_arrange()
+        assert not app.overlays.arranging
+        if SCREENSHOT:
+            from PIL import ImageGrab
+
+            mini = app.overlays.mini
+            x, y = mini.winfo_rootx(), mini.winfo_rooty()
+            ImageGrab.grab(bbox=(x, y, x + mini.winfo_width(), y + mini.winfo_height())).save(
+                SCREENSHOT.replace(".png", "-mini.png"))
+        app.toggle_mini_overlay()
+        assert app.overlays.mini.state() == "withdrawn"
+
     def scanner_messages() -> None:
         app.messages.put(("status", "smoke status"))
         app.messages.put(("engine", ("CPU", "Fake")))
@@ -161,10 +182,11 @@ def main() -> int:
         (2300, "character switch", characters),
         (2900, "boards + overlay modes", boards),
         (3300, "scanner messages", scanner_messages),
-        (3700, "close windows", close_windows),
+        (3600, "mini meter", mini_meter),
+        (4000, "close windows", close_windows),
     ]
     if WITH_OCR:
-        schedule += [(4200, "start OCR monitoring", start_ocr), (16000, "OCR monitoring produced frames", check_ocr)]
+        schedule += [(4500, "start OCR monitoring", start_ocr), (16500, "OCR monitoring produced frames", check_ocr)]
     for delay, name, action in schedule:
         app.after(delay, lambda name=name, action=action: step(name, action))
     app.after(schedule[-1][0] + 800, lambda: step("close app", app.close))

@@ -11,9 +11,12 @@ from ctypes import wintypes
 
 from ..capture import monitor_containing
 from ..config import Settings, TimerBoard
+from ..encounter import ActorRow
+from ..models import EncounterSnapshot
 from ..timers import TimerInstance, TimerManager
 from ..triggers import Trigger, TriggerMatch
-from .overlay import TimerOverlay
+from .mini_overlay import MiniMeterOverlay
+from .overlay import OverlayWindow, TimerOverlay
 
 DEFAULT_SIZE = (420, 320)
 INDEPENDENT_SIZES = {"compact": (250, 80), "standard": (360, 125), "large": (540, 210)}
@@ -41,19 +44,26 @@ class OverlayManager:
         self.status = status
         self.board_overlays: dict[str, TimerOverlay] = {}
         self.independent_overlays: dict[tuple[str, str], TimerOverlay] = {}
+        self.mini: MiniMeterOverlay | None = None
+        self.arranging = False
         self._left_down = False
 
     # -- lifecycle ------------------------------------------------------------
 
-    def all(self) -> list[TimerOverlay]:
-        return [overlay for overlay in (*self.board_overlays.values(), *self.independent_overlays.values())
-                if overlay.winfo_exists()]
+    def all(self) -> list[OverlayWindow]:
+        overlays: list[OverlayWindow] = [overlay for overlay in (*self.board_overlays.values(),
+                                                                 *self.independent_overlays.values())
+                                         if overlay.winfo_exists()]
+        if self.mini is not None and self.mini.winfo_exists():
+            overlays.append(self.mini)
+        return overlays
 
     def destroy_all(self) -> None:
         for overlay in self.all():
             overlay.destroy()
         self.board_overlays.clear()
         self.independent_overlays.clear()
+        self.mini = None
 
     def reset_for_character(self) -> None:
         self.destroy_all()
@@ -206,6 +216,43 @@ class OverlayManager:
                 overlay.render([], now, 1)
         return rendered
 
+    # -- mini meter -----------------------------------------------------------
+
+    def _mini_overlay(self) -> MiniMeterOverlay:
+        if self.mini is None or not self.mini.winfo_exists():
+            geometry = self.settings.mini_overlay_geometry
+            if not geometry:
+                match = re.fullmatch(r"\d+x\d+([+-]\d+)([+-]\d+)", self._anchor_geometry())
+                x, y = (int(match.group(1)), int(match.group(2))) if match else (40, 80)
+                geometry = f"340x230{x:+d}{y:+d}"
+            self.mini = MiniMeterOverlay(self.root, geometry, self._mini_moved)
+        return self.mini
+
+    def _mini_moved(self, geometry: str) -> None:
+        self.settings.mini_overlay_geometry = geometry
+        self.settings.save()
+
+    def render_mini(self, snapshot: EncounterSnapshot, rows: list[ActorRow]) -> None:
+        """Refresh the mini meter, creating or hiding it as the setting dictates."""
+        if not self.settings.mini_overlay_enabled:
+            if self.mini is not None and self.mini.winfo_exists() and self.mini.state() != "withdrawn":
+                self.mini.withdraw()
+            return
+        overlay = self._mini_overlay()
+        overlay.update_data(snapshot, rows, self.settings.mini_overlay_metric, self.settings.mini_overlay_rows,
+                            self.settings.mini_overlay_opacity)
+        if self.arranging:
+            return
+        overlay.ensure_visible()
+
+    def set_mini_enabled(self, enabled: bool) -> None:
+        self.settings.mini_overlay_enabled = enabled
+        self.settings.save()
+        if enabled:
+            self._mini_overlay().manually_hidden = False
+        elif self.mini is not None and self.mini.winfo_exists():
+            self.mini.withdraw()
+
     # -- user actions ---------------------------------------------------------
 
     def arrange(self) -> None:
@@ -220,18 +267,23 @@ class OverlayManager:
             names = {t.timer_board for t in visible} or {self.settings.timer_boards[0].name}
             for name in names:
                 self._board_overlay(self.settings.timer_board(name)).arrange()
-        self.status("Overlay unlocked — drag its header and resize from the lower-right corner.", "accent")
+        if self.settings.mini_overlay_enabled:
+            self._mini_overlay().arrange()
+        self.arranging = True
+        self.status("Overlays unlocked — drag a header to move, resize from the lower-right corner.", "accent")
 
     def lock(self) -> None:
         overlays = self.all() or [self._board_overlay(self.settings.timer_boards[0])]
         for overlay in overlays:
             overlay.lock()
-        self.status("Overlay locked and click-through.", "ok")
+        self.arranging = False
+        self.status("Overlays locked and click-through.", "ok")
 
     def hide(self) -> None:
         for overlay in self.all():
             overlay.hide_overlay()
-        self.status("Overlay hidden until the next timer.", "muted")
+        self.arranging = False
+        self.status("Overlays hidden until the next timer.", "muted")
 
     def preview_trigger(self, trigger: Trigger) -> bool:
         match = TriggerMatch(trigger.id, trigger.name, "", trigger.volume, "Overlay preview",
@@ -301,6 +353,8 @@ class OverlayManager:
     def dismiss_at(self, x: int, y: int) -> TimerInstance | None:
         for overlay in reversed(self.all()):
             if overlay.contains_point(x, y):
-                timer_id = overlay.timer_id_at_screen(x, y)
-                return self.timers.dismiss(timer_id) if timer_id else None
+                if isinstance(overlay, TimerOverlay):
+                    timer_id = overlay.timer_id_at_screen(x, y)
+                    return self.timers.dismiss(timer_id) if timer_id else None
+                return None
         return None

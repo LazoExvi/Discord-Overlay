@@ -31,7 +31,9 @@ SPEECH_MODES = ("queue", "interrupt")
 CHARACTER_FIELDS: tuple[str, ...] = (
     "region", "region_history", "timer_boards", "timer_layout", "timer_visual_size",
     "active_trigger_profile", "trigger_states", "actor_filter_enabled", "allowed_actor_names",
+    "mini_overlay_enabled", "mini_overlay_geometry",
 )
+MINI_METRICS = ("damage", "healing")
 
 
 def _choice(value, allowed: tuple[str, ...], default: str) -> str:
@@ -124,6 +126,9 @@ class Settings:
     speech_rate: int = 0
     speech_volume: int = 100
     speech_queue_mode: str = "queue"
+    mini_overlay_rows: int = 6
+    mini_overlay_opacity: float = 0.9
+    mini_overlay_metric: str = "damage"
     characters: list[CharacterProfile] = field(default_factory=list)
     active_character: str = PLACEHOLDER_CHARACTER
     # -- per character (live copy of the active profile) --------------------
@@ -136,6 +141,8 @@ class Settings:
     trigger_states: dict[str, bool] = field(default_factory=dict)  # trigger id -> enabled, per character
     actor_filter_enabled: bool = False
     allowed_actor_names: list[str] = field(default_factory=list)
+    mini_overlay_enabled: bool = False
+    mini_overlay_geometry: str = ""
 
     def __post_init__(self) -> None:
         self._normalize_characters()
@@ -214,6 +221,11 @@ class Settings:
             self.overlay_close_modifier2 = "none"
         self.timer_layout = _choice(self.timer_layout, OVERLAY_LAYOUTS, "docked")
         self.timer_visual_size = _choice(self.timer_visual_size, OVERLAY_SIZES, "standard")
+        self.mini_overlay_rows = int(_clamp(self.mini_overlay_rows, 1, 12, 6))
+        self.mini_overlay_opacity = _clamp(self.mini_overlay_opacity, 0.2, 1.0, 0.9)
+        self.mini_overlay_metric = _choice(self.mini_overlay_metric, MINI_METRICS, "damage")
+        self.mini_overlay_enabled = bool(self.mini_overlay_enabled)
+        self.mini_overlay_geometry = str(self.mini_overlay_geometry or "")
         self.active_trigger_profile = str(self.active_trigger_profile or "Default").strip() or "Default"
         self.allowed_actor_names = [str(n).strip() for n in self.allowed_actor_names if str(n).strip()]
         known_ids = {trigger.id for trigger in self.triggers}

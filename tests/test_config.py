@@ -203,6 +203,20 @@ def test_trigger_on_off_state_is_remembered_per_character(app_data):
     assert loaded.trigger_states == {} and loaded.character("Healer").data.get("trigger_states") == {}
 
 
+def test_mini_overlay_settings_round_trip_and_clamp(app_data):
+    settings = Settings(mini_overlay_enabled=True, mini_overlay_geometry="300x200+5+5", mini_overlay_rows=40,
+                        mini_overlay_opacity=3.0, mini_overlay_metric="weird")
+    assert (settings.mini_overlay_rows, settings.mini_overlay_opacity, settings.mini_overlay_metric) == (12, 1.0, "damage")
+    settings.add_character("Alt", copy_current=False)
+    settings.switch_character("Alt")
+    assert not settings.mini_overlay_enabled and settings.mini_overlay_geometry == ""  # per character
+    assert settings.mini_overlay_rows == 12  # shared
+    settings.save()
+    loaded = Settings.load()
+    assert loaded.switch_character("Default") and loaded.mini_overlay_enabled
+    assert loaded.mini_overlay_geometry == "300x200+5+5"
+
+
 def test_stale_trigger_states_are_dropped_on_load(app_data):
     settings_path().parent.mkdir(parents=True)
     settings_path().write_text(json.dumps({"characters": [{"name": "Default", "data": {"trigger_states": {"ghost": False}}}]}),

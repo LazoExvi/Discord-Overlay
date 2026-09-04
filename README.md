@@ -71,6 +71,10 @@ program does or build it yourself.
 - Pets are learned automatically from `Your pet Name …` lines. Choose whether pet
   damage merges into your row, and whether damage shields credit the wearer or a
   single `Damage Shield` actor.
+- A **mini meter overlay**: a compact always-on-top window with encounter DPS,
+  10-second DPS, damage, duration, and the top actor bars, for use while playing.
+  Toggle it from the sidebar, drag it into place with **Move overlays**, then
+  **Lock overlays** to make it click-through. Its position is saved per character.
 - **Running totals** combine fights until Reset while excluding idle time.
 - An optional **Group filter** keeps only fights involving you, your pet, or the
   names you list, so nearby strangers are excluded.
