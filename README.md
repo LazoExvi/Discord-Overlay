@@ -9,17 +9,32 @@ or sends input to the game.
 This repository is private and shared by invitation. There is no license server,
 no update check, and no telemetry.
 
-## Quick start
+## Install (no Python needed)
 
-1. Install **Python 3.12 (64-bit)** from python.org if you do not have it.
-2. Clone or download this repository and double-click **`run.bat`**. The first launch
-   creates a private `.venv`, detects your graphics card, and installs the matching
-   ONNX Runtime (NVIDIA CUDA, AMD/Intel DirectML, or CPU). Later launches are fast.
-3. Follow the first-time setup: select the combat region, run the capability test,
-   and apply its recommended scan interval.
+1. Open the **[Releases](../../releases/latest)** page and download
+   `DiscordOverlay-Setup-<version>.exe`.
+2. Run it. Windows may say "Windows protected your PC" because the installer is not
+   code-signed: click **More info**, then **Run anyway**. It installs for your user
+   only, needs no admin rights, and adds a Start Menu shortcut.
+3. Launch **Discord Overlay** and follow the first-time setup: select the combat
+   region, run the capability test, and apply its recommended scan interval.
 4. In game, make a chat tab that contains only combat messages, ideally on a black,
    opaque background with a larger font.
 5. Click **Start monitoring** before you pull.
+
+The installer uses DirectML for GPU acceleration, which works on NVIDIA, AMD, and
+Intel graphics and falls back to CPU automatically. A portable zip (unzip and run
+`DiscordOverlay.exe`) is attached to every release as well. To update, install the
+newer version over the old one; your settings are kept.
+
+## Run from source (optional)
+
+If you would rather run the Python code, or want NVIDIA CUDA acceleration:
+
+1. Install **Python 3.12 (64-bit)** from python.org.
+2. Clone or download this repository and double-click **`run.bat`**. The first launch
+   creates a private `.venv`, detects your graphics card, and installs the matching
+   ONNX Runtime (NVIDIA CUDA, AMD/Intel DirectML, or CPU). Later launches are fast.
 
 Selecting a region darkens every monitor. Left-drag around the scrolling combat
 text, leaving a small margin and never cutting through letters. Release to save,
@@ -113,7 +128,19 @@ Layout:
 | `discord_overlay/config.py` | Settings with per-character profiles |
 | `discord_overlay/ui/` | CustomTkinter windows, tabs, overlays |
 | `scripts/build_grammar_seed.py` | Regenerates the shipped grammar dictionary |
-| `scripts/build_windows.ps1` | Optional PyInstaller folder build for people without Python |
+| `scripts/build_windows.ps1` | PyInstaller folder build, plus `-Installer` for the Inno Setup installer |
+| `scripts/ui_smoke.py` | Drives the real window through its features (`--ocr` starts live monitoring) |
 
 Run `python scripts/build_grammar_seed.py` after adding real combat lines to
 `scripts/grammar-samples.txt`; names are masked before anything is written.
+
+### Publishing a release
+
+1. Bump `__version__` in `discord_overlay/__init__.py` and commit.
+2. Tag and push: `git tag v1.0.1 && git push origin main v1.0.1`.
+3. The **Release installer** workflow builds the installer and portable zip on a
+   GitHub Windows runner and publishes them on the Releases page. Invited
+   collaborators can download them while signed in to GitHub.
+
+"Run workflow" on the Actions tab builds the current commit as a pre-release
+without tagging.
