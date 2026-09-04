@@ -23,31 +23,40 @@ param(
     [switch]$SkipTests
 )
 
-$ErrorActionPreference = "Stop"
+# Native tools (pip, RapidOCR) write progress to stderr, which "Stop" would treat as
+# fatal under Windows PowerShell 5.1. Check exit codes explicitly instead.
+$ErrorActionPreference = "Continue"
 $Root = (Resolve-Path (Join-Path $PSScriptRoot "..")).Path
 $Python = Join-Path $Root ".build-venv\Scripts\python.exe"
+
+function Invoke-Native {
+    param([string]$Description, [scriptblock]$Command)
+    & $Command 2>&1 | ForEach-Object { "$_" }
+    if ($LASTEXITCODE -ne 0) { throw "$Description failed (exit code $LASTEXITCODE)" }
+}
 $VersionMatch = Select-String -LiteralPath (Join-Path $Root "discord_overlay\__init__.py") -Pattern '__version__ = "([0-9]+\.[0-9]+\.[0-9]+)"'
 if (-not $VersionMatch) { throw "Unable to read the application version" }
 $Version = $VersionMatch.Matches[0].Groups[1].Value
 
 if (-not (Test-Path -LiteralPath $Python)) {
-    py -3.12 -m venv (Join-Path $Root ".build-venv")
+    Invoke-Native "Creating build venv" { py -3.12 -m venv (Join-Path $Root ".build-venv") }
 }
-& $Python -m pip install --upgrade pip
-& $Python -m pip install -r (Join-Path $Root "requirements.txt") -r (Join-Path $Root "requirements-dev.txt")
-$Installed = (& $Python -m pip list --format=json | ConvertFrom-Json).name
+Invoke-Native "Upgrading pip" { & $Python -m pip install --upgrade pip }
+Invoke-Native "Installing requirements" {
+    & $Python -m pip install -r (Join-Path $Root "requirements.txt") -r (Join-Path $Root "requirements-dev.txt")
+}
+$Installed = (& $Python -m pip list --format=json 2>$null | ConvertFrom-Json).name
 $Runtimes = @("onnxruntime", "onnxruntime-gpu", "onnxruntime-directml") | Where-Object { $Installed -contains $_ }
-if ($Runtimes) { & $Python -m pip uninstall -y $Runtimes }
-& $Python -m pip install -r (Join-Path $Root "requirements-$Variant.txt")
-if (-not $SkipTests) { & $Python -m pytest (Join-Path $Root "tests") }
+if ($Runtimes) { Invoke-Native "Removing other ONNX runtimes" { & $Python -m pip uninstall -y $Runtimes } }
+Invoke-Native "Installing $Variant runtime" { & $Python -m pip install -r (Join-Path $Root "requirements-$Variant.txt") }
+if (-not $SkipTests) { Invoke-Native "Tests" { & $Python -m pytest (Join-Path $Root "tests") } }
 
 # RapidOCR downloads its models on first use; fetch them now so PyInstaller bundles them.
-& $Python -c "from rapidocr import RapidOCR; RapidOCR()"
+Invoke-Native "Fetching OCR models" { & $Python -c "from rapidocr import RapidOCR; RapidOCR()" }
 
 Push-Location $Root
 try {
-    & $Python -m PyInstaller --clean --noconfirm (Join-Path $Root "packaging\DiscordOverlay.spec")
-    if ($LASTEXITCODE -ne 0) { throw "PyInstaller failed" }
+    Invoke-Native "PyInstaller" { & $Python -m PyInstaller --clean --noconfirm (Join-Path $Root "packaging\DiscordOverlay.spec") }
     $Payload = Join-Path $Root "dist\DiscordOverlay"
     if (-not (Test-Path (Join-Path $Payload "DiscordOverlay.exe"))) { throw "Build produced no executable" }
     $Size = [math]::Round((Get-ChildItem $Payload -Recurse -File | Measure-Object Length -Sum).Sum / 1MB)
@@ -57,8 +66,7 @@ try {
         $Iscc = Get-Command iscc.exe -ErrorAction SilentlyContinue
         $IsccPath = if ($Iscc) { $Iscc.Source } else { "${env:ProgramFiles(x86)}\Inno Setup 6\ISCC.exe" }
         if (-not (Test-Path -LiteralPath $IsccPath)) { throw "Inno Setup 6 (ISCC.exe) was not found" }
-        & $IsccPath "/DAppVersion=$Version" (Join-Path $Root "packaging\DiscordOverlay.iss")
-        if ($LASTEXITCODE -ne 0) { throw "Inno Setup failed" }
+        Invoke-Native "Inno Setup" { & $IsccPath "/DAppVersion=$Version" (Join-Path $Root "packaging\DiscordOverlay.iss") }
         Write-Host "Installer: packaging\output\DiscordOverlay-Setup-$Version.exe"
     }
 } finally {
