@@ -34,6 +34,13 @@ CHARACTER_FIELDS: tuple[str, ...] = (
     "mini_overlay_enabled", "mini_overlay_geometry",
 )
 MINI_METRICS = ("damage", "healing")
+# Header stats the mini meter can show; the user picks up to MINI_STAT_SLOTS of them.
+MINI_STATS: dict[str, str] = {
+    "dps": "Encounter DPS", "rolling_dps": "10s DPS", "damage": "Damage", "incoming": "Incoming",
+    "healing": "Healing", "hps": "HPS", "duration": "Duration",
+}
+MINI_STAT_SLOTS = 4
+DEFAULT_MINI_STATS = ["dps", "rolling_dps", "damage", "healing"]
 
 
 def _choice(value, allowed: tuple[str, ...], default: str) -> str:
@@ -130,6 +137,7 @@ class Settings:
     mini_overlay_rows: int = 6
     mini_overlay_opacity: float = 0.9
     mini_overlay_metric: str = "damage"
+    mini_overlay_stats: list[str] = field(default_factory=lambda: list(DEFAULT_MINI_STATS))
     characters: list[CharacterProfile] = field(default_factory=list)
     active_character: str = PLACEHOLDER_CHARACTER
     # -- per character (live copy of the active profile) --------------------
@@ -225,6 +233,12 @@ class Settings:
         self.mini_overlay_rows = int(_clamp(self.mini_overlay_rows, 1, 12, 6))
         self.mini_overlay_opacity = _clamp(self.mini_overlay_opacity, 0.2, 1.0, 0.9)
         self.mini_overlay_metric = _choice(self.mini_overlay_metric, MINI_METRICS, "damage")
+        stats: list[str] = []
+        for key in self.mini_overlay_stats or []:
+            key = str(key).strip().casefold()
+            if key in MINI_STATS and key not in stats:
+                stats.append(key)
+        self.mini_overlay_stats = stats[:MINI_STAT_SLOTS]
         self.mini_overlay_enabled = bool(self.mini_overlay_enabled)
         self.mini_overlay_geometry = str(self.mini_overlay_geometry or "")
         self.active_trigger_profile = str(self.active_trigger_profile or "Default").strip() or "Default"

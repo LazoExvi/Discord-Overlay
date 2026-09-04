@@ -10,9 +10,21 @@ from . import theme
 from .overlay import OverlayWindow
 
 DEFAULT_GEOMETRY = "340x230+40+80"
-HEADER_HEIGHT = 34
+HEADER_HEIGHT = 44
 ROW_HEIGHT = 24
 GAP = 4
+STAT_LABELS = {"dps": "DPS", "rolling_dps": "10S DPS", "damage": "DAMAGE", "incoming": "INCOMING",
+               "healing": "HEALING", "hps": "HPS", "duration": "TIME"}
+STAT_COLORS = {"dps": theme.ACCENT, "rolling_dps": theme.CYAN, "damage": theme.AMBER, "incoming": theme.RED,
+               "healing": theme.GREEN, "hps": theme.GREEN, "duration": theme.PURPLE}
+
+
+def stat_value(snapshot: EncounterSnapshot, key: str) -> str:
+    if key == "duration":
+        minutes, seconds = divmod(int(snapshot.duration), 60)
+        return f"{minutes}:{seconds:02d}"
+    value = getattr(snapshot, {"damage": "total_out", "incoming": "total_in", "healing": "total_heal"}.get(key, key), 0)
+    return f"{value:,.0f}" if isinstance(value, float) else f"{value:,}"
 
 
 class MiniMeterOverlay(OverlayWindow):
@@ -25,13 +37,16 @@ class MiniMeterOverlay(OverlayWindow):
         self.rows: list[ActorRow] = []
         self.metric = "damage"
         self.max_rows = 6
+        self.stats: list[str] = ["dps", "rolling_dps", "damage", "healing"]
         self.canvas.bind("<Configure>", lambda _e: self.redraw())
 
     def update_data(self, snapshot: EncounterSnapshot, rows: Sequence[ActorRow], metric: str,
-                    max_rows: int, opacity: float) -> None:
+                    max_rows: int, opacity: float, stats: Sequence[str] | None = None) -> None:
         self.snapshot = snapshot
         self.metric = metric
         self.max_rows = max(1, max_rows)
+        if stats is not None:
+            self.stats = [key for key in stats if key in STAT_LABELS][:4]
         self.rows = [row for row in rows if getattr(row, metric) > 0]
         if metric == "healing":
             self.rows.sort(key=lambda row: row.healing, reverse=True)
@@ -45,24 +60,16 @@ class MiniMeterOverlay(OverlayWindow):
         if width < 40 or height < 20:
             return
         snap = self.snapshot
-        minutes, seconds = divmod(int(snap.duration), 60)
         canvas.create_rectangle(0, 0, width, HEADER_HEIGHT, fill=theme.PANEL_2, outline="")
         canvas.create_rectangle(0, HEADER_HEIGHT, width, HEADER_HEIGHT + 1, fill=theme.BORDER, outline="")
-        if self.metric == "healing":
-            headline = [("HPS", f"{snap.hps:,.0f}", theme.GREEN), ("HEAL", f"{snap.total_heal:,}", theme.GREEN)]
-        else:
-            headline = [("DPS", f"{snap.dps:,.0f}", theme.ACCENT), ("10s", f"{snap.rolling_dps:,.0f}", theme.CYAN),
-                        ("DMG", f"{snap.total_out:,}", theme.AMBER)]
-        x = 10
-        for label, value, color in headline:
-            canvas.create_text(x, HEADER_HEIGHT / 2, text=label, fill=theme.MUTED, anchor="w", font=(theme.DISPLAY_FAMILY, 9, "bold"))
-            x += 8 * len(label) + 6
-            canvas.create_text(x, HEADER_HEIGHT / 2, text=value, fill=color, anchor="w", font=(theme.NUMBER_FAMILY, 13, "bold"))
-            x += 9 * len(value) + 16
-        canvas.create_text(width - 10, HEADER_HEIGHT / 2, text=f"{minutes}:{seconds:02d}", fill=theme.PURPLE, anchor="e",
-                           font=(theme.NUMBER_FAMILY, 13, "bold"))
-        if snap.active:
-            canvas.create_oval(width - 60, HEADER_HEIGHT / 2 - 4, width - 52, HEADER_HEIGHT / 2 + 4, fill=theme.GREEN, outline="")
+        stats = self.stats or ["dps"]
+        column = (width - 16) / len(stats)
+        for index, key in enumerate(stats):
+            x = 8 + column * index + 6
+            canvas.create_text(x, 12, text=STAT_LABELS[key], fill=theme.MUTED, anchor="w", font=(theme.DISPLAY_FAMILY, 8, "bold"))
+            canvas.create_text(x, 29, text=stat_value(snap, key), fill=STAT_COLORS[key], anchor="w",
+                               font=(theme.NUMBER_FAMILY, 13, "bold"))
+        canvas.create_oval(width - 12, 8, width - 5, 15, fill=theme.GREEN if snap.active else theme.PANEL_3, outline="")
 
         visible = self.rows[:self.max_rows]
         if not visible:

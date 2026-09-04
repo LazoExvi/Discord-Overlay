@@ -207,6 +207,10 @@ def test_mini_overlay_settings_round_trip_and_clamp(app_data):
     settings = Settings(mini_overlay_enabled=True, mini_overlay_geometry="300x200+5+5", mini_overlay_rows=40,
                         mini_overlay_opacity=3.0, mini_overlay_metric="weird")
     assert (settings.mini_overlay_rows, settings.mini_overlay_opacity, settings.mini_overlay_metric) == (12, 1.0, "damage")
+    assert settings.mini_overlay_stats == ["dps", "rolling_dps", "damage", "healing"]
+    settings.mini_overlay_stats = ["HPS", "bogus", "hps", "duration", "dps", "damage", "incoming"]
+    settings._sanitize()
+    assert settings.mini_overlay_stats == ["hps", "duration", "dps", "damage"]
     settings.add_character("Alt", copy_current=False)
     settings.switch_character("Alt")
     assert not settings.mini_overlay_enabled and settings.mini_overlay_geometry == ""  # per character

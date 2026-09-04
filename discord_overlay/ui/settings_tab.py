@@ -6,7 +6,10 @@ from tkinter import messagebox, simpledialog
 import customtkinter as ctk
 
 from .. import __version__, shortcuts
-from ..config import TimerBoard
+from ..config import MINI_STAT_SLOTS, MINI_STATS, TimerBoard
+
+STAT_NONE = "None"
+STAT_KEYS = {label: key for key, label in MINI_STATS.items()}
 from . import theme
 from .dialogs import AboutWindow, GroupFilterEditor, open_diagnostics_folder
 
@@ -53,6 +56,13 @@ class SettingsTab:
         self.mini_rows_menu.grid(row=3, column=1, padx=16, pady=(0, 12), sticky="w")
         self.mini_opacity_entry = ctk.CTkEntry(frame, width=100)
         self.mini_opacity_entry.grid(row=3, column=2, padx=16, pady=(0, 12), sticky="w")
+        theme.note(frame, f"Header stats (up to {MINI_STAT_SLOTS}, shown left to right)").grid(
+            row=4, column=0, columnspan=4, padx=16, pady=(2, 3), sticky="w")
+        self.mini_stat_menus: list[ctk.CTkOptionMenu] = []
+        for slot in range(MINI_STAT_SLOTS):
+            menu = ctk.CTkOptionMenu(frame, values=[STAT_NONE, *MINI_STATS.values()], width=150, **theme.MENU)
+            menu.grid(row=5, column=slot, padx=16, pady=(0, 12), sticky="w")
+            self.mini_stat_menus.append(menu)
 
     # -- construction ---------------------------------------------------------
 
@@ -189,6 +199,9 @@ class SettingsTab:
         self.mini_rows_menu.set(str(s.mini_overlay_rows))
         self.mini_opacity_entry.delete(0, "end")
         self.mini_opacity_entry.insert(0, f"{s.mini_overlay_opacity * 100:.0f}")
+        for slot, menu in enumerate(self.mini_stat_menus):
+            key = s.mini_overlay_stats[slot] if slot < len(s.mini_overlay_stats) else None
+            menu.set(MINI_STATS.get(key, STAT_NONE))
         self.refresh_character_fields()
         self.refresh_hardware_label()
 
@@ -239,6 +252,8 @@ class SettingsTab:
         s.mini_overlay_metric = self.mini_metric_menu.get().casefold()
         s.mini_overlay_rows = int(self.mini_rows_menu.get())
         s.mini_overlay_opacity = mini_opacity
+        chosen = [STAT_KEYS[menu.get()] for menu in self.mini_stat_menus if menu.get() in STAT_KEYS]
+        s.mini_overlay_stats = list(dict.fromkeys(chosen))  # keep order, drop duplicates
         s.scan_interval, s.encounter_timeout, s.rolling_window, s.min_confidence = interval, timeout, rolling, confidence
         s.always_on_top = bool(self.topmost_var.get())
         s.combine_pet_damage = bool(self.combine_pet_var.get())

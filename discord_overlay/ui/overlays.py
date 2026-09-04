@@ -240,7 +240,7 @@ class OverlayManager:
             return
         overlay = self._mini_overlay()
         overlay.update_data(snapshot, rows, self.settings.mini_overlay_metric, self.settings.mini_overlay_rows,
-                            self.settings.mini_overlay_opacity)
+                            self.settings.mini_overlay_opacity, self.settings.mini_overlay_stats)
         if self.arranging:
             return
         overlay.ensure_visible()
