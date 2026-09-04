@@ -182,6 +182,34 @@ def test_legacy_player_name_seeds_the_first_character(app_data):
     assert loaded.character_names() == ["Raan"] and loaded.player_name == "Raan"
 
 
+def test_trigger_on_off_state_is_remembered_per_character(app_data):
+    curse = Trigger(id="curse", name="Curse", conditions=[TriggerCondition("curse")])
+    settings = Settings(active_character="Tank", triggers=[curse])
+    settings.add_character("Healer", copy_current=False)
+
+    settings.set_trigger_enabled("curse", False)
+    assert not settings.trigger_enabled(curse) and curse.enabled  # shared definition untouched
+    assert settings.effective_triggers()[0].enabled is False
+
+    assert settings.switch_character("Healer")
+    assert settings.trigger_enabled(curse)  # falls back to the trigger's own flag
+    settings.save()
+    loaded = Settings.load()
+    assert loaded.trigger_enabled(loaded.triggers[0])
+    assert loaded.switch_character("Tank")
+    assert not loaded.trigger_enabled(loaded.triggers[0])
+
+    loaded.remove_trigger("curse")
+    assert loaded.trigger_states == {} and loaded.character("Healer").data.get("trigger_states") == {}
+
+
+def test_stale_trigger_states_are_dropped_on_load(app_data):
+    settings_path().parent.mkdir(parents=True)
+    settings_path().write_text(json.dumps({"characters": [{"name": "Default", "data": {"trigger_states": {"ghost": False}}}]}),
+                               encoding="utf-8")
+    assert Settings.load().trigger_states == {}
+
+
 def test_trigger_and_board_helpers():
     settings = Settings(triggers=[Trigger(id="a", name="A", profile="Raid", conditions=[TriggerCondition("x")]),
                                   Trigger(id="b", name="B", profile="Solo", conditions=[TriggerCondition("y")])])

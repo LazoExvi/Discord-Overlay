@@ -547,7 +547,7 @@ class App(ctk.CTk):
         self.stop_monitoring() if self.running else self.start_monitoring()
 
     def start_monitoring(self) -> None:
-        has_dedicated = any(t.enabled and not t.use_combat_region and t.region for t in self.settings.triggers_in_profile())
+        has_dedicated = any(t.enabled and not t.use_combat_region and t.region for t in self.settings.effective_triggers())
         if not self.settings.region and not has_dedicated:
             self.select_region()
             return

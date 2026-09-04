@@ -94,8 +94,9 @@ program does or build it yourself.
 - A replay tester that explains exactly why a trigger did or did not fire.
 
 **Per-character profiles** keep the capture region, timer boards, active trigger
-profile, and group filter separate for each character. The character name is used
-for `You`/`Your` attribution.
+profile, which triggers are switched on, and the group filter separate for each
+character. Triggers themselves are shared, so one library serves every character.
+The character name is used for `You`/`Your` attribution.
 
 ## Scan rate
 

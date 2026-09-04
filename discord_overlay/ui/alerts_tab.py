@@ -99,7 +99,7 @@ class AlertsTab:
                 kind = "Timer" if trigger.timer_seconds > 0 else "Alert"
                 layout = "Ind" if self.settings.timer_layout == "independent" else f"Board: {trigger.timer_board}"
                 display = f"{kind} / {layout}"
-            rows.append(("YES" if trigger.enabled else "NO", trigger.name, trigger.folder, trigger.logic.upper(),
+            rows.append(("YES" if self.settings.trigger_enabled(trigger) else "NO", trigger.name, trigger.folder, trigger.logic.upper(),
                          len(trigger.conditions), "Combat" if trigger.use_combat_region else "Dedicated", sound,
                          display, f"{trigger.cooldown_seconds:g}s", self.last_fired.get(trigger.id, "-")))
             iids.append(trigger.id)
@@ -136,6 +136,8 @@ class AlertsTab:
     def _open_editor(self, trigger: Trigger) -> None:
         if self._editor and self._editor.winfo_exists():
             self._editor.destroy()
+        trigger = copy.deepcopy(trigger)
+        trigger.enabled = self.settings.trigger_enabled(trigger)  # show this character's on/off state
         self._editor = TriggerEditor(self.app, trigger, list(DEFAULT_SOUNDS), self.settings.board_names(),
                                      self.app.select_region, self.app.play_sound, self.preview_overlay, self._save_trigger)
 
@@ -165,7 +167,8 @@ class AlertsTab:
     def toggle_selected(self) -> None:
         trigger = self._selected()
         if trigger:
-            trigger.enabled = not trigger.enabled
+            # Remembered per character; the shared trigger definition is untouched.
+            self.settings.set_trigger_enabled(trigger.id, not self.settings.trigger_enabled(trigger))
             self.app.save_and_restart()
             self.refresh(trigger.id)
 
@@ -267,4 +270,4 @@ class AlertsTab:
         self.status("Windows speech settings saved.")
 
     def show_replay_tester(self) -> None:
-        TriggerReplayWindow(self.app, self.settings.triggers_in_profile(), [line.text for line in self.app.last_ocr])
+        TriggerReplayWindow(self.app, self.settings.effective_triggers(), [line.text for line in self.app.last_ocr])

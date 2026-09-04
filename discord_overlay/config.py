@@ -30,7 +30,7 @@ SPEECH_MODES = ("queue", "interrupt")
 
 CHARACTER_FIELDS: tuple[str, ...] = (
     "region", "region_history", "timer_boards", "timer_layout", "timer_visual_size",
-    "active_trigger_profile", "actor_filter_enabled", "allowed_actor_names",
+    "active_trigger_profile", "trigger_states", "actor_filter_enabled", "allowed_actor_names",
 )
 
 
@@ -133,6 +133,7 @@ class Settings:
     timer_layout: str = "docked"
     timer_visual_size: str = "standard"
     active_trigger_profile: str = "Default"
+    trigger_states: dict[str, bool] = field(default_factory=dict)  # trigger id -> enabled, per character
     actor_filter_enabled: bool = False
     allowed_actor_names: list[str] = field(default_factory=list)
 
@@ -215,6 +216,10 @@ class Settings:
         self.timer_visual_size = _choice(self.timer_visual_size, OVERLAY_SIZES, "standard")
         self.active_trigger_profile = str(self.active_trigger_profile or "Default").strip() or "Default"
         self.allowed_actor_names = [str(n).strip() for n in self.allowed_actor_names if str(n).strip()]
+        known_ids = {trigger.id for trigger in self.triggers}
+        self.trigger_states = {
+            str(key): bool(value) for key, value in dict(self.trigger_states or {}).items() if str(key) in known_ids
+        }
         self.events_column_order = [str(c) for c in self.events_column_order]
         self.breakdown_column_order = [str(c) for c in self.breakdown_column_order]
         if not self.timer_boards:
@@ -249,15 +254,40 @@ class Settings:
         profiles.update({self.active_trigger_profile or "Default", "Default"})
         return sorted(profiles, key=str.casefold)
 
+    # Triggers are shared by every character; whether each one is switched on is
+    # remembered per character, falling back to the trigger's own ``enabled`` flag.
+
+    def trigger_enabled(self, trigger: Trigger) -> bool:
+        return self.trigger_states.get(trigger.id, trigger.enabled)
+
+    def set_trigger_enabled(self, trigger_id: str, enabled: bool) -> None:
+        self.trigger_states[trigger_id] = bool(enabled)
+
+    def effective_triggers(self, profile: str | None = None) -> list[Trigger]:
+        """Copies of the profile's triggers with ``enabled`` resolved for this character."""
+        resolved = []
+        for trigger in self.triggers_in_profile(profile):
+            item = copy.deepcopy(trigger)
+            item.enabled = self.trigger_enabled(trigger)
+            resolved.append(item)
+        return resolved
+
     def upsert_trigger(self, trigger: Trigger) -> None:
         for index, existing in enumerate(self.triggers):
             if existing.id == trigger.id:
                 self.triggers[index] = trigger
-                return
-        self.triggers.append(trigger)
+                break
+        else:
+            self.triggers.append(trigger)
+        self.set_trigger_enabled(trigger.id, trigger.enabled)
 
     def remove_trigger(self, trigger_id: str) -> None:
         self.triggers = [t for t in self.triggers if t.id != trigger_id]
+        self.trigger_states.pop(trigger_id, None)
+        for profile in self.characters:
+            states = profile.data.get("trigger_states")
+            if isinstance(states, dict):
+                states.pop(trigger_id, None)
 
     def timer_board(self, name: str) -> TimerBoard:
         return next((b for b in self.timer_boards if b.name.casefold() == name.casefold()),

@@ -137,7 +137,7 @@ class ScannerWorker:
             capture = self._capture or ScreenCapture()
             parser = CombatTextParser(settings.player_name)
             repairer, template_path = self._make_repairer()
-            trigger_engine = TriggerEngine(settings.triggers_in_profile())
+            trigger_engine = TriggerEngine(settings.effective_triggers())
             sources = build_sources(settings, trigger_engine)
             extra = sum(key != COMBAT_SOURCE for key in sources)
             detail = f" + {extra} trigger region{'s' if extra != 1 else ''}" if extra else ""
