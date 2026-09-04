@@ -1,8 +1,9 @@
 """Drive the real Tk window through its main features and report any exception.
 
-Usage: python scripts/ui_smoke.py [--ocr]
+Usage: python scripts/ui_smoke.py [--ocr] [--screenshot PATH]
 Runs against a throwaway %LOCALAPPDATA% so your settings are untouched. With
 ``--ocr`` it also starts real monitoring on a screen region for a few seconds.
+``--screenshot`` saves a PNG of the main window once sample data is showing.
 """
 from __future__ import annotations
 
@@ -25,6 +26,7 @@ from discord_overlay.ui.dialogs import AboutWindow, GroupFilterEditor, RegexHelp
 from discord_overlay.ui.main_window import App  # noqa: E402
 
 WITH_OCR = "--ocr" in sys.argv
+SCREENSHOT = sys.argv[sys.argv.index("--screenshot") + 1] if "--screenshot" in sys.argv else ""
 failures: list[str] = []
 steps: list[str] = []
 
@@ -49,16 +51,39 @@ def main() -> int:
     windows: list = []
 
     def add_events() -> None:
-        now = 100.0
-        for text, kind, actor, target, amount in (
-            ("You crush a rat for 10 points of damage.", EventKind.DAMAGE_OUT, "You", "rat", 10),
-            ("a rat bites YOU for 4 points of damage.", EventKind.DAMAGE_IN, "rat", "You", 4),
-            ("Klog heals you for 20 Health.", EventKind.HEAL, "Klog", "You", 20),
-        ):
-            app._add_event(CombatEvent(now, datetime.now(), kind, actor, target, amount, raw_text=text))
-            now += 1
+        import time
+
+        now = time.monotonic() - 6
+        sample = (
+            ("You crush a rat for 810 points of damage.", EventKind.DAMAGE_OUT, "You", "rat", 810, False),
+            ("Your pet Ssssteve bites a rat for 240 points of damage.", EventKind.DAMAGE_OUT, "Ssssteve", "rat", 240, True),
+            ("Klog's Fireball hits a rat for 1,420 points of damage.", EventKind.DAMAGE_OTHER, "Klog", "rat", 1420, False),
+            ("Aernulo slashes a rat for 655 points of damage.", EventKind.DAMAGE_OTHER, "Aernulo", "rat", 655, False),
+            ("a rat bites YOU for 96 points of damage.", EventKind.DAMAGE_IN, "rat", "You", 96, False),
+            ("Klog heals you for 320 Health.", EventKind.HEAL, "Klog", "You", 320, False),
+            ("You crush a rat for 1,105 points of damage.", EventKind.DAMAGE_OUT, "You", "rat", 1105, False),
+        )
+        for index, (text, kind, actor, target, amount, is_pet) in enumerate(sample * 3):
+            app._add_event(CombatEvent(now + index * 0.25, datetime.now(), kind, actor, target, amount,
+                                       raw_text=text, is_pet=is_pet, critical=index % 5 == 0, confidence=0.93))
+        for index in range(120):
+            app.sparkline.add(now - 50 + index * 0.5, 400 + (index * 173) % 900)
         app._refresh_metrics()
-        assert app.log_table.tree.get_children() and app.actor_table.tree.get_children()
+        assert app.log_table.tree.get_children() and app.meter.rows
+        app.view_toggle.set("Table")
+        app._switch_view()
+        assert app.actor_table.tree.get_children()
+        app.view_toggle.set("Bars")
+        app._switch_view()
+
+    def screenshot() -> None:
+        if not SCREENSHOT:
+            return
+        from PIL import ImageGrab
+
+        app.update_idletasks()
+        x, y = app.winfo_rootx(), app.winfo_rooty()
+        ImageGrab.grab(bbox=(x - 8, y - 32, x + app.winfo_width() + 8, y + app.winfo_height() + 8)).save(SCREENSHOT)
 
     def fire_trigger() -> None:
         trigger = app.settings.triggers[0]
@@ -122,15 +147,16 @@ def main() -> int:
         assert app.running
 
     def check_ocr() -> None:
-        text = app.status_label.cget("text")
+        text = app.status_pill.label.cget("text")
         assert "Monitoring" in text, f"unexpected status: {text!r}"
         assert app._preview_photo is not None, "no live preview frame arrived"
         app.stop_monitoring()
 
     schedule = [
         (400, "add events", add_events),
-        (800, "fire trigger + overlay", fire_trigger),
-        (1400, "open windows", open_windows),
+        (700, "screenshot", screenshot),
+        (900, "fire trigger + overlay", fire_trigger),
+        (1600, "open windows", open_windows),
         (1900, "replay tester", replay),
         (2300, "character switch", characters),
         (2900, "boards + overlay modes", boards),

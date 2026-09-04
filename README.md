@@ -9,6 +9,8 @@ or sends input to the game.
 This repository is private and shared by invitation. There is no license server,
 no update check, and no telemetry.
 
+![Discord Overlay main window](docs/screenshot.png)
+
 ## Install (no Python needed)
 
 1. Open the **[Releases](../../releases/latest)** page and download
@@ -60,9 +62,11 @@ program does or build it yourself.
 
 **Combat parsing**
 - Encounter DPS, 10-second DPS, incoming damage, healing, HPS, and duration.
-- A **Combatants** table with damage, share, DPS, hits, crits, healing, and HPS per
-  actor, scoped to all targets or one target. Sort by clicking a heading; drag
-  headings to reorder columns (the order is saved).
+- A **Combatants** view with classic meter bars (damage or healing) or a full table
+  with damage, share, DPS, hits, crits, healing, and HPS per actor, scoped to all
+  targets or one target. Sort the table by clicking a heading; drag headings to
+  reorder columns (the order is saved). A sidebar sparkline shows the last minute
+  of 10-second DPS.
 - A chronological **Log** with raw OCR text and confidence, exportable to CSV along
   with the Combatants summary.
 - Pets are learned automatically from `Your pet Name …` lines. Choose whether pet

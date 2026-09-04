@@ -1,4 +1,8 @@
-"""Palette, widget style presets, and small window helpers shared by every screen."""
+"""Palette, widget style presets, and small window helpers shared by every screen.
+
+Discord-inspired dark theme: near-black ground, layered slate panels with hairline
+borders, blurple accent, and warm/cool status colors for damage, healing, incoming.
+"""
 from __future__ import annotations
 
 import logging
@@ -10,31 +14,48 @@ import customtkinter as ctk
 
 from ..diagnostics import LOGGER_NAME
 
-BG = "#0b1118"
-BG_DEEP = "#080d12"
-PANEL = "#121b25"
-PANEL_2 = "#172330"
-INPUT_BG = "#0a1017"
-BORDER = "#2c4054"
-TEXT = "#e7edf4"
-MUTED = "#8fa1b3"
-DIM = "#657789"
-ACCENT = "#d39b47"
-GREEN = "#42d392"
-RED = "#ff6577"
-PURPLE = "#ad7bff"
+BG = "#0b0d12"
+BG_DEEP = "#07080c"        # also the overlay's transparent key color
+PANEL = "#12151c"
+PANEL_2 = "#181c26"
+PANEL_3 = "#1f2431"
+INPUT_BG = "#0d1017"
+BORDER = "#252b3a"
+TEXT = "#e9ecf3"
+MUTED = "#8b93a7"
+DIM = "#5c647a"
+ACCENT = "#7b8cff"         # blurple, lightened for text on dark
+ACCENT_DEEP = "#5865f2"
+GREEN = "#3ddc97"
+RED = "#ff5c7a"
+PURPLE = "#c084fc"
+AMBER = "#f5a524"
+CYAN = "#38d6ff"
+SLATE = "#8ea2c2"
 
-ACCENT_BUTTON = dict(fg_color="#b77a2d", hover_color="#d08c35")
-QUIET_BUTTON = dict(fg_color=PANEL_2, hover_color="#223448")
-STEEL_BUTTON = dict(fg_color="#263a4e", hover_color="#304a64")
-DANGER_BUTTON = dict(fg_color="#522b32", hover_color="#683740")
-START_BUTTON = dict(fg_color="#277a55", hover_color="#32966a")
-STOP_BUTTON = dict(fg_color="#753a43", hover_color="#914752")
-DISABLED_BUTTON = dict(fg_color="#394653", hover_color="#394653")
-MENU = dict(fg_color="#263a4e", button_color="#304a64", dropdown_fg_color=PANEL_2)
-CHECKBOX = dict(fg_color="#b77a2d", hover_color="#d08c35")
-SEGMENT = dict(selected_color="#a66e29", selected_hover_color="#bd7e2e")
+DAMAGE_OUT_COLOR = AMBER
+DAMAGE_IN_COLOR = RED
+HEAL_COLOR = GREEN
+ACTOR_TYPE_COLORS = {
+    "PLAYER": ACCENT_DEEP, "PET": CYAN, "OTHER": "#4a5878", "ENEMY": "#b0384f", "DAMAGE SHIELD": "#b57d1c",
+}
+
+ACCENT_BUTTON = dict(fg_color=ACCENT_DEEP, hover_color="#6b78ff")
+QUIET_BUTTON = dict(fg_color=PANEL_2, hover_color="#222838")
+STEEL_BUTTON = dict(fg_color="#232a3a", hover_color="#2d3648")
+DANGER_BUTTON = dict(fg_color="#4a2230", hover_color="#612b3d")
+START_BUTTON = dict(fg_color="#22995f", hover_color="#2bb673")
+STOP_BUTTON = dict(fg_color="#8a3546", hover_color="#a13f54")
+DISABLED_BUTTON = dict(fg_color="#2a3040", hover_color="#2a3040")
+MENU = dict(fg_color="#232a3a", button_color="#2d3648", button_hover_color="#38425a", dropdown_fg_color=PANEL_3)
+CHECKBOX = dict(fg_color=ACCENT_DEEP, hover_color="#6b78ff", border_color="#3a4358")
+SEGMENT = dict(selected_color=ACCENT_DEEP, selected_hover_color="#6b78ff", unselected_color="#232a3a",
+               unselected_hover_color="#2d3648")
 TEXTBOX = dict(fg_color=INPUT_BG, border_width=1, border_color=BORDER, text_color=TEXT)
+CARD = dict(fg_color=PANEL_2, corner_radius=12, border_width=1, border_color=BORDER)
+
+DISPLAY_FAMILY = "Bahnschrift"   # ships with Windows 10+; Tk falls back silently elsewhere
+NUMBER_FAMILY = "Bahnschrift"
 
 
 def apply_theme() -> None:
@@ -49,12 +70,36 @@ def font(size: int = 13, bold: bool = False, family: str | None = None) -> ctk.C
     return ctk.CTkFont(**kwargs)
 
 
+def display_font(size: int, bold: bool = True) -> ctk.CTkFont:
+    return font(size, bold, DISPLAY_FAMILY)
+
+
+def number_font(size: int, bold: bool = True) -> ctk.CTkFont:
+    return font(size, bold, NUMBER_FAMILY)
+
+
 def heading(parent, text: str, size: int = 20, color: str = ACCENT) -> ctk.CTkLabel:
-    return ctk.CTkLabel(parent, text=text, text_color=color, font=font(size, bold=True), anchor="w")
+    return ctk.CTkLabel(parent, text=text, text_color=color, font=display_font(size), anchor="w")
 
 
 def note(parent, text: str, wraplength: int = 640, color: str = MUTED) -> ctk.CTkLabel:
     return ctk.CTkLabel(parent, text=text, text_color=color, anchor="w", justify="left", wraplength=wraplength)
+
+
+def card(parent, **overrides) -> ctk.CTkFrame:
+    return ctk.CTkFrame(parent, **{**CARD, **overrides})
+
+
+def icon_image(size: int = 28) -> ctk.CTkImage | None:
+    try:
+        from PIL import Image
+
+        assets = resources.files("discord_overlay").joinpath("assets")
+        with resources.as_file(assets.joinpath("icon.png")) as png_path:
+            image = Image.open(png_path).convert("RGBA")
+        return ctk.CTkImage(light_image=image, dark_image=image, size=(size, size))
+    except (OSError, ImportError):
+        return None
 
 
 def apply_window_icon(window: tk.Misc) -> None:
@@ -91,3 +136,10 @@ def bring_to_front(window: tk.Misc, grab: bool = False) -> None:
             window.after(100, window.grab_set)
     except tk.TclError:
         pass
+
+
+def blend(color: str, target: str, amount: float) -> str:
+    """Mix two #RRGGBB colors; ``amount`` 0 returns ``color``, 1 returns ``target``."""
+    c = [int(color[i:i + 2], 16) for i in (1, 3, 5)]
+    t = [int(target[i:i + 2], 16) for i in (1, 3, 5)]
+    return "#" + "".join(f"{round(a + (b - a) * amount):02x}" for a, b in zip(c, t))

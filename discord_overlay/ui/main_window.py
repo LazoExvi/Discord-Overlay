@@ -34,12 +34,14 @@ from .region_selector import RegionSelector
 from .settings_tab import SettingsTab
 from .setup_wizard import HardwareSetupWizard
 from .tips import ACCURACY_TIPS
-from .widgets import Column, MetricCard, SortableTree, configure_tree_style
+from .widgets import Column, MeterView, MetricCard, SortableTree, Sparkline, StatusPill, configure_tree_style
 
 EVENT_TAGS = {EventKind.DAMAGE_OUT: "out", EventKind.DAMAGE_IN: "in", EventKind.HEAL: "heal"}
 MAX_LOG_ROWS = 1000
 ALL_TARGETS = "All targets"
 PREVIEW_SIZE = (230, 106)
+VIEW_BARS, VIEW_TABLE = "Bars", "Table"
+METRIC_DAMAGE, METRIC_HEALING = "Damage", "Healing"
 
 
 class App(ctk.CTk):
@@ -49,8 +51,8 @@ class App(ctk.CTk):
         ensure_app_directories()
         self.logger = logging.getLogger(LOGGER_NAME)
         self.title(f"{APP_NAME} {__version__}")
-        self.geometry("1180x760")
-        self.minsize(980, 650)
+        self.geometry("1260x900")
+        self.minsize(1040, 760)
 
         self.settings = Settings.load()
         self.tracker = EncounterTracker(
@@ -92,15 +94,20 @@ class App(ctk.CTk):
 
     def _build_ui(self) -> None:
         self.grid_columnconfigure(1, weight=1)
-        self.grid_rowconfigure(0, weight=1)
+        self.grid_rowconfigure(1, weight=1)
+        self._build_header()
         self._build_sidebar()
         content = ctk.CTkFrame(self, fg_color=theme.BG, corner_radius=0)
-        content.grid(row=0, column=1, padx=16, pady=16, sticky="nsew")
+        content.grid(row=1, column=1, padx=16, pady=(12, 16), sticky="nsew")
         content.grid_columnconfigure(0, weight=1)
         content.grid_rowconfigure(1, weight=1)
         self._build_preview_bar(content)
-        self.tabs = ctk.CTkTabview(content, fg_color=theme.PANEL, segmented_button_fg_color=theme.PANEL_2,
-                                   segmented_button_selected_color="#a66e29", segmented_button_selected_hover_color="#bd7e2e")
+        self.tabs = ctk.CTkTabview(content, fg_color=theme.PANEL, border_width=1, border_color=theme.BORDER,
+                                   segmented_button_fg_color=theme.PANEL_2,
+                                   segmented_button_selected_color=theme.ACCENT_DEEP,
+                                   segmented_button_selected_hover_color="#6b78ff",
+                                   segmented_button_unselected_color=theme.PANEL_2,
+                                   segmented_button_unselected_hover_color=theme.PANEL_3)
         self.tabs.grid(row=1, column=0, sticky="nsew")
         self._build_combatants_tab(self.tabs.add("Combatants"))
         self.alerts = AlertsTab(self.tabs.add("Alerts & Timers"), self)
@@ -110,68 +117,85 @@ class App(ctk.CTk):
         self.tabs.set("Combatants")
         self._refresh_start_button()
 
+    def _build_header(self) -> None:
+        header = ctk.CTkFrame(self, fg_color=theme.PANEL, corner_radius=0, height=58, border_width=0)
+        header.grid(row=0, column=0, columnspan=2, sticky="ew")
+        header.grid_propagate(False)
+        header.grid_columnconfigure(2, weight=1)
+        logo = theme.icon_image(30)
+        ctk.CTkLabel(header, text="", image=logo, width=30).grid(row=0, column=0, padx=(18, 8), pady=14)
+        ctk.CTkLabel(header, text="DISCORD OVERLAY", text_color=theme.TEXT, font=theme.display_font(17)).grid(
+            row=0, column=1, pady=14, sticky="w")
+        ctk.CTkLabel(header, text=f"v{__version__}", text_color=theme.DIM, font=theme.font(11)).grid(
+            row=0, column=2, padx=(8, 0), pady=14, sticky="w")
+        self.status_pill = StatusPill(header)
+        self.status_pill.grid(row=0, column=3, padx=18, pady=13, sticky="e")
+        self.status_pill.set("Ready to monitor" if self.settings.region else "Choose the combat region",
+                             theme.ACCENT if self.settings.region else theme.MUTED)
+        ctk.CTkFrame(self, fg_color=theme.BORDER, height=1, corner_radius=0).grid(row=0, column=0, columnspan=2, sticky="sew")
+
     def _build_sidebar(self) -> None:
-        sidebar = ctk.CTkFrame(self, width=270, fg_color="#0f1720", corner_radius=0)
-        sidebar.grid(row=0, column=0, sticky="nsew")
+        sidebar = ctk.CTkFrame(self, width=282, fg_color="#0e1117", corner_radius=0)
+        sidebar.grid(row=1, column=0, sticky="nsew")
         sidebar.grid_propagate(False)
         sidebar.grid_columnconfigure((0, 1), weight=1)
 
-        ctk.CTkLabel(sidebar, text="CHARACTER", text_color=theme.ACCENT, font=theme.font(12, bold=True)).grid(
-            row=0, column=0, columnspan=2, padx=20, pady=(20, 0), sticky="w")
+        ctk.CTkLabel(sidebar, text="CHARACTER", text_color=theme.MUTED, font=theme.display_font(10)).grid(
+            row=0, column=0, columnspan=2, padx=20, pady=(18, 0), sticky="w")
         bar = ctk.CTkFrame(sidebar, fg_color="transparent")
-        bar.grid(row=1, column=0, columnspan=2, padx=20, pady=(4, 14), sticky="ew")
+        bar.grid(row=1, column=0, columnspan=2, padx=20, pady=(4, 12), sticky="ew")
         bar.grid_columnconfigure(0, weight=1)
         self.character_menu = ctk.CTkOptionMenu(bar, values=self.settings.character_names(), command=self._character_changed,
-                                                height=36, font=theme.font(15, bold=True), **theme.MENU)
+                                                height=36, font=theme.display_font(15), **theme.MENU)
         self.character_menu.set(self.settings.active_character)
         self.character_menu.grid(row=0, column=0, sticky="ew")
         ctk.CTkButton(bar, text="⋯", width=36, height=36, command=self._show_character_menu, font=theme.font(16, bold=True),
-                      **theme.QUIET_BUTTON).grid(row=0, column=1, padx=(6, 0))
+                      **theme.STEEL_BUTTON).grid(row=0, column=1, padx=(6, 0))
 
-        self.status_dot = ctk.CTkLabel(sidebar, text="●", text_color=theme.ACCENT if self.settings.region else theme.MUTED, width=14)
-        self.status_dot.grid(row=2, column=0, padx=(20, 2), sticky="w")
-        self.status_label = ctk.CTkLabel(sidebar, text="Ready to monitor" if self.settings.region else "Choose the combat region",
-                                         text_color=theme.MUTED, anchor="w", font=theme.font(12))
-        self.status_label.grid(row=2, column=0, columnspan=2, padx=(38, 12), sticky="ew")
-
-        self.start_button = ctk.CTkButton(sidebar, text="Start monitoring", command=self.toggle_monitoring, height=42,
-                                          text_color="white", font=theme.font(bold=True), **theme.START_BUTTON)
-        self.start_button.grid(row=3, column=0, columnspan=2, padx=20, pady=(15, 8), sticky="ew")
-        ctk.CTkButton(sidebar, text="Select region", command=self.select_region, height=36, **theme.QUIET_BUTTON).grid(
-            row=4, column=0, columnspan=2, padx=20, pady=4, sticky="ew")
+        self.start_button = ctk.CTkButton(sidebar, text="Start monitoring", command=self.toggle_monitoring, height=44,
+                                          corner_radius=10, text_color="white", font=theme.display_font(14), **theme.START_BUTTON)
+        self.start_button.grid(row=2, column=0, columnspan=2, padx=20, pady=(6, 6), sticky="ew")
+        ctk.CTkButton(sidebar, text="Select region", command=self.select_region, height=34, corner_radius=10,
+                      **theme.STEEL_BUTTON).grid(row=3, column=0, columnspan=2, padx=20, pady=(0, 4), sticky="ew")
 
         metrics = ctk.CTkFrame(sidebar, fg_color="transparent")
-        metrics.grid(row=5, column=0, columnspan=2, padx=14, pady=(14, 0), sticky="ew")
+        metrics.grid(row=4, column=0, columnspan=2, padx=15, pady=(12, 0), sticky="ew")
         metrics.grid_columnconfigure((0, 1), weight=1)
         self.dps_card = MetricCard(metrics, "Encounter DPS", theme.ACCENT)
-        self.rolling_card = MetricCard(metrics, "10s DPS", theme.GREEN)
+        self.rolling_card = MetricCard(metrics, "10s DPS", theme.CYAN)
         self.incoming_card = MetricCard(metrics, "Incoming", theme.RED)
-        self.damage_card = MetricCard(metrics, "Damage")
+        self.damage_card = MetricCard(metrics, "Damage", theme.AMBER)
         self.healing_card = MetricCard(metrics, "Healing", theme.GREEN)
         self.hps_card = MetricCard(metrics, "HPS", theme.GREEN)
-        self.duration_card = MetricCard(metrics, "Duration", theme.PURPLE)
+        self.duration_card = MetricCard(metrics, "Duration", theme.PURPLE, size=22)
         for index, card in enumerate((self.dps_card, self.rolling_card, self.incoming_card, self.damage_card,
                                       self.healing_card, self.hps_card)):
-            card.grid(row=index // 2, column=index % 2, padx=5, pady=5, sticky="ew")
-        self.duration_card.grid(row=3, column=0, columnspan=2, padx=5, pady=5, sticky="ew")
+            card.grid(row=index // 2, column=index % 2, padx=4, pady=4, sticky="ew")
+        self.duration_card.grid(row=3, column=0, columnspan=2, padx=4, pady=4, sticky="ew")
+
+        spark_card = theme.card(sidebar)
+        spark_card.grid(row=5, column=0, columnspan=2, padx=19, pady=(8, 0), sticky="ew")
+        spark_card.grid_columnconfigure(0, weight=1)
+        ctk.CTkLabel(spark_card, text="10S DPS TREND", text_color=theme.MUTED, font=theme.display_font(10), anchor="w").grid(
+            row=0, column=0, padx=12, pady=(8, 0), sticky="w")
+        self.sparkline = Sparkline(spark_card, color=theme.CYAN)
+        self.sparkline.grid(row=1, column=0, padx=8, pady=(2, 8), sticky="ew")
 
         ctk.CTkButton(sidebar, text="Export current data (CSV)", command=self.export_csv, fg_color="transparent",
-                      border_width=1, border_color="#344455", hover_color=theme.PANEL_2).grid(
-            row=6, column=0, columnspan=2, padx=20, pady=(16, 5), sticky="ew")
+                      border_width=1, border_color=theme.BORDER, hover_color=theme.PANEL_2, corner_radius=10).grid(
+            row=6, column=0, columnspan=2, padx=20, pady=(14, 5), sticky="ew")
         self.running_totals_var = ctk.BooleanVar(value=self.settings.keep_running_totals)
         ctk.CTkCheckBox(sidebar, text="Keep running totals until Reset", variable=self.running_totals_var,
                         command=self._running_totals_changed, text_color=theme.TEXT, font=theme.font(12), **theme.CHECKBOX).grid(
             row=7, column=0, columnspan=2, padx=20, pady=(7, 1), sticky="w")
-        ctk.CTkLabel(sidebar, text="Combines fights; idle time is excluded.", text_color=theme.MUTED, font=theme.font(10),
+        ctk.CTkLabel(sidebar, text="Combines fights; idle time is excluded.", text_color=theme.DIM, font=theme.font(10),
                      anchor="w").grid(row=8, column=0, columnspan=2, padx=45, pady=(0, 5), sticky="ew")
-        ctk.CTkButton(sidebar, text="Reset", command=self.reset_encounter, height=34, **theme.QUIET_BUTTON).grid(
-            row=9, column=0, columnspan=2, padx=20, pady=(4, 5), sticky="ew")
-        ctk.CTkLabel(sidebar, text="Screen capture + OCR only\nNo packet sniffing or memory reading", text_color=theme.DIM,
-                     justify="left", font=theme.font(11)).grid(row=10, column=0, columnspan=2, padx=20, pady=(10, 16), sticky="sw")
+        ctk.CTkButton(sidebar, text="Reset", command=self.reset_encounter, height=32, corner_radius=10, **theme.QUIET_BUTTON).grid(
+            row=9, column=0, columnspan=2, padx=20, pady=(4, 16), sticky="ew")
         sidebar.grid_rowconfigure(10, weight=1)
 
     def _build_preview_bar(self, content) -> None:
-        bar = ctk.CTkFrame(content, fg_color=theme.PANEL, corner_radius=10, height=126)
+        bar = theme.card(content, height=126)
         bar.grid(row=0, column=0, pady=(0, 12), sticky="ew")
         bar.grid_propagate(False)
         bar.grid_columnconfigure(1, weight=1)
@@ -180,7 +204,7 @@ class App(ctk.CTk):
         self.preview.grid(row=0, column=0, padx=10, pady=10, sticky="nsew")
         info = ctk.CTkFrame(bar, fg_color="transparent")
         info.grid(row=0, column=1, padx=12, pady=10, sticky="nsew")
-        self.region_label = ctk.CTkLabel(info, text=self._region_text(), text_color=theme.TEXT, font=theme.font(15, bold=True), anchor="w")
+        self.region_label = ctk.CTkLabel(info, text=self._region_text(), text_color=theme.TEXT, font=theme.display_font(15), anchor="w")
         self.region_label.pack(fill="x", pady=(8, 2))
         self.scan_label = ctk.CTkLabel(info, text="OCR idle", text_color=theme.MUTED, anchor="w")
         self.scan_label.pack(fill="x")
@@ -192,14 +216,38 @@ class App(ctk.CTk):
         tab.grid_columnconfigure(0, weight=1)
         tab.grid_rowconfigure(1, weight=1)
         scope = ctk.CTkFrame(tab, fg_color="transparent")
-        scope.grid(row=0, column=0, columnspan=2, padx=12, pady=(10, 2), sticky="ew")
-        scope.grid_columnconfigure(0, weight=1)
-        ctk.CTkLabel(scope, text="Target", text_color=theme.MUTED).grid(row=0, column=1, padx=(12, 6))
+        scope.grid(row=0, column=0, columnspan=2, padx=12, pady=(10, 4), sticky="ew")
+        scope.grid_columnconfigure(2, weight=1)
+        self.view_toggle = ctk.CTkSegmentedButton(scope, values=[VIEW_BARS, VIEW_TABLE], command=lambda _v: self._switch_view(),
+                                                  **theme.SEGMENT)
+        self.view_toggle.set(VIEW_BARS)
+        self.view_toggle.grid(row=0, column=0, padx=(0, 8))
+        self.metric_toggle = ctk.CTkSegmentedButton(scope, values=[METRIC_DAMAGE, METRIC_HEALING],
+                                                    command=lambda _v: self._refresh_metrics(), **theme.SEGMENT)
+        self.metric_toggle.set(METRIC_DAMAGE)
+        self.metric_toggle.grid(row=0, column=1)
+        ctk.CTkLabel(scope, text="Target", text_color=theme.MUTED).grid(row=0, column=3, padx=(12, 6))
         self.target_menu = ctk.CTkOptionMenu(scope, values=[ALL_TARGETS], command=lambda _v: self._refresh_metrics(),
                                              width=210, **theme.MENU)
         self.target_menu.set(ALL_TARGETS)
-        self.target_menu.grid(row=0, column=2)
-        self.actor_table = SortableTree(tab, [
+        self.target_menu.grid(row=0, column=4)
+
+        self.meter_frame = ctk.CTkFrame(tab, fg_color=theme.PANEL, corner_radius=0)
+        self.meter_frame.grid(row=1, column=0, columnspan=2, padx=8, pady=(4, 8), sticky="nsew")
+        self.meter_frame.grid_columnconfigure(0, weight=1)
+        self.meter_frame.grid_rowconfigure(0, weight=1)
+        self.meter = MeterView(self.meter_frame)
+        self.meter.grid(row=0, column=0, sticky="nsew")
+        meter_scroll = ctk.CTkScrollbar(self.meter_frame, command=self.meter.yview)
+        meter_scroll.grid(row=0, column=1, sticky="ns")
+        self.meter.configure(yscrollcommand=meter_scroll.set)
+
+        self.table_frame = ctk.CTkFrame(tab, fg_color="transparent", corner_radius=0)
+        self.table_frame.grid(row=1, column=0, columnspan=2, sticky="nsew")
+        self.table_frame.grid_columnconfigure(0, weight=1)
+        self.table_frame.grid_rowconfigure(0, weight=1)
+        self.table_frame.grid_remove()
+        self.actor_table = SortableTree(self.table_frame, [
             Column("actor", "ACTOR", 210), Column("type", "TYPE", 110), Column("damage", "DAMAGE", 115, "e", True),
             Column("share", "SHARE", 80, "e", True), Column("dps", "DPS", 100, "e", True),
             Column("rolling_dps", "10S DPS", 100, "e", True), Column("hits", "HITS", 70, "e", True),
@@ -207,12 +255,21 @@ class App(ctk.CTk):
             Column("hps", "HPS", 90, "e", True),
         ], order=self.settings.breakdown_column_order, on_order_changed=lambda order: self._save_column_order("breakdown_column_order", order))
         tree = self.actor_table.tree
-        vertical = ctk.CTkScrollbar(tab, command=tree.yview)
-        horizontal = ctk.CTkScrollbar(tab, orientation="horizontal", command=tree.xview)
+        vertical = ctk.CTkScrollbar(self.table_frame, command=tree.yview)
+        horizontal = ctk.CTkScrollbar(self.table_frame, orientation="horizontal", command=tree.xview)
         tree.configure(yscrollcommand=vertical.set, xscrollcommand=horizontal.set)
-        tree.grid(row=1, column=0, padx=(8, 0), pady=(8, 0), sticky="nsew")
-        vertical.grid(row=1, column=1, padx=(0, 8), pady=(8, 0), sticky="ns")
-        horizontal.grid(row=2, column=0, padx=(8, 0), pady=(0, 8), sticky="ew")
+        tree.grid(row=0, column=0, padx=(8, 0), pady=(4, 0), sticky="nsew")
+        vertical.grid(row=0, column=1, padx=(0, 8), pady=(4, 0), sticky="ns")
+        horizontal.grid(row=1, column=0, padx=(8, 0), pady=(0, 8), sticky="ew")
+
+    def _switch_view(self) -> None:
+        if self.view_toggle.get() == VIEW_TABLE:
+            self.meter_frame.grid_remove()
+            self.table_frame.grid()
+        else:
+            self.table_frame.grid_remove()
+            self.meter_frame.grid()
+        self._refresh_metrics()
 
     def _build_log_tab(self, tab) -> None:
         tab.grid_columnconfigure(0, weight=1)
@@ -224,10 +281,10 @@ class App(ctk.CTk):
         ], order=self.settings.events_column_order,
             on_order_changed=lambda order: self._save_column_order("events_column_order", order), selectmode="browse")
         tree = self.log_table.tree
-        tree.tag_configure("out", foreground="#e8bd7a")
-        tree.tag_configure("in", foreground=theme.RED)
-        tree.tag_configure("heal", foreground=theme.GREEN)
-        tree.tag_configure("other", foreground="#c2cbd4")
+        tree.tag_configure("out", foreground=theme.DAMAGE_OUT_COLOR)
+        tree.tag_configure("in", foreground=theme.DAMAGE_IN_COLOR)
+        tree.tag_configure("heal", foreground=theme.HEAL_COLOR)
+        tree.tag_configure("other", foreground=theme.SLATE)
         scroll = ctk.CTkScrollbar(tab, command=tree.yview)
         tree.configure(yscrollcommand=scroll.set)
         tree.grid(row=0, column=0, padx=(8, 0), pady=8, sticky="nsew")
@@ -247,8 +304,7 @@ class App(ctk.CTk):
     # -- status helpers -------------------------------------------------------
 
     def set_status(self, text: str, color: str = theme.MUTED) -> None:
-        self.status_label.configure(text=text)
-        self.status_dot.configure(text_color=color)
+        self.status_pill.set(text, color, pulse=self.running)
 
     def _overlay_status(self, text: str, kind: str) -> None:
         if hasattr(self, "alerts"):
@@ -515,6 +571,7 @@ class App(ctk.CTk):
         self.log_table.clear()
         self._log_iids.clear()
         self.actor_table.clear()
+        self.sparkline.clear()
         self._target_values = [ALL_TARGETS]
         self.target_menu.configure(values=self._target_values)
         self.target_menu.set(ALL_TARGETS)
@@ -573,6 +630,8 @@ class App(ctk.CTk):
         self.tracker.update()
         self._refresh_metrics()
         now = time.monotonic()
+        if self.running or self.tracker.active or self.sparkline.samples:
+            self.sparkline.add(now, self.tracker.snapshot(now).rolling_dps)
         for notification in self.timers.tick(now):
             self._timer_notification(notification)
         self.overlays.render(now)
@@ -617,11 +676,14 @@ class App(ctk.CTk):
                 self.target_menu.set(ALL_TARGETS)
         selected = self.target_menu.get()
         rows = self.tracker.actor_totals(target=None if selected == ALL_TARGETS else selected)
-        self.actor_table.set_rows([
-            (row.actor, row.actor_type, f"{row.damage:,}", f"{row.share:.1f}%", f"{row.dps:,.1f}",
-             f"{row.rolling_dps:,.1f}", row.hits, row.crits, f"{row.healing:,}", f"{row.hps:,.1f}")
-            for row in rows
-        ])
+        if self.view_toggle.get() == VIEW_TABLE:
+            self.actor_table.set_rows([
+                (row.actor, row.actor_type, f"{row.damage:,}", f"{row.share:.1f}%", f"{row.dps:,.1f}",
+                 f"{row.rolling_dps:,.1f}", row.hits, row.crits, f"{row.healing:,}", f"{row.hps:,.1f}")
+                for row in rows
+            ])
+        else:
+            self.meter.set_rows(rows, "healing" if self.metric_toggle.get() == METRIC_HEALING else "damage")
 
     def export_csv(self) -> None:
         if not self.tracker.events:
