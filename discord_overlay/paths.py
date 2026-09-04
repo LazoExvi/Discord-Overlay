@@ -54,11 +54,6 @@ def temp_dir() -> Path:
     return Path(tempfile.gettempdir()) / APP_DIR_NAME
 
 
-def parsesight_settings_path() -> Path:
-    """Settings file written by the earlier ParseSight parser, imported on first run."""
-    return _local_app_data() / "ParseSight" / "config" / "settings.json"
-
-
 def character_slug(name: str) -> str:
     return re.sub(r"[^a-z0-9]+", "-", name.casefold()).strip("-") or "default"
 

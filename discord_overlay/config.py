@@ -6,8 +6,6 @@ trigger profile, group filter) are snapshotted per character; the active
 character's snapshot is mirrored into the live fields listed in
 ``CHARACTER_FIELDS``. The character name doubles as the player name used for
 You/Your attribution.
-
-On first run, settings saved by the earlier ParseSight parser are imported.
 """
 from __future__ import annotations
 
@@ -18,7 +16,7 @@ from dataclasses import MISSING, asdict, dataclass, field
 from pathlib import Path
 
 from .models import Region
-from .paths import parsesight_settings_path, settings_path
+from .paths import settings_path
 from .triggers import OVERLAY_LAYOUTS, OVERLAY_SIZES, Trigger
 
 SCHEMA_VERSION = 1
@@ -96,14 +94,6 @@ class CharacterProfile:
         )
 
 
-def import_parsesight_settings(data: dict) -> dict:
-    """Map a ParseSight settings document onto this schema."""
-    mapped = dict(data)
-    mapped["triggers"] = mapped.pop("audio_triggers", [])
-    mapped["schema_version"] = SCHEMA_VERSION
-    return mapped
-
-
 @dataclass
 class Settings:
     schema_version: int = SCHEMA_VERSION
@@ -162,27 +152,13 @@ class Settings:
     @classmethod
     def load(cls, path: Path | None = None) -> "Settings":
         path = settings_path() if path is None else path
-        imported = False
         if not path.exists():
-            legacy = parsesight_settings_path()
-            if not legacy.exists():
-                return cls()
-            path, imported = legacy, True
+            return cls()
         try:
             data = json.loads(path.read_text(encoding="utf-8"))
         except (OSError, ValueError):
             return cls()
-        if not isinstance(data, dict):
-            return cls()
-        if imported:
-            data = import_parsesight_settings(data)
-        settings = cls.from_dict(data)
-        if imported:
-            try:
-                settings.save()
-            except OSError:
-                pass  # loading matters more than persisting the import right away
-        return settings
+        return cls.from_dict(data) if isinstance(data, dict) else cls()
 
     @classmethod
     def from_dict(cls, data: dict) -> "Settings":

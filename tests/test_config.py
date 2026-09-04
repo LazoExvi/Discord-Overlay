@@ -163,29 +163,16 @@ def test_missing_active_character_falls_back_to_first(app_data):
     assert Settings.load().active_character == "Solo"
 
 
-def test_parsesight_settings_are_imported_once(app_data):
-    legacy = app_data / "ParseSight" / "config" / "settings.json"
-    legacy.parent.mkdir(parents=True)
-    legacy.write_text(json.dumps({
-        "schema_version": 17, "player_name": "Klog", "active_character": "Klog", "scan_interval": 0.3,
-        "audio_triggers": [{"name": "Imported", "conditions": [{"pattern": "hit"}]}],
-        "characters": [{"name": "Klog", "data": {
-            "region": {"left": 1, "top": 2, "width": 400, "height": 300},
-            "overlay_geometry": "ignored", "timer_layout": "independent",
-            "timer_boards": [{"name": "Raid", "columns": 2}],
-        }}],
-        "update_last_check": 123, "include_group_damage": True,
-    }), encoding="utf-8")
-
+def test_unknown_keys_are_ignored_and_dropped_on_save(app_data):
+    settings_path().parent.mkdir(parents=True)
+    settings_path().write_text(json.dumps({"scan_interval": 0.3, "mystery": 1,
+                                           "characters": [{"name": "Klog", "data": {"ignored_field": 5}}]}),
+                               encoding="utf-8")
     loaded = Settings.load()
-
-    assert (loaded.player_name, loaded.scan_interval) == ("Klog", 0.3)
-    assert loaded.triggers[0].name == "Imported"
-    assert loaded.region == Region(1, 2, 400, 300)
-    assert loaded.timer_layout == "independent" and loaded.timer_boards[0].name == "Raid"
-    assert loaded.triggers[0].timer_board == "Raid"
-    assert settings_path().is_file()
-    assert "update_last_check" not in json.loads(settings_path().read_text(encoding="utf-8"))
+    assert loaded.scan_interval == 0.3 and loaded.player_name == "Klog"
+    loaded.save()
+    saved = json.loads(settings_path().read_text(encoding="utf-8"))
+    assert "mystery" not in saved and "ignored_field" not in saved["characters"][0]["data"]
 
 
 def test_legacy_player_name_seeds_the_first_character(app_data):

@@ -41,8 +41,20 @@ text, leaving a small margin and never cutting through letters. Release to save,
 press Esc or right-click to cancel. The eight most recent regions appear as dashed
 gold rectangles; click one to reuse it. Right-click clears them.
 
-Settings live in `%LOCALAPPDATA%\DiscordOverlay`. If you previously used ParseSight,
-its settings, characters, and triggers are imported automatically on first run.
+Settings live in `%LOCALAPPDATA%\DiscordOverlay` and survive updates and uninstalls.
+
+### Why Windows warns about the installer
+
+Windows SmartScreen shows "Windows protected your PC" for any program that is not
+signed with a code-signing certificate and has not yet been downloaded by many
+people. Discord Overlay is not signed. A code-signing certificate costs a few
+hundred dollars a year and requires identity verification, and that will not be
+done for this private project. The warning does not mean anything harmful was
+detected; it only means Windows does not recognize the publisher. Click **More
+info**, then **Run anyway**. Some antivirus products flag Python programs bundled
+with PyInstaller for the same reason; if yours does, allow the `DiscordOverlay`
+folder. The complete source is in this repository if you want to check what the
+program does or build it yourself.
 
 ## What you get
 
