@@ -518,8 +518,7 @@ class App(ctk.CTk):
         """Once, for the portable build: offer a Start Menu entry so it feels installed."""
         if not shortcuts.is_frozen():
             return
-        if shortcuts.repair_shortcuts():
-            self.set_status("Shortcuts updated to this version's location", theme.GREEN)
+        shortcuts.repair_shortcuts()  # silently repoint shortcuts after a move
         if self.settings.shortcut_prompted:
             return
         self.settings.shortcut_prompted = True
@@ -535,9 +534,7 @@ class App(ctk.CTk):
         try:
             shortcuts.create_shortcut(directory)
         except OSError as exc:
-            messagebox.showerror("Shortcut failed", str(exc), parent=self)
-            return
-        self.set_status(f"{label} shortcut created", theme.GREEN)
+            messagebox.showerror("Shortcut failed", f"Could not create the {label} shortcut.\n\n{exc}", parent=self)
 
     def show_hardware_setup(self) -> None:
         if self._setup_wizard is not None:
