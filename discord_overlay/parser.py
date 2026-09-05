@@ -63,6 +63,14 @@ _MISS = re.compile(
     re.IGNORECASE,
 )
 _OFFHAND = re.compile(r"\s+with\s+(?:your|their|its|his|her)\s+offhand\b", re.IGNORECASE)
+# Environmental damage is not combat and must not start or extend an encounter.
+_ENVIRONMENT = re.compile(
+    r"\b(?:from|by|due\s+to)\s+(?:falling|a\s+fall|drowning|starvation|hunger|thirst|suffocation)\b"
+    r"|\b(?:fall|falling|drowning)\s+damage\b",
+    re.IGNORECASE,
+)
+_PASSIVE_SELF = re.compile(r"^you\s+(?:take|suffer|receive)\b", re.IGNORECASE)
+_FROM_SOURCE = re.compile(r"\b(?:from|by)\s+(?P<source>[A-Za-z][A-Za-z' -]*?)(?:'s\s+\w+)?[.!]?$", re.IGNORECASE)
 _DAMAGE_SHIELD = re.compile(r"\bdamage[\s-]*shield\b", re.IGNORECASE)
 _NAME = r"[A-Za-z][A-Za-z'-]*"
 _NAME_PHRASE = rf"{_NAME}(?:\s+{_NAME}){{0,5}}"
@@ -244,6 +252,8 @@ class CombatTextParser:
         generic = None if match else _GENERIC_DAMAGE.search(text)
         if not match and not generic:
             return None
+        if _ENVIRONMENT.search(text):
+            return None  # "You take 65 points of damage from falling."
         amount = parse_amount((match or generic).group("amount"))
         if not 0 < amount <= MAX_AMOUNT:
             return None
@@ -340,6 +350,11 @@ class CombatTextParser:
             return "Damage Shield", target, action, kind, False
 
         folded = text.casefold()
+        if _PASSIVE_SELF.match(text):
+            # "You take 40 points of damage from a trap." is damage *to* you, not by you.
+            source = _FROM_SOURCE.search(text)
+            actor = self._pretty_name(source.group("source")) if source else "Unknown"
+            return actor, self.player_name, action, EventKind.DAMAGE_IN, False
         if re.search(r"\b(?:from|by)\s+your\s+pet\b", text, re.IGNORECASE):
             return "Pet", target, action, EventKind.DAMAGE_OUT, True
         if folded.startswith(("your pet ", "your pet's ")):

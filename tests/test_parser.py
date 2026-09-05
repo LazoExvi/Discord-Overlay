@@ -250,6 +250,17 @@ def test_configured_pet_names_and_learned_pet_announcements():
     assert parser.pop_new_pets() == []
 
 
+def test_environmental_damage_is_ignored_and_passive_self_damage_is_incoming():
+    assert parse("You take 65 points of damage from falling.") is None
+    assert parse("you take 65 damage from falling") is None
+    assert parse("You take 12 points of damage from drowning!") is None
+    assert parse("You suffer 30 fall damage.") is None
+    trap = parse("You take 40 points of damage from a poison trap.")
+    assert (trap.kind, trap.actor, trap.target, trap.amount) == (EventKind.DAMAGE_IN, "poison trap", "Raan", 40)
+    unknown = parse("You take 9 points of damage.")
+    assert (unknown.kind, unknown.actor, unknown.target) == (EventKind.DAMAGE_IN, "Unknown", "Raan")
+
+
 def test_non_combat_lines_are_ignored():
     for text in ("Starting to attack.", "a spiderling loses interest in Quorion.", "Matchacakes begins casting Flameburst."):
         assert parse(text) is None
