@@ -337,7 +337,7 @@ def test_lines_clipped_at_the_region_edge_still_count():
             ("Saranukes", "Exceptional Fire Volley", "Bone Construct", 117),
         "Janantik punches a rotten sharpshooter with their offhand for 4 points of":
             ("Janantik", "Punches (Offhand)", "rotten sharpshooter", 4),
-        "Saranukes's Exceptional Lightning Surge hits Bone Construct for 1455 points":
+        "Saranukes's Exceptional Lightning Surge hits Bone Construct for 1455 points of":
             ("Saranukes", "Exceptional Lightning Surge", "Bone Construct", 1455),
         "Longjonn bites Pustulax the Avatar of Plagues with their offhand for 89 points o damage. (Critical)":
             ("Longjonn", "Bites (Offhand)", "Pustulax the Avatar of Plagues", 89),
