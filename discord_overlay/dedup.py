@@ -51,9 +51,12 @@ class ScrollingTextDeduplicator:
             return []
 
         previous = self.previous
-        overlap = self._overlap(previous, current)
+        overlap, still_visible = self._overlap(previous, current)
         candidates = current[overlap:] if overlap else current
-        old_counts = Counter(line_key(line.text) for line in previous)
+        # Count only the old rows that are still on screen. A row that scrolled off
+        # the top must not cancel out an identical new row at the bottom, or every
+        # repeated heal tick and fixed-damage auto-attack loses lines.
+        old_counts = Counter(line_key(line.text) for line in (still_visible if overlap else previous))
         extra_counts = Counter(line_key(line.text) for line in current) - old_counts
         fresh: list[OCRLine] = []
         for line in candidates:
@@ -74,18 +77,18 @@ class ScrollingTextDeduplicator:
         return fresh
 
     @staticmethod
-    def _overlap(previous: list[OCRLine], current: list[OCRLine]) -> int:
-        """Rows at the top of ``current`` that repeat the bottom of ``previous``."""
+    def _overlap(previous: list[OCRLine], current: list[OCRLine]) -> tuple[int, list[OCRLine]]:
+        """Rows at the top of ``current`` that repeat ``previous``, and which old rows they are."""
         for size in range(min(len(previous), len(current)), 0, -1):
             matches = [_similar(a.text, b.text) for a, b in zip(previous[-size:], current[:size])]
             # Both boundary rows must match, otherwise a viewport with one new
             # bottom line is mistaken for a complete overlap.
             if matches[0] and matches[-1] and sum(matches) >= max(1, ceil(size * OVERLAP_RATIO)):
-                return size
+                return size, previous[-size:]
         # A static window keeps its prefix and appends at the bottom.
         prefix = 0
         for a, b in zip(previous, current):
             if not _similar(a.text, b.text):
                 break
             prefix += 1
-        return prefix
+        return prefix, previous[:prefix]

@@ -61,6 +61,21 @@ def test_an_additional_identical_line_is_still_new_when_count_increases():
     assert texts(dedup.new_lines(lines("Your Rage Grows", "Your Rage Grows"))) == ["Your Rage Grows"]
 
 
+def test_identical_line_entering_as_another_scrolls_off_is_new():
+    # Second Wind ticks "66 Health" every 2s; with a short chat window the oldest
+    # tick scrolls off exactly as the newest appears, so the visible count is
+    # unchanged. The new tick must still be reported.
+    tick = "Crit's Second Wind heals you for 66 Health."
+    dedup = ScrollingTextDeduplicator()
+    dedup.new_lines(lines(tick, "Lonaner slashes Bone Construct for 4 points of damage.", "You crush Bone Construct for 15 points of damage."))
+    fresh = dedup.new_lines(lines("Lonaner slashes Bone Construct for 4 points of damage.", "You crush Bone Construct for 15 points of damage.", tick))
+    assert texts(fresh) == [tick]
+    # Two ticks leaving and two identical ones arriving in the same frame both count.
+    dedup = ScrollingTextDeduplicator()
+    dedup.new_lines(lines(tick, tick, "filler one", "filler two"))
+    assert texts(dedup.new_lines(lines("filler one", "filler two", tick, tick))) == [tick, tick]
+
+
 def test_reset_reprimes_and_empty_input_is_ignored():
     dedup = ScrollingTextDeduplicator()
     dedup.new_lines(lines("a"))
