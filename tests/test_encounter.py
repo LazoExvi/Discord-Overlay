@@ -251,3 +251,29 @@ def test_running_totals_combine_fights_without_counting_idle_time():
     tracker.reset()
     cleared = tracker.snapshot(now=40.0)
     assert (cleared.total_out, cleared.duration, cleared.dps) == (0, 0.0, 0.0)
+
+
+def test_enemy_hitting_you_and_your_group_is_one_row():
+    tracker = EncounterTracker(player_name="Raan")
+    tracker.add(_event("Bone Construct", 100, EventKind.DAMAGE_IN, target="Raan"))
+    tracker.add(_event("Bone Construct", 300, EventKind.DAMAGE_OTHER, target="skeletal servant"))
+    tracker.add(_event("Klog", 50, EventKind.DAMAGE_OTHER))
+    assert [(r.actor, r.actor_type, r.damage, r.share) for r in tracker.actor_totals(now=10.5)] == [
+        ("Bone Construct", "ENEMY", 400, 100.0), ("Klog", "OTHER", 50, 100.0)]
+
+
+def test_ocr_misspellings_of_a_name_merge_into_the_common_spelling():
+    tracker = EncounterTracker(player_name="Raan")
+    for _ in range(3):
+        tracker.add(_event("Bone Construct", 100, target="skeletal servant"))
+    tracker.add(_event("Bone Construet", 40, target="skeletal servant"))
+    tracker.add(_event("Klog", 10, target="skeletal servamt"))
+    rows = tracker.actor_totals(now=10.5)
+    assert [(r.actor, r.damage, r.hits) for r in rows] == [("Bone Construct", 340, 4), ("Klog", 10, 1)]
+    assert tracker.encounter_targets() == ["skeletal servant"]
+    assert [r.actor for r in tracker.actor_totals(now=10.5, target="skeletal servant")] == ["Bone Construct", "Klog"]
+    # Short or genuinely different names never merge.
+    tracker.add(_event("Raan", 5, EventKind.DAMAGE_OUT))
+    tracker.add(_event("Ryan", 5))
+    tracker.add(_event("skeletal sentinel", 5))
+    assert {r.actor for r in tracker.actor_totals(now=10.5)} >= {"Raan", "Ryan", "skeletal sentinel", "Klog"}

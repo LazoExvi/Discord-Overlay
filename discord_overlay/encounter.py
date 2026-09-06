@@ -4,8 +4,9 @@ from __future__ import annotations
 import csv
 import re
 import time
-from collections import deque
+from collections import Counter, deque
 from dataclasses import astuple, dataclass
+from difflib import SequenceMatcher
 from pathlib import Path
 
 from .models import DAMAGE_KINDS, CombatEvent, EncounterSnapshot, EventKind
@@ -14,6 +15,7 @@ METRIC_KINDS = DAMAGE_KINDS | {EventKind.HEAL}
 COMBAT_KINDS = METRIC_KINDS | {EventKind.MISS}
 BREAKDOWN_DAMAGE_KINDS = frozenset({EventKind.DAMAGE_OUT, EventKind.DAMAGE_OTHER})
 PLAYER_TARGET_KEY = "__player__"
+NPC_BUCKET = "NPC"  # enemies and bystanders share rows; the row type is decided afterwards
 
 COMBATANT_COLUMNS = ("Actor", "Type", "Damage", "Share Percent", "DPS", "10s DPS",
                      "Hits", "Crits", "Healing", "HPS")
@@ -36,6 +38,30 @@ class ActorRow:
 
     def as_tuple(self) -> tuple:
         return astuple(self)
+
+
+def merge_similar_names(names, min_length: int = 6, ratio: float = 0.85) -> dict[str, str]:
+    """Map each casefolded name onto the most common near-identical spelling.
+
+    OCR reads the same mob as ``Bone Construct`` and ``Bone Construet``; without this
+    it gets two rows. Only long names differing by about one character are merged,
+    and the spelling seen most often wins.
+    """
+    counts = Counter(name for name in names if name)
+    canonical: dict[str, str] = {}
+    accepted: list[str] = []
+    for name, _count in sorted(counts.items(), key=lambda item: (-item[1], item[0])):
+        chosen = name
+        if len(name) >= min_length and name != "unknown":
+            for existing in accepted:
+                if (abs(len(existing) - len(name)) <= 1
+                        and SequenceMatcher(None, name, existing).ratio() >= ratio):
+                    chosen = existing
+                    break
+        if chosen == name:
+            accepted.append(name)
+        canonical[name] = chosen
+    return canonical
 
 
 class EncounterTracker:
@@ -197,35 +223,41 @@ class EncounterTracker:
     def actor_totals(self, now: float | None = None, target: str | None = None) -> list[ActorRow]:
         """One row per credited actor, optionally scoped to a single target."""
         snapshot = self.snapshot(now)
-        target_key = self._target_key(target) if target else None
+        names = self._name_map()
+        target_key = names.get(self._target_key(target)) if target else None
 
         def in_scope(event: CombatEvent) -> bool:
-            return target_key is None or self._target_key(event.target) == target_key
+            return target_key is None or names.get(self._target_key(event.target)) == target_key
 
         metric_events = [e for e in self.events if e.kind in METRIC_KINDS and in_scope(e)]
-        damage_events = [e for e in metric_events if e.kind in DAMAGE_KINDS]
-        outgoing_total = sum(e.amount for e in damage_events if e.kind != EventKind.DAMAGE_IN)
-        incoming_total = sum(e.amount for e in damage_events if e.kind == EventKind.DAMAGE_IN)
 
         grouped: dict[tuple[str, str], list[CombatEvent]] = {}
-        display_names: dict[tuple[str, str], str] = {}
+        display_names: dict[tuple[str, str], Counter] = {}
         for event in metric_events:
-            key, actor = self._actor_key(event)
+            key, actor = self._actor_key(event, names)
             grouped.setdefault(key, []).append(event)
-            current = display_names.get(key)
-            if current is None or (current.islower() and not actor.islower()):
-                display_names[key] = actor  # prefer a capitalized OCR reading
+            display_names.setdefault(key, Counter())[actor] += 1
         recent_damage: dict[tuple[str, str], int] = {}
         for event in self._recent:
             if event.kind in DAMAGE_KINDS and in_scope(event):
-                key, _actor = self._actor_key(event)
+                key, _actor = self._actor_key(event, names)
                 recent_damage[key] = recent_damage.get(key, 0) + event.amount
+
+        # A mob that hit you and also hit your group is one enemy, not two rows; its
+        # share is measured against everything enemies dealt, friendly rows against
+        # everything the friendly side dealt.
+        row_types = {key: self._row_type(key, events) for key, events in grouped.items()}
+        totals = {"enemy": 0, "friendly": 0}
+        for key, events in grouped.items():
+            side = "enemy" if row_types[key] == "ENEMY" else "friendly"
+            totals[side] += sum(e.amount for e in events if e.kind in DAMAGE_KINDS)
 
         if target_key is None:
             damage_duration = max(1.0, snapshot.duration)
             healing_duration = max(1.0, self._healing_duration())
             rolling_span = self._rolling_span()
         else:
+            damage_events = [e for e in metric_events if e.kind in DAMAGE_KINDS]
             damage_duration = _span(e.timestamp for e in damage_events)
             healing_duration = _span(e.timestamp for e in metric_events if e.kind == EventKind.HEAL)
             rolling_span = min(self.rolling_window, damage_duration)
@@ -234,12 +266,11 @@ class EncounterTracker:
         for key, events in grouped.items():
             actor_damage = [e for e in events if e.kind in DAMAGE_KINDS]
             damage = sum(e.amount for e in actor_damage)
-            incoming = any(e.kind == EventKind.DAMAGE_IN for e in actor_damage)
-            direction_total = incoming_total if incoming else outgoing_total
+            direction_total = totals["enemy" if row_types[key] == "ENEMY" else "friendly"]
             healing = sum(e.amount for e in events if e.kind == EventKind.HEAL)
             rows.append(ActorRow(
-                actor=display_names[key],
-                actor_type=key[1],
+                actor=_preferred_spelling(display_names[key]),
+                actor_type=row_types[key],
                 damage=damage,
                 share=100.0 * damage / max(1, direction_total),
                 dps=damage / damage_duration,
@@ -251,9 +282,25 @@ class EncounterTracker:
             ))
         return sorted(rows, key=lambda row: (row.damage, row.healing, row.actor.casefold()), reverse=True)
 
+    def _name_map(self) -> dict[str, str]:
+        """Canonical spelling for every actor and target name seen this encounter."""
+        seen = []
+        for event in self.events:
+            if event.kind in METRIC_KINDS:
+                seen.append(self.credited_actor(event).casefold().strip())
+                seen.append(self._target_key(event.target))
+        return merge_similar_names(seen)
+
+    @staticmethod
+    def _row_type(key: tuple[str, str], events: list[CombatEvent]) -> str:
+        if key[1] != NPC_BUCKET:
+            return key[1]
+        return "ENEMY" if any(e.kind == EventKind.DAMAGE_IN for e in events) else "OTHER"
+
     def encounter_targets(self) -> list[str]:
-        """Distinct damage and healing targets, one entry per case-insensitive name."""
-        names: dict[str, str] = {}
+        """Distinct damage and healing targets, one entry per (fuzzy) case-insensitive name."""
+        canonical = self._name_map()
+        names: dict[str, Counter] = {}
         for event in self.events:
             target = event.target.strip()
             if not target or event.kind not in METRIC_KINDS:
@@ -261,18 +308,21 @@ class EncounterTracker:
             key = self._target_key(target)
             if key == PLAYER_TARGET_KEY:
                 target = "You"
-            current = names.get(key)
-            if current is None or (current.islower() and not target.islower()):
-                names[key] = target
-        return sorted(names.values(), key=str.casefold)
+            names.setdefault(canonical.get(key, key), Counter())[target] += 1
+        return sorted((_preferred_spelling(c) for c in names.values()), key=str.casefold)
 
     def _target_key(self, target: str) -> str:
         key = target.casefold().strip()
         return PLAYER_TARGET_KEY if key in {"you", self.player_name.casefold().strip()} else key
 
-    def _actor_key(self, event: CombatEvent) -> tuple[tuple[str, str], str]:
+    def _actor_key(self, event: CombatEvent, names: dict[str, str] | None = None) -> tuple[tuple[str, str], str]:
         actor = self.credited_actor(event)
-        return (actor.casefold().strip(), self.credited_actor_type(event, actor)), actor
+        folded = actor.casefold().strip()
+        if names:
+            folded = names.get(folded, folded)
+        actor_type = self.credited_actor_type(event, actor)
+        bucket = NPC_BUCKET if actor_type in {"ENEMY", "OTHER"} else actor_type
+        return (folded, bucket), actor
 
     def credited_actor(self, event: CombatEvent) -> str:
         if event.is_damage_shield and not self.damage_shields_by_wearer:
@@ -313,6 +363,11 @@ class EncounterTracker:
                     event.action, event.amount, event.absorbed, event.critical, event.is_pet,
                     event.is_damage_shield, event.confidence, event.raw_text,
                 ])
+
+
+def _preferred_spelling(spellings: Counter) -> str:
+    """Most frequent reading wins; a capitalized reading breaks ties with a lowercase one."""
+    return max(spellings.items(), key=lambda item: (item[1], not item[0].islower(), item[0]))[0]
 
 
 def _span(timestamps) -> float:

@@ -265,3 +265,14 @@ def test_non_combat_lines_are_ignored():
     for text in ("Starting to attack.", "a spiderling loses interest in Quorion.", "Matchacakes begins casting Flameburst."):
         assert parse(text) is None
     assert parse("You hit a rat for 0 points of damage.") is None
+
+
+def test_misread_or_unknown_verbs_still_split_actor_from_target():
+    assert closest_combat_verb("erushes") == "crushes"  # first letter misread
+    assert closest_combat_verb("heals") is None
+    event = parse("Bone Construct erushes YOU for 120 points of damage.")
+    assert (event.actor, event.action, event.target, event.kind) == ("Bone Construct", "Crushes", "Raan", EventKind.DAMAGE_IN)
+    event = parse("Bone Construct wallops YOU for 120 points of damage.")
+    assert (event.actor, event.action, event.target, event.kind) == ("Bone Construct", "Wallops", "Raan", EventKind.DAMAGE_IN)
+    event = parse("a rat nibbles a zealot for 3 points of damage.")
+    assert (event.actor, event.action, event.target, event.kind) == ("rat", "Nibbles", "zealot", EventKind.DAMAGE_OTHER)

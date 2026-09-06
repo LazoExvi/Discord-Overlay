@@ -72,6 +72,10 @@ _ENVIRONMENT = re.compile(
 _PASSIVE_SELF = re.compile(r"^you\s+(?:take|suffer|receive)\b", re.IGNORECASE)
 _FROM_SOURCE = re.compile(r"\b(?:from|by)\s+(?P<source>[A-Za-z][A-Za-z' -]*?)(?:'s\s+\w+)?[.!]?$", re.IGNORECASE)
 _DAMAGE_SHIELD = re.compile(r"\bdamage[\s-]*shield\b", re.IGNORECASE)
+_UNKNOWN_VERB = re.compile(
+    r"^(?P<actor>[A-Za-z][A-Za-z' -]*?)\s+(?P<verb>[A-Za-z]{3,})\s+(?P<target>(?:(?:a|an|the)\s+.+)|you)$",
+    re.IGNORECASE,
+)
 _NAME = r"[A-Za-z][A-Za-z'-]*"
 _NAME_PHRASE = rf"{_NAME}(?:\s+{_NAME}){{0,5}}"
 _PET_POSSESSIVE = re.compile(rf"\byour\s+pet\s+(?P<name>{_NAME_PHRASE})'s\b", re.IGNORECASE)
@@ -105,12 +109,13 @@ def closest_combat_verb(value: str) -> str | None:
         return folded
     if len(folded) < 4:
         return None
-    candidates = [verb for verb in COMBAT_VERBS
-                  if verb[0] == folded[0] and abs(len(verb) - len(folded)) <= 2]
+    candidates = [verb for verb in COMBAT_VERBS if abs(len(verb) - len(folded)) <= 2]
     if not candidates:
         return None
     best = max(candidates, key=lambda verb: SequenceMatcher(None, folded, verb).ratio())
-    return best if SequenceMatcher(None, folded, best).ratio() >= 0.72 else None
+    ratio = SequenceMatcher(None, folded, best).ratio()
+    # A misread first letter ("erushes" for "crushes") needs a closer match than a jumbled tail.
+    return best if ratio >= (0.72 if best[0] == folded[0] else 0.8) else None
 
 
 def repair_ocr_spacing(text: str) -> str:
@@ -399,7 +404,13 @@ class CombatTextParser:
                 action = ability or action
             target_text, action = _strip_offhand(target_text, action)
         else:
-            actor_text, target_text, action = prefix, "Unknown", "Attack"
+            unknown_verb = _UNKNOWN_VERB.match(prefix)
+            if unknown_verb:
+                # "Bone Construct wallops YOU": an unlisted or misread verb before a clear target.
+                actor_text, target_text = unknown_verb.group("actor"), unknown_verb.group("target")
+                action = unknown_verb.group("verb").title()
+            else:
+                actor_text, target_text, action = prefix, "Unknown", "Attack"
 
         actor_is_player = actor_text.strip().casefold() in {"you", self.player_name.casefold()}
         actor_is_pet = self._is_known_pet(actor_text)
