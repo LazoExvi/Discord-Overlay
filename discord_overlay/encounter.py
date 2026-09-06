@@ -40,26 +40,57 @@ class ActorRow:
         return astuple(self)
 
 
-def merge_similar_names(names, min_length: int = 6, ratio: float = 0.85) -> dict[str, str]:
-    """Map each casefolded name onto the most common near-identical spelling.
+# Character pairs OCR confuses in the game font. Two spellings merge only when
+# every difference between them is one of these swaps, so "Konaner" and
+# "Lonaner" (a real K/L difference) stay separate players while
+# "Bone Construet" folds into "Bone Construct".
+OCR_CONFUSIONS: frozenset[tuple[str, str]] = frozenset({
+    ("c", "e"), ("l", "i"), ("l", "1"), ("i", "1"), ("l", "t"), ("i", "j"), ("o", "0"), ("o", "a"),
+    ("u", "n"), ("t", "f"), ("s", "5"), ("b", "8"), ("h", "b"), ("g", "q"), ("g", "9"), ("z", "2"),
+    ("rn", "m"), ("n", "m"), ("cl", "d"), ("vv", "w"), ("ii", "u"), ("nn", "m"),
+    ("'", ""), ("'", "l"), ("'", "1"), ("'", "i"), ("'", "`"), ("-", ""), (" ", ""),
+})
+_CONFUSABLE = OCR_CONFUSIONS | {(b, a) for a, b in OCR_CONFUSIONS}
+MAX_CONFUSIONS = 2
 
-    OCR reads the same mob as ``Bone Construct`` and ``Bone Construet``; without this
-    it gets two rows. Only long names differing by about one character are merged,
-    and the spelling seen most often wins.
+
+def ocr_confusable(a: str, b: str, max_edits: int = MAX_CONFUSIONS) -> bool:
+    """True when ``a`` and ``b`` differ only by up to ``max_edits`` known OCR swaps."""
+    if a == b:
+        return False
+    edits = 0
+    for tag, i1, i2, j1, j2 in SequenceMatcher(None, a, b, autojunk=False).get_opcodes():
+        if tag == "equal":
+            continue
+        edits += 1
+        if edits > max_edits or (a[i1:i2], b[j1:j2]) not in _CONFUSABLE:
+            return False
+    return edits > 0
+
+
+def merge_similar_names(names, protected=(), minority_share: float = 0.25) -> dict[str, str]:
+    """Map each casefolded name onto the spelling it is most likely a misread of.
+
+    A spelling merges into a more common one only when the two differ by known OCR
+    character confusions, the rarer spelling is a small minority of the pair (a
+    misread is occasional; a second player is not), and neither is a protected
+    name such as the player's own or a configured pet.
     """
     counts = Counter(name for name in names if name)
+    protected_keys = {str(name).casefold().strip() for name in protected}
     canonical: dict[str, str] = {}
-    accepted: list[str] = []
-    for name, _count in sorted(counts.items(), key=lambda item: (-item[1], item[0])):
+    accepted: list[tuple[str, int]] = []
+    for name, count in sorted(counts.items(), key=lambda item: (-item[1], item[0])):
         chosen = name
-        if len(name) >= min_length and name != "unknown":
-            for existing in accepted:
-                if (abs(len(existing) - len(name)) <= 1
-                        and SequenceMatcher(None, name, existing).ratio() >= ratio):
+        if len(name) >= 3 and name != "unknown" and name not in protected_keys:
+            for existing, existing_count in accepted:
+                if existing in protected_keys and count > 2:
+                    continue
+                if count <= max(2, existing_count * minority_share) and ocr_confusable(name, existing):
                     chosen = existing
                     break
         if chosen == name:
-            accepted.append(name)
+            accepted.append((name, count))
         canonical[name] = chosen
     return canonical
 
@@ -70,13 +101,14 @@ class EncounterTracker:
     def __init__(self, timeout: float = 8.0, rolling_window: float = 10.0,
                  player_name: str = "You", combine_pet_damage: bool = True,
                  damage_shields_by_wearer: bool = False,
-                 keep_running_totals: bool = False) -> None:
+                 keep_running_totals: bool = False, protected_names=()) -> None:
         self.timeout = timeout
         self.rolling_window = rolling_window
         self.player_name = player_name
         self.combine_pet_damage = combine_pet_damage
         self.damage_shields_by_wearer = damage_shields_by_wearer
         self.keep_running_totals = keep_running_totals
+        self.protected_names: set[str] = {str(n).casefold().strip() for n in protected_names if str(n).strip()}
         self.events: list[CombatEvent] = []
         self.history: list[list[CombatEvent]] = []
         self._recent: deque[CombatEvent] = deque()
@@ -289,7 +321,7 @@ class EncounterTracker:
             if event.kind in METRIC_KINDS:
                 seen.append(self.credited_actor(event).casefold().strip())
                 seen.append(self._target_key(event.target))
-        return merge_similar_names(seen)
+        return merge_similar_names(seen, self.protected_names | {self.player_name.casefold().strip()})
 
     @staticmethod
     def _row_type(key: tuple[str, str], events: list[CombatEvent]) -> str:

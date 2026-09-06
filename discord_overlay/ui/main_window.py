@@ -59,6 +59,7 @@ class App(ctk.CTk):
         self.tracker = EncounterTracker(
             self.settings.encounter_timeout, self.settings.rolling_window, self.settings.player_name,
             self.settings.combine_pet_damage, self.settings.damage_shields_by_wearer, self.settings.keep_running_totals,
+            protected_names=self.settings.pet_names,
         )
         self.timers = TimerManager(self.settings.timer_layout, self.settings.timer_visual_size)
         self.overlays = OverlayManager(self, self.settings, self.timers, self._overlay_status)

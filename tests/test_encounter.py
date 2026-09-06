@@ -272,8 +272,28 @@ def test_ocr_misspellings_of_a_name_merge_into_the_common_spelling():
     assert [(r.actor, r.damage, r.hits) for r in rows] == [("Bone Construct", 340, 4), ("Klog", 10, 1)]
     assert tracker.encounter_targets() == ["skeletal servant"]
     assert [r.actor for r in tracker.actor_totals(now=10.5, target="skeletal servant")] == ["Bone Construct", "Klog"]
-    # Short or genuinely different names never merge.
+    # Genuinely different names never merge, however close: Konaner and Lonaner
+    # are two players, and a real K/L difference is not an OCR confusion.
     tracker.add(_event("Raan", 5, EventKind.DAMAGE_OUT))
     tracker.add(_event("Ryan", 5))
     tracker.add(_event("skeletal sentinel", 5))
-    assert {r.actor for r in tracker.actor_totals(now=10.5)} >= {"Raan", "Ryan", "skeletal sentinel", "Klog"}
+    for _ in range(50):
+        tracker.add(_event("Lonaner", 5))
+    tracker.add(_event("Konaner", 5))
+    assert {r.actor for r in tracker.actor_totals(now=10.5)} >= {
+        "Raan", "Ryan", "skeletal sentinel", "Klog", "Lonaner", "Konaner"}
+
+
+def test_frequent_spellings_and_protected_names_are_never_merged():
+    # Two spellings both seen often are two combatants, even if OCR-confusable.
+    tracker = EncounterTracker(player_name="Raan")
+    for _ in range(40):
+        tracker.add(_event("Crit", 5))
+        tracker.add(_event("Crlt", 5))
+    assert {r.actor for r in tracker.actor_totals(now=10.5)} == {"Crit", "Crlt"}
+    # A configured pet or the player's own name keeps its row even when rare.
+    tracker = EncounterTracker(player_name="Raan", protected_names=["Raon"])
+    for _ in range(40):
+        tracker.add(_event("Raan", 5, EventKind.DAMAGE_OUT))
+    tracker.add(_event("Raon", 5))
+    assert {r.actor for r in tracker.actor_totals(now=10.5)} == {"Raan", "Raon"}
