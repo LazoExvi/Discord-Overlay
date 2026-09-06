@@ -63,8 +63,16 @@ def ocr_confusable(a: str, b: str, max_edits: int = MAX_CONFUSIONS) -> bool:
         if tag == "equal":
             continue
         edits += 1
-        if edits > max_edits or (a[i1:i2], b[j1:j2]) not in _CONFUSABLE:
+        if edits > max_edits:
             return False
+        left, right = a[i1:i2], b[j1:j2]
+        if (left, right) in _CONFUSABLE:
+            continue
+        # A doubled letter read as one: the inserted/deleted char repeats its neighbour.
+        longer, at, gap = (a, i1, left) if len(left) == 1 and not right else (b, j1, right)
+        if len(gap) == 1 and (longer[at - 1:at] == gap or longer[at + 1:at + 2] == gap):
+            continue
+        return False
     return edits > 0
 
 

@@ -305,3 +305,34 @@ def test_heal_lines_seen_in_real_logs():
     assert parse("Tiberous is renewed by ancestral healing") is None
     assert parse_amount("l") == 0
     assert parse_amount("I8O") == 180
+
+
+def test_spreading_disease_damage_credits_the_disease_not_the_carrier():
+    event = parse("Calvin spreads their Spreading Plague to Raan. Raan takes 400 points of damage!", name="Crit")
+    assert (event.kind, event.actor, event.target, event.action, event.amount) == (
+        EventKind.DAMAGE_OTHER, "Spreading Plague", "Raan", "Spread by Calvin", 400)
+    event = parse("Ouch spreads their Disease to you. YOU take 400 points of damage!", name="Crit")
+    assert (event.kind, event.actor, event.target) == (EventKind.DAMAGE_IN, "Disease", "Crit")
+    # A passive "takes" line without a source credits nobody, and a bare verb is not a name.
+    event = parse("Tom takes 400 points of damage!")
+    assert (event.kind, event.actor, event.target) == (EventKind.DAMAGE_OTHER, "Unknown", "Tom")
+    assert parse("takes 400 points of damage!").actor == "Unknown"
+    # The existing "You take N from <source>" path is untouched.
+    event = parse("You take 40 points of damage from a poison trap.")
+    assert (event.kind, event.actor, event.target) == (EventKind.DAMAGE_IN, "poison trap", "Raan")
+
+
+def test_ocr_glue_and_mangled_absorbed_words_are_repaired():
+    event = parse("a tomb knight hics YOU for-407 points of damage (45 sbsorbed). (Critical)", name="Crit")
+    assert (event.actor, event.target, event.action, event.amount, event.absorbed, event.critical) == (
+        "tomb knight", "Crit", "Hits", 407, 45, True)
+    event = parse("Fangkeeper's Savage Strike I hitsia rattlesnake for 20 points of damage.")
+    assert (event.actor, event.target, event.action, event.amount) == ("Fangkeeper", "rattlesnake", "Savage Strike I", 20)
+    assert repair_ocr_spacing("Sirobae's Staggering Winds hits Whiplash for 9") == "Sirobae's Staggering Winds hits Whiplash for 9"
+
+
+def test_faith_answers_heal_credits_owner_and_self_target():
+    event = parse("Ebola's faith answers, healing them for 375 Health.")
+    assert (event.actor, event.target, event.amount) == ("Ebola", "Ebola", 375)
+    event = parse("Your faith answers, healing you for 750 Health!", name="Crit")
+    assert (event.actor, event.target, event.amount) == ("Crit", "Crit", 750)

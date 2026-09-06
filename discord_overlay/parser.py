@@ -33,7 +33,7 @@ _NUMBER_CLASS = r"[\dOoIlSB,]+"
 _DAMAGE = re.compile(
     rf"^(?P<prefix>.+?)\s+for\s+(?P<amount>{_NUMBER_CLASS})\s+points?\s+of\s+"
     r"(?:(?P<school>[A-Za-z]+)\s+)?damage[.!]?"
-    rf"(?:\s*\((?P<absorbed>{_NUMBER_CLASS})\s+absorbed\))?",
+    rf"(?:\s*\((?P<absorbed>{_NUMBER_CLASS})\s+[a-z]{{6,9}}\))?",
     re.IGNORECASE,
 )
 _GENERIC_DAMAGE = re.compile(
@@ -41,7 +41,7 @@ _GENERIC_DAMAGE = re.compile(
     r"(?:(?P<school>[A-Za-z][A-Za-z-]*)\s+)?damage\b",
     re.IGNORECASE,
 )
-_ABSORBED = re.compile(rf"\(({_NUMBER_CLASS})\s+absorbed\)", re.IGNORECASE)
+_ABSORBED = re.compile(rf"\(({_NUMBER_CLASS})\s+[a-z]{{6,9}}\)", re.IGNORECASE)
 _HEAL = re.compile(
     rf"^(?P<prefix>.+)\s+heals?\s+(?P<target>you|[\w' -]+?)\s+for\s+"
     rf"(?P<amount>{_NUMBER_CLASS})(?:\s+Health)?[.!]?",
@@ -70,6 +70,15 @@ _ENVIRONMENT = re.compile(
     re.IGNORECASE,
 )
 _PASSIVE_SELF = re.compile(r"^you\s+(?:take|suffer|receive)\b", re.IGNORECASE)
+# "Calvin spreads their Spreading Plague to Raan. Raan takes 400 points of damage!"
+_SPREAD = re.compile(
+    r"^(?P<spreader>[A-Za-z][A-Za-z'-]*)\s+spreads\s+(?:their|his|her|its)\s+(?P<disease>[A-Za-z][A-Za-z -]*?)"
+    r"\s+to\s+(?P<target>you|[A-Za-z][A-Za-z'-]*)[.!]?\s*(?:you|[A-Za-z][A-Za-z'-]*)?\s*takes?\b",
+    re.IGNORECASE,
+)
+# "Tom takes 400 points of damage!" (or a truncated "takes 400 points of damage!")
+_TAKES = re.compile(r"^(?:(?P<target>you|[A-Za-z][A-Za-z'-]*)\s+)?takes?\s+\S*\d", re.IGNORECASE)
+_JUNK_ACTORS = frozenset({"takes", "take", "hits", "hit", "for", "is", "are", "the", "a", "an"})
 _FROM_SOURCE = re.compile(r"\b(?:from|by)\s+(?P<source>[A-Za-z][A-Za-z' -]*?)(?:'s\s+\w+)?[.!]?$", re.IGNORECASE)
 _DAMAGE_SHIELD = re.compile(r"\bdamage[\s-]*shield\b", re.IGNORECASE)
 _UNKNOWN_VERB = re.compile(
@@ -137,9 +146,25 @@ def repair_ocr_possessive(text: str) -> str:
     return f"{match.group('name')}'s {text[match.end('suffix'):].lstrip()}"
 
 
+_GLUED_ARTICLE = re.compile(r"\b([A-Za-z]{4,})(an|a)(?=\s+[a-z])")
+
+
+def _split_glued_article(match: re.Match) -> str:
+    token, article = match.group(1), match.group(2)
+    for junk in ("", "i", "l", "1"):  # "hitsia" -> "hits" + "i" + "a"
+        stem = token[:-len(junk)] if junk else token
+        if stem.endswith(junk) or not junk:
+            verb = closest_combat_verb(stem[:-len(junk)] if junk and stem.endswith(junk) else stem)
+            if verb and (verb == stem.casefold() or len(stem) >= 4):
+                return f"{verb} {article}"
+    return match.group(0)
+
+
 def repair_ocr_spacing(text: str) -> str:
     """Restore spaces OCR drops in a few grammar-backed spots; nothing broader."""
     text = repair_ocr_possessive(text)
+    text = re.sub(r"\bfor-(?=\d)", "for ", text)  # "for-407 points"
+    text = _GLUED_ARTICLE.sub(_split_glued_article, text)
     # Klog'sFireball / James'Fireball
     text = re.sub(r"^([A-Za-z][A-Za-z'-]*?'s)([A-Za-z])", r"\1 \2", text)
     text = re.sub(r"^([A-Za-z][A-Za-z'-]*?s')(?!s\b)([A-Za-z])", r"\1 \2", text)
@@ -282,6 +307,19 @@ class CombatTextParser:
         amount = parse_amount((match or generic).group("amount"))
         if not 0 < amount <= MAX_AMOUNT:
             return None
+        spread = _SPREAD.match(text)
+        takes = None if spread or _PASSIVE_SELF.match(text) else _TAKES.match(text)
+        if spread or takes:
+            # Mechanic damage: credit the disease (or nobody), never the player it spread from.
+            target = self._pretty_name((spread or takes).group("target") or "Unknown")
+            actor = spread.group("disease").strip().title() if spread else "Unknown"
+            action = f"Spread by {spread.group('spreader')}" if spread else "Damage Taken"
+            kind = EventKind.DAMAGE_IN if target == self.player_name else EventKind.DAMAGE_OTHER
+            return CombatEvent(
+                timestamp=now, wall_time=wall, kind=kind, actor=actor, target=target, amount=amount,
+                absorbed=parse_amount(m.group(1)) if (m := _ABSORBED.search(text)) else 0,
+                action=action, critical="critical" in text.casefold(), raw_text=text, confidence=confidence,
+            )
         if match:
             prefix = _repair_damage_prefix(match.group("prefix").strip())
             absorbed = parse_amount(match.group("absorbed"))
@@ -326,10 +364,20 @@ class CombatTextParser:
         if text.casefold().startswith(("you ", "your ")):
             actor = self.player_name
         actor = self._normalize_healer_actor(actor)
+        # "Ebola's faith answers, healing them for 375 Health."
+        owner = re.match(r"^([A-Za-z][A-Za-z'-]*)'s\s+faith\b", text, re.IGNORECASE)
+        if owner:
+            actor = self._pretty_name(owner.group(1))
+        named = re.search(r"\b(?:heal\w*|restor\w*|mend\w*|regenerat\w*)\s+(?P<target>[A-Za-z][A-Za-z'-]*)\s+for\b",
+                          text, re.IGNORECASE)
         if re.search(r"\b(?:you|your)\s+pet\b", text, re.IGNORECASE):
             target = "Pet"
         elif re.search(r"\byou\b", text, re.IGNORECASE):
             target = self.player_name
+        elif named and named.group("target").casefold() in _REFLEXIVE:
+            target = actor
+        elif named and named.group("target").casefold() not in {"for", "the", "a", "an"}:
+            target = self._pretty_name(named.group("target"))
         else:
             target = "Unknown"
         return CombatEvent(
@@ -490,6 +538,6 @@ class CombatTextParser:
         if value.casefold() in {"you", "your"}:
             return self.player_name
         # OCR sometimes loses the start of a line; never credit an empty or article-only name.
-        if not re.search(r"[A-Za-z0-9]", value) or value.casefold() in {"a", "an", "the"}:
+        if not re.search(r"[A-Za-z0-9]", value) or value.casefold() in _JUNK_ACTORS:
             return "Unknown"
         return value

@@ -297,3 +297,14 @@ def test_frequent_spellings_and_protected_names_are_never_merged():
         tracker.add(_event("Raan", 5, EventKind.DAMAGE_OUT))
     tracker.add(_event("Raon", 5))
     assert {r.actor for r in tracker.actor_totals(now=10.5)} == {"Raan", "Raon"}
+
+
+def test_ocr_confusable_pairs():
+    from discord_overlay.encounter import ocr_confusable
+    assert ocr_confusable("bone construet", "bone construct")   # c/e
+    assert ocr_confusable("stickyiky", "stickyikky")           # doubled letter read once
+    assert ocr_confusable("zephnulo", "zephuulo")              # n/u
+    assert ocr_confusable("entrarils", "entrari's")            # apostrophe as l
+    assert not ocr_confusable("konaner", "lonaner")            # K/L is a different name
+    assert not ocr_confusable("rattelesnake", "rattlesnake")   # inserted letter, not a swap
+    assert not ocr_confusable("skeletal sentinel", "skeletal servant")
