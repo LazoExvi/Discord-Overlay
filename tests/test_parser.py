@@ -290,3 +290,18 @@ def test_apostrophe_misread_as_letter_still_credits_the_ability_owner():
     assert parse("Nils hits a rat for 10 points of damage.").actor == "Nils"
     assert parse("Xerxes Construct hits Raan for 10 points of damage.").actor == "Xerxes Construct"
     assert parse("Your Slice VI hits a rat for 10 points of damage.").actor == "Raan"
+
+
+def test_heal_lines_seen_in_real_logs():
+    # Ability names containing "Heal" must not steal the target.
+    event = parse("Arne's Sublime Heal heals you for 1365 Health.")
+    assert (event.actor, event.target, event.amount) == ("Arne", "Raan", 1365)
+    event = parse("Arne's Sublime Heal heals Entrari for 1365 Health.")
+    assert (event.actor, event.target, event.amount) == ("Arne", "Entrari", 1365)
+    # "heals them" is a self-heal on the caster.
+    event = parse("Entrari's Life Sap heals them for 38 Health.")
+    assert (event.actor, event.target, event.amount) == ("Entrari", "Entrari", 38)
+    # No digits means no amount: a flavour line is not a 1-point heal.
+    assert parse("Tiberous is renewed by ancestral healing") is None
+    assert parse_amount("l") == 0
+    assert parse_amount("I8O") == 180

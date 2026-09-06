@@ -43,7 +43,7 @@ _GENERIC_DAMAGE = re.compile(
 )
 _ABSORBED = re.compile(rf"\(({_NUMBER_CLASS})\s+absorbed\)", re.IGNORECASE)
 _HEAL = re.compile(
-    rf"^(?P<prefix>.+?)\s+heals?\s+(?P<target>you|[\w' -]+?)\s+for\s+"
+    rf"^(?P<prefix>.+)\s+heals?\s+(?P<target>you|[\w' -]+?)\s+for\s+"
     rf"(?P<amount>{_NUMBER_CLASS})(?:\s+Health)?[.!]?",
     re.IGNORECASE,
 )
@@ -88,6 +88,7 @@ _PET_TARGET = re.compile(
 _NAMED_PET_SPELL = re.compile(rf"^your\s+pet\s+(?P<name>{_NAME_PHRASE})'s\s+(?P<rest>.+)$", re.IGNORECASE)
 _UNNAMED_PET_SPELL = re.compile(r"^your\s+pet(?:'s|s')\s+(?P<rest>.+)$", re.IGNORECASE)
 _PET_ATTACK = re.compile(r"^your\s+pet\s+(?P<rest>.+)$", re.IGNORECASE)
+_REFLEXIVE = frozenset({"them", "themselves", "themself", "himself", "herself", "itself", "self"})
 _HEAL_FRAGMENT = re.compile(rf"(?:heal|heals|healed|healing)\s+(?P<name>{_NAME})", re.IGNORECASE)
 _DIGIT_FIXES = str.maketrans({"O": "0", "o": "0", "I": "1", "l": "1", "S": "5", "B": "8"})
 
@@ -96,7 +97,7 @@ MAX_AMOUNT = 10_000_000
 
 def parse_amount(value: str | None) -> int:
     """Read a number OCR may have mangled (``I8O`` -> 180, ``1,234`` -> 1234)."""
-    if not value:
+    if not value or not re.search(r"\d", value):
         return 0
     cleaned = value.translate(_DIGIT_FIXES).replace(",", "")
     return int(re.sub(r"\D", "", cleaned) or 0)
@@ -304,9 +305,11 @@ class CombatTextParser:
         if match:
             amount = parse_amount(match.group("amount"))
             actor = self._healer_from(match.group("prefix").strip())
+            target_text = match.group("target").strip()
+            target = actor if target_text.casefold() in _REFLEXIVE else self._pretty_name(target_text)
             if amount > 0:
                 return CombatEvent(
-                    now, wall, EventKind.HEAL, actor, self._pretty_name(match.group("target")),
+                    now, wall, EventKind.HEAL, actor, target,
                     amount, action="Heal", raw_text=text, confidence=confidence,
                     is_pet=self._is_known_pet(actor),
                 )
