@@ -331,6 +331,31 @@ def test_ocr_glue_and_mangled_absorbed_words_are_repaired():
     assert repair_ocr_spacing("Sirobae's Staggering Winds hits Whiplash for 9") == "Sirobae's Staggering Winds hits Whiplash for 9"
 
 
+def test_lines_clipped_at_the_region_edge_still_count():
+    cases = {
+        "Saranukes's Exceptional Fire Volley hits Bone Construct for 117 points of Fire":
+            ("Saranukes", "Exceptional Fire Volley", "Bone Construct", 117),
+        "Janantik punches a rotten sharpshooter with their offhand for 4 points of":
+            ("Janantik", "Punches (Offhand)", "rotten sharpshooter", 4),
+        "Saranukes's Exceptional Lightning Surge hits Bone Construct for 1455 points":
+            ("Saranukes", "Exceptional Lightning Surge", "Bone Construct", 1455),
+        "Longjonn bites Pustulax the Avatar of Plagues with their offhand for 89 points o damage. (Critical)":
+            ("Longjonn", "Bites (Offhand)", "Pustulax the Avatar of Plagues", 89),
+        "Advisor Sargolin hits YOU for 59 polnts of damage (7 absorbed). (Critical)":
+            ("Advisor Sargolin", "Hits", "Crit", 59),
+        "Adviser Sargolin hits YOU for 59 points ąf damage (7 absorbed). (Critical)":
+            ("Adviser Sargolin", "Hits", "Crit", 59),
+        "Walkback's SliceIhits Whiplash for 8 points of damage.": ("Walkback", "Slice I", "Whiplash", 8),
+        "Klog throws at a bone archer for 27 points of damage.": ("Klog", "Throws", "bone archer", 27),
+    }
+    for text, expected in cases.items():
+        event = parse(text, name="Crit")
+        assert event is not None, text
+        assert (event.actor, event.action, event.target, event.amount) == expected, text
+    assert parse("You gain 5 points of experience.") is None
+    assert parse("Klog hits a rat for 5 points") is None  # no "of": not a damage line
+
+
 def test_faith_answers_heal_credits_owner_and_self_target():
     event = parse("Ebola's faith answers, healing them for 375 Health.")
     assert (event.actor, event.target, event.amount) == ("Ebola", "Ebola", 375)

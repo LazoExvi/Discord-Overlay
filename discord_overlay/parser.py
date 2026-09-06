@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import re
 import time
+import unicodedata
 from collections.abc import Iterable
 from datetime import datetime
 from difflib import SequenceMatcher
@@ -23,6 +24,9 @@ COMBAT_VERBS: tuple[str, ...] = (
     "cleaves", "cleave", "slices", "slice", "chops", "chop", "mauls", "maul",
     "pummels", "pummel", "smites", "smite", "rends", "rend", "gouges", "gouge",
     "attacks", "attack", "shocks", "shock", "drains", "drain", "poisons", "poison",
+    "throws", "throw", "strikes", "strike", "stings", "sting", "whips", "whip", "lashes", "lash",
+    "gores", "gore", "stomps", "stomp", "tramples", "trample", "slams", "slam", "rakes", "rake",
+    "backstabs", "backstab", "impales", "impale", "scratches", "scratch",
 )
 _VERB_SET = frozenset(COMBAT_VERBS)
 _VERB_ALTERNATION = "|".join(COMBAT_VERBS)
@@ -30,9 +34,10 @@ _VERB_PATTERN = re.compile(rf"\b({_VERB_ALTERNATION})\b", re.IGNORECASE)
 _GLUED_VERBS = tuple(sorted(_VERB_SET | {"tries", "try"}, key=len, reverse=True))
 
 _NUMBER_CLASS = r"[\dOoIlSB,]+"
+_POINTS_OF = r"p[o0][il1]nts?\s+(?:[oa]f?\s+)?"
 _DAMAGE = re.compile(
-    rf"^(?P<prefix>.+?)\s+for\s+(?P<amount>{_NUMBER_CLASS})\s+points?\s+of\s+"
-    r"(?:(?P<school>[A-Za-z]+)\s+)?damage[.!]?"
+    rf"^(?P<prefix>.+?)\s+for\s+(?P<amount>{_NUMBER_CLASS})\s+{_POINTS_OF}"
+    r"(?:(?P<school>[A-Za-z]+)\s+)?(?:damage[.!]?|(?P<school_end>[A-Za-z]+)$|$)"
     rf"(?:\s*\((?P<absorbed>{_NUMBER_CLASS})\s+[a-z]{{6,9}}\))?",
     re.IGNORECASE,
 )
@@ -147,6 +152,7 @@ def repair_ocr_possessive(text: str) -> str:
 
 
 _GLUED_ARTICLE = re.compile(r"\b([A-Za-z]{4,})(an|a)(?=\s+[a-z])")
+_GLUED_RANK_VERB = re.compile(rf"\b([A-Za-z]{{3,}})(I{{1,3}}|IV|VI{{0,3}}|V|IX|X)({_VERB_ALTERNATION})(?=\s)")
 
 
 def _split_glued_article(match: re.Match) -> str:
@@ -164,6 +170,7 @@ def repair_ocr_spacing(text: str) -> str:
     """Restore spaces OCR drops in a few grammar-backed spots; nothing broader."""
     text = repair_ocr_possessive(text)
     text = re.sub(r"\bfor-(?=\d)", "for ", text)  # "for-407 points"
+    text = _GLUED_RANK_VERB.sub(lambda m: f"{m.group(1)} {m.group(2)} {m.group(3)}", text)
     text = _GLUED_ARTICLE.sub(_split_glued_article, text)
     # Klog'sFireball / James'Fireball
     text = re.sub(r"^([A-Za-z][A-Za-z'-]*?'s)([A-Za-z])", r"\1 \2", text)
@@ -223,7 +230,11 @@ def _pet_key(value: str) -> str:
 
 def normalize_quotes(text: str) -> str:
     """OCR renders apostrophes as backticks or acute accents; the grammar needs a plain one."""
-    return text.replace("`", "'").replace("´", "'").replace("’", "'").replace("‘", "'")
+    text = text.replace("`", "'").replace("´", "'").replace("’", "'").replace("‘", "'")
+    if not text.isascii():
+        # "ąf damage": strip diacritics the game never prints, keep anything else as-is.
+        text = "".join(c for c in unicodedata.normalize("NFKD", text) if not unicodedata.combining(c))
+    return text
 
 
 def _split_verb(text: str) -> tuple[str, str, str] | None:
@@ -236,6 +247,7 @@ def _split_verb(text: str) -> tuple[str, str, str] | None:
 
 
 def _strip_offhand(target: str, action: str) -> tuple[str, str]:
+    target = re.sub(r"^(?:at|on|into|upon)\s+", "", target, flags=re.IGNORECASE)
     offhand = _OFFHAND.search(target)
     if offhand:
         return target[:offhand.start()].strip(), f"{action} (Offhand)"
