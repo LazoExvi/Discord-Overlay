@@ -276,3 +276,17 @@ def test_misread_or_unknown_verbs_still_split_actor_from_target():
     assert (event.actor, event.action, event.target, event.kind) == ("Bone Construct", "Wallops", "Raan", EventKind.DAMAGE_IN)
     event = parse("a rat nibbles a zealot for 3 points of damage.")
     assert (event.actor, event.action, event.target, event.kind) == ("rat", "Nibbles", "zealot", EventKind.DAMAGE_OTHER)
+
+
+def test_apostrophe_misread_as_letter_still_credits_the_ability_owner():
+    for text in ("Entrarils Slice VI hits Bone Construct for 72 points of Bleed Damage.",
+                 "EntrariIs Stab VI hits Bone Construct for 374 points of damage.",
+                 "Entrari1s Backstab VI hits a skeletal servant for 490 points of damage. (Critical)",
+                 "Entraris Slice VI hits Bone Construct for 72 points of damage."):
+        event = parse(text)
+        assert event.actor == "Entrari", text
+        assert event.action.split()[0] in {"Slice", "Stab", "Backstab"}, text
+    # Names that merely end in s, or capitalized multi-word mobs, are left alone.
+    assert parse("Nils hits a rat for 10 points of damage.").actor == "Nils"
+    assert parse("Xerxes Construct hits Raan for 10 points of damage.").actor == "Xerxes Construct"
+    assert parse("Your Slice VI hits a rat for 10 points of damage.").actor == "Raan"

@@ -118,8 +118,27 @@ def closest_combat_verb(value: str) -> str | None:
     return best if ratio >= (0.72 if best[0] == folded[0] else 0.8) else None
 
 
+_RANK = r"(?:[IVX]{1,4}|Rk\.?\s*[IVX]{1,4}|\d{1,2})"
+_MISREAD_POSSESSIVE = re.compile(
+    rf"^(?P<name>[A-Z][A-Za-z-]{{2,}}?)(?P<suffix>[lI1]s|s)\s+"
+    rf"(?P<ability>[A-Z][A-Za-z-]+(?:\s+[A-Za-z-]+){{0,3}}?)(?P<rank>\s+{_RANK})?\s+(?:{_VERB_ALTERNATION})\b",
+)
+
+
+def repair_ocr_possessive(text: str) -> str:
+    """``Entrarils Slice VI hits`` -> ``Entrari's Slice VI hits`` (apostrophe read as l/I/1 or lost)."""
+    match = _MISREAD_POSSESSIVE.match(text)
+    if not match or match.group("name").casefold() in {"you", "your"}:
+        return text
+    # Without a rank numeral, a plain trailing "s" is more likely part of the name.
+    if match.group("suffix") == "s" and not match.group("rank"):
+        return text
+    return f"{match.group('name')}'s {text[match.end('suffix'):].lstrip()}"
+
+
 def repair_ocr_spacing(text: str) -> str:
     """Restore spaces OCR drops in a few grammar-backed spots; nothing broader."""
+    text = repair_ocr_possessive(text)
     # Klog'sFireball / James'Fireball
     text = re.sub(r"^([A-Za-z][A-Za-z'-]*?'s)([A-Za-z])", r"\1 \2", text)
     text = re.sub(r"^([A-Za-z][A-Za-z'-]*?s')(?!s\b)([A-Za-z])", r"\1 \2", text)
