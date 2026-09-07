@@ -46,10 +46,19 @@ class AccuracyReminder(ctk.CTkToplevel):
         body.grid(row=2, column=0, padx=28, sticky="nsew")
         body.grid_columnconfigure(1, weight=1)
         for index, tip in enumerate(tips):
+            important = tip.startswith("IMPORTANT:")
+            pady = (12 if index == 0 else 8, 8)
             ctk.CTkLabel(body, text=str(index + 1), text_color=theme.ACCENT, font=theme.font(18, bold=True), width=28).grid(
-                row=index, column=0, padx=(12, 8), pady=(12 if index == 0 else 8, 8), sticky="n")
-            ctk.CTkLabel(body, text=tip, text_color=theme.TEXT, font=theme.font(13), justify="left", anchor="w",
-                         wraplength=540).grid(row=index, column=1, padx=(0, 12), pady=(12 if index == 0 else 8, 8), sticky="ew")
+                row=index, column=0, padx=(12, 8), pady=pady, sticky="n")
+            if important:
+                # Boxed and bold: the rule people skip most often and pay for most.
+                box = ctk.CTkFrame(body, fg_color=theme.PANEL, corner_radius=8, border_width=1, border_color=theme.ACCENT)
+                box.grid(row=index, column=1, padx=(0, 12), pady=pady, sticky="ew")
+                ctk.CTkLabel(box, text=tip, text_color=theme.TEXT, font=theme.font(13, bold=True), justify="left",
+                             anchor="w", wraplength=510).pack(padx=12, pady=10, anchor="w")
+            else:
+                ctk.CTkLabel(body, text=tip, text_color=theme.TEXT, font=theme.font(13), justify="left", anchor="w",
+                             wraplength=540).grid(row=index, column=1, padx=(0, 12), pady=pady, sticky="ew")
         ctk.CTkLabel(self, text="These tips stay available under the OCR Tips tab.", text_color=theme.MUTED,
                      font=theme.font(12)).grid(row=3, column=0, padx=28, pady=(14, 4), sticky="w")
         ctk.CTkButton(self, text="Got it", command=self.destroy, width=140, **theme.ACCENT_BUTTON).grid(

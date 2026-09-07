@@ -61,7 +61,7 @@ class RegionSelector:
                            fill="white", font=("Segoe UI", 18, "bold"))
         help_item = canvas.create_text(
             monitor["width"] // 2, 76, fill="#c9d7e5", font=("Segoe UI", 12),
-            text=("Include complete text lines with a small margin - do not cut off letters  |  "
+            text=("Leave a 20-30 px margin on every side, especially left of the text - never cut into letters  |  "
                   "Click the gold box to reuse the last region  |  Right-click forgets it  |  Esc cancels"),
         )
         saved: list[Region] = []

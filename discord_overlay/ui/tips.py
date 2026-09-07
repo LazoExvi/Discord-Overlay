@@ -6,6 +6,13 @@ ACCURACY_TIP_ITEMS = (
     "Make the combat window wide enough that every message, even the longest, stays on one line. "
     "A message that wraps onto a second line is read as two fragments and its damage can be lost.",
 
+    "IMPORTANT: leave a clear margin on every side when you draw the capture region, especially on the "
+    "left. Start the box about a finger's width (20 to 30 pixels) left of where the text begins, and keep "
+    "a similar gap above the top line, below the bottom line, and past the end of the longest line. If the "
+    "left edge sits right on the text, a one-pixel shift of the game window or a frame caught mid-redraw "
+    "cuts off the first letter of every name, so \"Stuffy\" is read as \"uffy\". Never cut through the "
+    "top, bottom, or sides of letters; include the complete height and width of every line.",
+
     "Use a black, fully opaque combat-window background. Transparency lets the game world bleed "
     "through the letters.",
 
@@ -21,9 +28,6 @@ ACCURACY_TIP_ITEMS = (
     "monitoring. Anything drawn over the chat replaces the letters underneath. Discord Overlay repairs "
     "words the cursor hides using recently seen lines, marked with ~ in the Log, but it never guesses "
     "hidden numbers.",
-
-    "Leave a small margin around the combat text when you draw the capture region. Do not cut through "
-    "the top, bottom, or sides of letters; include the complete height and width of every line.",
 
     "Arrange timer overlays outside every OCR capture region. Click-through stops them from "
     "intercepting input, but visible overlay pixels still cover combat text if the windows overlap.",
