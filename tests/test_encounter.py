@@ -299,6 +299,19 @@ def test_frequent_spellings_and_protected_names_are_never_merged():
     assert {r.actor for r in tracker.actor_totals(now=10.5)} == {"Raan", "Raon"}
 
 
+def test_name_missing_its_first_letters_merges_and_keeps_the_players_row():
+    tracker = EncounterTracker(player_name="Crit")
+    for _ in range(20):
+        tracker.add(_event("Crit", 10, EventKind.DAMAGE_OUT))
+        tracker.add(_event("Stuffy", 10))
+    tracker.add(_event("rit", 10))            # "Crit" with the C cut off by the region edge
+    tracker.add(_heal("rit", 65, target="Crit"))
+    tracker.add(_event("uffy", 10))           # "Stuffy" minus two letters
+    tracker.add(_event("Ryan", 10))           # a different name stays separate
+    rows = {r.actor: (r.actor_type, r.damage, r.healing) for r in tracker.actor_totals(now=10.5)}
+    assert rows == {"Crit": ("PLAYER", 210, 65), "Stuffy": ("OTHER", 210, 0), "Ryan": ("OTHER", 10, 0)}
+
+
 def test_ocr_confusable_pairs():
     from discord_overlay.encounter import ocr_confusable
     assert ocr_confusable("bone construet", "bone construct")   # c/e

@@ -356,6 +356,13 @@ def test_lines_clipped_at_the_region_edge_still_count():
     assert parse("Klog hits a rat for 5 points") is None  # no "of": not a damage line
 
 
+def test_bow_suffix_and_clipped_critical_lines():
+    event = parse("Firstedition pierces Lord Ga'Duuz with their bow for 34 points of damage.", name="Crit")
+    assert (event.actor, event.target, event.action, event.amount) == ("Firstedition", "Lord Ga'Duuz", "Pierces (Bow)", 34)
+    event = parse("Remco's Exceptional Fire Volley hits Lord Ga'Duuz for 166 points of Fire (Critical)", name="Crit")
+    assert (event.actor, event.target, event.amount, event.critical) == ("Remco", "Lord Ga'Duuz", 166, True)
+
+
 def test_another_creatures_pet_is_one_actor():
     event = parse("a Plagueborn runescribe's pet hits Player for 2 points of damage.", name="Crit")
     assert (event.kind, event.actor, event.target, event.action) == (

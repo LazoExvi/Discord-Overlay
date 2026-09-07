@@ -68,12 +68,18 @@ def ocr_confusable(a: str, b: str, max_edits: int = MAX_CONFUSIONS) -> bool:
         left, right = a[i1:i2], b[j1:j2]
         if (left, right) in _CONFUSABLE:
             continue
-        # A doubled letter read as one: the inserted/deleted char repeats its neighbour.
-        longer, at, gap = (a, i1, left) if len(left) == 1 and not right else (b, j1, right)
-        if len(gap) == 1 and (longer[at - 1:at] == gap or longer[at + 1:at + 2] == gap):
-            continue
+        # A doubled letter read as one: an inserted/deleted char that repeats its neighbour.
+        if not left or not right:
+            longer, at, gap = (a, i1, left) if left else (b, j1, right)
+            if len(gap) == 1 and (longer[at - 1:at] == gap or longer[at + 1:at + 2] == gap):
+                continue
         return False
     return edits > 0
+
+
+def clipped_head(name: str, known: str) -> bool:
+    """``uffy`` -> ``stuffy``: the capture edge or cursor cut off the first letter or two."""
+    return (len(name) >= 3 and 1 <= len(known) - len(name) <= 2 and known.endswith(name))
 
 
 def merge_similar_names(names, protected=(), minority_share: float = 0.25) -> dict[str, str]:
@@ -94,12 +100,20 @@ def merge_similar_names(names, protected=(), minority_share: float = 0.25) -> di
             for existing, existing_count in accepted:
                 if existing in protected_keys and count > 2:
                     continue
-                if count <= max(2, existing_count * minority_share) and ocr_confusable(name, existing):
+                if count <= max(2, existing_count * minority_share) and (
+                        ocr_confusable(name, existing) or clipped_head(name, existing)):
                     chosen = existing
                     break
         if chosen == name:
             accepted.append((name, count))
         canonical[name] = chosen
+    # The player's own name is always a merge target, even when rarely seen by that spelling.
+    for name in list(canonical):
+        if canonical[name] == name and name not in protected_keys:
+            for key in protected_keys:
+                if clipped_head(name, key) or ocr_confusable(name, key):
+                    canonical[name] = key
+                    break
     return canonical
 
 
@@ -360,7 +374,7 @@ class EncounterTracker:
         folded = actor.casefold().strip()
         if names:
             folded = names.get(folded, folded)
-        actor_type = self.credited_actor_type(event, actor)
+        actor_type = self.credited_actor_type(event, folded)
         bucket = NPC_BUCKET if actor_type in {"ENEMY", "OTHER"} else actor_type
         return (folded, bucket), actor
 

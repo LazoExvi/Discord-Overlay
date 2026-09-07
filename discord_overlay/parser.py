@@ -37,7 +37,7 @@ _NUMBER_CLASS = r"[\dOoIlSB,]+"
 _POINTS_OF = r"p[o0][il1]nts?\s+(?:[oa]f?\s+)?"
 _DAMAGE = re.compile(
     rf"^(?P<prefix>.+?)\s+for\s+(?P<amount>{_NUMBER_CLASS})\s+{_POINTS_OF}"
-    r"(?:(?P<school>[A-Za-z]+)\s+)?(?:damage[.!]?|(?P<school_end>[A-Za-z]+)$|$)"
+    r"(?:(?P<school>[A-Za-z]+)\s+)?(?:damage[.!]?|(?P<school_end>[A-Za-z]+)(?=\s*(?:\(|$))|$)"
     rf"(?:\s*\((?P<absorbed>{_NUMBER_CLASS})\s+[a-z]{{6,9}}\))?",
     re.IGNORECASE,
 )
@@ -67,7 +67,7 @@ _MISS = re.compile(
     r"^(?P<actor>You|Your|.+?)\s+(?:try|tries)\s+to\s+.+?\s+(?P<target>.+?),?\s+but\s+miss",
     re.IGNORECASE,
 )
-_OFFHAND = re.compile(r"\s+with\s+(?:your|their|its|his|her)\s+offhand\b", re.IGNORECASE)
+_OFFHAND = re.compile(r"\s+with\s+(?:your|their|its|his|her)\s+(?P<weapon>offhand|bow|crossbow|sling)\b", re.IGNORECASE)
 # Environmental damage is not combat and must not start or extend an encounter.
 _ENVIRONMENT = re.compile(
     r"\b(?:from|by|due\s+to)\s+(?:falling|a\s+fall|drowning|starvation|hunger|thirst|suffocation)\b"
@@ -250,7 +250,7 @@ def _strip_offhand(target: str, action: str) -> tuple[str, str]:
     target = re.sub(r"^(?:at|on|into|upon)\s+", "", target, flags=re.IGNORECASE)
     offhand = _OFFHAND.search(target)
     if offhand:
-        return target[:offhand.start()].strip(), f"{action} (Offhand)"
+        return target[:offhand.start()].strip(), f"{action} ({offhand.group('weapon').title()})"
     return target, action
 
 
