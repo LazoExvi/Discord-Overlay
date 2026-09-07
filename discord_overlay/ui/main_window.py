@@ -494,7 +494,7 @@ class App(ctk.CTk):
     def _clear_region_history(self) -> None:
         self.settings.region_history.clear()
         self.settings.save()
-        self.set_status("Saved region history cleared", theme.MUTED)
+        self.set_status("Last region forgotten", theme.MUTED)
 
     def _region_selected(self, region: Region) -> None:
         self.settings.region = region

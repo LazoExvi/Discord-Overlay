@@ -39,7 +39,7 @@ def test_full_round_trip(app_data):
                                  growth_direction="columns")],
         speech_voice="Test Voice", speech_rate=2, speech_volume=75, speech_queue_mode="interrupt",
         active_trigger_profile="Raid", region=Region(100, 120, 800, 260),
-        region_history=[Region(10, 20, 640, 180), Region(100, 120, 800, 260)],
+        region_history=[Region(100, 120, 800, 260)],
         events_column_order=["type", "time"],
         triggers=[Trigger(
             name="Raid warning", folder="Bosses", profile="Raid", logic="any",
@@ -70,7 +70,7 @@ def test_full_round_trip(app_data):
         "Test Voice", 2, 75, "interrupt")
     assert loaded.active_trigger_profile == "Raid"
     assert loaded.region == Region(100, 120, 800, 260)
-    assert loaded.region_history == [Region(10, 20, 640, 180), Region(100, 120, 800, 260)]
+    assert loaded.region_history == [Region(100, 120, 800, 260)]
     assert loaded.events_column_order == ["type", "time"]
     trigger = loaded.triggers[0]
     assert (trigger.name, trigger.folder, trigger.profile, trigger.logic) == ("Raid warning", "Bosses", "Raid", "any")
@@ -80,16 +80,14 @@ def test_full_round_trip(app_data):
     assert (trigger.ending_sound, trigger.expiration_sound, trigger.end_mode) == ("builtin:Chime", "builtin:Pulse", "regex")
 
 
-def test_recent_regions_are_deduplicated_and_bounded():
+def test_only_the_last_selected_region_is_remembered():
     settings = Settings()
     regions = [Region(index * 10, index * 10, 640, 180) for index in range(10)]
     for region in regions:
         settings.remember_region(region)
     settings.remember_region(regions[5])
     settings.remember_region(Region(0, 0, 10, 10))  # too small, ignored
-    assert len(settings.region_history) == 8
-    assert settings.region_history[0] == regions[5]
-    assert settings.region_history.count(regions[5]) == 1
+    assert settings.region_history == [regions[5]]
 
 
 def test_invalid_values_are_sanitized(app_data):

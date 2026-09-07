@@ -15,7 +15,7 @@ TOO_SMALL = "#ff8b99"
 class RegionSelector:
     """Darkens every display; left-drag selects, click a gold rectangle reuses it.
 
-    Esc cancels; right-click clears the remembered rectangles. The selection is
+    Esc cancels; right-click forgets the remembered rectangle. The selection is
     reported in the physical desktop coordinates used by ``ScreenCapture``.
     """
 
@@ -62,7 +62,7 @@ class RegionSelector:
         help_item = canvas.create_text(
             monitor["width"] // 2, 76, fill="#c9d7e5", font=("Segoe UI", 12),
             text=("Include complete text lines with a small margin - do not cut off letters  |  "
-                  "Click gold to reuse  |  Right-click clears saved regions  |  Esc cancels"),
+                  "Click the gold box to reuse the last region  |  Right-click forgets it  |  Esc cancels"),
         )
         saved: list[Region] = []
         for index, region in enumerate(self.remembered, start=1):
@@ -96,7 +96,7 @@ class RegionSelector:
             state["saved"].clear()
             state["canvas"].delete("saved")
             state["canvas"].itemconfigure(
-                state["help"], text="Saved regions cleared - drag a new box with a small margin  |  Esc cancels")
+                state["help"], text="Last region forgotten - drag a new box with a small margin  |  Esc cancels")
         return "break"
 
     def _press(self, event, state: dict) -> None:

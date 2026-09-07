@@ -42,8 +42,8 @@ If you would rather run the Python code, or want NVIDIA CUDA acceleration:
 
 Selecting a region darkens every monitor. Left-drag around the scrolling combat
 text, leaving a small margin and never cutting through letters. Release to save,
-press Esc or right-click to cancel. The eight most recent regions appear as dashed
-gold rectangles; click one to reuse it. Right-click clears them.
+press Esc or right-click to cancel. The last region you selected appears as a dashed
+gold rectangle; click it to reuse it. Right-click forgets it.
 
 Settings live in `%LOCALAPPDATA%\DiscordOverlay` and survive updates and uninstalls.
 

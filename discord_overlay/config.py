@@ -22,7 +22,7 @@ from .triggers import OVERLAY_LAYOUTS, OVERLAY_SIZES, Trigger
 SCHEMA_VERSION = 1
 PLACEHOLDER_CHARACTER = "Default"
 PLACEHOLDER_PLAYER = "You"
-REGION_HISTORY_SIZE = 8
+REGION_HISTORY_SIZE = 1  # only the last selected region is offered for reuse
 BOARD_SORT_ORDERS = ("started", "remaining", "name")
 BOARD_GROWTH = ("rows", "columns")
 MODIFIERS = ("control", "shift", "alt")
@@ -194,7 +194,7 @@ class Settings:
         for name in cls.__dataclass_fields__:
             setattr(settings, name, scalars[name] if name in scalars else _field_default(name))
         settings.region = Region.from_dict(region_data)
-        settings.region_history = [r for r in (Region.from_dict(i) for i in history_data) if r]
+        settings.region_history = [r for r in (Region.from_dict(i) for i in history_data) if r][:REGION_HISTORY_SIZE]
         settings.triggers = [Trigger.from_dict(i) for i in trigger_data if isinstance(i, dict)]
         settings.timer_boards = [TimerBoard.from_dict(i) for i in board_data if isinstance(i, dict)]
         settings.characters = [CharacterProfile.from_dict(i) for i in character_data if isinstance(i, dict)]
@@ -262,7 +262,7 @@ class Settings:
     # -- regions ------------------------------------------------------------
 
     def remember_region(self, region: Region) -> None:
-        """Move a valid region to the front of the bounded recent-region list."""
+        """Remember the last valid region so the selector can offer it for reuse."""
         if not region.valid():
             return
         self.region_history = [item for item in self.region_history if item != region]
@@ -345,7 +345,7 @@ class Settings:
         self.region_history = [
             item if isinstance(item, Region) else Region.from_dict(item) for item in self.region_history
         ]
-        self.region_history = [item for item in self.region_history if item]
+        self.region_history = [item for item in self.region_history if item][:REGION_HISTORY_SIZE]
         self.timer_boards = [
             item if isinstance(item, TimerBoard) else TimerBoard.from_dict(item)
             for item in self.timer_boards if isinstance(item, (dict, TimerBoard))
