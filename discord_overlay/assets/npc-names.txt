@@ -1,0 +1,1721 @@
+# NPC names from the Monsters & Memories community wiki (Category:NPCs) and mnmdrops.com.
+# Regenerate with: python scripts/build_npc_names.py
+# One name per line; a leading article is kept as written but ignored when matching.
+
+A ancient basilisk
+A Ba'Haara guard
+A Ba'Haara helmsman
+A Ba'Haara navigator
+A bag merchant
+A baker
+A bandit
+A barkeep
+A barrow knight
+A bear cub
+A beastmaster instructor
+A begrudging farmer
+A beguiled alpha wolf
+A beguiled bluecap
+A beguiled river elemental
+A beguiled water elemental
+A beguiled wolf
+A bejeweled skeleton
+A Benu Dhai brother
+A Benu Dhai elder
+A Benu Dhai priest
+A Benu Dhai sister
+A bight asp
+A black bat
+A black bear
+A black rat
+A black serpent
+A black widow
+A black widow hatchling
+A black wolf
+A black wolf alpha
+A black wolf pup
+A blacksmith
+A Blacktide acolyte
+A Blacktide bowman
+A Blacktide brute
+A Blacktide chef
+A Blacktide cleric
+A Blacktide guard
+A Blacktide mariner
+A Blacktide raider
+A Blacktide seer
+A Blacktide slaver
+A Blacktide tracker
+A Blacktide warmage
+A blighted warden
+A Blightmaw drake
+A blinking evil eye
+A blister beetle
+A blistered ambusher
+A bloated plague rat
+A blood scribe
+A bloodbound brawler
+A bloodbound cleric
+A bloodbound conscript
+A bloodbound defender
+A bloodbound priest
+A Bloodchain champion
+A Bloodchain guard
+A Bloodchain mender
+A Bloodchain mindbreaker
+A Bloodchain overseer
+A Bloodchain sentry
+A Bloodchain soulherder
+A Bloodchain taskmaster
+A Bloodynose captain
+A Bloodynose frightener
+A Bloodynose fumer
+A Bloodynose hag
+A Bloodynose healer
+A Bloodynose muralist
+A Bloodynose quarreler
+A Bloodynose scarer
+A Bloodynose schemer
+A Bloodynose sergeant
+A Bloodynose spooker
+A Bloodynose stabber
+A Bloodynose trainer
+A Bloodynose voodooist
+A Bloodynose witch doctor
+A blooming thrall
+A bodyguard
+A bone carver
+A bone fiend
+A boulder viper
+A bowyer
+A brackish basilisk
+A brawler
+A breathless elf
+A brewer
+A brittle elven theurgist
+A brittle surgeon
+A broken acolyte
+A brown rat
+A brown wolf
+A bulky bandit
+A burly henchman
+A burned skeleton
+A burning skeleton
+A burnt acolyte
+A cackling skeleton
+A caiman
+A Calafreyan captain
+A Calafreyan soldier
+A callous gravedigger
+A canyon stalker
+A castaway pirate
+A catacombs rat
+A caustic ooze
+A cave bear
+A cave creeper
+A cemetary rat
+A cemetery rat
+A chain armorer
+A charred acolyte
+A charred assistant
+A charred grovekeeper
+A charred peasant
+A charred ranger
+A charred tracker
+A chasm drake
+A cinder carrier
+A cinder drone
+A cinder harvester
+A cinder herald
+A cinder scout
+A cinder sentinel
+A cinder worker
+A Claw aide
+A Claw blackguard
+A Claw enforcer
+A Claw henchman
+A Claw rhetor
+A Claw shafi
+A Claw steward
+A Claw vilicus
+A cleric scribe
+A cloth armorer
+A cobbler
+A cobweave spider
+A cobweaver avicularia
+A cobweaver hatchling
+A cobweaver spider
+A congealed scavenger
+A conscript liaison
+A conscript overseer
+A consumed one
+A contagious bleeder
+A contrabandier
+A cook
+A cooking apprentice
+A coolwater basilisk
+A corrupt clergyman
+A corrupt priest
+A corrupted adept
+A corrupted ashira
+A corrupted creeper
+A corrupted enchantress
+A corrupted hill giant
+A corrupted monk
+A corrupted outrider
+A corrupted priestess
+A corrupted warrior
+A Cossa pirate
+A cracked beetle
+A cranky pirate
+A craven cultist
+A crocodile
+A crocodile hatchling
+A crowned skeleton
+A crumbling elven curate
+A crushed blacksmith
+A crypt broodmistress
+A crypt broodmother
+A crypt creeper
+A crypt guardian
+A crypt scarab
+A crypt spiderling
+A crystal dervish
+A crystallized drake
+A crystallized fakir
+A crystallized giant
+A crystallized researcher
+A crystallized skeleton
+A crystallized stormcaller
+A crystallized suncaller
+A crystallized theologian
+A cult initiate
+A cultist
+A cultist acolyte
+A cultist adept
+A cultist guard
+A cultist lookout
+A cunning privateer
+A cursed plague rat
+A dawn pixie
+A deadwood matriarch
+A deadwood recluse
+A death's head scavenger
+A decaying drunk
+A decaying reservist
+A deceptive trickster
+A deckhand
+A decrepit ghoul
+A decrepit skeleton
+A defiled asp
+A deformed skeleton
+A degenerating Mur'Hua
+A delirious cultist
+A den matriarch
+A desert bat
+A desert creeper
+A destitute chaplain
+A devoted cultist
+A devotee
+A devotee of Hapna
+A diminished ghost
+A dire wolf
+A dire wolf patroller
+A discarded
+A discarded corpse
+A diseased bat
+A diseased beetle
+A diseased desert bat
+A diseased jackal
+A diseased mystic
+A diseased rat
+A diseased snake
+A disgraced friar
+A disgruntled farmer
+A docile bluecap
+A docile redcap
+A dock registrar
+A dockhand
+A dour cleric
+A dread knight
+A dreary wanderer
+A drowned elf
+A drowned knight
+A druid scribe
+A druidic cultist
+A drunken cleric
+A drunken dockworker
+A dryad fawn
+A dryad prankster
+A dune scarab
+A dunes madman
+A dunes scarab
+A dust drake
+A dust drake scout
+A dust drake sentinel
+A Dustrend cultor
+A Dustrend deshpar
+A Dustrend foot soldier
+A Dustrend kennel master
+A Dustrend legionary
+A Dustrend patroller
+A Dustrend priest
+A Dustrend sacramir
+A Dustrend serverat
+A Dustrend venator
+A dusty dire jackal
+A dusty scarab
+A dusty skeleton
+A dusty tracker
+A dutiful sommelier
+A ebon acolyte
+A emerald grass viper
+A faded concierge
+A fae guardian
+A fae spellweaver
+A fae wanderer
+A failed adventurer
+A fallen arcanist
+A fallen astromage
+A fallen footman
+A fallen freeman
+A fallen magus
+A fallen sentinel
+A fallen sergeant
+A fallen warden
+A famished ghoul
+A famished zombie
+A farmhand
+A fat cave bear
+A favored aspirant
+A favored attendant
+A favored pugilist
+A favored templar
+A favored vanguard
+A feeble ratmancer
+A feisty fishwife
+A Fellstone corrupter
+A Fellstone defiler
+A Fellstone guard
+A Fellstone necromancer
+A Fellstone ragecaller
+A Fellstone ritualist
+A Fellstone scout
+A Fellstone sentinel
+A Fellstone sentry
+A Fellstone shaman
+A Fellstone tracker
+A Fellstone warrior
+A festering ghoul
+A festering skirmisher
+A filthy acolyte
+A filthy henchman
+A fire beetle
+A fire giant refugee
+A fire giant survivor
+A fire giant wanderer
+A fisherman
+A fisherwoman
+A fishmonger
+A fishwife
+A flamekeeper
+A fledgling seer
+A fleshless fighter
+A fleshless seer
+A fletcher
+A flourishing treant
+A focused evil eye
+A forest drake
+A forest drakeling
+A forest stalker
+A forest whelp
+A forgotten shadow
+A forlorn dreamer
+A frenzied crypt guardian
+A frenzied Plagueborn
+A frenzied ratman
+A frostbloom dryad
+A fungal disperser
+A fungal druid
+A fungal thrall
+A gambling foreigner
+A gargantuan ghoul
+A gaunt bowman
+A ghastly cook
+A ghastly peasant
+A ghost
+A ghostly cleric
+A ghostly fighter
+A ghostly figure
+A ghoul
+A ghoulish custodian
+A ghoulish scholar
+A giant dunes scarab
+A giant dust scarab
+A giant fire beetle
+A giant sand tick
+A giant spider
+A giant tomb burrower
+A giant wolf
+A gloom widow matron
+A glowing wisp
+A gnomish architect
+A gnomish engineer
+A gnomish surveyor
+A goblin bandit
+A goblin bonecollector
+A goblin claim jumper
+A goblin drunk
+A goblin gambler
+A goblin miner
+A goblin overseer
+A goblin shore reaver
+A goblin sneak
+A goblin spellshooter
+A goblin spiritbinder
+A goblin spiritcaller
+A goblin squatter
+A goblin tiderunner
+A goblin troublemaker
+A golbin shore reaver
+A gold devourer
+A goods merchant
+A goon
+A grain beetle
+A grain seller
+A grave magus
+A grave mummy
+A grave robber
+A great bight shark
+A greedy halfling
+A green drake
+A green drakeling
+A grim farmhand
+A Grimtide abyssmaid
+A Grimtide bloodsinger
+A Grimtide deepseeress
+A Grimtide echohexer
+A Grimtide fangbearer
+A Grimtide kelpweaver
+A Grimtide moondrowner
+A Grimtide reefshaper
+A Grimtide shellcaller
+A Grimtide tidewatcher
+A Grimtide zealot
+A grizzled aspirant
+A grizzled raider
+A grizzled smuggler
+A grocer
+A gruff farmhand
+A hammerhead shark
+A hardened scarab
+A haunted merchant
+A haunted messenger
+A haunted traveler
+A headless vacationer
+A heartless hunter
+A hearty laborer
+A henchman
+A herald
+A heretical zealot
+A hierophant
+A highwayman prospect
+A hill giant bandit
+A hired scout
+A hired spellslinger
+A hired thug
+A hired tracker
+A hooded figure
+A hulking maulrat
+A hungering escapee
+A jackal
+A jackal howler
+A jackal pup
+A jailer's assistant
+A jewelcrafter
+A keening spectre
+A keep groundskeeper
+A knight watchman
+A Landing deckhand
+A Landing enforcer
+A Landing guard
+A landing lieutenant
+A Landing privateer
+A Landing watcher
+A large black bat
+A large crypt creeper
+A large desert bat
+A large diseased rat
+A large dunes bat
+A large rat
+A large sewer rat
+A large shadow
+A laughing gobling
+A lawbreaker
+A lazy farmer
+A leatherworker
+A lighterman
+A lingering ghost
+A lingering spirit
+A lost drake
+A loyal champion
+A loyal pledge
+A loyal protector
+A lumberjack
+A mad prophet
+A majestic skeleton
+A malaise elemental
+A mangy backbiter
+A market peddler
+A marshaled corpse
+A master blacksmith
+A medic
+A mercenary
+A mercenary magus
+A merchant traveler
+A merciless marauder
+A Mezzatrain scion
+A Mezzatrian broodling
+A miner
+A mischievous faerie
+A mouldering knight
+A mugger
+A Muggrah bonecollector
+A Muggrah bonekeeper
+A Muggrah bonestealer
+A Muggrah brawler
+A Muggrah frightener
+A Muggrah mindstealer
+A Muggrah naturer
+A Muggrah naturest
+A Muggrah raider
+A Muggrah robber
+A Muggrah scavenger
+A Muggrah scrapper
+A Muggrah shaman
+A Muggrah spiritcaller
+A Muggrah spiritseer
+A Muggrah spiritualist
+A Muggrah stabber
+A Muggrah trickster
+A Mur'Hua escapee
+A Mur'Hua harvester
+A Mur'Hua rebel
+A Mur'Hua scavenger
+A Mur'Hua shaman
+A Mur'Hua slave
+A Mur'Hua tracker
+A mutated thrall
+A myconid price
+A myconid prince
+A mycothane
+A mystic gobling
+A naiad enchantress
+A naiad trickster
+A necromancer
+A nefarious cultist
+A net weaver
+A noble skeleton
+A notch-eared shaftsman
+A notched-eared shaftsman
+A novice hemomancer
+A noxious slime
+A paladin instructor
+A pale agent
+A pale assistant
+A pale captor
+A Pale Cook
+A Pale Forman
+A pale guard
+A pale jailer
+A pale lieutenant
+A Pale Provisioner
+A pale seeker
+A pale senior
+A pale wisp
+A pale worker
+A palm creeper
+A palm hunter
+A palm weaver
+A pelt trader
+A pest summoner
+A plague golem
+A plague-sworn squire
+A Plagueborn acolyte
+A Plagueborn arcanist
+A Plagueborn archer
+A Plagueborn blightcaller
+A Plagueborn blightwarden
+A Plagueborn butler
+A Plagueborn chaplain
+A Plagueborn citizen
+A Plagueborn cleric
+A Plagueborn constable
+A Plagueborn corpse
+A Plagueborn defiler
+A Plagueborn drake
+A Plagueborn druid
+A Plagueborn elder drake
+A Plagueborn evoker
+A Plagueborn faithful
+A Plagueborn grovekeeper
+A Plagueborn hag
+A Plagueborn heiress
+A Plagueborn housewarden
+A Plagueborn knight
+A Plagueborn leywalker
+A Plagueborn maid
+A Plagueborn maiden
+A Plagueborn myrmidon
+A Plagueborn mystic
+A Plagueborn noble
+A Plagueborn nobleman
+A Plagueborn noblewoman
+A Plagueborn oracle
+A Plagueborn patrolman
+A Plagueborn priest
+A Plagueborn runescribe
+A Plagueborn scholar
+A Plagueborn sentinel
+A Plagueborn servant
+A Plagueborn Skri'Var
+A Plagueborn stablehand
+A Plagueborn templar
+A Plagueborn veteran
+A Plagueborn warrior
+A Plagueborn watchman
+A Plagueborn worshipper
+A plaguesworn knight
+A plate armorer
+A poacher
+A poacher bruiser
+A poacher herbalist
+A poacher pathfinder
+A poison maker
+A predatory spider
+A priest of Porbor
+A priest of The Matswar
+A priest of Tilustra
+A priestess of Kravvin
+A pristine beetle
+A produce vendor
+A profane spiritist
+A property merchant
+A prowling wolf
+A pustuled acolyte
+A pustuled gravechanger
+A pustuled gravechanter
+A putrid ghoul
+A putrid puddle
+A Pyrmos mercenary
+A rabid plaguereaver
+A rabid wolf
+A raging elemental
+A raised disciple
+A rambunctious redcap
+A rampaging wererat
+A ransacker
+A rat-chewed cleric
+A ratman ritualist
+A ratman rogue
+A rattlesnake
+A ravenous ghoul
+A reagent vendor
+A reanimated elven archer
+A Red Mantle escort
+A Red Mantle guard
+A Red Mantle inquisitor
+A Red Mantle recruit
+A Red Mantle sergeant
+A researcher
+A restless adept
+A restless ghoul
+A restless skeleton
+A rider
+A risen cleric
+A risen commander
+A risen deacon
+A risen guard
+A risen officer
+A risen peasant
+A risen reveler
+A risen servant
+A risen skeleton
+A risen thaumaturgist
+A risen zombie
+A river pirate
+A river pirate captain
+A road captain
+A road deacon
+A roaming shark
+A Robed Figure
+A robed mourner
+A root-entangled cube
+A rotten sharpshooter
+A rotting beguiler
+A rotting blightblade
+A rotting deacon
+A rotting skeleton
+A rough poacher
+A roving ghoul
+A rowdy redcap
+A sacrificial remnant
+A salt elemental
+A salt gatherer
+A sanctum elemental
+A sanctum shark
+A sand giant bandit
+A sand giant brigand
+A sand giant fakir
+A sand giant fisher
+A sand giant geomancer
+A sand giant raider
+A sand giant scout
+A sand giant suncaller
+A sand strider
+A sand trapper
+A Sangrel arcanist
+A Sangrel entangler
+A Sangrel grappler
+A Sangrel hunter
+A Sangrel shadowblade
+A Sangrel striker
+A sanguine bat
+A scabbed dreadrat
+A scarred zealot
+A scorched medic
+A scoundrel
+A scrap dealer
+A scribe of Tilustra
+A scrupulous constable
+A scullery maiden
+A sea goblin
+A sea witch
+A seasoned marauder
+A seasoned spellslinger
+A seaweary spiritist
+A sellsword
+A senior researcher
+A shadow
+A shadow knight recruit
+A shadow wolf
+A shadowed scribe
+A shady farmer
+A shady peddler
+A shady poacher
+A shady trader
+A shaman scribe
+A shard bat
+A shattered crusader
+A shattered soldier
+A shifty elf
+A shifty gnome
+A shimmering shadow
+A shrewd shanker
+A shrewd spellsayer
+A sickened ashira
+A sickly Mur'Hua
+A silent bandit
+A silent protector
+A silky venomfang
+A silver devourer
+A sinewy archer
+A skeletal acolyte
+A skeletal adept
+A skeletal archer
+A skeletal captive
+A skeletal cavalier
+A skeletal champion
+A skeletal cleric
+A skeletal deacon
+A skeletal defender
+A skeletal farmer
+A skeletal fighter
+A skeletal footman
+A skeletal giant
+A skeletal guard
+A skeletal inquisitor
+A skeletal knight
+A skeletal marksman
+A skeletal monk
+A skeletal paladin
+A skeletal porter
+A skeletal priest
+A skeletal quartermaster
+A skeletal ranger
+A skeletal researcher
+A skeletal reveler
+A skeletal runner
+A skeletal sergeant
+A skeletal slave
+A skeletal soldier
+A skeletal vicar
+A skeletal warrior
+A skeletal worker
+A skeleton
+A Skintaker bravo
+A skintaker pet
+A Skintaker ritualist
+A Skintaker sneak
+A Skri'Var ambusher
+A Skri'Var fiend
+A Skri'Var guard
+A Skri'Var hoarder
+A Skri'Var mystic
+A Skri'Var raider
+A Skri'Var scrambler
+A Skri'Var slave hunter
+A Skri'Var snarer
+A Skri'Var sniffer
+A Skri'Var swarmer
+A Skri'Var taskmaster
+A Skri'Var tracker
+A Skri'Var watchman
+A slime covered bat
+A slime covered scarab
+A slime covered skeleton
+A slime covered snake
+A slithering serpent
+A sly farmhand
+A small cellar rat
+A small river elemental
+A smarmy hunter
+A smelter
+A smouldering servant
+A smuggler
+A smuggler laborer
+A smuggler lookout
+A snake
+A snarling wolf
+A sneaky rat
+A snowhide bear
+A soiled mucker
+A Sojourner guard
+A Sojourner lookout
+A Sojourner venomwalker
+A solemn priest
+A solemn saddler
+A soul echo
+A spectre
+A spice merchant
+A spicemonger
+A spiderling
+A spinner
+A spirit
+A spiteful sporeling
+A spoiled sporeling
+A sporebound thrall
+A spymaster
+A squinting bowrat
+A stablemaster
+A starved ghoul
+A stoic sorceress
+A stumbling skeleton
+A stumbling zombie
+A stunned bather
+A sullen farmhand
+A survivalist
+A suspicious exploiter
+A suspicious salesman
+A swarm leader
+A swarthy sorcerer
+A sweaty Bloodynose goblin
+A Syndicate channeler
+A Syndicate hauler
+A Syndicate liaison
+A Syndicate negotiator
+A Syndicate trader
+A Syndicate worker
+A Szuurian viper
+A tanner
+A tavern patron
+A tawny hayward
+A tearful mourner
+A theologian
+A threatening figure
+A thug
+A timber wolf
+A Timberwolf lumberjak
+A tireless warehouseman
+A tomb burrower
+A tomb knight
+A tormented guardian
+A tormented spirit
+A tortured skeleton
+A trail bandit
+A treant
+A trixie pixie
+A trusted oathkeeper
+A twisted fae
+A used weapons dealer
+A Valtheris andrapodist
+A Valtheris bloodknight
+A Valtheris bloodlord
+A Valtheris bloodmage
+A Valtheris champion
+A Valtheris devout
+A Valtheris elder
+A Valtheris hemomancer
+A Valtheris illusionist
+A Valtheris night-watch
+A Valtheris penitent
+A Valtheris phantasmist
+A Valtheris priest
+A Valtheris rake
+A Valtheris sentry
+A Valtheris stalker
+A veiled emissary
+A veteran brigand
+A Viscious Bight Asp
+A visiting cultist
+A wailing wench
+A waining spirit
+A wandering ghoul
+A wandering skeleton
+A wandering spectre
+A wandering spider
+A warehouse clerk
+A warped fae
+A wary croptender
+A wash maiden
+A wasp drone
+A wasp scout
+A wasp worker
+A watchful farmhand
+A water basilisk
+A water basilisk broodmother
+A water elementaling
+A watersnake
+A weaponsmith
+A weeping visitor
+A wench
+A werejackal brother
+A werejackal cub
+A werejackal elder
+A werejackal priest
+A werejackal sister
+A wererat
+A wharf rat
+A wheezing plaguepriest
+A whirling warder
+A whiskered bonecaller
+A whispering adapt
+A whispering adept
+A whispering groom
+A whispering shadow
+A wide-eyed reveler
+A widow matron
+A wild elemental
+A willowisp
+A winterveil dryad
+A wise elder
+A Witchguard corruptor
+A Witchguard cultor
+A Witchguard defiler
+A Witchguard medicus
+A Witchguard myrmidon
+A Witchguard oracle
+A Witchguard princeps
+A Witchguard sacramir
+A Witchguard serverat
+A Witchguard shaman
+A Witchguard signifer
+A Witchguard stalker
+A Witchguard veles
+A Witchguard velite
+A Witchguard venator
+A withered
+A withered corpse
+A withered rootkeeper
+A withered warlock
+A wizard's remains
+A wood elf scout
+A wood elf warden
+A woodworker
+A wretched boilbinder
+A Wyrmsbane crusader
+A Wyrmsbane war wizard
+A wyrmseer
+A wyrmseer vizier
+A young albino crocodile
+A young basilisk
+A young crypt scarab
+A zealot
+A zealous warden
+A Zintari asp
+A zombie laborer
+A zombie provisioner
+A zombified rat
+Aaliyah
+Ada Nirseen
+Adah Mukhtar
+Adept Kossco
+Adimah Starseeker
+Admiral Blacktide
+Adventure Gear
+Advisor Sargolin
+Aerin Mossfang
+Aidan Thrym
+Aide Aida
+Alaric Brom
+Alaric Bromm
+Albrecht
+Alchemist Vizyl
+Aldric Vellander
+Allistaire the Black
+Almina
+Alysse Selegrass
+Ambassador Samthain of Tarellon
+An abyssal emissary
+An acolyte of Kravvin
+An acolyte of Visru
+An aggressive black bear
+An alchemist
+An amber hornet
+An ancient elven fighter
+An ancient elven skeleton
+An ancient sanguisuge
+An angered spirit
+An anguished spirit
+An animated sporeling
+An apostle
+An archaeologist
+An armored revenant
+An ashen knight
+An ashen seneschal
+An ashen servant
+An ashira adept
+An ashira ain guard
+An ashira alchemist
+An ashira alpha
+An ashira ambusher
+An ashira archer
+An ashira bruiser
+An ashira cook
+An ashira drunk
+An ashira elite guard
+An ashira fisher
+An ashira forge assistant
+An ashira fortune teller
+An ashira hierophant
+An ashira huntmaster
+An ashira lookout
+An ashira luminary
+An ashira mystic
+An ashira naturalist
+An ashira oracle
+An ashira outrider
+An ashira packleader
+An ashira pathfinder
+An ashira preserver
+An ashira raider
+An ashira refugee
+An ashira runt
+An ashira scout
+An ashira seer
+An ashira seeress
+An ashira shaman
+An ashira shaman scribe
+An ashira shapeshifter
+An ashira skinner
+An ashira spearfisher
+An ashira spearthrower
+An ashira stalker
+An ashira Supplier
+An ashira tailor
+An ashira treasurer
+An ashira wanderer
+An ashira warder
+An ashira warrior
+An ashira youngling
+An aspiring researcher
+An assistant jailer
+An Easthymnite traveler
+An elder black bear
+An elder cave creeper
+An elder widow
+An elemental quartermaster
+An elite Plagueborn archer
+An elite Plagueborn cleric
+An elite Plagueborn mage
+An elite Plagueborn warrior
+An Elven Field Sergeant
+An emissary
+An enchanter
+An enchanter scribe
+An enforcer
+An engorged feeder
+An enraged fire elemental
+An enslaved dwarf
+An enslaved elf
+An enslaved gnome
+An enslaved human
+An enthralled archaeologist
+An enthralled jackal
+An escaped minion
+An exhausted Red Mantle guard
+An exiled researcher
+An exotic cook
+An herbalist
+An immolated grovekeeper
+An infamous swashbuckler
+An infected prelate
+An innkeeper
+An inquisitive sister
+An inquisitor instructor
+An Iron Emissaries envoy
+An obedient sniffer
+An off-duty Red Mantle guard
+An old elven skeleton
+An old scarab
+An oozeling
+An orc supplier
+An orcish tactician
+An ornate beetle
+An outdoorsman
+An outfitter
+An unblinking overseer
+An undead poacher
+An undead rat
+An unrelenting don
+An unresting corpse
+An unworthy pledge
+Animast Wafi
+Animist Wafi
+Anlisia Silvereye
+application-name
+Aquarris The River Watcher
+Aragon Brythe
+Ariblast the Wicked
+Ashir the Protector
+Assistant Researcher Farland
+Asthijvala
+Ayip
+Baewyn Mossfang
+Baharu Storyteller
+Balindor Silvertrowel
+Banker Bahdi
+Barkeep Glior
+Barkeep Zahra
+Baron Bigtent
+Belthakar Dunecaller
+Best Appraiser Bibic
+Bewildered Gorakk Four-Toes
+Bieito Brightsmile
+Bishop Aybram
+Blacksmith Baran
+Blacksmith Musafar
+Blacktide Orc
+Blightcaller Ghora
+Blightcaller Harun
+Blightcaller Torvak
+Blightcaller Vethis
+Blightcaller Zirat
+Bloatbelly
+Blood Puppet
+Bloodfang
+Bone Construct
+Bones
+Braggla the Spawnkeeper
+Brahson the Butcher
+Brak'zul Bonecarver
+Brazzic Durraim
+Bree Weatherstoll
+Brenna McMiller
+Brewer Gromni
+Brightspark
+Brother Gurrom
+Brother Juro
+Brother Luka
+Brukk Goldgut
+Buckmarr Gorstagg
+Calaada Acaciathorn
+Calen McMiller
+Captain Belvoir
+Captain Bilgesneak
+Captain Brey
+Captain Caspian
+Captain Eilionoir
+Captain Hale
+Captain Haring
+Captain Harkan Saafir
+Captain Ironhull
+Captain Jonas Cossa
+Captain Keyaryn Thornshade
+Captain Kruush
+Captain Relgen Greenblade
+Captain Vaelric Ironbark
+Captain Zaedin Rahal
+Carpenter Quais
+Cartographer Duha
+Cassen Gonling
+Chaim the Herald
+Champion of Muurtu
+Chef Argna
+Chef Belle
+Chef Daisy
+Chef Violyn
+Cheikho
+Cheswik Barrelgirth
+Chieftain Raka'Matar
+Chieftan Raka'matar
+Chompers
+Clint the Innocent
+Commander Elydris Stormbough
+Commander Mangles
+Commander Otieno
+Commander Rursk
+Constable Brennan
+Cordellius Hollmion
+Cormac Renshaw
+Corporal Theodora
+Craftguard Vinebrow
+Crafty Rufkas
+Crowne Duval
+Customs Agent Priorton
+Customs Inspector Bakari
+Cyra Brinewell
+Daegolar the Pauper
+Dalinder Grammanoot
+Dame Lysandra Thrym
+Dario Numas
+Darius Brask
+Darvok Skullbender
+Delloreli the Butcher
+Delugia Coldsong
+Demeter Stollen
+description
+Detective Brunsworth
+Devourhymn Glomenda
+Dhajr Spitemaw
+Dilshad Abolfazl
+Disenchanter Kahni
+Disenchanter Qaridi
+Distiller Sybil
+Dizzik
+Domas Starseeker
+Dougal Brom
+Dougal Bromm
+Dregath Warwake
+Drogo the Grocer
+Dubar Falshim
+Duke Mygdrath
+Duneseer Hadi
+Eamon Kassir
+Ebon Scholar Myrddin
+Echo of the Unfinished
+Edric Torvald
+Elda the Cook
+Elder Luh'kan
+Elder Mahir Sultaan
+Elder Sethu
+Elias Messing
+Elmswood
+Elrind Steele
+Elyndiir Nightshade
+Ember
+Emissary Irina
+Enchanter Haffiz
+Enchanter Reagents
+Endric Vellander
+Enforcer Gritjaw
+Eraeldor Lowmist
+Ereldian Brambleshade
+Errol Shrewtender
+Esaneq
+Everett Graves
+Exavius Deathwhisper
+Fadila
+Faelar Thistlebrook
+Fariha bint Nizar
+Farmer Ammar
+Father Rau
+Faylan Torvald
+Felgin Ironwhisker
+Felix Rathmere
+Fendris the Forsaken
+Fenrix Lightfoot
+Fernic the Cur
+Finnel Tidehook
+Fish Catcher Samak
+Fisher Mardan
+Fisher Ri'Kiti
+Fisherman Abduh
+Fizzle Screwtape
+Font Seeress Jumana
+Foreman Barriga
+Foreman Stonehammer
+Forge Master Jabbar
+Foss Dunestrider
+Frightweaver
+Frimbus Darplefen
+Fungivore
+Gaereth Ashenpath
+Gallows Krane
+Garran Grinholdt
+Garrick Harlow
+Gatekeeper Nusder
+Gazer
+General Overlord Bloodynose
+Gerhardt Graves
+Ghost of Selam
+Gidum, the Dark Spirit
+Gnaw
+google-adsense-account
+Gore
+Grand Spiritbinder Murk
+Grand Vizier Al'kithar
+Grandmaster Gildas
+Grandmaster Obadiah
+Grantha Scrigglehex
+Gravemaster Higgins
+Greedy Merchant
+Grubbfist
+Guard Andreu
+Guard Ashbriar
+Guard Atep
+Guard Elthir
+Guard Halfsies
+Guard Irilis
+Guard Iskandar
+Guard Jeskal
+Guard Pippi Pinecone
+Guard Serelyth
+Guard Thariel
+Guard Vaelisra
+Guard Velbloom
+Guardian Crepus
+Guardian Noctus
+Guardian of the Life Font
+Guild Registrar
+Guillome the Accursed
+Gurowl the Beast
+Gurowl, The Beast
+Hadhraman, First Among Alphas
+Hadir the Shipbreaker
+Hakim al-Hayati
+Halrinn Grimsul
+Hamsar
+Handmaiden Mira
+Harbormaster Daoud
+Harbormaster Greywake
+Haredi
+Harold Abegg
+Harris Bhreathnach
+Hazel
+Head Researcher Aashir
+Hearld Of Murtur
+Heather
+Hegumenia Mariam
+Hemalmula the Hunter
+Hendrick Valbreken
+Hendrik Valbreken
+Herald of Muurtu
+Herbalism Zaarid
+Herbalist Qirfa
+Herbmonger Nabiah
+High Adept Vashtek
+High Marshal Fionna
+High Marshal Fionna Bromm
+High Master Farwyn Nyxx
+High Priest of Muurtu
+High Priest Sebkha
+High Watchman Albury
+High Wyrmseer Valthrun
+High-Mother Haathala
+High-Sister Sarinius
+Hill Giant
+Hobeth Shuweed
+Horvarth Ezzadel
+Hovarth Ezzadel
+Hrask
+Hult Beetlewrangler
+Instructor Afzal
+Irfan Raz
+Ivor Thrym
+Ixelda Jackalfang
+Jaakima
+Jabir Ilhamar
+Jaffar Jhaym
+Jailer Benedict
+Jailer Kur'mak
+Jakob Geffrey
+Jalwa Noor
+Jamee Langris
+Jiselle Heyley
+Jokan'daru
+Jorvan Ironfist
+Jumthem
+Juval Mukhtar
+Kalain Mukhtar
+Kalid Al-Bahri
+Kallen Oison
+Karif Jamah
+Karsyn
+Kaya Seefar
+Keeper of the Road
+Kemilla
+Khal'Baar the Growler
+Khalid al-Bahri
+Kilia
+King Mahraad
+Klimpi the Feared
+Kowmeh Lalen
+Krelvya Drynn
+Krev Thistlehook
+Krothun Veincarver
+Kyros Emeraldscale
+Lady Elana Torvald
+Lady Isolde
+Lady Tristanya Thrym
+Lanna Ivintoria
+Layith Kharem
+Layla Faraj
+Leatherworker Haiat
+Leatherworker Saif
+Leatherworking Supplies
+Leila al-Bahri
+Leila Ghasem
+Librarian Gallier
+Lieutenant Gregan Snyde
+Lieutenant Jarovik Holt
+Little Tamsah
+Liyna Esueiruc
+Lloyd Matthias
+Lord Dorian
+Lubern the Heretic
+Lucille Webtooth
+Luhum the Plump
+Lumberjacking Bubir
+Lumberjacking Supplies Evershade
+Lumberjacking Trainer Evershade
+Madame Vespera
+Mafeed the Butcher
+Magistrate Sivash
+Maleq
+Malik the Glass Viper
+Malory Moreland
+Manciple Daphne
+Mar'Tem
+Marcus Aden
+Marissa the Warmage
+Marshal Reginald
+Marvion Hallows
+Mason Krulch
+Mason Steinn
+Masonry Supplier Arthis
+Masoumeh Akhtar
+Master Khaila
+Master Tailor Sansha
+Master Tracker Lark
+Matheus Griswald
+Mayana
+Mayor Oisin
+Medic Zafira
+Melichesh Dirth
+Melrose Shervas
+Meluli Dawnglow
+Mercenary Captain Hulg
+Mercenary Foldja
+Mercenary Lord Hrrush
+Merrisam Copperhelm
+Mezzatrian Boneweaver
+Mia Tarcut
+Mierra Willowshade
+Mila Dastan
+Milham the Mad
+Millicent Domaire
+Miner Falmud
+Mining Supplies
+Mira Gables
+Mira Harlow
+Mirella Nighthorn
+Mirembe Tiifu
+Mirrielle Brom
+Mirrielle Bromm
+Misteress Naelira
+Mistress Elise
+Mistress Mazheth
+Mistress Naelira
+Mistress Nephidna
+MnM Drops Mobs
+Moon Dances
+Morgan the Skewer
+Morthkara the Blight
+Mother Shelkir
+Mrvath Cinderhand
+Muleda Murktoe
+Myrielle Softglade
+Nadia Al-Hakim
+Nadim Al-Saraf
+Najm the Mirage
+Namon Ka Har
+Necroferius
+Nefarious Cultists
+Nerguk
+Nerida Thinblade
+Ngakepoto
+Night Terror
+Nizar al-Harith
+Njau Hansou
+Noel Klares
+Nosey
+Noura the Tailor
+Nyxx
+Oakheart
+Observer Samvel
+Ojamar Antorious
+Old Mother Roshan
+Old Rankle
+Old Scar
+Olvin Viscus
+Onis the Elder
+Orbilis the Overseer
+Ormi Brassfist
+Osmund the Unspent
+Osric the Hungry
+Oswin the Wailing
+Otto Roth
+Outdoorsman Gahira
+Overseer Jaru'kan
+Overseer Shuk'naru
+Pak'har
+Pasha Patrice
+Pau
+Petra Gyle
+Phurfie Dibery
+Piia
+Poacher Garrus
+Poacher Tolan
+Poacher Wilna
+Polietta Two-tone
+Prince Ademaar Reims
+Prince Mali'tik
+Pustulax
+Qassem Brolt
+Quagrot
+Quartermaster Boothroy
+Quartermaster Girault
+Quartermaster Obaid
+Raincaller Mazin
+Rais Alyssum
+Rais Muzari
+Rallin Wizzentrop
+Rami Al'qawwaas
+Rami al-Qawwaas
+Rami Al-Qawwaasr
+Rami Suresight
+Ranger Rylin
+Ranger Valegazer
+Rarthan Wartide
+Ratan
+Red Mantle Quartermaster
+Redpaw
+Reeve Thurston Winter
+Researcher Fairgrove
+Researcher Harseal
+Rhakar Vexfang
+Rider Ebraim
+Rider Sylvadir
+Riham
+Riki'tipa
+Ripper
+Rizik Goresnout
+Roa the Huntress
+Rolan Talmula
+Rootmind
+Rotfang
+Rotmuzzle
+Runner Murtazam
+Saahil the Tide Reaver
+Sahir Muzalal
+Sajra
+Sami Hassoun
+Samira Moonpalm
+Scout Amberward
+Scout Amberweald
+Scout Faeweald
+Scout Gladebow
+Scout Grimgaze
+Scout Leader Krindor
+Scout Nightsparrow
+Scout Skybranch
+Scout Stonebranch
+Seamas Growt
+Seamus Three-Knuckle
+Seeress Hamana
+Seeric of Maelsin Thrys
+Sekhmet
+Selene Brightmantle
+Selyst Surecoin
+Seneschal Kazmer
+Sergeant Merkhen
+Sersil Tangleroot
+Servarator Vakraar
+Servitor of Sacred Sands
+Seshena the Lost
+Sexton Harding
+Shadowfunnel
+Shar the Silent
+Sharkie
+Shattershriek
+Shipwright Benlink
+Shon Ibn Lail
+Silent Nirra
+Sima Filipa
+Sinastin Aspenleaf
+Sinder
+Sir Hedley
+Sister Elara
+Sister Elsi
+Sivah Arjun
+Sivah Arujan
+Skizzak Darkrain
+Skree
+Skyseer Illya
+Slashel the Scared
+Smelter Jadid
+Snar the Egg Collector
+Socket
+Softpaws
+Soraya the Mirage
+Sorchan Yazmul
+Spawn of Goreloch
+Speaker Khaldun
+Spicy Raziq
+Spinner Cligg
+Sporeweaver Underveil
+Sproggets Bedsprings
+Spymaster Uzaiyn
+Squire Ryland
+Stable Master Kavanaugh
+Stablemaster Tomaz
+Steward Grimaldi
+Stonecutter Selin
+Stonecutter Sodunn
+Stormcaller Tabigan
+Strig
+Stumpy the Whistler
+Suhib the Night Market Realtor
+Sularfaan the Flamekeeper
+Survivalist Faiza
+Survivalist Jabool
+Sybille Abegg
+Sylvaine
+Sylvara Winterveil
+Sylvarya Starveil
+Sylwine Brightspirit
+Taeresh Deathcharmer
+Tailor Darya
+Takalea Scaletender
+Tallymaster Elspeth
+Talnach Wilenner
+Tanner Burhan
+Tanner Daba
+Tansy Farwinds
+Tarakhan the Boulder
+Tarek Mansur
+Tariq the Revealer
+Taskmaster Feeka
+Taskmaster Fek'ney
+Taskmaster Gitch
+Taskmaster Murkraal
+Taskmaster Nor'tap
+Taskmaster Urka
+Tearesh Deathcharmer
+Tenebrim Tam
+Tessa Kentwell
+Teyla Beastbound
+Thalric Torxid
+The Hangman's Advocate
+Thibald Burlond
+Thirsty Sharab
+Thoren Blackwood
+Thornbark
+Thorne Grindholdt
+Thorne Grinholdt
+Thrallmaker Zladen
+Thuraya Aisliingar
+Thuraya Aislingar
+Tidal Lord Keelbiter
+Tidecaller Selka
+Tig Pebblebank
+Timberfang
+Timmon Bell
+Tinka Roofstrider
+Tinkerer Boltia
+Tinkerer Vilsis
+Tok'Nor
+Tolman Sneed
+Tolrad Oarsen
+Toma the Two-Faced
+Tora'galdo
+Tormented Soul
+Tracker Baumery
+Tralin
+Treasurer Ghani
+Trey Fulton
+Truthseeker Rongrim
+Tust Brookturner
+twitter:card
+twitter:description
+twitter:image
+twitter:title
+Uglak the Loud
+Unyeilding Brute
+Used Armor Trader
+Vaclav
+Varilis Thornvine
+Venomfang
+Vesska the Bloodbound
+Vexil
+Veya Karn
+Veygan Antorious
+Victualler Veera
+viewport
+Vikar Brask
+Vile Will
+Vizier Zarakh
+Vorkuul Blighteye
+War Wizard Leonath
+Warden Tessaru
+Warlord Muggrah
+Warpriest Eddard
+Wasp Hive Protector
+Watcher Aquafis
+Watcher Terial
+Waterlord Lin'xa
+Wavecaller Hydronysa
+Weakened Red Dragon
+Weaponsmith Fahkri
+Weaponsmith Sielah Zefir
+Wendrish Fords
+Whipstich Khayyat
+Whipstitch Khayyat
+Whiskey
+Whispering Wallace
+Widow Vethra
+Willy
+Wily Rufga
+Witcher Sayyaad
+Witchguard Hellblade
+Witchguard Primus
+Witchlord Kruurgal
+Witherwood
+Wyrdguard Oakenpine
+X2 Recipient
+Yapala
+Yealaroth the Consumed
+Yeoman Borin Smythe
+Yezkiel the Gatekeeper
+Yorias
+Yurl Rootrender
+Yvette Gardener
+Zahid the Calm
+Zahkir Dunewake
+Zaila the Fierce
+Zakariah Shriki
+Zalia the Fierce
+Zarek Dunewalk
+Zubair Goldentongue
+Zubair Goldtongue

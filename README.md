@@ -155,6 +155,8 @@ Layout:
 | `scripts/build_grammar_seed.py` | Regenerates the shipped grammar dictionary |
 | `scripts/build_windows.ps1` | PyInstaller folder build, plus `-Installer` for the Inno Setup installer |
 | `scripts/ui_smoke.py` | Drives the real window through its features (`--ocr` starts live monitoring) |
+| `discord_overlay/names.py` | Name similarity, merging of OCR variants, and the shipped NPC name list |
+| `scripts/build_npc_names.py` | Refreshes `assets/npc-names.txt` from the community wiki and mnmdrops.com |
 | `scripts/build_corpus.py`, `tests/corpus/` | Real-gameplay regression corpus: raw OCR lines and their expected parse |
 | `scripts/compare_logs.py` | Compares two exported logs of the same recording (coverage, gaps, per-actor totals) |
 
@@ -167,3 +169,8 @@ and run `python scripts/build_corpus.py add <log.csv>`. After an intentional par
 run `python scripts/build_corpus.py regenerate` and review the diff of
 `tests/corpus/expected.tsv` before committing. The corpus contains the character names
 seen in contributed logs.
+
+The NPC name list in `discord_overlay/assets/npc-names.txt` comes from the
+[Monsters & Memories community wiki](https://monstersandmemories.miraheze.org/wiki/Category:NPCs)
+and [mnmdrops.com](https://mnmdrops.com). It is a hint for merging OCR misreads of mob
+names, never a filter: a name that is not on the list is still counted.
