@@ -34,7 +34,8 @@ from .overlays import OverlayManager
 from .region_selector import RegionSelector
 from .settings_tab import SettingsTab
 from .setup_wizard import HardwareSetupWizard
-from .tips import ACCURACY_TIPS
+from .dialogs import AccuracyReminder
+from .tips import ACCURACY_TIPS, ESSENTIAL_TIPS
 from .widgets import Column, MeterView, MetricCard, SortableTree, Sparkline, StatusPill, configure_tree_style
 
 EVENT_TAGS = {EventKind.DAMAGE_OUT: "out", EventKind.DAMAGE_IN: "in", EventKind.HEAL: "heal"}
@@ -513,7 +514,13 @@ class App(ctk.CTk):
     def _maybe_show_setup(self) -> None:
         self._maybe_offer_shortcut()
         if not self.settings.setup_completed:
-            self.show_hardware_setup()
+            self.show_hardware_setup()  # the reminder follows once setup finishes
+        else:
+            self.show_accuracy_reminder()
+
+    def show_accuracy_reminder(self) -> None:
+        """Every launch: users who skip the tips tab still see what decides accuracy."""
+        self._reminder = AccuracyReminder(self, ESSENTIAL_TIPS)
 
     def _maybe_offer_shortcut(self) -> None:
         """Once, for the portable build: offer a Start Menu entry so it feels installed."""
@@ -553,6 +560,7 @@ class App(ctk.CTk):
 
     def _apply_capability_result(self, result: CapabilityResult) -> None:
         s = self.settings
+        first_setup = not s.setup_completed
         s.setup_completed = True
         s.performance_profile = result.profile
         s.benchmark_ocr_ms = result.ocr_ms
@@ -562,6 +570,8 @@ class App(ctk.CTk):
         s.prefer_gpu = result.provider == "GPU"
         s.save()
         self.settings_tab.refresh_from_settings()
+        if first_setup:
+            self.after(300, self.show_accuracy_reminder)
         self.set_status(f"{result.profile} OCR profile applied • {result.recommended_interval:.2f}s scans",
                         theme.GREEN if not result.warning else theme.ACCENT)
 

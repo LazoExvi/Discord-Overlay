@@ -356,6 +356,17 @@ def test_lines_clipped_at_the_region_edge_still_count():
     assert parse("Klog hits a rat for 5 points") is None  # no "of": not a damage line
 
 
+def test_another_creatures_pet_is_one_actor():
+    event = parse("a Plagueborn runescribe's pet hits Player for 2 points of damage.", name="Crit")
+    assert (event.kind, event.actor, event.target, event.action) == (
+        EventKind.DAMAGE_OTHER, "Plagueborn runescribe's pet", "Player", "Hits")
+    shield = parse("a Plagueborn runescribe's pet's Damage Shield hits YOU for 14 points of damage.", name="Crit")
+    assert (shield.actor, shield.target, shield.is_damage_shield) == ("Plagueborn runescribe's pet", "Crit", True)
+    # Your own pet is still yours.
+    mine = parse("Raan's pet hits a rat for 5 points of damage.")
+    assert (mine.kind, mine.actor, mine.is_pet) == (EventKind.DAMAGE_OUT, "Pet", True)
+
+
 def test_faith_answers_heal_credits_owner_and_self_target():
     event = parse("Ebola's faith answers, healing them for 375 Health.")
     assert (event.actor, event.target, event.amount) == ("Ebola", "Ebola", 375)

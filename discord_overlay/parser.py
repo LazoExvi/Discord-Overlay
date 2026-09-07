@@ -426,7 +426,7 @@ class CombatTextParser:
             if re.search(r"\byour\s+damage[\s-]*shield\b", text, re.IGNORECASE):
                 return self.player_name, target, action, EventKind.DAMAGE_OUT, False
             wearer = re.search(
-                rf"(?:^|\b(?:by|from)\s+)(?P<wearer>{_NAME}(?:\s+{_NAME}){{0,2}})'s\s+damage[\s-]*shield\b",
+                rf"(?:^|\b(?:by|from)\s+)(?:(?:a|an|the)\s+)?(?P<wearer>{_NAME}(?:\s+{_NAME}){{0,3}})'s\s+damage[\s-]*shield\b",
                 text, re.IGNORECASE,
             )
             if wearer:
@@ -481,7 +481,9 @@ class CombatTextParser:
                 target_text, action = _strip_offhand(target_text, action)
                 return "Pet", self._pretty_name(target_text), action, EventKind.DAMAGE_OUT, True
             possessive = split_possessive(actor_text)
-            if possessive:
+            if possessive and possessive[1].casefold() == "pet":
+                pass  # "a Plagueborn runescribe's pet hits ...": the pet itself is the actor
+            elif possessive:
                 actor_text, ability = possessive
                 action = ability or action
             target_text, action = _strip_offhand(target_text, action)

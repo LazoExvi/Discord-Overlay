@@ -1,4 +1,23 @@
-"""OCR accuracy guidance shown on the Tips tab."""
+"""OCR accuracy guidance shown on the Tips tab and in the start-up reminder."""
+
+# The five settings that decide accuracy, shown every time the app opens.
+ESSENTIAL_TIPS = (
+    ("One message per line",
+     "Make the combat window wide enough that even the longest line stays on one row. A message that "
+     "wraps onto a second line is read as two fragments and its damage can be lost."),
+    ("Black, opaque background",
+     "Set the combat window background to solid black. Transparency lets the game world bleed through "
+     "the letters."),
+    ("Readable font, then taller window",
+     "Raise the font only until text is crisp; past that, prefer a taller window so lines stay visible "
+     "longer before scrolling away."),
+    ("Nothing over the text",
+     "Keep the mouse pointer, other windows, tooltips, and the timer overlays out of the capture region. "
+     "Anything drawn over the chat replaces the letters underneath."),
+    ("Select with a margin",
+     "When you draw the capture region, leave a small gap around the text and never cut through the "
+     "top, bottom, or sides of a line."),
+)
 
 ACCURACY_TIPS = (
     "• Use a black, fully opaque combat-window background.\n\n"

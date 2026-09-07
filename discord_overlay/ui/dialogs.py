@@ -23,6 +23,44 @@ def open_diagnostics_folder() -> None:
     os.startfile(diagnostics_dir())  # type: ignore[attr-defined]  # Windows only
 
 
+class AccuracyReminder(ctk.CTkToplevel):
+    """Shown on every launch: the handful of setup rules that decide parse accuracy."""
+
+    def __init__(self, parent, tips) -> None:
+        super().__init__(parent)
+        theme.apply_window_icon(self)
+        self.title("Before you start")
+        self.geometry("620x560")
+        self.resizable(False, False)
+        self.transient(parent)
+        self.attributes("-topmost", True)
+        self.grid_columnconfigure(0, weight=1)
+        ctk.CTkLabel(self, text="ACCURACY CHECKLIST", text_color=theme.ACCENT, font=theme.font(24, bold=True)).grid(
+            row=0, column=0, padx=28, pady=(24, 2), sticky="w")
+        ctk.CTkLabel(self, text="The parser only sees pixels. These five settings decide whether it reads "
+                                "every line or misses damage. Check them before each session.",
+                     text_color=theme.MUTED, font=theme.font(13), justify="left", anchor="w", wraplength=560).grid(
+            row=1, column=0, padx=28, pady=(0, 14), sticky="w")
+        body = ctk.CTkFrame(self, fg_color=theme.PANEL_2, corner_radius=10)
+        body.grid(row=2, column=0, padx=28, sticky="ew")
+        body.grid_columnconfigure(1, weight=1)
+        for index, (title, detail) in enumerate(tips):
+            ctk.CTkLabel(body, text=str(index + 1), text_color=theme.ACCENT, font=theme.font(18, bold=True), width=28).grid(
+                row=index, column=0, padx=(16, 8), pady=(12 if index == 0 else 6, 6), sticky="n")
+            cell = ctk.CTkFrame(body, fg_color="transparent")
+            cell.grid(row=index, column=1, padx=(0, 16), pady=(12 if index == 0 else 6, 6), sticky="ew")
+            ctk.CTkLabel(cell, text=title, text_color=theme.TEXT, font=theme.font(14, bold=True), anchor="w").pack(anchor="w")
+            ctk.CTkLabel(cell, text=detail, text_color=theme.MUTED, font=theme.font(12), justify="left", anchor="w",
+                         wraplength=480).pack(anchor="w")
+        ctk.CTkLabel(self, text="The full list is under the OCR Tips tab.", text_color=theme.MUTED, font=theme.font(12)).grid(
+            row=3, column=0, padx=28, pady=(14, 4), sticky="w")
+        ctk.CTkButton(self, text="Got it", command=self.destroy, width=140, **theme.ACCENT_BUTTON).grid(
+            row=4, column=0, padx=28, pady=(6, 20), sticky="e")
+        self.bind("<Return>", lambda _e: self.destroy())
+        self.bind("<Escape>", lambda _e: self.destroy())
+        self.after(50, lambda: theme.bring_to_front(self))
+
+
 class AboutWindow(ctk.CTkToplevel):
     def __init__(self, parent) -> None:
         super().__init__(parent)
