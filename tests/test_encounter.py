@@ -321,3 +321,10 @@ def test_ocr_confusable_pairs():
     assert not ocr_confusable("konaner", "lonaner")            # K/L is a different name
     assert not ocr_confusable("rattelesnake", "rattlesnake")   # inserted letter, not a swap
     assert not ocr_confusable("skeletal sentinel", "skeletal servant")
+
+
+def test_space_glued_article_and_two_letter_clips_merge():
+    from discord_overlay.encounter import merge_similar_names
+    names = ["whiplash"] * 40 + ["whip lash"] * 30 + ["bone archer"] * 20 + ["abone archer"] + ["tom"] * 50 + ["om"]
+    merged = {k: v for k, v in merge_similar_names(names).items() if k != v}
+    assert merged == {"whip lash": "whiplash", "abone archer": "bone archer", "om": "tom"}

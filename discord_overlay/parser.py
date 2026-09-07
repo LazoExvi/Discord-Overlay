@@ -75,7 +75,7 @@ _ENVIRONMENT = re.compile(
     re.IGNORECASE,
 )
 _PASSIVE_SELF = re.compile(r"^you\s+(?:take|suffer|receive)\b", re.IGNORECASE)
-# "Calvin spreads their Spreading Plague to Raan. Raan takes 400 points of damage!"
+# "Playerone spreads their Spreading Plague to Playertwo. Playertwo takes 400 points of damage!"
 _SPREAD = re.compile(
     r"^(?P<spreader>[A-Za-z][A-Za-z'-]*)\s+spreads\s+(?:their|his|her|its)\s+(?P<disease>[A-Za-z][A-Za-z -]*?)"
     r"\s+to\s+(?P<target>you|[A-Za-z][A-Za-z'-]*)[.!]?\s*(?:you|[A-Za-z][A-Za-z'-]*)?\s*takes?\b",
@@ -141,7 +141,7 @@ _MISREAD_POSSESSIVE = re.compile(
 
 
 def repair_ocr_possessive(text: str) -> str:
-    """``Entrarils Slice VI hits`` -> ``Entrari's Slice VI hits`` (apostrophe read as l/I/1 or lost)."""
+    """``Playerls Slice VI hits`` -> ``Player's Slice VI hits`` (apostrophe read as l/I/1 or lost)."""
     match = _MISREAD_POSSESSIVE.match(text)
     if not match or match.group("name").casefold() in {"you", "your"}:
         return text
@@ -172,19 +172,21 @@ def repair_ocr_spacing(text: str) -> str:
     text = re.sub(r"\bfor-(?=\d)", "for ", text)  # "for-407 points"
     text = _GLUED_RANK_VERB.sub(lambda m: f"{m.group(1)} {m.group(2)} {m.group(3)}", text)
     text = _GLUED_ARTICLE.sub(_split_glued_article, text)
-    # Klog'sFireball / James'Fireball
+    # Player'sFireball / James'Fireball
     text = re.sub(r"^([A-Za-z][A-Za-z'-]*?'s)([A-Za-z])", r"\1 \2", text)
     text = re.sub(r"^([A-Za-z][A-Za-z'-]*?s')(?!s\b)([A-Za-z])", r"\1 \2", text)
 
-    # Klogpunches a zealot / Youcrush a rat: split a verb suffix off the first token only.
+    # Playerpunches a zealot / Youcrush a rat: split a verb suffix off the first token only.
     first, separator, remainder = text.partition(" ")
     folded = first.casefold()
-    for verb in _GLUED_VERBS:
-        if folded.endswith(verb) and len(first) - len(verb) >= 2:
-            text = f"{first[:-len(verb)]} {first[-len(verb):]}{separator}{remainder}"
-            break
+    # Not when a verb follows directly: "Whiplash crushes a rat" keeps its name.
+    if remainder and not _VERB_PATTERN.match(remainder):
+        for verb in _GLUED_VERBS:
+            if folded.endswith(verb) and len(first) - len(verb) >= 2:
+                text = f"{first[:-len(verb)]} {first[-len(verb):]}{separator}{remainder}"
+                break
 
-    # Klog curshsa cryptic weaver -> Klog crushes a cryptic weaver (one-token actor only).
+    # Player curshsa cryptic weaver -> Player crushes a cryptic weaver (one-token actor only).
     parts = text.split(" ", 2)
     if len(parts) == 3:
         actor, candidate, remainder = parts
@@ -210,7 +212,7 @@ def _repair_damage_prefix(prefix: str) -> str:
 
 
 def split_possessive(value: str) -> tuple[str, str] | None:
-    """``Klog's Fireball`` -> (Klog, Fireball); ``James' Fireball`` -> (James, Fireball)."""
+    """``Player's Fireball`` -> (Player, Fireball); ``James' Fireball`` -> (James, Fireball)."""
     regular = re.match(r"^(.+?)'s\s+(.+)$", value, re.IGNORECASE)
     if regular:
         return regular.group(1).strip(), regular.group(2).strip()
@@ -477,7 +479,7 @@ class CombatTextParser:
         if parts:
             actor_text, verb, target_text = parts
             action = verb.title()
-            if self._is_your_pet(actor_text):  # "Raan's pet hits ..."
+            if self._is_your_pet(actor_text):  # "Player's pet hits ..."
                 target_text, action = _strip_offhand(target_text, action)
                 return "Pet", self._pretty_name(target_text), action, EventKind.DAMAGE_OUT, True
             possessive = split_possessive(actor_text)

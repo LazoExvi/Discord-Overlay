@@ -41,13 +41,13 @@ class ActorRow:
 
 
 # Character pairs OCR confuses in the game font. Two spellings merge only when
-# every difference between them is one of these swaps, so "Konaner" and
-# "Lonaner" (a real K/L difference) stay separate players while
+# every difference between them is one of these swaps, so "Bonaner" and
+# "Ronaner" (a real B/R difference) stay separate players while
 # "Bone Construet" folds into "Bone Construct".
 OCR_CONFUSIONS: frozenset[tuple[str, str]] = frozenset({
-    ("c", "e"), ("l", "i"), ("l", "1"), ("i", "1"), ("l", "t"), ("i", "j"), ("o", "0"), ("o", "a"),
+    ("c", "e"), ("e", "o"), ("l", "i"), ("l", "1"), ("i", "1"), ("l", "t"), ("i", "j"), ("o", "0"), ("o", "a"),
     ("u", "n"), ("t", "f"), ("s", "5"), ("b", "8"), ("h", "b"), ("g", "q"), ("g", "9"), ("z", "2"),
-    ("rn", "m"), ("n", "m"), ("cl", "d"), ("vv", "w"), ("ii", "u"), ("nn", "m"),
+    ("rn", "m"), ("rb", "m"), ("n", "m"), ("cl", "d"), ("vv", "w"), ("ii", "u"), ("nn", "m"),
     ("'", ""), ("'", "l"), ("'", "1"), ("'", "i"), ("'", "`"), ("-", ""), (" ", ""),
 })
 _CONFUSABLE = OCR_CONFUSIONS | {(b, a) for a, b in OCR_CONFUSIONS}
@@ -78,8 +78,14 @@ def ocr_confusable(a: str, b: str, max_edits: int = MAX_CONFUSIONS) -> bool:
 
 
 def clipped_head(name: str, known: str) -> bool:
-    """``uffy`` -> ``stuffy``: the capture edge or cursor cut off the first letter or two."""
-    return (len(name) >= 3 and 1 <= len(known) - len(name) <= 2 and known.endswith(name))
+    """``layername`` -> ``playername``: the capture edge or cursor cut off the first letter or two."""
+    minimum = 2 if len(known) <= 4 else 3
+    return (len(name) >= minimum and 1 <= len(known) - len(name) <= 2 and known.endswith(name))
+
+
+def glued_article(name: str, known: str) -> bool:
+    """``abone archer`` -> ``bone archer``: the article lost its space."""
+    return name in (f"a{known}", f"an{known}", f"the{known}")
 
 
 def merge_similar_names(names, protected=(), minority_share: float = 0.25) -> dict[str, str]:
@@ -96,12 +102,16 @@ def merge_similar_names(names, protected=(), minority_share: float = 0.25) -> di
     accepted: list[tuple[str, int]] = []
     for name, count in sorted(counts.items(), key=lambda item: (-item[1], item[0])):
         chosen = name
-        if len(name) >= 3 and name != "unknown" and name not in protected_keys:
+        if len(name) >= 2 and name != "unknown" and name not in protected_keys:
             for existing, existing_count in accepted:
                 if existing in protected_keys and count > 2:
                     continue
+                if name.replace(" ", "") == existing.replace(" ", ""):
+                    chosen = existing  # a stray or missing space is never a different combatant
+                    break
                 if count <= max(2, existing_count * minority_share) and (
-                        ocr_confusable(name, existing) or clipped_head(name, existing)):
+                        ocr_confusable(name, existing) or clipped_head(name, existing)
+                        or glued_article(name, existing)):
                     chosen = existing
                     break
         if chosen == name:

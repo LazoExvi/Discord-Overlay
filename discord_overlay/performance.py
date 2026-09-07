@@ -72,7 +72,7 @@ def representative_combat_frame(width: int = 652, height: int = 477) -> np.ndarr
         "a skeletal cleric hits YOU for 83 points of damage.",
         "Your pet Ssssteve pierces a skeletal cleric for 215 points of damage.",
         "Ssssteve's Staggering Winds hits a skeletal cleric for 15 points of Magic Damage.",
-        "Raan's Damage Shield hits a caiman for 35 points of damage.",
+        "Playername's Damage Shield hits a caiman for 35 points of damage.",
         "Your Frenzy hits a crocodile for 100 points of slashing damage.",
         "a caiman crushes YOU for 382 points of damage. (Critical)",
         "Your Mend heals you for 120 Health.",

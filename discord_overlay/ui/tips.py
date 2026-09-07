@@ -10,7 +10,7 @@ ACCURACY_TIP_ITEMS = (
     "left. Start the box about a finger's width (20 to 30 pixels) left of where the text begins, and keep "
     "a similar gap above the top line, below the bottom line, and past the end of the longest line. If the "
     "left edge sits right on the text, a one-pixel shift of the game window or a frame caught mid-redraw "
-    "cuts off the first letter of every name, so \"Stuffy\" is read as \"uffy\". Never cut through the "
+    "cuts off the first letter of every name, so \"Playername\" is read as \"layername\". Never cut through the "
     "top, bottom, or sides of letters; include the complete height and width of every line.",
 
     "Use a black, fully opaque combat-window background. Transparency lets the game world bleed "
