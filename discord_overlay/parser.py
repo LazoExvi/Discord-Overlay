@@ -29,6 +29,9 @@ COMBAT_VERBS: tuple[str, ...] = (
     "backstabs", "backstab", "impales", "impale", "scratches", "scratch",
 )
 _VERB_SET = frozenset(COMBAT_VERBS)
+# The game conjugates for everyone but you: "Klog crushes" versus "You crush". A bare
+# verb therefore identifies the player even when OCR mangled the word before it.
+_SECOND_PERSON_VERBS = frozenset(v for v in COMBAT_VERBS if v + "s" in _VERB_SET or v + "es" in _VERB_SET)
 _VERB_ALTERNATION = "|".join(COMBAT_VERBS)
 _VERB_PATTERN = re.compile(rf"\b({_VERB_ALTERNATION})\b", re.IGNORECASE)
 _GLUED_VERBS = tuple(sorted(_VERB_SET | {"tries", "try"}, key=len, reverse=True))
@@ -494,7 +497,10 @@ class CombatTextParser:
             else:
                 actor_text, target_text, action = prefix, "Unknown", "Attack"
 
-        actor_is_player = actor_text.strip().casefold() in {"you", self.player_name.casefold()}
+        actor_is_player = (actor_text.strip().casefold() in {"you", self.player_name.casefold()}
+                           or bool(re.search(r"\bwith\s+your\s+offhand\b", prefix, re.IGNORECASE))
+                           or (parts is not None and parts[1].casefold() in _SECOND_PERSON_VERBS
+                               and len(actor_text.split()) == 1 and not self._is_known_pet(actor_text)))
         actor_is_pet = self._is_known_pet(actor_text)
         target_is_player = target_text.strip().casefold() == "you"
         target_is_pet = self._is_your_pet(target_text)

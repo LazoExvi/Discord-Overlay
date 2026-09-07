@@ -356,6 +356,17 @@ def test_lines_clipped_at_the_region_edge_still_count():
     assert parse("Klog hits a rat for 5 points") is None  # no "of": not a damage line
 
 
+def test_second_person_grammar_identifies_the_player_despite_a_mangled_you():
+    # Something covered "You" (here another window read as "spamu"); the bare verb gives it away.
+    event = parse("spamu crush Blightcaller Torvak for 114 points of damage. (Critical)", name="Crit")
+    assert (event.kind, event.actor, event.action) == (EventKind.DAMAGE_OUT, "Crit", "Crush")
+    event = parse("spamu slash Blightcaller Torvak with your offhand for 77 points of damage.", name="Crit")
+    assert (event.kind, event.actor, event.action) == (EventKind.DAMAGE_OUT, "Crit", "Slash (Offhand)")
+    # Third-person lines are untouched, even with a mangled name.
+    event = parse("spambola crushes Blightcaller Torvak for 76 points of damage.", name="Crit")
+    assert (event.kind, event.actor) == (EventKind.DAMAGE_OTHER, "spambola")
+
+
 def test_faith_answers_heal_credits_owner_and_self_target():
     event = parse("Ebola's faith answers, healing them for 375 Health.")
     assert (event.actor, event.target, event.amount) == ("Ebola", "Ebola", 375)
