@@ -61,6 +61,38 @@ jobs:
           & $python -m PyInstaller --version
           if ($LASTEXITCODE -ne 0) { throw "PyInstaller is not importable after install" }
 
+      # The shipped NPC name list is refreshed from the community sites before every
+      # build. If the sites are unreachable the committed list is used unchanged.
+      - name: Refresh NPC names from the community wiki and mnmdrops.com
+        id: npc
+        shell: pwsh
+        continue-on-error: true
+        run: |
+          py -3.12 scripts/build_npc_names.py
+          if ($LASTEXITCODE -ne 0) { throw "NPC refresh failed" }
+          $changed = (git status --porcelain discord_overlay/assets/npc-names.txt) -ne $null
+          "changed=$changed" >> $env:GITHUB_OUTPUT
+          if ($changed) { git diff --stat discord_overlay/assets/npc-names.txt }
+
+      # Keep the repository in step with what was shipped: push the refreshed list to
+      # main through the contents API (this job is checked out at the tag, not main).
+      - name: Commit refreshed NPC names to main
+        if: steps.npc.outputs.changed == 'True'
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          $path = "discord_overlay/assets/npc-names.txt"
+          $current = gh api "repos/${{ github.repository }}/contents/$path?ref=main" | ConvertFrom-Json
+          $body = @{
+            message = "Refresh NPC names before release ${{ github.ref_name }}"
+            content = [Convert]::ToBase64String([IO.File]::ReadAllBytes($path))
+            sha = $current.sha
+            branch = "main"
+          } | ConvertTo-Json
+          $body | gh api -X PUT "repos/${{ github.repository }}/contents/$path" --input - | Out-Null
+          Write-Host "Pushed refreshed NPC names to main"
+
       # No installer: Defender's cloud reputation check flags unsigned installers of
       # bundled Python apps on download, while the same program in a zip passes. The
       # app offers to add a Start Menu shortcut on first launch instead.

@@ -51,6 +51,11 @@ if ($Runtimes) { Invoke-Native "Removing other ONNX runtimes" { & $Python -m pip
 Invoke-Native "Installing $Variant runtime" { & $Python -m pip install -r (Join-Path $Root "requirements-$Variant.txt") }
 if (-not $SkipTests) { Invoke-Native "Tests" { & $Python -m pytest (Join-Path $Root "tests") } }
 
+# Refresh the shipped NPC name list from the community sites; the committed copy is
+# used unchanged when they are unreachable.
+& $Python (Join-Path $Root "scripts\build_npc_names.py") 2>&1 | ForEach-Object { "$_" }
+if ($LASTEXITCODE -ne 0) { Write-Warning "NPC name refresh failed; building with the committed list" }
+
 # RapidOCR downloads its models on first use; fetch them now so PyInstaller bundles them.
 Invoke-Native "Fetching OCR models" { & $Python -c "from rapidocr import RapidOCR; RapidOCR()" }
 
