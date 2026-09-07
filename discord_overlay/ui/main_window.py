@@ -35,7 +35,7 @@ from .region_selector import RegionSelector
 from .settings_tab import SettingsTab
 from .setup_wizard import HardwareSetupWizard
 from .dialogs import AccuracyReminder
-from .tips import ACCURACY_TIPS, ESSENTIAL_TIPS
+from .tips import ACCURACY_TIP_ITEMS, ACCURACY_TIPS
 from .widgets import Column, MeterView, MetricCard, SortableTree, Sparkline, StatusPill, configure_tree_style
 
 EVENT_TAGS = {EventKind.DAMAGE_OUT: "out", EventKind.DAMAGE_IN: "in", EventKind.HEAL: "heal"}
@@ -520,7 +520,7 @@ class App(ctk.CTk):
 
     def show_accuracy_reminder(self) -> None:
         """Every launch: users who skip the tips tab still see what decides accuracy."""
-        self._reminder = AccuracyReminder(self, ESSENTIAL_TIPS)
+        self._reminder = AccuracyReminder(self, ACCURACY_TIP_ITEMS)
 
     def _maybe_offer_shortcut(self) -> None:
         """Once, for the portable build: offer a Start Menu entry so it feels installed."""
