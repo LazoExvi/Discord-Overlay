@@ -8,9 +8,9 @@ ESSENTIAL_TIPS = (
     ("Black, opaque background",
      "Set the combat window background to solid black. Transparency lets the game world bleed through "
      "the letters."),
-    ("Readable font, then taller window",
-     "Raise the font only until text is crisp; past that, prefer a taller window so lines stay visible "
-     "longer before scrolling away."),
+    ("Taller window for bigger fights",
+     "The more people fighting, the faster spam from abilities like Frenzy and Flurry scrolls past. A group "
+     "needs a tall window; a raid may need close to half the screen. Raise the font only until text is crisp."),
     ("Nothing over the text",
      "Keep the mouse pointer, other windows, tooltips, and the timer overlays out of the capture region. "
      "Anything drawn over the chat replaces the letters underneath."),
@@ -37,8 +37,10 @@ ACCURACY_TIPS = (
     "• Reduce unnecessary combat spam when possible. If you do not need them for parsing or "
     "triggers, hide messages such as melee misses so important damage, healing, and mechanic lines "
     "stay visible longer.\n\n"
-    "• Accuracy can decrease at higher levels or in a full party because combat spam may scroll out "
-    "before it can be read. A taller window and faster scan interval help.\n\n"
+    "• The more people fighting, the taller the window must be. Multi-hit abilities such as Frenzy and "
+    "Flurry produce bursts of lines that scroll out before the next scan in a short window. A full group "
+    "needs a tall window; for top accuracy in a raid, close to half the screen may be combat log. A faster "
+    "scan interval helps too.\n\n"
     "• Arrange timer overlays outside every OCR capture region. Click-through stops them from "
     "intercepting input, but visible overlay pixels still cover combat text if the windows overlap."
 )
