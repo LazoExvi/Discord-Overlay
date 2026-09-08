@@ -21,8 +21,10 @@ ACCURACY_TIP_ITEMS = (
     "needs a tall window; for top accuracy in a raid, close to half the screen may be combat log. A faster "
     "scan interval helps too.",
 
-    "Increase the in-game combat font size only until every character is crisp. Past that point, "
-    "prefer a taller window over a bigger font.",
+    "Font size: try /chatfontsize 5 in game and adjust from there. You want the font just big enough "
+    "that OCR reads every character clearly, and no bigger, because a larger font wraps long messages "
+    "onto two lines and fills the window with fewer lines. Size 5 reads as accurately as size 6 in "
+    "testing while keeping more messages on one line.",
 
     "Keep the mouse pointer, other windows, and tooltips out of every OCR capture region while "
     "monitoring. Anything drawn over the chat replaces the letters underneath. Discord Overlay repairs "

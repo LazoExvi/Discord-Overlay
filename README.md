@@ -23,7 +23,8 @@ Free to use. There is no license server, no update check, and no telemetry.
 4. Follow the first-time setup: select the combat region, run the capability test,
    and apply its recommended scan interval.
 5. In game, make a chat tab that contains only combat messages, ideally on a black,
-   opaque background with a larger font.
+   opaque background. Start with `/chatfontsize 5` and adjust from there: big enough to read
+   clearly, small enough that long messages stay on one line.
 6. Click **Start monitoring** before you pull.
 
 The build uses DirectML for GPU acceleration, which works on NVIDIA, AMD, and Intel
@@ -123,7 +124,7 @@ size change.
 
 ## Accuracy checklist
 
-- Black, opaque combat background; larger font; wide enough that lines do not wrap.
+- Black, opaque combat background; `/chatfontsize 5` as a starting point; wide enough that lines do not wrap.
 - Taller panel so more lines survive between scans.
 - Keep the mouse pointer and overlay windows out of the capture region.
 - Hide message categories you do not need (for example melee misses).
