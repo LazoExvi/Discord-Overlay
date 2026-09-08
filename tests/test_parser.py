@@ -372,6 +372,8 @@ def test_right_edge_clipping_keeps_criticals_and_miss_targets_drop_offhand():
     event = parse("Klog's Flying Kick V hits Blightcaller Torvak for 153 points of damage. (Cri")
     assert (event.actor, event.action, event.critical) == ("Klog", "Flying Kick V", True)
     assert not parse("Klog hits a rat for 5 points of damage.").critical
+    # A Crippling Blow is the fighter's low-health critical.
+    assert parse("You crush a pestilent ghoul for 46 points of damage. (Crippling Blow)").critical
     miss = parse("You try to slash Magistrate Sivash with your offhand, but miss!", name="Crit")
     assert (miss.kind, miss.actor, miss.target) == (EventKind.MISS, "Crit", "Magistrate Sivash")
 

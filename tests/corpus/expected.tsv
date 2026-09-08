@@ -4090,7 +4090,7 @@ Weratissimo's Vampirism hits Lord Ga'Duuz for 21 points of Corruption Damage.	da
 Weratissimo's Vampirism hits Lord Ga'Duuz for 43 points of Corruption Damage.	damage_other|Weratissimo|Lord Ga'Duuz|Vampirism|43|0|0|0|0
 Whiplash slashes Archon for 14 points of damage.	damage_other|Whiplash|Archon|Slashes|14|0|0|0|0
 Whiplash slashes Archon for 50 points of damage.	damage_other|Whiplash|Archon|Slashes|50|0|0|0|0
-Whiplash slashes Echwig for 127 points of damage. (Crippling Blow)	damage_other|Whiplash|Echwig|Slashes|127|0|0|0|0
+Whiplash slashes Echwig for 127 points of damage. (Crippling Blow)	damage_other|Whiplash|Echwig|Slashes|127|0|1|0|0
 Whiplash slashes Echwig for 50 points of damage.	damage_other|Whiplash|Echwig|Slashes|50|0|0|0|0
 Whiplash slashes Echwig for 53 points of damage.	damage_other|Whiplash|Echwig|Slashes|53|0|0|0|0
 Whiplash slashes Walkback for 100 points of damage. (Critical)	damage_other|Whiplash|Walkback|Slashes|100|0|1|0|0
@@ -4176,11 +4176,11 @@ You crush a pestilent ghoul for 151 points of damage. (Critical)	damage_out|Crit
 You crush a pestilent ghoul for 27 points of damage.	damage_out|Crit|pestilent ghoul|Crush|27|0|0|0|0
 You crush a pestilent ghoul for 31 points of damage.	damage_out|Crit|pestilent ghoul|Crush|31|0|0|0|0
 You crush a pestilent ghoul for 34 points of damage.	damage_out|Crit|pestilent ghoul|Crush|34|0|0|0|0
-You crush a pestilent ghoul for 36 points of damage. (Crippling Blow)	damage_out|Crit|pestilent ghoul|Crush|36|0|0|0|0
+You crush a pestilent ghoul for 36 points of damage. (Crippling Blow)	damage_out|Crit|pestilent ghoul|Crush|36|0|1|0|0
 You crush a pestilent ghoul for 38 points of damage.	damage_out|Crit|pestilent ghoul|Crush|38|0|0|0|0
 You crush a pestilent ghoul for 42 points of damage.	damage_out|Crit|pestilent ghoul|Crush|42|0|0|0|0
 You crush a pestilent ghoul for 46 points of damage.	damage_out|Crit|pestilent ghoul|Crush|46|0|0|0|0
-You crush a pestilent ghoul for 46 points of damage. (Crippling Blow)	damage_out|Crit|pestilent ghoul|Crush|46|0|0|0|0
+You crush a pestilent ghoul for 46 points of damage. (Crippling Blow)	damage_out|Crit|pestilent ghoul|Crush|46|0|1|0|0
 You crush a pestilent ghoul for 50 points of damage.	damage_out|Crit|pestilent ghoul|Crush|50|0|0|0|0
 You crush a pestilent ghoul for 54 points of damage.	damage_out|Crit|pestilent ghoul|Crush|54|0|0|0|0
 You crush a pestilent ghoul for 58 points of damage.	damage_out|Crit|pestilent ghoul|Crush|58|0|0|0|0
@@ -4268,7 +4268,7 @@ You crush an armored revenant for 46 points of damage.	damage_out|Crit|armored r
 You crush an armored revenant for 50 points of damage.	damage_out|Crit|armored revenant|Crush|50|0|0|0|0
 You crush an armored revenant for 54 points of damage.	damage_out|Crit|armored revenant|Crush|54|0|0|0|0
 You crush an armored revenant for 73 points of damage.	damage_out|Crit|armored revenant|Crush|73|0|0|0|0
-You crush an armored revenant for 82 points of damage. (Crippling Blow)	damage_out|Crit|armored revenant|Crush|82|0|0|0|0
+You crush an armored revenant for 82 points of damage. (Crippling Blow)	damage_out|Crit|armored revenant|Crush|82|0|1|0|0
 You crush an armored revenant for 89 points of damage.	damage_out|Crit|armored revenant|Crush|89|0|0|0|0
 You crush Blightcaller Torvak for 100 points of damage.	damage_out|Crit|Blightcaller Torvak|Crush|100|0|0|0|0
 You crush Blightcaller Torvak for 104 points of damage.	damage_out|Crit|Blightcaller Torvak|Crush|104|0|0|0|0

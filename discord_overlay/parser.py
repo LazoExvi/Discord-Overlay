@@ -111,7 +111,8 @@ MAX_AMOUNT = 10_000_000
 
 # "(Critical)" even when the region edge cut it short; the only other parenthetical
 # after a damage amount is "(N absorbed)", which starts with a digit.
-_CRITICAL = re.compile(r"\(\s*crit[a-z]*|\(\s*c(?:r(?:i)?)?$", re.IGNORECASE)  # not "(Crippling Blow)"
+# "(Crippling Blow)" is the fighter's low-health critical, so it counts too.
+_CRITICAL = re.compile(r"\(\s*cri[a-z]*|\(\s*cr?$", re.IGNORECASE)
 
 
 def _is_critical(text: str) -> bool:
