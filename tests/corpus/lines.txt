@@ -176,6 +176,9 @@ a Plagueborn runescribe's pet's Damage Shield hits Longjonn for 14 points of dam
 a Plagueborn runescribe's pet's Damage Shield hits Player for 13 points of damage.
 a Plagueborn runescribe's pet's Damage Shield hits YOU for 14 points of damage.
 a Plagueborn runescribe's pet's Damage Shield hits YOU for 8 points of damage.
+a Plagueborn templar hits Remco for 186 points of damage.
+a Plagueborn templar tries to hit YOU, but misses!
+a Plagueborn templar's Slam hits YOU for 18 points of damage!
 a putrid ghoul hits Arne for 48 points of damage.
 a putrid ghoul hits Arne for 954 points of damage.
 a putrid ghoul hits Deaths for 386 points of damage (20 absorbed). (Block 405)
@@ -407,13 +410,30 @@ Archon's Phase Strike hits Whiplash for 4 points of damage.
 Archon's Phase Strike hits Whiplash for 6 points of damage.
 Archon's Telekinetic Infusion hits Whiplash for 7 points of damage.
 Arne crushes a Plagueborn myrmidon for 37 points of damage.
+Arne crushes a Plagueborn templar for 13 points of damage.
+Arne crushes a Plagueborn templar for 43 points of damage.
+Arne crushes a Plagueborn templar for 50 points of damage.
+Arne crushes a Plagueborn templar for 71 points of damage.
+Arne crushes a Plagueborn templar for 9 points of damage.
+Arne crushes Blightcaller Torvak for 12 points of damage.
+Arne crushes Blightcaller Torvak for 16 points of damage.
+Arne crushes Blightcaller Torvak for 22 points of damage.
+Arne crushes Blightcaller Torvak for 25 points of damage.
+Arne crushes Blightcaller Torvak for 3 points of damage.
 Arne crushes Blightcaller Torvak for 31 points of damage.
+Arne crushes Blightcaller Torvak for 37 points of damage.
+Arne crushes Blightcaller Torvak for 40 points of damage.
+Arne crushes Blightcaller Torvak for 43 points of damage.
+Arne crushes Blightcaller Torvak for 50 points of damage.
+Arne crushes Blightcaller Torvak for 62 points of damage.
+Arne crushes Blightcaller Torvak for 9 points of damage.
 Arne crushes Magistrate Sivash for 31 points of damage.
 Arne crushes Magistrate Sivash for 43 points of damage.
 Arne crushes Magistrate Sivash for 53 points of damage.
 Arne is renewed by ancestral healing
 Arne spreads their Disease to you. YOU take 400 points of damage!
 Arne's ancestral healing fades.
+Arne's Circle of Restoration II heals Arne for 1091 Health,
 Arne's Circle of Restoration II heals Arne for 1091 Health.
 Arne's Circle of Restoration II heals Arne for 1175 Health.
 Arne's Circle of Restoration II heals Arne for 1279 Health.
@@ -427,6 +447,8 @@ Arne's Circle of Restoration II heals Luck for 1175 Health.
 Arne's Circle of Restoration II heals Luck for 1279 Health.
 Arne's Circle of Restoration II heals Ouch for 1175 Health.
 Arne's Circle of Restoration II heals Ouch for 1279 Health.
+Arne's Circle of Restoration II heals Pitborn for 1091 Health.
+Arne's Circle of Restoration II heals Remco for 1091 Health.
 Arne's Circle of Restoration II heals Saranukes for 1279 Health.
 Arne's Circle of Restoration II heals Tiberous for 1091 Health.
 Arne's Circle of Restoration II heals Visage for 1175 Health.
@@ -434,11 +456,22 @@ Arne's Circle of Restoration II heals you for 1091 Health.
 Arne's Circle of Restoration II heals you for 1175 Health.
 Arne's Divine Heal heals you for 1921 Health.
 Arne's Holy Strike hits a Plagueborn myrmidon for 55 points of Holy Damage.
+Arne's Holy Strike hits a Plagueborn templar for 101 points of Holy Damage.
 Arne's Holy Strike hits Blightcaller Torvak for 101 points of Holy Damage.
+Arne's Holy Strike hits Blightcaller Torvak for 106 points of Holy Damage.
+Arne's Holy Strike hits Blightcaller Torvak for 108 points of Holy Damage.
 Arne's Holy Strike hits Blightcaller Torvak for 114 points of Holy Damage.
+Arne's Holy Strike hits Blightcaller Torvak for 117 points of Holy Damage.
+Arne's Holy Strike hits Blightcaller Torvak for 123 points of Holy Damage.
+Arne's Holy Strike hits Blightcaller Torvak for 125 points of Holy Damage.
+Arne's Holy Strike hits Blightcaller Torvak for 58 points of Holy Damage.
+Arne's Holy Strike hits Blightcaller Torvak for 91 points of Holy Damage.
 Arne's Holy Strike hits Magistrate Sivash for 101 points of Holy Damage.
 Arne's Retribution III hits Blightcaller Torvak for 1493 points of Holy Damage.
 Arne's Retribution III hits Blightcaller Torvak for 955 points of Holy Damage.
+Arne's Righteous Strike hits Blightcaller Torvak for 216 points of Holy Damage.
+Arne's Righteous Strike hits Blightcaller Torvak for 378 points of Holy Damage.
+Arne's Righteous Strike hits Blightcaller Torvak for 632 points of Holy Damage.
 Arne's Sublime Heal heals Arne for 1253 Health.
 Arne's Sublime Heal heals Arne for 1365 Health.
 Arne's Sublime Heal heals Entrari for 1365 Health.
@@ -448,6 +481,7 @@ Arne's Sublime Heal heals Ouch for 1253 Health.
 Arne's Sublime Heal heals Player for 1164 Health.
 Arne's Sublime Heal heals Stuffy for 1253 Health.
 Arne's Sublime Heal heals Visage for 1253 Health.
+Arne's Sublime Heal heals you for 1164 Health.
 Arne's Sublime Heal heals you for 1253 Health.
 Arne's Sublime Heal heals you for 1365 Health.
 Arne's Supreme Heal heals you for 1786 Health.
@@ -487,9 +521,34 @@ Blightcaller Torvak hits Player for 213 points of damage (11 absorbed).
 Blightcaller Torvak hits Player for 25 points of damage (1 absorbed).
 Blightcaller Torvak hits Player for 251 points of damage (13 absorbed).
 Blightcaller Torvak hits Player for 87 points of damage (5 absorbed).
+Blightcaller Torvak hits Remco for 172 points of damage.
+Blightcaller Torvak hits YOU for 13 points of damage.
+Blightcaller Torvak hits YOU for 130 points of damage (15 absorbed).
+Blightcaller Torvak hits YOU for 132 points of damage.
+Blightcaller Torvak hits YOU for 158 points of damage.
+Blightcaller Torvak hits YOU for 185 points of damage.
+Blightcaller Torvak hits YOU for 211 points of damage.
+Blightcaller Torvak hits YOU for 224 points of damage.
+Blightcaller Torvak hits YOU for 23 points of damage (3 absorbed).
+Blightcaller Torvak hits YOU for 238 points of damage (26 absorbed).
+Blightcaller Torvak hits YOU for 238 points of damage.
+Blightcaller Torvak hits YOU for 26 points of damage.
+Blightcaller Torvak hits YOU for 264 points of damage.
+Blightcaller Torvak hits YOU for 40 points of damage.
+Blightcaller Torvak hits YOU for 53 points of damage.
+Blightcaller Torvak hits YOU for 71 points of damage (8 absorbed).
+Blightcaller Torvak hits YOU for 92 points of damage.
+Blightcaller Torvak tries to hit YOU, but misses!
 Blightcaller Torvak's Bash hits Player for 13 points of damage.
+Blightcaller Torvak's Bash hits Remco for 14 points of damage.
+Blightcaller Torvak's Bash hits YOU for 14 points of damage!
 Blightcaller Torvak's Frenzy hits Player for 22 points of damage.
 Blightcaller Torvak's Strike hits Player for 87 points of damage.
+Blightcaller Torvak's Strike hits YOU for 103 points of damage!
+Blightcaller Torvak's Strike hits YOU for 120 points of damage!
+Blightcaller Torvak's Strike hits YOU for 120 points of damagel
+Blightcaller Torvak's Strike hits YOU for 64 points of damage!
+Blightcaller Torvak's Strike hits YOU for 70 points of damage!
 Bloodgate's Lethal Deluge hits a bone archer for 461 points of Poison Damage.
 Bone Construct crushes Lonaner for 354 points of damage.
 Bone Construct crushes Lonaner for 42 points of damage.
@@ -1567,6 +1626,14 @@ Klog crushes a Plagueborn myrmidon with their offhand for 60 points of damage.
 Klog crushes a Plagueborn myrmidon with their offhand for 64 points of damage.
 Klog crushes a Plagueborn myrmidon with their offhand for 9 points of damage.
 Klog crushes a Plagueborn myrmidon with their offhand for 92 points of damage.
+Klog crushes a Plagueborn templar with their offhand for 26 points of damage.
+Klog crushes a Plagueborn templar with their offhand for 35 points of damage.
+Klog crushes a Plagueborn templar with their offhand for 4 points of damage.
+Klog crushes a Plagueborn templar with their offhand for 40 points of damage.
+Klog crushes a Plagueborn templar with their offhand for 66 points of damage.
+Klog crushes a Plagueborn templar with their offhand for 70 points of damage.
+Klog crushes a Plagueborn templar with their offhand for 88 points of damage.
+Klog crushes a Plagueborn templar with their offhand for 9 points of damage.
 Klog crushes Blightcaller Torvak for 124 points of damage. (Critical)
 Klog crushes Blightcaller Torvak for 125 points of damage.
 Klog crushes Blightcaller Torvak for 177 points of damage.
@@ -1613,6 +1680,12 @@ Klog punches a Plagueborn myrmidon for 73 points of damage.
 Klog punches a Plagueborn myrmidon for 77 points of damage.
 Klog punches a Plagueborn myrmidon for 86 points of damage.
 Klog punches a Plagueborn myrmidon for 99 points of damage.
+Klog punches a Plagueborn templar for 15 points of damage.
+Klog punches a Plagueborn templar for 40 points of damage.
+Klog punches a Plagueborn templar for 49 points of damage.
+Klog punches a Plagueborn templar for 53 points of damage.
+Klog punches a Plagueborn templar for 78 points of damage.
+Klog punches a Plagueborn templar for 95 points of damage.
 Klog punches a rotten sharpshooter for 90 points of damage.
 Klog punches Magistrate Sivash for 15 points of damage.
 Klog punches Magistrate Sivash for 24 points of damage.
@@ -1679,15 +1752,18 @@ Klog's Celestial Strike VI hits Magistrate Sivash for 146 points of damage.
 Klog's Celestial Strike VI hits Magistrate Sivash for 59 points of damage.
 Klog's Celestial Strike VI hits Magistrate Sivash for 80 points of damage.
 Klog's Celestial Vitality heals them for 100 Health.
+Klog's Flying Kick V hits a Plagueborn blightcaller for 158 points of damage.
 Klog's Flying Kick V hits Blightcaller Torvak for 264 points of damage. (Critical)
 Klog's Life Sap heals them for 37 Health.
 Klog's Life Sap heals them for 40 Health.
+Klog's Life Sap hits a Plagueborn templar for 37 points of Corruption Damage.
 Klog's Life Sap hits Magistrate Sivash for 40 points of Corruption Damage.
 Klog's Mend heals them for 856 Health.
 Klog's Mend heals them for 882 Health.
 Klog's Mend heals them for 914 Health.
 Klog's Pinning Throw hits a rotten sharpshooter for 23 points of damage.
 Klog's Round Kick VI hits a Plagueborn myrmidon for 146 points of damage.
+Klog's Round Kick VI hits a Plagueborn templar for 148 points of damage.
 Klog's Round Kick VI hits a rotten sharpshooter for 149 points of damage.
 Klog's Round Kick VI hits a sandy broodling for 147 points of damage.
 Klog's Round Kick VI hits a sandy broodling for 154 points of damage.
@@ -2445,6 +2521,7 @@ Pitborn's Greater Pact of Revival heals Stuffy for 464 Health.
 Pitborn's Greater Pact of Revival heals Stuffy for 516 Health.
 Pitborn's Greater Pact of Revival heals Velvet for 516 Health.
 Pitborn's Greater Pact of Revival heals Weratissimo for 522 Health.
+Pitborn's Greater Pact of Revival heals you for 485 Health.
 Pitborn's Greater Pact of Revival heals you for 496 Health.
 Pitborn's Greater Pact of Revival heals you for 516 Health.
 Pitborn's Greater Pestilence hits Lord Ga'Duuz for 430 points of Disease
@@ -2477,8 +2554,10 @@ Pitborn's Transcendent Spirit Mending heals Firstedition for 1599 Health.
 Pitborn's Transcendent Spirit Mending heals Klog for 1501 Health.
 Pitborn's Transcendent Spirit Mending heals Ouch for 1580 Health.
 Pitborn's Transcendent Spirit Mending heals Pitborn for 1422 Health.
+Pitborn's Transcendent Spirit Mending heals Pitborn for 1485 Health.
 Pitborn's Transcendent Spirit Mending heals Pitborn for 1580 Health.
 Pitborn's Transcendent Spirit Mending heals Velvet for 1580 Health.
+Pitborn's Transcendent Spirit Mending heals you for 1485 Health.
 Pitborn's Transcendent Spirit Mending heals you for 1501 Health.
 Pitborn's Transcendent Spirit Mending heals you for 1520 Health.
 Player is renewed by ancestral healing
@@ -2973,6 +3052,17 @@ Raan's Vampirism hits Lord Ga'Duuz for 33 points of Corruption
 Raan's Vampirism hits Lord Ga'Duuz for 33 points of Corruption Damage.
 Redmeat bites Whiplash for 2 points of damage. (Critical)
 Remco is renewed by ancestral healing
+Remco's Exceptional Fire Volley hits a Plagueborn templar for 106 points of Fire Damage.
+Remco's Exceptional Fire Volley hits Blightcaller Torvak for 100 points of Fire Damage.
+Remco's Exceptional Fire Volley hits Blightcaller Torvak for 101 points of Fire Damage.
+Remco's Exceptional Fire Volley hits Blightcaller Torvak for 102 points of Fire Damage.
+Remco's Exceptional Fire Volley hits Blightcaller Torvak for 103 points of Fire Damage.
+Remco's Exceptional Fire Volley hits Blightcaller Torvak for 104 points of Fire Damage.
+Remco's Exceptional Fire Volley hits Blightcaller Torvak for 95 points of Fire Damage.
+Remco's Exceptional Fire Volley hits Blightcaller Torvak for 96 points of Fire Damage.
+Remco's Exceptional Fire Volley hits Blightcaller Torvak for 97 points of Fire Damage.
+Remco's Exceptional Fire Volley hits Blightcaller Torvak for 98 points of Fire Damage.
+Remco's Exceptional Fire Volley hits Blightcaller Torvak for 99 points of Fire Damage.
 Remco's Exceptional Fire Volley hits Lord Ga'Duuz for 103 points of Fire
 Remco's Exceptional Fire Volley hits Lord Ga'Duuz for 103 points of Fire Damage.
 Remco's Exceptional Fire Volley hits Lord Ga'Duuz for 104 points of Fire Damage.
@@ -3001,9 +3091,13 @@ Remco's Exceptional Fire Volley hits Lord Ga'Duuz for 79 points of Fire
 Remco's Exceptional Fire Volley hits Lord Ga'Duuz for 79 points of Fire Damage.
 Remco's Exceptional Fire Volley hits Lord Ga'Duuz for 84 points of Fire
 Remco's Exceptional Fire Volley hits Lord Ga'Duuz for 84 points of Fire Damage.
+Remco's Greater Fireball hits a Plagueborn templar for 2647 points of Fire Damage.
+Remco's Greater Fireball hits a Plagueborn templar for 2653 points of Fire Damage.
 Remco's Greater Fireball hits a sandy broodling for 1699 points of Fire Damage.
 Remco's Greater Fireball hits a sandy broodling for 2031 points of Fire Damage.
 Remco's Greater Fireball hits a sandy broodling for 2760 points of Fire Damage.
+Remco's Greater Fireball hits Blightcaller Torvak for 2647 points of Fire Damage.
+Remco's Greater Fireball hits Blightcaller Torvak for 2653 points of Fire Damage.
 Remco's Greater Fireball hits Lord Ga'Duuz for 1432 points of Fire
 Remco's Greater Fireball hits Lord Ga'Duuz for 1432 points of Fire Damage.
 Remco's Greater Fireball hits Lord Ga'Duuz for 1602 points of Fire Damage.
@@ -3839,6 +3933,13 @@ You crush a Plagueborn myrmidon for 96 points of damage.
 You crush a Plagueborn runescribe's pet for 114 points of damage. (Critical)
 You crush a Plagueborn runescribe's pet for 16 points of damage.
 You crush a Plagueborn runescribe's pet for 44 points of damage.
+You crush a Plagueborn templar for 104 points of damage.
+You crush a Plagueborn templar for 40 points of damage.
+You crush a Plagueborn templar for 63 points of damage.
+You crush a Plagueborn templar for 73 points of damage.
+You crush a Plagueborn templar for 77 points of damage.
+You crush a Plagueborn templar for 81 points of damage.
+You crush a Plagueborn templar for 86 points of damage.
 You crush a putrid ghoul for 15 points of damage.
 You crush a putrid ghoul for 54 points of damage.
 You crush a putrid ghoul for 62 points of damage.
@@ -3880,23 +3981,37 @@ You crush an armored revenant for 54 points of damage.
 You crush an armored revenant for 73 points of damage.
 You crush an armored revenant for 82 points of damage. (Crippling Blow)
 You crush an armored revenant for 89 points of damage.
+You crush Blightcaller Torvak for 100 points of damage.
 You crush Blightcaller Torvak for 104 points of damage.
+You crush Blightcaller Torvak for 107 points of damage. (Critical)
 You crush Blightcaller Torvak for 114 points of damage. (Critical)
+You crush Blightcaller Torvak for 131 points of damage. (Critical)
 You crush Blightcaller Torvak for 135 points of damage. (Critical)
 You crush Blightcaller Torvak for 139 points of damage. (Critical)
 You crush Blightcaller Torvak for 16 points of damage.
 You crush Blightcaller Torvak for 168 points of damage. (Critical)
+You crush Blightcaller Torvak for 170 points of damage. (Critical)
+You crush Blightcaller Torvak for 178 points of damage. (Critical)
 You crush Blightcaller Torvak for 189 points of damage. (Critical)
+You crush Blightcaller Torvak for 21 points of damage.
 You crush Blightcaller Torvak for 222 points of damage. (Critical)
 You crush Blightcaller Torvak for 243 points of damage. (Critical)
+You crush Blightcaller Torvak for 29 points of damage. (Critical)
 You crush Blightcaller Torvak for 31 points of damage.
 You crush Blightcaller Torvak for 35 points of damage.
+You crush Blightcaller Torvak for 40 points of damage.
+You crush Blightcaller Torvak for 44 points of damage.
 You crush Blightcaller Torvak for 48 points of damage. (Critical)
+You crush Blightcaller Torvak for 50 points of damage.
+You crush Blightcaller Torvak for 54 points of damage.
 You crush Blightcaller Torvak for 59 points of damage. (Critical)
 You crush Blightcaller Torvak for 62 points of damage. (Critical)
+You crush Blightcaller Torvak for 63 points of damage.
 You crush Blightcaller Torvak for 67 points of damage.
 You crush Blightcaller Torvak for 73 points of damage.
 You crush Blightcaller Torvak for 77 points of damage.
+You crush Blightcaller Torvak for 81 points of damage.
+You crush Blightcaller Torvak for 86 points of damage.
 You crush Blightcaller Torvak for 92 points of damage. (Critical)
 You crush Blightcaller Torvak for 96 points of damage.
 You crush Bone Construct for 102 points of damage. (Critical)
@@ -4041,18 +4156,35 @@ You slash a Plagueborn runescribe's pet with your offhand for 46 points of damag
 You slash a Plagueborn runescribe's pet with your offhand for 66 points of damage.
 You slash a Plagueborn runescribe's pet with your offhand for 73 points of damage. (Critical)
 You slash a Plagueborn runescribe's pet with your offhand for 8 points of damage.
+You slash a Plagueborn templar with your offhand for 38 points of damage.
+You slash a Plagueborn templar with your offhand for 4 points of damage.
+You slash a Plagueborn templar with your offhand for 62 points of damage.
+You slash a Plagueborn templar with your offhand for 77 points of damage.
+You slash Blightcaller Torvak with your offhand for 12 points of damage.
+You slash Blightcaller Torvak with your offhand for 125 points of damage. (Critical)
+You slash Blightcaller Torvak with your offhand for 131 points of damage. (Critical)
 You slash Blightcaller Torvak with your offhand for 135 points of damage. (Critical)
+You slash Blightcaller Torvak with your offhand for 15 points of damage.
 You slash Blightcaller Torvak with your offhand for 160 points of damage. (Critical)
 You slash Blightcaller Torvak with your offhand for 178 points of damage. (Critical)
+You slash Blightcaller Torvak with your offhand for 20 points of damage.
 You slash Blightcaller Torvak with your offhand for 23 points of damage.
+You slash Blightcaller Torvak with your offhand for 26 points of damage. (Critical)
+You slash Blightcaller Torvak with your offhand for 28 points of damage.
 You slash Blightcaller Torvak with your offhand for 31 points of damage.
+You slash Blightcaller Torvak with your offhand for 34 points of damage. (Critical)
+You slash Blightcaller Torvak with your offhand for 38 points of damage.
+You slash Blightcaller Torvak with your offhand for 4 points of damage.
+You slash Blightcaller Torvak with your offhand for 43 points of damage.
 You slash Blightcaller Torvak with your offhand for 46 points of damage.
 You slash Blightcaller Torvak with your offhand for 46 points of damage. (Critical)
+You slash Blightcaller Torvak with your offhand for 51 points of damage.
 You slash Blightcaller Torvak with your offhand for 54 points of damage.
 You slash Blightcaller Torvak with your offhand for 58 points of damage.
 You slash Blightcaller Torvak with your offhand for 62 points of damage.
 You slash Blightcaller Torvak with your offhand for 66 points of damage.
 You slash Blightcaller Torvak with your offhand for 69 points of damage.
+You slash Blightcaller Torvak with your offhand for 74 points of damage.
 You slash Blightcaller Torvak with your offhand for 77 points of damage.
 You slash Legoliath with your offhand for 117 points of damage. (Critical)
 You slash Legoliath with your offhand for 15 points of damage.
@@ -4129,9 +4261,11 @@ You slash Whiplash for 17 points of damage (2 absorbed).
 You slash Whiplash for 27 points of damage (3 absorbed).
 You slash Whiplash for 3 points of damage.
 You try to crush a pestilent ghoul, but miss!
+You try to crush Blightcaller Torvak, but miss!
 You try to crush Bone Construct, but miss!
 You try to crush Lord Ga'Duuz, but miss!
 You try to crush Magistrate Sivash, but miss!
+You try to slash Blightcaller Torvak with your offhand, but miss!
 You try to slash Lord Ga'Duuz with your offhand, but miss!
 You try to slash Whiplash, but miss!
 Your Damage Shield hits a bone archer for 12 points of damage.
@@ -4170,10 +4304,14 @@ Your Feint IV hits a rotten sharpshooter for 82 points of damage.
 Your Feint IV hits Advisor Sargolin for 122 points of damage.
 Your Feint IV hits Advisor Sargolin for 47 points of damage.
 Your Feint IV hits an armored revenant for 68 points of damage.
+Your Feint IV hits Blightcaller Torvak for 142 points of damage.
 Your Feint IV hits Blightcaller Torvak for 143 points of damage.
+Your Feint IV hits Blightcaller Torvak for 145 points of damage. (Critical)
 Your Feint IV hits Blightcaller Torvak for 146 points of damage.
+Your Feint IV hits Blightcaller Torvak for 152 points of damage.
 Your Feint IV hits Blightcaller Torvak for 235 points of damage. (Critical)
 Your Feint IV hits Blightcaller Torvak for 52 points of damage.
+Your Feint IV hits Blightcaller Torvak for 93 points of damage.
 Your Feint IV hits Legoliath for 100 points of damage.
 Your Feint IV hits Legoliath for 116 points of damage. (Critical)
 Your Feint IV hits Legoliath for 66 points of damage.
@@ -4210,6 +4348,12 @@ Your Feint IV hits Magistrate Sivash for 52 points of damage.
 Your Feint IV hits Magistrate Sivash for 63 points of damage.
 Your Feint IV hits Mistress Maribeth for 100 points of damage.
 Your Final Stand heals you for 680 Health.
+Your Frenzy hits a Plagueborn templar for 13 points of damage.
+Your Frenzy hits a Plagueborn templar for 45 points of damage.
+Your Frenzy hits a Plagueborn templar for 62 points of damage.
+Your Frenzy hits Blightcaller Torvak for 116 points of damage.
+Your Frenzy hits Blightcaller Torvak for 85 points of damage. (Critical)
+Your Frenzy hits Blightcaller Torvak for 89 points of damage.
 Your Frenzy hits Bone Construct for 12 points of damage.
 Your Frenzy hits Bone Construct for 15 points of damage.
 Your Frenzy hits Bone Construct for 19 points of damage.
@@ -4258,8 +4402,10 @@ Your Life Sap hits a contagious bleeder for 40 points of Corruption Damage.
 Your Life Sap hits a feeble ratmancer for 40 points of Corruption Damage.
 Your Life Sap hits a grave magus for 40 points of Corruption Damage.
 Your Life Sap hits a Plagueborn myrmidon for 38 points of Corruption Damage.
+Your Life Sap hits a Plagueborn templar for 36 points of Corruption Damage.
 Your Life Sap hits a rabid plaguereaver for 40 points of Corruption Damage.
 Your Life Sap hits a rotten sharpshooter for 40 points of Corruption Damage.
+Your Life Sap hits Blightcaller Torvak for 36 points of Corruption Damage.
 Your Life Sap hits Blightcaller Torvak for 38 points of Corruption Damage.
 Your Life Sap hits Bone Construct for 36 points of Corruption Damage.
 Your Life Sap hits Bone Construct for 37 points of Corruption Damage.
@@ -4281,13 +4427,19 @@ Your Rend VI hits a grave magus for 65 points of damage.
 Your Rend VI hits a pestilent ghoul for 110 points of damage.
 Your Rend VI hits a pestilent ghoul for 57 points of damage.
 Your Rend VI hits a Plagueborn myrmidon for 163 points of damage.
+Your Rend VI hits a Plagueborn templar for 126 points of damage.
 Your Rend VI hits a putrid ghoul for 137 points of damage.
 Your Rend VI hits a rabid plaguereaver for 61 points of damage.
 Your Rend VI hits a rotten sharpshooter for 120 points of damage.
 Your Rend VI hits Advisor Sargolin for 127 points of damage.
 Your Rend VI hits Advisor Sargolin for 141 points of damage.
 Your Rend VI hits an armored revenant for 141 points of damage.
+Your Rend VI hits Blightcaller Torvak for 104 points of damage.
+Your Rend VI hits Blightcaller Torvak for 116 points of damage.
+Your Rend VI hits Blightcaller Torvak for 120 points of damage.
 Your Rend VI hits Blightcaller Torvak for 136 points of damage.
+Your Rend VI hits Blightcaller Torvak for 141 points of damage.
+Your Rend VI hits Blightcaller Torvak for 146 points of damage.
 Your Rend VI hits Blightcaller Torvak for 158 points of damage.
 Your Rend VI hits Blightcaller Torvak for 63 points of damage.
 Your Rend VI hits Bone Construct for 112 points of damage.
