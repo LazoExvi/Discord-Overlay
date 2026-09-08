@@ -109,6 +109,15 @@ _DIGIT_FIXES = str.maketrans({"O": "0", "o": "0", "I": "1", "l": "1", "S": "5", 
 MAX_AMOUNT = 10_000_000
 
 
+# "(Critical)" even when the region edge cut it short; the only other parenthetical
+# after a damage amount is "(N absorbed)", which starts with a digit.
+_CRITICAL = re.compile(r"\(\s*crit[a-z]*|\(\s*c(?:r(?:i)?)?$", re.IGNORECASE)  # not "(Crippling Blow)"
+
+
+def _is_critical(text: str) -> bool:
+    return "critical" in text.casefold() or bool(_CRITICAL.search(text.rstrip()))
+
+
 def parse_amount(value: str | None) -> int:
     """Read a number OCR may have mangled (``I8O`` -> 180, ``1,234`` -> 1234)."""
     if not value or not re.search(r"\d", value):
@@ -338,7 +347,7 @@ class CombatTextParser:
             return CombatEvent(
                 timestamp=now, wall_time=wall, kind=kind, actor=actor, target=target, amount=amount,
                 absorbed=parse_amount(m.group(1)) if (m := _ABSORBED.search(text)) else 0,
-                action=action, critical="critical" in text.casefold(), raw_text=text, confidence=confidence,
+                action=action, critical=_is_critical(text), raw_text=text, confidence=confidence,
             )
         if match:
             prefix = _repair_damage_prefix(match.group("prefix").strip())
@@ -354,7 +363,7 @@ class CombatTextParser:
         return CombatEvent(
             timestamp=now, wall_time=wall, kind=kind, actor=actor, target=target,
             amount=amount, absorbed=absorbed, action=action,
-            critical="critical" in text.casefold(), raw_text=text, confidence=confidence,
+            critical=_is_critical(text), raw_text=text, confidence=confidence,
             is_pet=is_pet, is_damage_shield=bool(_DAMAGE_SHIELD.search(text)),
         )
 
@@ -413,8 +422,9 @@ class CombatTextParser:
         actor_text = match.group("actor").strip()
         is_pet = actor_text.casefold() == "your pet"
         actor = "Pet" if is_pet else self._pretty_name(actor_text)
+        target_text, _action = _strip_offhand(match.group("target"), "Miss")
         return CombatEvent(
-            now, wall, EventKind.MISS, actor, self._pretty_name(match.group("target")),
+            now, wall, EventKind.MISS, actor, self._pretty_name(target_text),
             action="Miss", raw_text=text, confidence=confidence,
             is_pet=is_pet or self._is_known_pet(actor),
         )

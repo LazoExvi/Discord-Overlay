@@ -133,6 +133,8 @@ a plague rat bites YOU for 52 points of damage (45 absorbed).	damage_in|plague r
 a plague rat bites YOU for 61 points of damage (52 absorbed).	damage_in|plague rat|Crit|Bites|61|52|0|0|0
 a plague rat bites YOU for 7 points of damage (1 absorbed).	damage_in|plague rat|Crit|Bites|7|1|0|0|0
 a plague rat tries to bite YOU, but misses!	miss|plague rat|Crit|Miss|0|0|0|0|0
+a Plagueborn blightwarden hits Klog for 124 points of damage.	damage_other|Plagueborn blightwarden|Klog|Hits|124|0|0|0|0
+a Plagueborn blightwarden hits Klog for 79 points of damage.	damage_other|Plagueborn blightwarden|Klog|Hits|79|0|0|0|0
 a Plagueborn blightwarden hits Player for 10 points of damage (1 absorbed).	damage_other|Plagueborn blightwarden|Player|Hits|10|1|0|0|0
 a Plagueborn blightwarden hits Tiberous for 23 points of damage.	damage_other|Plagueborn blightwarden|Tiberous|Hits|23|0|0|0|0
 a Plagueborn blightwarden hits Tiberous for 45 points of damage.	damage_other|Plagueborn blightwarden|Tiberous|Hits|45|0|0|0|0
@@ -169,7 +171,10 @@ a Plagueborn drake's Strike hits YOU for 26 points of damagel	damage_in|Plaguebo
 a Plagueborn drake's Strike hits YOU for 29 points of damage!	damage_in|Plagueborn drake|Crit|Strike|29|0|0|0|0
 a Plagueborn drake's Strike hits YOU for 29 points of damagel	damage_in|Plagueborn drake|Crit|Strike|29|0|0|0|0
 a Plagueborn drake's Strike hits YOU for 41 points of damagel	damage_in|Plagueborn drake|Crit|Strike|41|0|0|0|0
+a Plagueborn myrmidon hits Klog for 192 points of damage.	damage_other|Plagueborn myrmidon|Klog|Hits|192|0|0|0|0
+a Plagueborn myrmidon hits Klog for 226 points of damage.	damage_other|Plagueborn myrmidon|Klog|Hits|226|0|0|0|0
 a Plagueborn myrmidon hits Klog for 6 points of damage. (Block 5)	damage_other|Plagueborn myrmidon|Klog|Hits|6|0|0|0|0
+a Plagueborn myrmidon hits Klog for 90 points of damage.	damage_other|Plagueborn myrmidon|Klog|Hits|90|0|0|0|0
 a Plagueborn myrmidon hits Player for 10 points of damage (1 absorbed).	damage_other|Plagueborn myrmidon|Player|Hits|10|1|0|0|0
 a Plagueborn myrmidon hits Player for 118 points of damage (6 absorbed).	damage_other|Plagueborn myrmidon|Player|Hits|118|6|0|0|0
 a Plagueborn myrmidon hits Player for 162 points of damage (8 absorbed).	damage_other|Plagueborn myrmidon|Player|Hits|162|8|0|0|0
@@ -457,6 +462,7 @@ Arne crushes Blightcaller Torvak for 12 points of damage.	damage_other|Arne|Blig
 Arne crushes Blightcaller Torvak for 16 points of damage.	damage_other|Arne|Blightcaller Torvak|Crushes|16|0|0|0|0
 Arne crushes Blightcaller Torvak for 22 points of damage.	damage_other|Arne|Blightcaller Torvak|Crushes|22|0|0|0|0
 Arne crushes Blightcaller Torvak for 25 points of damage.	damage_other|Arne|Blightcaller Torvak|Crushes|25|0|0|0|0
+Arne crushes Blightcaller Torvak for 28 points of damage.	damage_other|Arne|Blightcaller Torvak|Crushes|28|0|0|0|0
 Arne crushes Blightcaller Torvak for 3 points of damage.	damage_other|Arne|Blightcaller Torvak|Crushes|3|0|0|0|0
 Arne crushes Blightcaller Torvak for 31 points of damage.	damage_other|Arne|Blightcaller Torvak|Crushes|31|0|0|0|0
 Arne crushes Blightcaller Torvak for 37 points of damage.	damage_other|Arne|Blightcaller Torvak|Crushes|37|0|0|0|0
@@ -465,9 +471,14 @@ Arne crushes Blightcaller Torvak for 43 points of damage.	damage_other|Arne|Blig
 Arne crushes Blightcaller Torvak for 50 points of damage.	damage_other|Arne|Blightcaller Torvak|Crushes|50|0|0|0|0
 Arne crushes Blightcaller Torvak for 62 points of damage.	damage_other|Arne|Blightcaller Torvak|Crushes|62|0|0|0|0
 Arne crushes Blightcaller Torvak for 9 points of damage.	damage_other|Arne|Blightcaller Torvak|Crushes|9|0|0|0|0
+Arne crushes Magistrate Sivash for 25 points of damage.	damage_other|Arne|Magistrate Sivash|Crushes|25|0|0|0|0
+Arne crushes Magistrate Sivash for 28 points of damage.	damage_other|Arne|Magistrate Sivash|Crushes|28|0|0|0|0
+Arne crushes Magistrate Sivash for 3 points of damage.	damage_other|Arne|Magistrate Sivash|Crushes|3|0|0|0|0
 Arne crushes Magistrate Sivash for 31 points of damage.	damage_other|Arne|Magistrate Sivash|Crushes|31|0|0|0|0
 Arne crushes Magistrate Sivash for 43 points of damage.	damage_other|Arne|Magistrate Sivash|Crushes|43|0|0|0|0
 Arne crushes Magistrate Sivash for 53 points of damage.	damage_other|Arne|Magistrate Sivash|Crushes|53|0|0|0|0
+Arne crushes Magistrate Sivash for 56 points of damage.	damage_other|Arne|Magistrate Sivash|Crushes|56|0|0|0|0
+Arne crushes Magistrate Sivash for 62 points of damage.	damage_other|Arne|Magistrate Sivash|Crushes|62|0|0|0|0
 Arne is renewed by ancestral healing	-
 Arne spreads their Disease to you. YOU take 400 points of damage!	damage_in|Disease|Crit|Spread by Arne|400|0|0|0|0
 Arne's ancestral healing fades.	-
@@ -496,23 +507,33 @@ Arne's Divine Heal heals you for 1921 Health.	heal|Arne|Crit|Heal|1921|0|0|0|0
 Arne's Holy Strike hits a Plagueborn myrmidon for 55 points of Holy Damage.	damage_other|Arne|Plagueborn myrmidon|Holy Strike|55|0|0|0|0
 Arne's Holy Strike hits a Plagueborn templar for 101 points of Holy Damage.	damage_other|Arne|Plagueborn templar|Holy Strike|101|0|0|0|0
 Arne's Holy Strike hits Blightcaller Torvak for 101 points of Holy Damage.	damage_other|Arne|Blightcaller Torvak|Holy Strike|101|0|0|0|0
+Arne's Holy Strike hits Blightcaller Torvak for 103 points of Holy Damage.	damage_other|Arne|Blightcaller Torvak|Holy Strike|103|0|0|0|0
 Arne's Holy Strike hits Blightcaller Torvak for 106 points of Holy Damage.	damage_other|Arne|Blightcaller Torvak|Holy Strike|106|0|0|0|0
 Arne's Holy Strike hits Blightcaller Torvak for 108 points of Holy Damage.	damage_other|Arne|Blightcaller Torvak|Holy Strike|108|0|0|0|0
+Arne's Holy Strike hits Blightcaller Torvak for 110 points of Holy Damage.	damage_other|Arne|Blightcaller Torvak|Holy Strike|110|0|0|0|0
 Arne's Holy Strike hits Blightcaller Torvak for 114 points of Holy Damage.	damage_other|Arne|Blightcaller Torvak|Holy Strike|114|0|0|0|0
 Arne's Holy Strike hits Blightcaller Torvak for 117 points of Holy Damage.	damage_other|Arne|Blightcaller Torvak|Holy Strike|117|0|0|0|0
+Arne's Holy Strike hits Blightcaller Torvak for 120 points of Holy Damage.	damage_other|Arne|Blightcaller Torvak|Holy Strike|120|0|0|0|0
 Arne's Holy Strike hits Blightcaller Torvak for 123 points of Holy Damage.	damage_other|Arne|Blightcaller Torvak|Holy Strike|123|0|0|0|0
 Arne's Holy Strike hits Blightcaller Torvak for 125 points of Holy Damage.	damage_other|Arne|Blightcaller Torvak|Holy Strike|125|0|0|0|0
 Arne's Holy Strike hits Blightcaller Torvak for 58 points of Holy Damage.	damage_other|Arne|Blightcaller Torvak|Holy Strike|58|0|0|0|0
 Arne's Holy Strike hits Blightcaller Torvak for 91 points of Holy Damage.	damage_other|Arne|Blightcaller Torvak|Holy Strike|91|0|0|0|0
 Arne's Holy Strike hits Magistrate Sivash for 101 points of Holy Damage.	damage_other|Arne|Magistrate Sivash|Holy Strike|101|0|0|0|0
+Arne's Holy Strike hits Magistrate Sivash for 109 points of Holy Damage.	damage_other|Arne|Magistrate Sivash|Holy Strike|109|0|0|0|0
+Arne's Holy Strike hits Magistrate Sivash for 110 points of Holy Damage.	damage_other|Arne|Magistrate Sivash|Holy Strike|110|0|0|0|0
+Arne's Holy Strike hits Magistrate Sivash for 115 points of Holy Damage.	damage_other|Arne|Magistrate Sivash|Holy Strike|115|0|0|0|0
+Arne's Holy Strike hits Magistrate Sivash for 122 points of Holy Damage.	damage_other|Arne|Magistrate Sivash|Holy Strike|122|0|0|0|0
+Arne's Retribution III hits Blightcaller Torvak for 1493 points of Holy Dama	damage_other|Arne|Blightcaller Torvak|Retribution III|1493|0|0|0|0
 Arne's Retribution III hits Blightcaller Torvak for 1493 points of Holy Damage.	damage_other|Arne|Blightcaller Torvak|Retribution III|1493|0|0|0|0
 Arne's Retribution III hits Blightcaller Torvak for 955 points of Holy Damage.	damage_other|Arne|Blightcaller Torvak|Retribution III|955|0|0|0|0
+Arne's Retribution III hits Magistrate Sivash for 1357 points of Holy Damage	damage_other|Arne|Magistrate Sivash|Retribution III|1357|0|0|0|0
 Arne's Righteous Strike hits Blightcaller Torvak for 216 points of Holy Damage.	damage_other|Arne|Blightcaller Torvak|Righteous Strike|216|0|0|0|0
 Arne's Righteous Strike hits Blightcaller Torvak for 378 points of Holy Damage.	damage_other|Arne|Blightcaller Torvak|Righteous Strike|378|0|0|0|0
 Arne's Righteous Strike hits Blightcaller Torvak for 632 points of Holy Damage.	damage_other|Arne|Blightcaller Torvak|Righteous Strike|632|0|0|0|0
 Arne's Sublime Heal heals Arne for 1253 Health.	heal|Arne|Arne|Heal|1253|0|0|0|0
 Arne's Sublime Heal heals Arne for 1365 Health.	heal|Arne|Arne|Heal|1365|0|0|0|0
 Arne's Sublime Heal heals Entrari for 1365 Health.	heal|Arne|Entrari|Heal|1365|0|0|0|0
+Arne's Sublime Heal heals Klog for 1164 Health.	heal|Arne|Klog|Heal|1164|0|0|0|0
 Arne's Sublime Heal heals Lonaner for 1365 Health.	heal|Arne|Lonaner|Heal|1365|0|0|0|0
 Arne's Sublime Heal heals Luck for 1365 Health.	heal|Arne|Luck|Heal|1365|0|0|0|0
 Arne's Sublime Heal heals Ouch for 1253 Health.	heal|Arne|Ouch|Heal|1253|0|0|0|0
@@ -560,21 +581,31 @@ Blightcaller Torvak hits Player for 25 points of damage (1 absorbed).	damage_oth
 Blightcaller Torvak hits Player for 251 points of damage (13 absorbed).	damage_other|Blightcaller Torvak|Player|Hits|251|13|0|0|0
 Blightcaller Torvak hits Player for 87 points of damage (5 absorbed).	damage_other|Blightcaller Torvak|Player|Hits|87|5|0|0|0
 Blightcaller Torvak hits Remco for 172 points of damage.	damage_other|Blightcaller Torvak|Remco|Hits|172|0|0|0|0
+Blightcaller Torvak hits YOU for 106 points of damage.	damage_in|Blightcaller Torvak|Crit|Hits|106|0|0|0|0
+Blightcaller Torvak hits YOU for 107 points of damage (12 absorbed).	damage_in|Blightcaller Torvak|Crit|Hits|107|12|0|0|0
+Blightcaller Torvak hits YOU for 12 points of damage (1 absorbed).	damage_in|Blightcaller Torvak|Crit|Hits|12|1|0|0|0
 Blightcaller Torvak hits YOU for 13 points of damage.	damage_in|Blightcaller Torvak|Crit|Hits|13|0|0|0|0
 Blightcaller Torvak hits YOU for 130 points of damage (15 absorbed).	damage_in|Blightcaller Torvak|Crit|Hits|130|15|0|0|0
 Blightcaller Torvak hits YOU for 132 points of damage.	damage_in|Blightcaller Torvak|Crit|Hits|132|0|0|0|0
+Blightcaller Torvak hits YOU for 145 points of damage.	damage_in|Blightcaller Torvak|Crit|Hits|145|0|0|0|0
 Blightcaller Torvak hits YOU for 158 points of damage.	damage_in|Blightcaller Torvak|Crit|Hits|158|0|0|0|0
+Blightcaller Torvak hits YOU for 172 points of damage.	damage_in|Blightcaller Torvak|Crit|Hits|172|0|0|0|0
 Blightcaller Torvak hits YOU for 185 points of damage.	damage_in|Blightcaller Torvak|Crit|Hits|185|0|0|0|0
+Blightcaller Torvak hits YOU for 188 points of damage (21 absorbed).	damage_in|Blightcaller Torvak|Crit|Hits|188|21|0|0|0
 Blightcaller Torvak hits YOU for 211 points of damage.	damage_in|Blightcaller Torvak|Crit|Hits|211|0|0|0|0
 Blightcaller Torvak hits YOU for 224 points of damage.	damage_in|Blightcaller Torvak|Crit|Hits|224|0|0|0|0
 Blightcaller Torvak hits YOU for 23 points of damage (3 absorbed).	damage_in|Blightcaller Torvak|Crit|Hits|23|3|0|0|0
 Blightcaller Torvak hits YOU for 238 points of damage (26 absorbed).	damage_in|Blightcaller Torvak|Crit|Hits|238|26|0|0|0
 Blightcaller Torvak hits YOU for 238 points of damage.	damage_in|Blightcaller Torvak|Crit|Hits|238|0|0|0|0
+Blightcaller Torvak hits YOU for 251 points of damage.	damage_in|Blightcaller Torvak|Crit|Hits|251|0|0|0|0
 Blightcaller Torvak hits YOU for 26 points of damage.	damage_in|Blightcaller Torvak|Crit|Hits|26|0|0|0|0
 Blightcaller Torvak hits YOU for 264 points of damage.	damage_in|Blightcaller Torvak|Crit|Hits|264|0|0|0|0
+Blightcaller Torvak hits YOU for 36 points of damage (4 absorbed).	damage_in|Blightcaller Torvak|Crit|Hits|36|4|0|0|0
 Blightcaller Torvak hits YOU for 40 points of damage.	damage_in|Blightcaller Torvak|Crit|Hits|40|0|0|0|0
 Blightcaller Torvak hits YOU for 53 points of damage.	damage_in|Blightcaller Torvak|Crit|Hits|53|0|0|0|0
 Blightcaller Torvak hits YOU for 71 points of damage (8 absorbed).	damage_in|Blightcaller Torvak|Crit|Hits|71|8|0|0|0
+Blightcaller Torvak hits YOU for 79 points of damage.	damage_in|Blightcaller Torvak|Crit|Hits|79|0|0|0|0
+Blightcaller Torvak hits YOU for 83 points of damage (9 absorbed).	damage_in|Blightcaller Torvak|Crit|Hits|83|9|0|0|0
 Blightcaller Torvak hits YOU for 92 points of damage.	damage_in|Blightcaller Torvak|Crit|Hits|92|0|0|0|0
 Blightcaller Torvak tries to hit YOU, but misses!	miss|Blightcaller Torvak|Crit|Miss|0|0|0|0|0
 Blightcaller Torvak's Bash hits Player for 13 points of damage.	damage_other|Blightcaller Torvak|Player|Bash|13|0|0|0|0
@@ -585,8 +616,10 @@ Blightcaller Torvak's Strike hits Player for 87 points of damage.	damage_other|B
 Blightcaller Torvak's Strike hits YOU for 103 points of damage!	damage_in|Blightcaller Torvak|Crit|Strike|103|0|0|0|0
 Blightcaller Torvak's Strike hits YOU for 120 points of damage!	damage_in|Blightcaller Torvak|Crit|Strike|120|0|0|0|0
 Blightcaller Torvak's Strike hits YOU for 120 points of damagel	damage_in|Blightcaller Torvak|Crit|Strike|120|0|0|0|0
+Blightcaller Torvak's Strike hits YOU for 125 points of damagel	damage_in|Blightcaller Torvak|Crit|Strike|125|0|0|0|0
 Blightcaller Torvak's Strike hits YOU for 64 points of damage!	damage_in|Blightcaller Torvak|Crit|Strike|64|0|0|0|0
 Blightcaller Torvak's Strike hits YOU for 70 points of damage!	damage_in|Blightcaller Torvak|Crit|Strike|70|0|0|0|0
+Blightcaller Torvak's Strike hits YOU for 98 points of damage!	damage_in|Blightcaller Torvak|Crit|Strike|98|0|0|0|0
 Bloodgate's Lethal Deluge hits a bone archer for 461 points of Poison Damage.	damage_other|Bloodgate|bone archer|Lethal Deluge|461|0|0|0|0
 Bone Construct crushes Lonaner for 354 points of damage.	damage_other|Bone Construct|Lonaner|Crushes|354|0|0|0|0
 Bone Construct crushes Lonaner for 42 points of damage.	damage_other|Bone Construct|Lonaner|Crushes|42|0|0|0|0
@@ -1572,22 +1605,54 @@ Kaufdoggy crushes a Plagueborn runescribe's pet for 156 points of damage.	damage
 Kaufdoggy crushes a Plagueborn runescribe's pet for 49 points of damage.	damage_other|Kaufdoggy|Plagueborn runescribe's pet|Crushes|49|0|0|0|0
 Kaufdoggy crushes Blightcaller Torvak for 107 points of damage.	damage_other|Kaufdoggy|Blightcaller Torvak|Crushes|107|0|0|0|0
 Kaufdoggy crushes Blightcaller Torvak for 110 points of damage.	damage_other|Kaufdoggy|Blightcaller Torvak|Crushes|110|0|0|0|0
+Kaufdoggy crushes Blightcaller Torvak for 119 points of damage.	damage_other|Kaufdoggy|Blightcaller Torvak|Crushes|119|0|0|0|0
 Kaufdoggy crushes Blightcaller Torvak for 124 points of damage.	damage_other|Kaufdoggy|Blightcaller Torvak|Crushes|124|0|0|0|0
+Kaufdoggy crushes Blightcaller Torvak for 129 points of damage.	damage_other|Kaufdoggy|Blightcaller Torvak|Crushes|129|0|0|0|0
+Kaufdoggy crushes Blightcaller Torvak for 136 points of damage.	damage_other|Kaufdoggy|Blightcaller Torvak|Crushes|136|0|0|0|0
 Kaufdoggy crushes Blightcaller Torvak for 144 points of damage.	damage_other|Kaufdoggy|Blightcaller Torvak|Crushes|144|0|0|0|0
+Kaufdoggy crushes Blightcaller Torvak for 145 points of damage.	damage_other|Kaufdoggy|Blightcaller Torvak|Crushes|145|0|0|0|0
+Kaufdoggy crushes Blightcaller Torvak for 146 points of damage.	damage_other|Kaufdoggy|Blightcaller Torvak|Crushes|146|0|0|0|0
+Kaufdoggy crushes Blightcaller Torvak for 151 points of damage.	damage_other|Kaufdoggy|Blightcaller Torvak|Crushes|151|0|0|0|0
+Kaufdoggy crushes Blightcaller Torvak for 152 points of damage.	damage_other|Kaufdoggy|Blightcaller Torvak|Crushes|152|0|0|0|0
+Kaufdoggy crushes Blightcaller Torvak for 155 points of damage.	damage_other|Kaufdoggy|Blightcaller Torvak|Crushes|155|0|0|0|0
+Kaufdoggy crushes Blightcaller Torvak for 162 points of damage.	damage_other|Kaufdoggy|Blightcaller Torvak|Crushes|162|0|0|0|0
 Kaufdoggy crushes Blightcaller Torvak for 166 points of damage.	damage_other|Kaufdoggy|Blightcaller Torvak|Crushes|166|0|0|0|0
 Kaufdoggy crushes Blightcaller Torvak for 172 points of damage.	damage_other|Kaufdoggy|Blightcaller Torvak|Crushes|172|0|0|0|0
+Kaufdoggy crushes Blightcaller Torvak for 180 points of damage.	damage_other|Kaufdoggy|Blightcaller Torvak|Crushes|180|0|0|0|0
+Kaufdoggy crushes Blightcaller Torvak for 182 points of damage.	damage_other|Kaufdoggy|Blightcaller Torvak|Crushes|182|0|0|0|0
+Kaufdoggy crushes Blightcaller Torvak for 41 points of damage.	damage_other|Kaufdoggy|Blightcaller Torvak|Crushes|41|0|0|0|0
 Kaufdoggy crushes Blightcaller Torvak for 48 points of damage.	damage_other|Kaufdoggy|Blightcaller Torvak|Crushes|48|0|0|0|0
 Kaufdoggy crushes Blightcaller Torvak for 62 points of damage.	damage_other|Kaufdoggy|Blightcaller Torvak|Crushes|62|0|0|0|0
+Kaufdoggy crushes Blightcaller Torvak for 85 points of damage.	damage_other|Kaufdoggy|Blightcaller Torvak|Crushes|85|0|0|0|0
+Kaufdoggy crushes Blightcaller Torvak for 92 points of damage.	damage_other|Kaufdoggy|Blightcaller Torvak|Crushes|92|0|0|0|0
+Kaufdoggy crushes Blightcaller Torvak for 98 points of damage.	damage_other|Kaufdoggy|Blightcaller Torvak|Crushes|98|0|0|0|0
+Kaufdoggy crushes Magistrate Sivash for 101 points of damage.	damage_other|Kaufdoggy|Magistrate Sivash|Crushes|101|0|0|0|0
+Kaufdoggy crushes Magistrate Sivash for 102 points of damage.	damage_other|Kaufdoggy|Magistrate Sivash|Crushes|102|0|0|0|0
+Kaufdoggy crushes Magistrate Sivash for 111 points of damage.	damage_other|Kaufdoggy|Magistrate Sivash|Crushes|111|0|0|0|0
 Kaufdoggy crushes Magistrate Sivash for 114 points of damage.	damage_other|Kaufdoggy|Magistrate Sivash|Crushes|114|0|0|0|0
+Kaufdoggy crushes Magistrate Sivash for 115 points of damage.	damage_other|Kaufdoggy|Magistrate Sivash|Crushes|115|0|0|0|0
+Kaufdoggy crushes Magistrate Sivash for 123 points of damage.	damage_other|Kaufdoggy|Magistrate Sivash|Crushes|123|0|0|0|0
 Kaufdoggy crushes Magistrate Sivash for 125 points of damage.	damage_other|Kaufdoggy|Magistrate Sivash|Crushes|125|0|0|0|0
 Kaufdoggy crushes Magistrate Sivash for 129 points of damage.	damage_other|Kaufdoggy|Magistrate Sivash|Crushes|129|0|0|0|0
+Kaufdoggy crushes Magistrate Sivash for 133 points of damage.	damage_other|Kaufdoggy|Magistrate Sivash|Crushes|133|0|0|0|0
+Kaufdoggy crushes Magistrate Sivash for 138 points of damage.	damage_other|Kaufdoggy|Magistrate Sivash|Crushes|138|0|0|0|0
 Kaufdoggy crushes Magistrate Sivash for 146 points of damage.	damage_other|Kaufdoggy|Magistrate Sivash|Crushes|146|0|0|0|0
+Kaufdoggy crushes Magistrate Sivash for 150 points of damage.	damage_other|Kaufdoggy|Magistrate Sivash|Crushes|150|0|0|0|0
+Kaufdoggy crushes Magistrate Sivash for 152 points of damage.	damage_other|Kaufdoggy|Magistrate Sivash|Crushes|152|0|0|0|0
 Kaufdoggy crushes Magistrate Sivash for 156 points of damage.	damage_other|Kaufdoggy|Magistrate Sivash|Crushes|156|0|0|0|0
+Kaufdoggy crushes Magistrate Sivash for 157 points of damage.	damage_other|Kaufdoggy|Magistrate Sivash|Crushes|157|0|0|0|0
 Kaufdoggy crushes Magistrate Sivash for 160 points of damage.	damage_other|Kaufdoggy|Magistrate Sivash|Crushes|160|0|0|0|0
+Kaufdoggy crushes Magistrate Sivash for 165 points of damage.	damage_other|Kaufdoggy|Magistrate Sivash|Crushes|165|0|0|0|0
 Kaufdoggy crushes Magistrate Sivash for 170 points of damage.	damage_other|Kaufdoggy|Magistrate Sivash|Crushes|170|0|0|0|0
+Kaufdoggy crushes Magistrate Sivash for 171 points of damage.	damage_other|Kaufdoggy|Magistrate Sivash|Crushes|171|0|0|0|0
+Kaufdoggy crushes Magistrate Sivash for 176 points of damage.	damage_other|Kaufdoggy|Magistrate Sivash|Crushes|176|0|0|0|0
 Kaufdoggy crushes Magistrate Sivash for 180 points of damage.	damage_other|Kaufdoggy|Magistrate Sivash|Crushes|180|0|0|0|0
+Kaufdoggy crushes Magistrate Sivash for 182 points of damage.	damage_other|Kaufdoggy|Magistrate Sivash|Crushes|182|0|0|0|0
+Kaufdoggy crushes Magistrate Sivash for 188 points of damage.	damage_other|Kaufdoggy|Magistrate Sivash|Crushes|188|0|0|0|0
 Kaufdoggy crushes Magistrate Sivash for 41 points of damage.	damage_other|Kaufdoggy|Magistrate Sivash|Crushes|41|0|0|0|0
 Kaufdoggy crushes Magistrate Sivash for 42 points of damage.	damage_other|Kaufdoggy|Magistrate Sivash|Crushes|42|0|0|0|0
+Kaufdoggy crushes Magistrate Sivash for 64 points of damage.	damage_other|Kaufdoggy|Magistrate Sivash|Crushes|64|0|0|0|0
+Kaufdoggy crushes Magistrate Sivash for 65 points of damage.	damage_other|Kaufdoggy|Magistrate Sivash|Crushes|65|0|0|0|0
 Kaufdoggy crushes Magistrate Sivash for 78 points of damage.	damage_other|Kaufdoggy|Magistrate Sivash|Crushes|78|0|0|0|0
 Kaufdoggy crushes Magistrate Sivash for 87 points of damage.	damage_other|Kaufdoggy|Magistrate Sivash|Crushes|87|0|0|0|0
 Kaufdoggy crushes Magistrate Sivash for 88 points of damage.	damage_other|Kaufdoggy|Magistrate Sivash|Crushes|88|0|0|0|0
@@ -1620,18 +1685,34 @@ Kaufdoggy's ancestral healing fades.	-
 Kaufdoggy's Chop VI hits a Plagueborn runescribe's pet for 119 points of damage.	damage_other|Kaufdoggy|Plagueborn runescribe's pet|Chop VI|119|0|0|0|0
 Kaufdoggy's Chop VI hits Blightcaller Torvak for 207 points of damage.	damage_other|Kaufdoggy|Blightcaller Torvak|Chop VI|207|0|0|0|0
 Kaufdoggy's Chop VI hits Blightcaller Torvak for 286 points of damage.	damage_other|Kaufdoggy|Blightcaller Torvak|Chop VI|286|0|0|0|0
+Kaufdoggy's Chop VI hits Blightcaller Torvak for 287 points of damage.	damage_other|Kaufdoggy|Blightcaller Torvak|Chop VI|287|0|0|0|0
+Kaufdoggy's Chop VI hits Blightcaller Torvak for 312 points of damage.	damage_other|Kaufdoggy|Blightcaller Torvak|Chop VI|312|0|0|0|0
+Kaufdoggy's Chop VI hits Blightcaller Torvak for 317 points of damage.	damage_other|Kaufdoggy|Blightcaller Torvak|Chop VI|317|0|0|0|0
+Kaufdoggy's Chop VI hits Magistrate Sivash for 148 points of damage.	damage_other|Kaufdoggy|Magistrate Sivash|Chop VI|148|0|0|0|0
 Kaufdoggy's Chop VI hits Magistrate Sivash for 150 points of damage.	damage_other|Kaufdoggy|Magistrate Sivash|Chop VI|150|0|0|0|0
+Kaufdoggy's Chop VI hits Magistrate Sivash for 182 points of damage.	damage_other|Kaufdoggy|Magistrate Sivash|Chop VI|182|0|0|0|0
+Kaufdoggy's Chop VI hits Magistrate Sivash for 197 points of damage.	damage_other|Kaufdoggy|Magistrate Sivash|Chop VI|197|0|0|0|0
+Kaufdoggy's Chop VI hits Magistrate Sivash for 236 points of damage.	damage_other|Kaufdoggy|Magistrate Sivash|Chop VI|236|0|0|0|0
 Kaufdoggy's Chop VI hits Magistrate Sivash for 289 points of damage.	damage_other|Kaufdoggy|Magistrate Sivash|Chop VI|289|0|0|0|0
 Kaufdoggy's Chop VI hits Magistrate Sivash for 303 points of damage.	damage_other|Kaufdoggy|Magistrate Sivash|Chop VI|303|0|0|0|0
+Kaufdoggy's Chop VI hits Magistrate Sivash for 326 points of damage.	damage_other|Kaufdoggy|Magistrate Sivash|Chop VI|326|0|0|0|0
 Kaufdoggy's Enraging Strike VI hits a Plagueborn runescribe's pet for 50 points of damage.	damage_other|Kaufdoggy|Plagueborn runescribe's pet|Enraging Strike VI|50|0|0|0|0
+Kaufdoggy's Enraging Strike VI hits Blightcaller Torvak for 111 points of dar	damage_other|Kaufdoggy|Blightcaller Torvak|Enraging Strike VI|111|0|0|0|0
 Kaufdoggy's Enraging Strike VI hits Blightcaller Torvak for 145 points of damage.	damage_other|Kaufdoggy|Blightcaller Torvak|Enraging Strike VI|145|0|0|0|0
 Kaufdoggy's Enraging Strike VI hits Blightcaller Torvak for 146 points of damage.	damage_other|Kaufdoggy|Blightcaller Torvak|Enraging Strike VI|146|0|0|0|0
 Kaufdoggy's Enraging Strike VI hits Blightcaller Torvak for 152 points of damage.	damage_other|Kaufdoggy|Blightcaller Torvak|Enraging Strike VI|152|0|0|0|0
+Kaufdoggy's Enraging Strike VI hits Blightcaller Torvak for 159 points of dar	damage_other|Kaufdoggy|Blightcaller Torvak|Enraging Strike VI|159|0|0|0|0
+Kaufdoggy's Enraging Strike VI hits Blightcaller Torvak for 72 points of dam	damage_other|Kaufdoggy|Blightcaller Torvak|Enraging Strike VI|72|0|0|0|0
+Kaufdoggy's Enraging Strike VI hits Magistrate Sivash for 108 points of dam	damage_other|Kaufdoggy|Magistrate Sivash|Enraging Strike VI|108|0|0|0|0
+Kaufdoggy's Enraging Strike VI hits Magistrate Sivash for 123 points of dam	damage_other|Kaufdoggy|Magistrate Sivash|Enraging Strike VI|123|0|0|0|0
 Kaufdoggy's Enraging Strike VI hits Magistrate Sivash for 55 points of damage.	damage_other|Kaufdoggy|Magistrate Sivash|Enraging Strike VI|55|0|0|0|0
+Kaufdoggy's Enraging Strike VI hits Magistrate Sivash for 61 points of damag	damage_other|Kaufdoggy|Magistrate Sivash|Enraging Strike VI|61|0|0|0|0
+Kaufdoggy's Enraging Strike VI hits Magistrate Sivash for 76 points of damag	damage_other|Kaufdoggy|Magistrate Sivash|Enraging Strike VI|76|0|0|0|0
 Kaufdoggy's Enraging Strike VI hits Magistrate Sivash for 79 points of damage.	damage_other|Kaufdoggy|Magistrate Sivash|Enraging Strike VI|79|0|0|0|0
 Kaufdoggy's Enraging Strike VI hits Magistrate Sivash for 83 points of damage.	damage_other|Kaufdoggy|Magistrate Sivash|Enraging Strike VI|83|0|0|0|0
 Kaufdoggy's Lick Wounds heals Kaufdoggy for 150 Health.	heal|Kaufdoggy|Kaufdoggy|Heal|150|0|0|0|0
 Kaufdoggy's Lick Wounds heals Kaufdoggy for 185 Health.	heal|Kaufdoggy|Kaufdoggy|Heal|185|0|0|0|0
+Kaufdoggy's Pounce hits Blightcaller Torvak for 58 points of damage.	damage_other|Kaufdoggy|Blightcaller Torvak|Pounce|58|0|0|0|0
 Kaufdoggy's Pounce hits Blightcaller Torvak for 86 points of damage.	damage_other|Kaufdoggy|Blightcaller Torvak|Pounce|86|0|0|0|0
 Kaufdoggy's Rejuvenate Companion heals Stickyikky for 295 Health.	heal|Kaufdoggy|Stickyikky|Heal|295|0|0|0|0
 Kebekab is renewed by ancestral healing	-
@@ -1684,6 +1765,17 @@ Klog crushes Blightcaller Torvak for 61 points of damage. (Critical)	damage_othe
 Klog crushes Blightcaller Torvak for 66 points of damage.	damage_other|Klog|Blightcaller Torvak|Crushes|66|0|0|0|0
 Klog crushes Blightcaller Torvak for 75 points of damage. (Critical)	damage_other|Klog|Blightcaller Torvak|Crushes|75|0|1|0|0
 Klog crushes Blightcaller Torvak for 96 points of damage.	damage_other|Klog|Blightcaller Torvak|Crushes|96|0|0|0|0
+Klog crushes Blightcaller Torvak with their offhand for 34 points of damage.	damage_other|Klog|Blightcaller Torvak|Crushes (Offhand)|34|0|0|0|0
+Klog crushes Blightcaller Torvak with their offhand for 4 points of damage.	damage_other|Klog|Blightcaller Torvak|Crushes (Offhand)|4|0|0|0|0
+Klog crushes Blightcaller Torvak with their offhand for 42 points of damage.	damage_other|Klog|Blightcaller Torvak|Crushes (Offhand)|42|0|0|0|0
+Klog crushes Blightcaller Torvak with their offhand for 46 points of damage.	damage_other|Klog|Blightcaller Torvak|Crushes (Offhand)|46|0|0|0|0
+Klog crushes Blightcaller Torvak with their offhand for 50 points of damage.	damage_other|Klog|Blightcaller Torvak|Crushes (Offhand)|50|0|0|0|0
+Klog crushes Blightcaller Torvak with their offhand for 59 points of damage.	damage_other|Klog|Blightcaller Torvak|Crushes (Offhand)|59|0|0|0|0
+Klog crushes Blightcaller Torvak with their offhand for 63 points of damage.	damage_other|Klog|Blightcaller Torvak|Crushes (Offhand)|63|0|0|0|0
+Klog crushes Blightcaller Torvak with their offhand for 67 points of damage.	damage_other|Klog|Blightcaller Torvak|Crushes (Offhand)|67|0|0|0|0
+Klog crushes Blightcaller Torvak with their offhand for 71 points of damage.	damage_other|Klog|Blightcaller Torvak|Crushes (Offhand)|71|0|0|0|0
+Klog crushes Blightcaller Torvak with their offhand for 76 points of damage.	damage_other|Klog|Blightcaller Torvak|Crushes (Offhand)|76|0|0|0|0
+Klog crushes Blightcaller Torvak with their offhand for 84 points of damage.	damage_other|Klog|Blightcaller Torvak|Crushes (Offhand)|84|0|0|0|0
 Klog crushes Magistrate Sivash for 110 points of damage.	damage_other|Klog|Magistrate Sivash|Crushes|110|0|0|0|0
 Klog crushes Magistrate Sivash for 118 points of damage.	damage_other|Klog|Magistrate Sivash|Crushes|118|0|0|0|0
 Klog crushes Magistrate Sivash for 133 points of damage.	damage_other|Klog|Magistrate Sivash|Crushes|133|0|0|0|0
@@ -1727,6 +1819,16 @@ Klog punches a Plagueborn templar for 53 points of damage.	damage_other|Klog|Pla
 Klog punches a Plagueborn templar for 78 points of damage.	damage_other|Klog|Plagueborn templar|Punches|78|0|0|0|0
 Klog punches a Plagueborn templar for 95 points of damage.	damage_other|Klog|Plagueborn templar|Punches|95|0|0|0|0
 Klog punches a rotten sharpshooter for 90 points of damage.	damage_other|Klog|rotten sharpshooter|Punches|90|0|0|0|0
+Klog punches Blightcaller Torvak for 15 points of damage.	damage_other|Klog|Blightcaller Torvak|Punches|15|0|0|0|0
+Klog punches Blightcaller Torvak for 27 points of damage.	damage_other|Klog|Blightcaller Torvak|Punches|27|0|0|0|0
+Klog punches Blightcaller Torvak for 39 points of damage.	damage_other|Klog|Blightcaller Torvak|Punches|39|0|0|0|0
+Klog punches Blightcaller Torvak for 43 points of damage.	damage_other|Klog|Blightcaller Torvak|Punches|43|0|0|0|0
+Klog punches Blightcaller Torvak for 47 points of damage.	damage_other|Klog|Blightcaller Torvak|Punches|47|0|0|0|0
+Klog punches Blightcaller Torvak for 55 points of damage.	damage_other|Klog|Blightcaller Torvak|Punches|55|0|0|0|0
+Klog punches Blightcaller Torvak for 59 points of damage.	damage_other|Klog|Blightcaller Torvak|Punches|59|0|0|0|0
+Klog punches Blightcaller Torvak for 63 points of damage.	damage_other|Klog|Blightcaller Torvak|Punches|63|0|0|0|0
+Klog punches Blightcaller Torvak for 71 points of damage.	damage_other|Klog|Blightcaller Torvak|Punches|71|0|0|0|0
+Klog punches Blightcaller Torvak for 91 points of damage.	damage_other|Klog|Blightcaller Torvak|Punches|91|0|0|0|0
 Klog punches Magistrate Sivash for 15 points of damage.	damage_other|Klog|Magistrate Sivash|Punches|15|0|0|0|0
 Klog punches Magistrate Sivash for 24 points of damage.	damage_other|Klog|Magistrate Sivash|Punches|24|0|0|0|0
 Klog punches Magistrate Sivash for 42 points of damage.	damage_other|Klog|Magistrate Sivash|Punches|42|0|0|0|0
@@ -1769,6 +1871,8 @@ Klog's Celestial Strike VI hits a sandy broodling for 101 points of damage.	dama
 Klog's Celestial Strike VI hits a sandy broodling for 130 points of damage.	damage_other|Klog|sandy broodling|Celestial Strike VI|130|0|0|0|0
 Klog's Celestial Strike VI hits a sandy broodling for 134 points of damage.	damage_other|Klog|sandy broodling|Celestial Strike VI|134|0|0|0|0
 Klog's Celestial Strike VI hits a sandy broodling for 84 points of damage.	damage_other|Klog|sandy broodling|Celestial Strike VI|84|0|0|0|0
+Klog's Celestial Strike VI hits Blightcaller Torvak for 101 points of damage.	damage_other|Klog|Blightcaller Torvak|Celestial Strike VI|101|0|0|0|0
+Klog's Celestial Strike VI hits Blightcaller Torvak for 135 points of damage.	damage_other|Klog|Blightcaller Torvak|Celestial Strike VI|135|0|0|0|0
 Klog's Celestial Strike VI hits Blightcaller Torvak for 164 points of damage.	damage_other|Klog|Blightcaller Torvak|Celestial Strike VI|164|0|0|0|0
 Klog's Celestial Strike VI hits Blightcaller Torvak for 257 points of damage. (Critical)	damage_other|Klog|Blightcaller Torvak|Celestial Strike VI|257|0|1|0|0
 Klog's Celestial Strike VI hits Lord Ga'Duuz for 101 points of damage.	damage_other|Klog|Lord Ga'Duuz|Celestial Strike VI|101|0|0|0|0
@@ -1793,11 +1897,13 @@ Klog's Celestial Strike VI hits Magistrate Sivash for 59 points of damage.	damag
 Klog's Celestial Strike VI hits Magistrate Sivash for 80 points of damage.	damage_other|Klog|Magistrate Sivash|Celestial Strike VI|80|0|0|0|0
 Klog's Celestial Vitality heals them for 100 Health.	heal|Klog|Klog|Heal|100|0|0|0|0
 Klog's Flying Kick V hits a Plagueborn blightcaller for 158 points of damage.	damage_other|Klog|Plagueborn blightcaller|Flying Kick V|158|0|0|0|0
+Klog's Flying Kick V hits Blightcaller Torvak for 153 points of damage.	damage_other|Klog|Blightcaller Torvak|Flying Kick V|153|0|0|0|0
 Klog's Flying Kick V hits Blightcaller Torvak for 264 points of damage. (Critical)	damage_other|Klog|Blightcaller Torvak|Flying Kick V|264|0|1|0|0
 Klog's Life Sap heals them for 37 Health.	heal|Klog|Klog|Heal|37|0|0|0|0
 Klog's Life Sap heals them for 40 Health.	heal|Klog|Klog|Heal|40|0|0|0|0
 Klog's Life Sap hits a Plagueborn templar for 37 points of Corruption Damage.	damage_other|Klog|Plagueborn templar|Life Sap|37|0|0|0|0
 Klog's Life Sap hits Magistrate Sivash for 40 points of Corruption Damage.	damage_other|Klog|Magistrate Sivash|Life Sap|40|0|0|0|0
+Klog's Mend heals them for 789 Health.	heal|Klog|Klog|Heal|789|0|0|0|0
 Klog's Mend heals them for 856 Health.	heal|Klog|Klog|Heal|856|0|0|0|0
 Klog's Mend heals them for 882 Health.	heal|Klog|Klog|Heal|882|0|0|0|0
 Klog's Mend heals them for 914 Health.	heal|Klog|Klog|Heal|914|0|0|0|0
@@ -1807,12 +1913,14 @@ Klog's Round Kick VI hits a Plagueborn templar for 148 points of damage.	damage_
 Klog's Round Kick VI hits a rotten sharpshooter for 149 points of damage.	damage_other|Klog|rotten sharpshooter|Round Kick VI|149|0|0|0|0
 Klog's Round Kick VI hits a sandy broodling for 147 points of damage.	damage_other|Klog|sandy broodling|Round Kick VI|147|0|0|0|0
 Klog's Round Kick VI hits a sandy broodling for 154 points of damage.	damage_other|Klog|sandy broodling|Round Kick VI|154|0|0|0|0
+Klog's Round Kick VI hits Blightcaller Torvak for 143 points of damage.	damage_other|Klog|Blightcaller Torvak|Round Kick VI|143|0|0|0|0
 Klog's Round Kick VI hits Blightcaller Torvak for 144 points of damage.	damage_other|Klog|Blightcaller Torvak|Round Kick VI|144|0|0|0|0
 Klog's Round Kick VI hits Blightcaller Torvak for 145 points of damage.	damage_other|Klog|Blightcaller Torvak|Round Kick VI|145|0|0|0|0
 Klog's Round Kick VI hits Lord Ga'Duuz for 147 points of damage.	damage_other|Klog|Lord Ga'Duuz|Round Kick VI|147|0|0|0|0
 Klog's Round Kick VI hits Lord Ga'Duuz for 154 points of damage.	damage_other|Klog|Lord Ga'Duuz|Round Kick VI|154|0|0|0|0
 Klog's Round Kick VI hits Magistrate Sivash for 144 points of damage.	damage_other|Klog|Magistrate Sivash|Round Kick VI|144|0|0|0|0
 Klog's Round Kick VI hits Magistrate Sivash for 146 points of damage.	damage_other|Klog|Magistrate Sivash|Round Kick VI|146|0|0|0|0
+Klog's Soul Reverberation hits Blightcaller Torvak for 220 points of Magic D	damage_other|Klog|Blightcaller Torvak|Soul Reverberation|220|0|0|0|0
 Klog's Soul Reverberation hits Lord Ga'Duuz for 208 points of Magic Damage.	damage_other|Klog|Lord Ga'Duuz|Soul Reverberation|208|0|0|0|0
 Klog's Soul Reverberation hits Lord Ga'Duuz for 216 points of Magic	damage_other|Klog|Lord Ga'Duuz|Soul Reverberation|216|0|0|0|0
 Klog's Soul Reverberation hits Lord Ga'Duuz for 216 points of Magic Damage.	damage_other|Klog|Lord Ga'Duuz|Soul Reverberation|216|0|0|0|0
@@ -1974,45 +2082,88 @@ Longjonn bites a Plagueborn runescribe's pet with their offhand for 28 points of
 Longjonn bites a Plagueborn runescribe's pet with their offhand for 3 points of damage.	damage_other|Longjonn|Plagueborn runescribe's pet|Bites (Offhand)|3|0|0|0|0
 Longjonn bites a Plagueborn runescribe's pet with their offhand for 71 points of damage.(Critical)	damage_other|Longjonn|Plagueborn runescribe's pet|Bites (Offhand)|71|0|1|0|0
 Longjonn bites Blightcaller Torvak for 11 points of damage.	damage_other|Longjonn|Blightcaller Torvak|Bites|11|0|0|0|0
+Longjonn bites Blightcaller Torvak for 14 points of damage.	damage_other|Longjonn|Blightcaller Torvak|Bites|14|0|0|0|0
+Longjonn bites Blightcaller Torvak for 14 points of damage. (Critical)	damage_other|Longjonn|Blightcaller Torvak|Bites|14|0|1|0|0
+Longjonn bites Blightcaller Torvak for 20 points of damage.	damage_other|Longjonn|Blightcaller Torvak|Bites|20|0|0|0|0
 Longjonn bites Blightcaller Torvak for 22 points of damage.	damage_other|Longjonn|Blightcaller Torvak|Bites|22|0|0|0|0
 Longjonn bites Blightcaller Torvak for 25 points of damage.	damage_other|Longjonn|Blightcaller Torvak|Bites|25|0|0|0|0
+Longjonn bites Blightcaller Torvak for 28 points of damage.	damage_other|Longjonn|Blightcaller Torvak|Bites|28|0|0|0|0
+Longjonn bites Blightcaller Torvak for 29 points of damage. (Critical)	damage_other|Longjonn|Blightcaller Torvak|Bites|29|0|1|0|0
 Longjonn bites Blightcaller Torvak for 3 points of damage.	damage_other|Longjonn|Blightcaller Torvak|Bites|3|0|0|0|0
 Longjonn bites Blightcaller Torvak for 31 points of damage.	damage_other|Longjonn|Blightcaller Torvak|Bites|31|0|0|0|0
 Longjonn bites Blightcaller Torvak for 34 points of damage.	damage_other|Longjonn|Blightcaller Torvak|Bites|34|0|0|0|0
+Longjonn bites Blightcaller Torvak for 34 points of damage. (Critical)	damage_other|Longjonn|Blightcaller Torvak|Bites|34|0|1|0|0
 Longjonn bites Blightcaller Torvak for 36 points of damage.	damage_other|Longjonn|Blightcaller Torvak|Bites|36|0|0|0|0
 Longjonn bites Blightcaller Torvak for 37 points of damage. (Critical)	damage_other|Longjonn|Blightcaller Torvak|Bites|37|0|1|0|0
 Longjonn bites Blightcaller Torvak for 39 points of damage.	damage_other|Longjonn|Blightcaller Torvak|Bites|39|0|0|0|0
+Longjonn bites Blightcaller Torvak for 42 points of damage. (Critical)	damage_other|Longjonn|Blightcaller Torvak|Bites|42|0|1|0|0
 Longjonn bites Blightcaller Torvak for 45 points of damage.	damage_other|Longjonn|Blightcaller Torvak|Bites|45|0|0|0|0
 Longjonn bites Blightcaller Torvak for 48 points of damage.	damage_other|Longjonn|Blightcaller Torvak|Bites|48|0|0|0|0
 Longjonn bites Blightcaller Torvak for 48 points of damage. (Critical)	damage_other|Longjonn|Blightcaller Torvak|Bites|48|0|1|0|0
 Longjonn bites Blightcaller Torvak for 5 points of damage. (Critical)	damage_other|Longjonn|Blightcaller Torvak|Bites|5|0|1|0|0
+Longjonn bites Blightcaller Torvak for 50 points of damage.	damage_other|Longjonn|Blightcaller Torvak|Bites|50|0|0|0|0
 Longjonn bites Blightcaller Torvak for 53 points of damage.	damage_other|Longjonn|Blightcaller Torvak|Bites|53|0|0|0|0
+Longjonn bites Blightcaller Torvak for 53 points of damage. (Critical)	damage_other|Longjonn|Blightcaller Torvak|Bites|53|0|1|0|0
 Longjonn bites Blightcaller Torvak for 56 points of damage.	damage_other|Longjonn|Blightcaller Torvak|Bites|56|0|0|0|0
+Longjonn bites Blightcaller Torvak for 58 points of damage. (Critical)	damage_other|Longjonn|Blightcaller Torvak|Bites|58|0|1|0|0
+Longjonn bites Blightcaller Torvak for 66 points of damage. (Critical)	damage_other|Longjonn|Blightcaller Torvak|Bites|66|0|1|0|0
+Longjonn bites Blightcaller Torvak for 71 points of damage. (Critical)	damage_other|Longjonn|Blightcaller Torvak|Bites|71|0|1|0|0
 Longjonn bites Blightcaller Torvak for 76 points of damage. (Critical)	damage_other|Longjonn|Blightcaller Torvak|Bites|76|0|1|0|0
 Longjonn bites Blightcaller Torvak for 8 points of damage.	damage_other|Longjonn|Blightcaller Torvak|Bites|8|0|0|0|0
+Longjonn bites Blightcaller Torvak for 95 points of damage. (Critical)	damage_other|Longjonn|Blightcaller Torvak|Bites|95|0|1|0|0
 Longjonn bites Blightcaller Torvak with their offhand for 10 points of damage. (Critical)	damage_other|Longjonn|Blightcaller Torvak|Bites (Offhand)|10|0|1|0|0
+Longjonn bites Blightcaller Torvak with their offhand for 11 points of damag	damage_other|Longjonn|Blightcaller Torvak|Bites (Offhand)|11|0|0|0|0
+Longjonn bites Blightcaller Torvak with their offhand for 14 points of damag	damage_other|Longjonn|Blightcaller Torvak|Bites (Offhand)|14|0|0|0|0
 Longjonn bites Blightcaller Torvak with their offhand for 14 points of damage.	damage_other|Longjonn|Blightcaller Torvak|Bites (Offhand)|14|0|0|0|0
+Longjonn bites Blightcaller Torvak with their offhand for 17 points of dama	damage_other|Longjonn|Blightcaller Torvak|Bites (Offhand)|17|0|0|0|0
+Longjonn bites Blightcaller Torvak with their offhand for 19 points of damag	damage_other|Longjonn|Blightcaller Torvak|Bites (Offhand)|19|0|0|0|0
+Longjonn bites Blightcaller Torvak with their offhand for 20 points of dama	damage_other|Longjonn|Blightcaller Torvak|Bites (Offhand)|20|0|0|0|0
 Longjonn bites Blightcaller Torvak with their offhand for 22 points of damage.	damage_other|Longjonn|Blightcaller Torvak|Bites (Offhand)|22|0|0|0|0
+Longjonn bites Blightcaller Torvak with their offhand for 25 points of damag	damage_other|Longjonn|Blightcaller Torvak|Bites (Offhand)|25|0|0|0|0
 Longjonn bites Blightcaller Torvak with their offhand for 25 points of damage.	damage_other|Longjonn|Blightcaller Torvak|Bites (Offhand)|25|0|0|0|0
 Longjonn bites Blightcaller Torvak with their offhand for 28 points of damage.	damage_other|Longjonn|Blightcaller Torvak|Bites (Offhand)|28|0|0|0|0
 Longjonn bites Blightcaller Torvak with their offhand for 29 points of damage. (Critical)	damage_other|Longjonn|Blightcaller Torvak|Bites (Offhand)|29|0|1|0|0
+Longjonn bites Blightcaller Torvak with their offhand for 3 points of damag	damage_other|Longjonn|Blightcaller Torvak|Bites (Offhand)|3|0|0|0|0
+Longjonn bites Blightcaller Torvak with their offhand for 3 points of damage	damage_other|Longjonn|Blightcaller Torvak|Bites (Offhand)|3|0|0|0|0
 Longjonn bites Blightcaller Torvak with their offhand for 3 points of damage.	damage_other|Longjonn|Blightcaller Torvak|Bites (Offhand)|3|0|0|0|0
+Longjonn bites Blightcaller Torvak with their offhand for 31 points of damag	damage_other|Longjonn|Blightcaller Torvak|Bites (Offhand)|31|0|0|0|0
 Longjonn bites Blightcaller Torvak with their offhand for 31 points of damage.	damage_other|Longjonn|Blightcaller Torvak|Bites (Offhand)|31|0|0|0|0
+Longjonn bites Blightcaller Torvak with their offhand for 34 points of damag	damage_other|Longjonn|Blightcaller Torvak|Bites (Offhand)|34|0|0|0|0
+Longjonn bites Blightcaller Torvak with their offhand for 39 points of damag	damage_other|Longjonn|Blightcaller Torvak|Bites (Offhand)|39|0|0|0|0
+Longjonn bites Blightcaller Torvak with their offhand for 42 points of damag	damage_other|Longjonn|Blightcaller Torvak|Bites (Offhand)|42|0|0|0|0
 Longjonn bites Blightcaller Torvak with their offhand for 42 points of damage.	damage_other|Longjonn|Blightcaller Torvak|Bites (Offhand)|42|0|0|0|0
 Longjonn bites Blightcaller Torvak with their offhand for 42 points of damage. (Critical)	damage_other|Longjonn|Blightcaller Torvak|Bites (Offhand)|42|0|1|0|0
+Longjonn bites Blightcaller Torvak with their offhand for 48 points of damag	damage_other|Longjonn|Blightcaller Torvak|Bites (Offhand)|48|0|0|0|0
+Longjonn bites Blightcaller Torvak with their offhand for 5 points of damage	damage_other|Longjonn|Blightcaller Torvak|Bites (Offhand)|5|0|0|0|0
+Longjonn bites Blightcaller Torvak with their offhand for 50 points of dama	damage_other|Longjonn|Blightcaller Torvak|Bites (Offhand)|50|0|0|0|0
+Longjonn bites Blightcaller Torvak with their offhand for 53 points of damag	damage_other|Longjonn|Blightcaller Torvak|Bites (Offhand)|53|0|0|0|0
 Longjonn bites Blightcaller Torvak with their offhand for 53 points of damage.	damage_other|Longjonn|Blightcaller Torvak|Bites (Offhand)|53|0|0|0|0
+Longjonn bites Blightcaller Torvak with their offhand for 56 points of dama	damage_other|Longjonn|Blightcaller Torvak|Bites (Offhand)|56|0|0|0|0
+Longjonn bites Blightcaller Torvak with their offhand for 56 points of damag	damage_other|Longjonn|Blightcaller Torvak|Bites (Offhand)|56|0|0|0|0
 Longjonn bites Blightcaller Torvak with their offhand for 56 points of damage.	damage_other|Longjonn|Blightcaller Torvak|Bites (Offhand)|56|0|0|0|0
+Longjonn bites Blightcaller Torvak with their offhand for 58 points of dama	damage_other|Longjonn|Blightcaller Torvak|Bites (Offhand)|58|0|0|0|0
+Longjonn bites Blightcaller Torvak with their offhand for 58 points of damag	damage_other|Longjonn|Blightcaller Torvak|Bites (Offhand)|58|0|0|0|0
 Longjonn bites Blightcaller Torvak with their offhand for 61 points of damage.	damage_other|Longjonn|Blightcaller Torvak|Bites (Offhand)|61|0|0|0|0
 Longjonn bites Blightcaller Torvak with their offhand for 76 points of damage. (Critical)	damage_other|Longjonn|Blightcaller Torvak|Bites (Offhand)|76|0|1|0|0
+Longjonn bites Blightcaller Torvak with their offhand for 82 points of damag	damage_other|Longjonn|Blightcaller Torvak|Bites (Offhand)|82|0|0|0|0
+Longjonn bites Blightcaller Torvak with their offhand for 85 points of damag	damage_other|Longjonn|Blightcaller Torvak|Bites (Offhand)|85|0|0|0|0
+Longjonn bites Blightcaller Torvak with their offhand for 90 points of dama	damage_other|Longjonn|Blightcaller Torvak|Bites (Offhand)|90|0|0|0|0
+Longjonn bites Blightcaller Torvak with their offhand for 95 points of dama	damage_other|Longjonn|Blightcaller Torvak|Bites (Offhand)|95|0|0|0|0
 Longjonn bites Blightcaller Torvak with their offhand for 95 points of damage. (Critical)	damage_other|Longjonn|Blightcaller Torvak|Bites (Offhand)|95|0|1|0|0
+Longjonn bites Magistrate Sivash for 11 points of damage.	damage_other|Longjonn|Magistrate Sivash|Bites|11|0|0|0|0
+Longjonn bites Magistrate Sivash for 14 points of damage.	damage_other|Longjonn|Magistrate Sivash|Bites|14|0|0|0|0
 Longjonn bites Magistrate Sivash for 14 points of damage. (Critical)	damage_other|Longjonn|Magistrate Sivash|Bites|14|0|1|0|0
+Longjonn bites Magistrate Sivash for 19 points of damage. (Critical)	damage_other|Longjonn|Magistrate Sivash|Bites|19|0|1|0|0
 Longjonn bites Magistrate Sivash for 20 points of damage.	damage_other|Longjonn|Magistrate Sivash|Bites|20|0|0|0|0
+Longjonn bites Magistrate Sivash for 22 points of damage.	damage_other|Longjonn|Magistrate Sivash|Bites|22|0|0|0|0
 Longjonn bites Magistrate Sivash for 25 points of damage.	damage_other|Longjonn|Magistrate Sivash|Bites|25|0|0|0|0
 Longjonn bites Magistrate Sivash for 28 points of damage.	damage_other|Longjonn|Magistrate Sivash|Bites|28|0|0|0|0
 Longjonn bites Magistrate Sivash for 3 points of damage.	damage_other|Longjonn|Magistrate Sivash|Bites|3|0|0|0|0
 Longjonn bites Magistrate Sivash for 31 points of damage.	damage_other|Longjonn|Magistrate Sivash|Bites|31|0|0|0|0
 Longjonn bites Magistrate Sivash for 34 points of damage.	damage_other|Longjonn|Magistrate Sivash|Bites|34|0|0|0|0
+Longjonn bites Magistrate Sivash for 36 points of damage.	damage_other|Longjonn|Magistrate Sivash|Bites|36|0|0|0|0
 Longjonn bites Magistrate Sivash for 37 points of damage. (Critical)	damage_other|Longjonn|Magistrate Sivash|Bites|37|0|1|0|0
+Longjonn bites Magistrate Sivash for 39 points of damage.	damage_other|Longjonn|Magistrate Sivash|Bites|39|0|0|0|0
 Longjonn bites Magistrate Sivash for 42 points of damage.	damage_other|Longjonn|Magistrate Sivash|Bites|42|0|0|0|0
 Longjonn bites Magistrate Sivash for 45 points of damage.	damage_other|Longjonn|Magistrate Sivash|Bites|45|0|0|0|0
 Longjonn bites Magistrate Sivash for 48 points of damage. (Critical)	damage_other|Longjonn|Magistrate Sivash|Bites|48|0|1|0|0
@@ -2021,28 +2172,54 @@ Longjonn bites Magistrate Sivash for 50 points of damage.	damage_other|Longjonn|
 Longjonn bites Magistrate Sivash for 53 points of damage.	damage_other|Longjonn|Magistrate Sivash|Bites|53|0|0|0|0
 Longjonn bites Magistrate Sivash for 53 points of damage. (Critical)	damage_other|Longjonn|Magistrate Sivash|Bites|53|0|1|0|0
 Longjonn bites Magistrate Sivash for 56 points of damage.	damage_other|Longjonn|Magistrate Sivash|Bites|56|0|0|0|0
+Longjonn bites Magistrate Sivash for 58 points of damage. (Critical)	damage_other|Longjonn|Magistrate Sivash|Bites|58|0|1|0|0
 Longjonn bites Magistrate Sivash for 6 points of damage.	damage_other|Longjonn|Magistrate Sivash|Bites|6|0|0|0|0
 Longjonn bites Magistrate Sivash for 61 points of damage. (Critical)	damage_other|Longjonn|Magistrate Sivash|Bites|61|0|1|0|0
 Longjonn bites Magistrate Sivash for 66 points of damage. (Critical)	damage_other|Longjonn|Magistrate Sivash|Bites|66|0|1|0|0
+Longjonn bites Magistrate Sivash for 76 points of damage. (Critical)	damage_other|Longjonn|Magistrate Sivash|Bites|76|0|1|0|0
 Longjonn bites Magistrate Sivash for 8 points of damage.	damage_other|Longjonn|Magistrate Sivash|Bites|8|0|0|0|0
+Longjonn bites Magistrate Sivash for 82 points of damage. (Critical)	damage_other|Longjonn|Magistrate Sivash|Bites|82|0|1|0|0
+Longjonn bites Magistrate Sivash for 85 points of damage. (Critical)	damage_other|Longjonn|Magistrate Sivash|Bites|85|0|1|0|0
 Longjonn bites Magistrate Sivash for 90 points of damage. (Critical)	damage_other|Longjonn|Magistrate Sivash|Bites|90|0|1|0|0
 Longjonn bites Magistrate Sivash for 95 points of damage. (Critical)	damage_other|Longjonn|Magistrate Sivash|Bites|95|0|1|0|0
+Longjonn bites Magistrate Sivash with their offhand for 11 points of damage	damage_other|Longjonn|Magistrate Sivash|Bites (Offhand)|11|0|0|0|0
+Longjonn bites Magistrate Sivash with their offhand for 14 points of damage	damage_other|Longjonn|Magistrate Sivash|Bites (Offhand)|14|0|0|0|0
+Longjonn bites Magistrate Sivash with their offhand for 17 points of damage	damage_other|Longjonn|Magistrate Sivash|Bites (Offhand)|17|0|0|0|0
+Longjonn bites Magistrate Sivash with their offhand for 20 points of damage	damage_other|Longjonn|Magistrate Sivash|Bites (Offhand)|20|0|0|0|0
+Longjonn bites Magistrate Sivash with their offhand for 22 points of damage	damage_other|Longjonn|Magistrate Sivash|Bites (Offhand)|22|0|0|0|0
 Longjonn bites Magistrate Sivash with their offhand for 22 points of damage.	damage_other|Longjonn|Magistrate Sivash|Bites (Offhand)|22|0|0|0|0
+Longjonn bites Magistrate Sivash with their offhand for 25 points of damage	damage_other|Longjonn|Magistrate Sivash|Bites (Offhand)|25|0|0|0|0
 Longjonn bites Magistrate Sivash with their offhand for 25 points of damage.	damage_other|Longjonn|Magistrate Sivash|Bites (Offhand)|25|0|0|0|0
+Longjonn bites Magistrate Sivash with their offhand for 28 points of damage	damage_other|Longjonn|Magistrate Sivash|Bites (Offhand)|28|0|0|0|0
 Longjonn bites Magistrate Sivash with their offhand for 28 points of damage.	damage_other|Longjonn|Magistrate Sivash|Bites (Offhand)|28|0|0|0|0
 Longjonn bites Magistrate Sivash with their offhand for 3 points of damage.	damage_other|Longjonn|Magistrate Sivash|Bites (Offhand)|3|0|0|0|0
 Longjonn bites Magistrate Sivash with their offhand for 31 points of damage.	damage_other|Longjonn|Magistrate Sivash|Bites (Offhand)|31|0|0|0|0
+Longjonn bites Magistrate Sivash with their offhand for 36 points of damage	damage_other|Longjonn|Magistrate Sivash|Bites (Offhand)|36|0|0|0|0
+Longjonn bites Magistrate Sivash with their offhand for 37 points of damage	damage_other|Longjonn|Magistrate Sivash|Bites (Offhand)|37|0|0|0|0
 Longjonn bites Magistrate Sivash with their offhand for 39 points of damage.	damage_other|Longjonn|Magistrate Sivash|Bites (Offhand)|39|0|0|0|0
+Longjonn bites Magistrate Sivash with their offhand for 42 points of damage	damage_other|Longjonn|Magistrate Sivash|Bites (Offhand)|42|0|0|0|0
 Longjonn bites Magistrate Sivash with their offhand for 42 points of damage.	damage_other|Longjonn|Magistrate Sivash|Bites (Offhand)|42|0|0|0|0
 Longjonn bites Magistrate Sivash with their offhand for 45 points of damage.	damage_other|Longjonn|Magistrate Sivash|Bites (Offhand)|45|0|0|0|0
+Longjonn bites Magistrate Sivash with their offhand for 48 points of damage	damage_other|Longjonn|Magistrate Sivash|Bites (Offhand)|48|0|0|0|0
+Longjonn bites Magistrate Sivash with their offhand for 5 points of damage.	damage_other|Longjonn|Magistrate Sivash|Bites (Offhand)|5|0|0|0|0
 Longjonn bites Magistrate Sivash with their offhand for 5 points of damage. (Critical)	damage_other|Longjonn|Magistrate Sivash|Bites (Offhand)|5|0|1|0|0
+Longjonn bites Magistrate Sivash with their offhand for 50 points of damage	damage_other|Longjonn|Magistrate Sivash|Bites (Offhand)|50|0|0|0|0
 Longjonn bites Magistrate Sivash with their offhand for 50 points of damage.	damage_other|Longjonn|Magistrate Sivash|Bites (Offhand)|50|0|0|0|0
+Longjonn bites Magistrate Sivash with their offhand for 53 points of damage	damage_other|Longjonn|Magistrate Sivash|Bites (Offhand)|53|0|0|0|0
 Longjonn bites Magistrate Sivash with their offhand for 53 points of damage. (Critical)	damage_other|Longjonn|Magistrate Sivash|Bites (Offhand)|53|0|1|0|0
+Longjonn bites Magistrate Sivash with their offhand for 56 points of damage	damage_other|Longjonn|Magistrate Sivash|Bites (Offhand)|56|0|0|0|0
 Longjonn bites Magistrate Sivash with their offhand for 56 points of damage.	damage_other|Longjonn|Magistrate Sivash|Bites (Offhand)|56|0|0|0|0
+Longjonn bites Magistrate Sivash with their offhand for 58 points of damage	damage_other|Longjonn|Magistrate Sivash|Bites (Offhand)|58|0|0|0|0
 Longjonn bites Magistrate Sivash with their offhand for 6 points of damage.	damage_other|Longjonn|Magistrate Sivash|Bites (Offhand)|6|0|0|0|0
+Longjonn bites Magistrate Sivash with their offhand for 61 points of damage	damage_other|Longjonn|Magistrate Sivash|Bites (Offhand)|61|0|0|0|0
 Longjonn bites Magistrate Sivash with their offhand for 61 points of damage. (Critical)	damage_other|Longjonn|Magistrate Sivash|Bites (Offhand)|61|0|1|0|0
+Longjonn bites Magistrate Sivash with their offhand for 66 points of damage	damage_other|Longjonn|Magistrate Sivash|Bites (Offhand)|66|0|0|0|0
+Longjonn bites Magistrate Sivash with their offhand for 71 points of damage	damage_other|Longjonn|Magistrate Sivash|Bites (Offhand)|71|0|0|0|0
 Longjonn bites Magistrate Sivash with their offhand for 8 points of damage.	damage_other|Longjonn|Magistrate Sivash|Bites (Offhand)|8|0|0|0|0
+Longjonn bites Magistrate Sivash with their offhand for 82 points of damage	damage_other|Longjonn|Magistrate Sivash|Bites (Offhand)|82|0|0|0|0
 Longjonn bites Magistrate Sivash with their offhand for 82 points of damage. (Critical)	damage_other|Longjonn|Magistrate Sivash|Bites (Offhand)|82|0|1|0|0
+Longjonn bites Magistrate Sivash with their offhand for 90 points of damage	damage_other|Longjonn|Magistrate Sivash|Bites (Offhand)|90|0|0|0|0
+Longjonn bites Magistrate Sivash with their offhand for 95 points of damage	damage_other|Longjonn|Magistrate Sivash|Bites (Offhand)|95|0|0|0|0
 Longjonn bites Magistrate Sivash with their offhand for 95 points of damage. (Critical)	damage_other|Longjonn|Magistrate Sivash|Bites (Offhand)|95|0|1|0|0
 Longjonn bites Pustulax the Avatar of Plagues for 18 points of damage.	damage_other|Longjonn|Pustulax the Avatar of Plagues|Bites|18|0|0|0|0
 Longjonn bites Pustulax the Avatar of Plagues for 21 points of damage.	damage_other|Longjonn|Pustulax the Avatar of Plagues|Bites|21|0|0|0|0
@@ -2193,11 +2370,36 @@ Magistrate Sivash crushes YOU for 55 points of damage (37 absorbed).	damage_in|M
 Magistrate Sivash crushes YOU for 64 points of damage (42 absorbed).	damage_in|Magistrate Sivash|Crit|Crushes|64|42|0|0|0
 Magistrate Sivash crushes YOU for 71 points of damage (48 absorbed).	damage_in|Magistrate Sivash|Crit|Crushes|71|48|0|0|0
 Magistrate Sivash crushes YOU for 8 points of damage (5 absorbed).	damage_in|Magistrate Sivash|Crit|Crushes|8|5|0|0|0
+Magistrate Sivash hits YOU for 103 points of damage (69 absorbed).	damage_in|Magistrate Sivash|Crit|Hits|103|69|0|0|0
+Magistrate Sivash hits YOU for 107 points of damage (12 absorbed).	damage_in|Magistrate Sivash|Crit|Hits|107|12|0|0|0
+Magistrate Sivash hits YOU for 127 points of damage (84 absorbed).	damage_in|Magistrate Sivash|Crit|Hits|127|84|0|0|0
+Magistrate Sivash hits YOU for 13 points of damage.	damage_in|Magistrate Sivash|Crit|Hits|13|0|0|0|0
+Magistrate Sivash hits YOU for 130 points of damage (15 absorbed).	damage_in|Magistrate Sivash|Crit|Hits|130|15|0|0|0
+Magistrate Sivash hits YOU for 143 points of damage (95 absorbed).	damage_in|Magistrate Sivash|Crit|Hits|143|95|0|0|0
+Magistrate Sivash hits YOU for 15 points of damage (249 absorbed).	damage_in|Magistrate Sivash|Crit|Hits|15|249|0|0|0
+Magistrate Sivash hits YOU for 158 points of damage (106 absorbed).	damage_in|Magistrate Sivash|Crit|Hits|158|106|0|0|0
+Magistrate Sivash hits YOU for 16 points of damage (10 absorbed).	damage_in|Magistrate Sivash|Crit|Hits|16|10|0|0|0
+Magistrate Sivash hits YOU for 166 points of damage (19 absorbed).	damage_in|Magistrate Sivash|Crit|Hits|166|19|0|0|0
+Magistrate Sivash hits YOU for 32 points of damage (21 absorbed).	damage_in|Magistrate Sivash|Crit|Hits|32|21|0|0|0
+Magistrate Sivash hits YOU for 36 points of damage (4 absorbed).	damage_in|Magistrate Sivash|Crit|Hits|36|4|0|0|0
+Magistrate Sivash hits YOU for 40 points of damage (26 absorbed).	damage_in|Magistrate Sivash|Crit|Hits|40|26|0|0|0
+Magistrate Sivash hits YOU for 48 points of damage (5 absorbed).	damage_in|Magistrate Sivash|Crit|Hits|48|5|0|0|0
+Magistrate Sivash hits YOU for 53 points of damage.	damage_in|Magistrate Sivash|Crit|Hits|53|0|0|0|0
+Magistrate Sivash hits YOU for 55 points of damage (37 absorbed).	damage_in|Magistrate Sivash|Crit|Hits|55|37|0|0|0
+Magistrate Sivash hits YOU for 71 points of damage (48 absorbed).	damage_in|Magistrate Sivash|Crit|Hits|71|48|0|0|0
+Magistrate Sivash hits YOU for 79 points of damage (53 absorbed).	damage_in|Magistrate Sivash|Crit|Hits|79|53|0|0|0
+Magistrate Sivash hits YOU for 8 points of damage (5 absorbed).	damage_in|Magistrate Sivash|Crit|Hits|8|5|0|0|0
+Magistrate Sivash hits YOU for 95 points of damage (11 absorbed).	damage_in|Magistrate Sivash|Crit|Hits|95|11|0|0|0
+Magistrate Sivash hits YOU for 95 points of damage (63 absorbed).	damage_in|Magistrate Sivash|Crit|Hits|95|63|0|0|0
 Magistrate Sivash tries to crush YOU, but misses!	miss|Magistrate Sivash|Crit|Miss|0|0|0|0|0
+Magistrate Sivash tries to hit YOU, but misses!	miss|Magistrate Sivash|Crit|Miss|0|0|0|0|0
+Magistrate Sivash's Bash hits YOU for 14 points of damagel	damage_in|Magistrate Sivash|Crit|Bash|14|0|0|0|0
 Magistrate Sivash's Bash hits YOU for 8 points of damagel	damage_in|Magistrate Sivash|Crit|Bash|8|0|0|0|0
 Magistrate Sivash's Strike hits Klog for 72 points of damage.	damage_other|Magistrate Sivash|Klog|Strike|72|0|0|0|0
 Magistrate Sivash's Strike hits YOU for 25 points of damage!	damage_in|Magistrate Sivash|Crit|Strike|25|0|0|0|0
 Magistrate Sivash's Strike hits YOU for 70 points of damage!	damage_in|Magistrate Sivash|Crit|Strike|70|0|0|0|0
+Magistrate Sivash's Strike hits YOU for 82 points of damagel	damage_in|Magistrate Sivash|Crit|Strike|82|0|0|0|0
+Magistrate Sivash's Strike hits YOU for 84 points of damagel	damage_in|Magistrate Sivash|Crit|Strike|84|0|0|0|0
 Mankisser's Heal heals Obiwand for 85 Health.	heal|Mankisser|Obiwand|Heal|85|0|0|0|0
 Mankisser's Impart Prayer heals Tommy for 210 Health.	heal|Mankisser|Tommy|Heal|210|0|0|0|0
 Nakor crushes Pustulax the Avatar of Plagues for 14 points of damage.	damage_other|Nakor|Pustulax the Avatar of Plagues|Crushes|14|0|0|0|0
@@ -3093,15 +3295,26 @@ Raan's Vampirism hits Lord Ga'Duuz for 33 points of Corruption Damage.	damage_ot
 Redmeat bites Whiplash for 2 points of damage. (Critical)	damage_other|Redmeat|Whiplash|Bites|2|0|1|0|0
 Remco is renewed by ancestral healing	-
 Remco's Exceptional Fire Volley hits a Plagueborn templar for 106 points of Fire Damage.	damage_other|Remco|Plagueborn templar|Exceptional Fire Volley|106|0|0|0|0
+Remco's Exceptional Fire Volley hits Blightcaller Torvak for 100 points of Fi	damage_other|Remco|Blightcaller Torvak|Exceptional Fire Volley|100|0|0|0|0
 Remco's Exceptional Fire Volley hits Blightcaller Torvak for 100 points of Fire Damage.	damage_other|Remco|Blightcaller Torvak|Exceptional Fire Volley|100|0|0|0|0
+Remco's Exceptional Fire Volley hits Blightcaller Torvak for 101 points of Fi	damage_other|Remco|Blightcaller Torvak|Exceptional Fire Volley|101|0|0|0|0
 Remco's Exceptional Fire Volley hits Blightcaller Torvak for 101 points of Fire Damage.	damage_other|Remco|Blightcaller Torvak|Exceptional Fire Volley|101|0|0|0|0
+Remco's Exceptional Fire Volley hits Blightcaller Torvak for 102 points of Fi	damage_other|Remco|Blightcaller Torvak|Exceptional Fire Volley|102|0|0|0|0
 Remco's Exceptional Fire Volley hits Blightcaller Torvak for 102 points of Fire Damage.	damage_other|Remco|Blightcaller Torvak|Exceptional Fire Volley|102|0|0|0|0
+Remco's Exceptional Fire Volley hits Blightcaller Torvak for 103 points of Fi	damage_other|Remco|Blightcaller Torvak|Exceptional Fire Volley|103|0|0|0|0
 Remco's Exceptional Fire Volley hits Blightcaller Torvak for 103 points of Fire Damage.	damage_other|Remco|Blightcaller Torvak|Exceptional Fire Volley|103|0|0|0|0
+Remco's Exceptional Fire Volley hits Blightcaller Torvak for 104 points of Fi	damage_other|Remco|Blightcaller Torvak|Exceptional Fire Volley|104|0|0|0|0
 Remco's Exceptional Fire Volley hits Blightcaller Torvak for 104 points of Fire Damage.	damage_other|Remco|Blightcaller Torvak|Exceptional Fire Volley|104|0|0|0|0
+Remco's Exceptional Fire Volley hits Blightcaller Torvak for 106 points of Fi	damage_other|Remco|Blightcaller Torvak|Exceptional Fire Volley|106|0|0|0|0
+Remco's Exceptional Fire Volley hits Blightcaller Torvak for 95 points of Fir	damage_other|Remco|Blightcaller Torvak|Exceptional Fire Volley|95|0|0|0|0
 Remco's Exceptional Fire Volley hits Blightcaller Torvak for 95 points of Fire Damage.	damage_other|Remco|Blightcaller Torvak|Exceptional Fire Volley|95|0|0|0|0
+Remco's Exceptional Fire Volley hits Blightcaller Torvak for 96 points of Fir	damage_other|Remco|Blightcaller Torvak|Exceptional Fire Volley|96|0|0|0|0
 Remco's Exceptional Fire Volley hits Blightcaller Torvak for 96 points of Fire Damage.	damage_other|Remco|Blightcaller Torvak|Exceptional Fire Volley|96|0|0|0|0
+Remco's Exceptional Fire Volley hits Blightcaller Torvak for 97 points of Fir	damage_other|Remco|Blightcaller Torvak|Exceptional Fire Volley|97|0|0|0|0
 Remco's Exceptional Fire Volley hits Blightcaller Torvak for 97 points of Fire Damage.	damage_other|Remco|Blightcaller Torvak|Exceptional Fire Volley|97|0|0|0|0
+Remco's Exceptional Fire Volley hits Blightcaller Torvak for 98 points of Fir	damage_other|Remco|Blightcaller Torvak|Exceptional Fire Volley|98|0|0|0|0
 Remco's Exceptional Fire Volley hits Blightcaller Torvak for 98 points of Fire Damage.	damage_other|Remco|Blightcaller Torvak|Exceptional Fire Volley|98|0|0|0|0
+Remco's Exceptional Fire Volley hits Blightcaller Torvak for 99 points of Fir	damage_other|Remco|Blightcaller Torvak|Exceptional Fire Volley|99|0|0|0|0
 Remco's Exceptional Fire Volley hits Blightcaller Torvak for 99 points of Fire Damage.	damage_other|Remco|Blightcaller Torvak|Exceptional Fire Volley|99|0|0|0|0
 Remco's Exceptional Fire Volley hits Lord Ga'Duuz for 103 points of Fire	damage_other|Remco|Lord Ga'Duuz|Exceptional Fire Volley|103|0|0|0|0
 Remco's Exceptional Fire Volley hits Lord Ga'Duuz for 103 points of Fire Damage.	damage_other|Remco|Lord Ga'Duuz|Exceptional Fire Volley|103|0|0|0|0
@@ -3131,12 +3344,23 @@ Remco's Exceptional Fire Volley hits Lord Ga'Duuz for 79 points of Fire	damage_o
 Remco's Exceptional Fire Volley hits Lord Ga'Duuz for 79 points of Fire Damage.	damage_other|Remco|Lord Ga'Duuz|Exceptional Fire Volley|79|0|0|0|0
 Remco's Exceptional Fire Volley hits Lord Ga'Duuz for 84 points of Fire	damage_other|Remco|Lord Ga'Duuz|Exceptional Fire Volley|84|0|0|0|0
 Remco's Exceptional Fire Volley hits Lord Ga'Duuz for 84 points of Fire Damage.	damage_other|Remco|Lord Ga'Duuz|Exceptional Fire Volley|84|0|0|0|0
+Remco's Exceptional Fire Volley hits Magistrate Sivash for 100 points of Fire	damage_other|Remco|Magistrate Sivash|Exceptional Fire Volley|100|0|0|0|0
+Remco's Exceptional Fire Volley hits Magistrate Sivash for 101 points of Fire	damage_other|Remco|Magistrate Sivash|Exceptional Fire Volley|101|0|0|0|0
+Remco's Exceptional Fire Volley hits Magistrate Sivash for 102 points of Fire	damage_other|Remco|Magistrate Sivash|Exceptional Fire Volley|102|0|0|0|0
+Remco's Exceptional Fire Volley hits Magistrate Sivash for 103 points of Fire	damage_other|Remco|Magistrate Sivash|Exceptional Fire Volley|103|0|0|0|0
+Remco's Exceptional Fire Volley hits Magistrate Sivash for 104 points of Fire	damage_other|Remco|Magistrate Sivash|Exceptional Fire Volley|104|0|0|0|0
+Remco's Exceptional Fire Volley hits Magistrate Sivash for 106 points of Fire	damage_other|Remco|Magistrate Sivash|Exceptional Fire Volley|106|0|0|0|0
+Remco's Exceptional Fire Volley hits Magistrate Sivash for 95 points of Fire	damage_other|Remco|Magistrate Sivash|Exceptional Fire Volley|95|0|0|0|0
+Remco's Exceptional Fire Volley hits Magistrate Sivash for 96 points of Fire	damage_other|Remco|Magistrate Sivash|Exceptional Fire Volley|96|0|0|0|0
+Remco's Exceptional Fire Volley hits Magistrate Sivash for 98 points of Fire	damage_other|Remco|Magistrate Sivash|Exceptional Fire Volley|98|0|0|0|0
+Remco's Exceptional Fire Volley hits Magistrate Sivash for 99 points of Fire	damage_other|Remco|Magistrate Sivash|Exceptional Fire Volley|99|0|0|0|0
 Remco's Greater Fireball hits a Plagueborn templar for 2647 points of Fire Damage.	damage_other|Remco|Plagueborn templar|Greater Fireball|2647|0|0|0|0
 Remco's Greater Fireball hits a Plagueborn templar for 2653 points of Fire Damage.	damage_other|Remco|Plagueborn templar|Greater Fireball|2653|0|0|0|0
 Remco's Greater Fireball hits a sandy broodling for 1699 points of Fire Damage.	damage_other|Remco|sandy broodling|Greater Fireball|1699|0|0|0|0
 Remco's Greater Fireball hits a sandy broodling for 2031 points of Fire Damage.	damage_other|Remco|sandy broodling|Greater Fireball|2031|0|0|0|0
 Remco's Greater Fireball hits a sandy broodling for 2760 points of Fire Damage.	damage_other|Remco|sandy broodling|Greater Fireball|2760|0|0|0|0
 Remco's Greater Fireball hits Blightcaller Torvak for 2647 points of Fire Damage.	damage_other|Remco|Blightcaller Torvak|Greater Fireball|2647|0|0|0|0
+Remco's Greater Fireball hits Blightcaller Torvak for 2647 points of Fire Dan	damage_other|Remco|Blightcaller Torvak|Greater Fireball|2647|0|0|0|0
 Remco's Greater Fireball hits Blightcaller Torvak for 2653 points of Fire Damage.	damage_other|Remco|Blightcaller Torvak|Greater Fireball|2653|0|0|0|0
 Remco's Greater Fireball hits Lord Ga'Duuz for 1432 points of Fire	damage_other|Remco|Lord Ga'Duuz|Greater Fireball|1432|0|0|0|0
 Remco's Greater Fireball hits Lord Ga'Duuz for 1432 points of Fire Damage.	damage_other|Remco|Lord Ga'Duuz|Greater Fireball|1432|0|0|0|0
@@ -3148,6 +3372,8 @@ Remco's Greater Fireball hits Lord Ga'Duuz for 2864 points of Fire	damage_other|
 Remco's Greater Fireball hits Lord Ga'Duuz for 2864 points of Fire Damage.	damage_other|Remco|Lord Ga'Duuz|Greater Fireball|2864|0|0|0|0
 Remco's Greater Fireball hits Lord Ga'Duuz for 2872 points of Fire Damage.	damage_other|Remco|Lord Ga'Duuz|Greater Fireball|2872|0|0|0|0
 Remco's Greater Fireball hits Lord Ga'Duuz for 4297 points of Fire Damage.(Critical)	damage_other|Remco|Lord Ga'Duuz|Greater Fireball|4297|0|1|0|0
+Remco's Greater Fireball hits Magistrate Sivash for 2454 points of Fire Dama	damage_other|Remco|Magistrate Sivash|Greater Fireball|2454|0|0|0|0
+Remco's Greater Fireball hits Magistrate Sivash for 2647 points of Fire Dama	damage_other|Remco|Magistrate Sivash|Greater Fireball|2647|0|0|0|0
 Riich pierces a restless skeleton for 1 point of damage.	damage_other|Riich|restless skeleton|Pierces|1|0|0|0|0
 Riich pierces a restless skeleton for 10 points of damage.	damage_other|Riich|restless skeleton|Pierces|10|0|0|0|0
 Riich pierces a restless skeleton for 11 points of damage.	damage_other|Riich|restless skeleton|Pierces|11|0|0|0|0
@@ -4048,33 +4274,47 @@ You crush Blightcaller Torvak for 100 points of damage.	damage_out|Crit|Blightca
 You crush Blightcaller Torvak for 104 points of damage.	damage_out|Crit|Blightcaller Torvak|Crush|104|0|0|0|0
 You crush Blightcaller Torvak for 107 points of damage. (Critical)	damage_out|Crit|Blightcaller Torvak|Crush|107|0|1|0|0
 You crush Blightcaller Torvak for 114 points of damage. (Critical)	damage_out|Crit|Blightcaller Torvak|Crush|114|0|1|0|0
+You crush Blightcaller Torvak for 120 points of damage. (Critical)	damage_out|Crit|Blightcaller Torvak|Crush|120|0|1|0|0
+You crush Blightcaller Torvak for 130 points of damage. (Critical)	damage_out|Crit|Blightcaller Torvak|Crush|130|0|1|0|0
 You crush Blightcaller Torvak for 131 points of damage. (Critical)	damage_out|Crit|Blightcaller Torvak|Crush|131|0|1|0|0
 You crush Blightcaller Torvak for 135 points of damage. (Critical)	damage_out|Crit|Blightcaller Torvak|Crush|135|0|1|0|0
 You crush Blightcaller Torvak for 139 points of damage. (Critical)	damage_out|Crit|Blightcaller Torvak|Crush|139|0|1|0|0
+You crush Blightcaller Torvak for 141 points of damage. (Critical)	damage_out|Crit|Blightcaller Torvak|Crush|141|0|1|0|0
+You crush Blightcaller Torvak for 150 points of damage. (Critical)	damage_out|Crit|Blightcaller Torvak|Crush|150|0|1|0|0
 You crush Blightcaller Torvak for 16 points of damage.	damage_out|Crit|Blightcaller Torvak|Crush|16|0|0|0|0
 You crush Blightcaller Torvak for 168 points of damage. (Critical)	damage_out|Crit|Blightcaller Torvak|Crush|168|0|1|0|0
 You crush Blightcaller Torvak for 170 points of damage. (Critical)	damage_out|Crit|Blightcaller Torvak|Crush|170|0|1|0|0
+You crush Blightcaller Torvak for 171 points of damage. (Critical)	damage_out|Crit|Blightcaller Torvak|Crush|171|0|1|0|0
 You crush Blightcaller Torvak for 178 points of damage. (Critical)	damage_out|Crit|Blightcaller Torvak|Crush|178|0|1|0|0
+You crush Blightcaller Torvak for 182 points of damage. (Critical)	damage_out|Crit|Blightcaller Torvak|Crush|182|0|1|0|0
 You crush Blightcaller Torvak for 189 points of damage. (Critical)	damage_out|Crit|Blightcaller Torvak|Crush|189|0|1|0|0
 You crush Blightcaller Torvak for 21 points of damage.	damage_out|Crit|Blightcaller Torvak|Crush|21|0|0|0|0
 You crush Blightcaller Torvak for 222 points of damage. (Critical)	damage_out|Crit|Blightcaller Torvak|Crush|222|0|1|0|0
+You crush Blightcaller Torvak for 232 points of damage. (Critical)	damage_out|Crit|Blightcaller Torvak|Crush|232|0|1|0|0
 You crush Blightcaller Torvak for 243 points of damage. (Critical)	damage_out|Crit|Blightcaller Torvak|Crush|243|0|1|0|0
 You crush Blightcaller Torvak for 29 points of damage. (Critical)	damage_out|Crit|Blightcaller Torvak|Crush|29|0|1|0|0
 You crush Blightcaller Torvak for 31 points of damage.	damage_out|Crit|Blightcaller Torvak|Crush|31|0|0|0|0
+You crush Blightcaller Torvak for 34 points of damage.	damage_out|Crit|Blightcaller Torvak|Crush|34|0|0|0|0
 You crush Blightcaller Torvak for 35 points of damage.	damage_out|Crit|Blightcaller Torvak|Crush|35|0|0|0|0
 You crush Blightcaller Torvak for 40 points of damage.	damage_out|Crit|Blightcaller Torvak|Crush|40|0|0|0|0
 You crush Blightcaller Torvak for 44 points of damage.	damage_out|Crit|Blightcaller Torvak|Crush|44|0|0|0|0
 You crush Blightcaller Torvak for 48 points of damage. (Critical)	damage_out|Crit|Blightcaller Torvak|Crush|48|0|1|0|0
 You crush Blightcaller Torvak for 50 points of damage.	damage_out|Crit|Blightcaller Torvak|Crush|50|0|0|0|0
 You crush Blightcaller Torvak for 54 points of damage.	damage_out|Crit|Blightcaller Torvak|Crush|54|0|0|0|0
+You crush Blightcaller Torvak for 56 points of damage.	damage_out|Crit|Blightcaller Torvak|Crush|56|0|0|0|0
 You crush Blightcaller Torvak for 59 points of damage. (Critical)	damage_out|Crit|Blightcaller Torvak|Crush|59|0|1|0|0
 You crush Blightcaller Torvak for 62 points of damage. (Critical)	damage_out|Crit|Blightcaller Torvak|Crush|62|0|1|0|0
 You crush Blightcaller Torvak for 63 points of damage.	damage_out|Crit|Blightcaller Torvak|Crush|63|0|0|0|0
 You crush Blightcaller Torvak for 67 points of damage.	damage_out|Crit|Blightcaller Torvak|Crush|67|0|0|0|0
+You crush Blightcaller Torvak for 69 points of damage.	damage_out|Crit|Blightcaller Torvak|Crush|69|0|0|0|0
 You crush Blightcaller Torvak for 73 points of damage.	damage_out|Crit|Blightcaller Torvak|Crush|73|0|0|0|0
 You crush Blightcaller Torvak for 77 points of damage.	damage_out|Crit|Blightcaller Torvak|Crush|77|0|0|0|0
+You crush Blightcaller Torvak for 78 points of damage.	damage_out|Crit|Blightcaller Torvak|Crush|78|0|0|0|0
 You crush Blightcaller Torvak for 81 points of damage.	damage_out|Crit|Blightcaller Torvak|Crush|81|0|0|0|0
 You crush Blightcaller Torvak for 86 points of damage.	damage_out|Crit|Blightcaller Torvak|Crush|86|0|0|0|0
+You crush Blightcaller Torvak for 88 points of damage. (Critical)	damage_out|Crit|Blightcaller Torvak|Crush|88|0|1|0|0
+You crush Blightcaller Torvak for 90 points of damage.	damage_out|Crit|Blightcaller Torvak|Crush|90|0|0|0|0
+You crush Blightcaller Torvak for 90 points of damage. (Critical)	damage_out|Crit|Blightcaller Torvak|Crush|90|0|1|0|0
 You crush Blightcaller Torvak for 92 points of damage. (Critical)	damage_out|Crit|Blightcaller Torvak|Crush|92|0|1|0|0
 You crush Blightcaller Torvak for 96 points of damage.	damage_out|Crit|Blightcaller Torvak|Crush|96|0|0|0|0
 You crush Bone Construct for 102 points of damage. (Critical)	damage_out|Crit|Bone Construct|Crush|102|0|1|0|0
@@ -4179,19 +4419,33 @@ You crush Lord Ga'Duuz for 91 points of damage.	damage_out|Crit|Lord Ga'Duuz|Cru
 You crush Lord Ga'Duuz for 91 points of damage. (Critical)	damage_out|Crit|Lord Ga'Duuz|Crush|91|0|1|0|0
 You crush Lord Ga'Duuz for 96 points of damage.	damage_out|Crit|Lord Ga'Duuz|Crush|96|0|0|0|0
 You crush Lord Ga'Duuz for 99 points of damage. (Critical)	damage_out|Crit|Lord Ga'Duuz|Crush|99|0|1|0|0
+You crush Magistrate Sivash for 100 points of damage.	damage_out|Crit|Magistrate Sivash|Crush|100|0|0|0|0
 You crush Magistrate Sivash for 104 points of damage.	damage_out|Crit|Magistrate Sivash|Crush|104|0|0|0|0
+You crush Magistrate Sivash for 147 points of damage. (Critical)	damage_out|Crit|Magistrate Sivash|Crush|147|0|1|0|0
 You crush Magistrate Sivash for 16 points of damage.	damage_out|Crit|Magistrate Sivash|Crush|16|0|0|0|0
 You crush Magistrate Sivash for 178 points of damage. (Critical)	damage_out|Crit|Magistrate Sivash|Crush|178|0|1|0|0
+You crush Magistrate Sivash for 21 points of damage.	damage_out|Crit|Magistrate Sivash|Crush|21|0|0|0|0
+You crush Magistrate Sivash for 25 points of damage.	damage_out|Crit|Magistrate Sivash|Crush|25|0|0|0|0
 You crush Magistrate Sivash for 26 points of damage.	damage_out|Crit|Magistrate Sivash|Crush|26|0|0|0|0
+You crush Magistrate Sivash for 30 points of damage.	damage_out|Crit|Magistrate Sivash|Crush|30|0|0|0|0
+You crush Magistrate Sivash for 34 points of damage.	damage_out|Crit|Magistrate Sivash|Crush|34|0|0|0|0
 You crush Magistrate Sivash for 35 points of damage.	damage_out|Crit|Magistrate Sivash|Crush|35|0|0|0|0
+You crush Magistrate Sivash for 38 points of damage.	damage_out|Crit|Magistrate Sivash|Crush|38|0|0|0|0
 You crush Magistrate Sivash for 40 points of damage.	damage_out|Crit|Magistrate Sivash|Crush|40|0|0|0|0
+You crush Magistrate Sivash for 43 points of damage.	damage_out|Crit|Magistrate Sivash|Crush|43|0|0|0|0
 You crush Magistrate Sivash for 44 points of damage.	damage_out|Crit|Magistrate Sivash|Crush|44|0|0|0|0
+You crush Magistrate Sivash for 47 points of damage.	damage_out|Crit|Magistrate Sivash|Crush|47|0|0|0|0
 You crush Magistrate Sivash for 50 points of damage.	damage_out|Crit|Magistrate Sivash|Crush|50|0|0|0|0
+You crush Magistrate Sivash for 52 points of damage.	damage_out|Crit|Magistrate Sivash|Crush|52|0|0|0|0
+You crush Magistrate Sivash for 56 points of damage.	damage_out|Crit|Magistrate Sivash|Crush|56|0|0|0|0
 You crush Magistrate Sivash for 58 points of damage.	damage_out|Crit|Magistrate Sivash|Crush|58|0|0|0|0
+You crush Magistrate Sivash for 60 points of damage.	damage_out|Crit|Magistrate Sivash|Crush|60|0|0|0|0
 You crush Magistrate Sivash for 63 points of damage.	damage_out|Crit|Magistrate Sivash|Crush|63|0|0|0|0
 You crush Magistrate Sivash for 73 points of damage.	damage_out|Crit|Magistrate Sivash|Crush|73|0|0|0|0
 You crush Magistrate Sivash for 77 points of damage.	damage_out|Crit|Magistrate Sivash|Crush|77|0|0|0|0
+You crush Magistrate Sivash for 78 points of damage.	damage_out|Crit|Magistrate Sivash|Crush|78|0|0|0|0
 You crush Magistrate Sivash for 81 points of damage.	damage_out|Crit|Magistrate Sivash|Crush|81|0|0|0|0
+You crush Magistrate Sivash for 82 points of damage.	damage_out|Crit|Magistrate Sivash|Crush|82|0|0|0|0
 You crush Magistrate Sivash for 86 points of damage.	damage_out|Crit|Magistrate Sivash|Crush|86|0|0|0|0
 You crush Magistrate Sivash for 90 points of damage.	damage_out|Crit|Magistrate Sivash|Crush|90|0|0|0|0
 You crush Magistrate Sivash for 96 points of damage.	damage_out|Crit|Magistrate Sivash|Crush|96|0|0|0|0
@@ -4245,13 +4499,18 @@ You slash Blightcaller Torvak with your offhand for 12 points of damage.	damage_
 You slash Blightcaller Torvak with your offhand for 125 points of damage. (Critical)	damage_out|Crit|Blightcaller Torvak|Slash (Offhand)|125|0|1|0|0
 You slash Blightcaller Torvak with your offhand for 131 points of damage. (Critical)	damage_out|Crit|Blightcaller Torvak|Slash (Offhand)|131|0|1|0|0
 You slash Blightcaller Torvak with your offhand for 135 points of damage. (Critical)	damage_out|Crit|Blightcaller Torvak|Slash (Offhand)|135|0|1|0|0
+You slash Blightcaller Torvak with your offhand for 142 points of damage. (0	damage_out|Crit|Blightcaller Torvak|Slash (Offhand)|142|0|0|0|0
 You slash Blightcaller Torvak with your offhand for 15 points of damage.	damage_out|Crit|Blightcaller Torvak|Slash (Offhand)|15|0|0|0|0
 You slash Blightcaller Torvak with your offhand for 160 points of damage. (Critical)	damage_out|Crit|Blightcaller Torvak|Slash (Offhand)|160|0|1|0|0
+You slash Blightcaller Torvak with your offhand for 168 points of damage. (0	damage_out|Crit|Blightcaller Torvak|Slash (Offhand)|168|0|0|0|0
 You slash Blightcaller Torvak with your offhand for 178 points of damage. (Critical)	damage_out|Crit|Blightcaller Torvak|Slash (Offhand)|178|0|1|0|0
 You slash Blightcaller Torvak with your offhand for 20 points of damage.	damage_out|Crit|Blightcaller Torvak|Slash (Offhand)|20|0|0|0|0
 You slash Blightcaller Torvak with your offhand for 23 points of damage.	damage_out|Crit|Blightcaller Torvak|Slash (Offhand)|23|0|0|0|0
+You slash Blightcaller Torvak with your offhand for 25 points of damage.	damage_out|Crit|Blightcaller Torvak|Slash (Offhand)|25|0|0|0|0
 You slash Blightcaller Torvak with your offhand for 26 points of damage. (Critical)	damage_out|Crit|Blightcaller Torvak|Slash (Offhand)|26|0|1|0|0
 You slash Blightcaller Torvak with your offhand for 28 points of damage.	damage_out|Crit|Blightcaller Torvak|Slash (Offhand)|28|0|0|0|0
+You slash Blightcaller Torvak with your offhand for 29 points of damage.	damage_out|Crit|Blightcaller Torvak|Slash (Offhand)|29|0|0|0|0
+You slash Blightcaller Torvak with your offhand for 3 points of damage.	damage_out|Crit|Blightcaller Torvak|Slash (Offhand)|3|0|0|0|0
 You slash Blightcaller Torvak with your offhand for 31 points of damage.	damage_out|Crit|Blightcaller Torvak|Slash (Offhand)|31|0|0|0|0
 You slash Blightcaller Torvak with your offhand for 34 points of damage. (Critical)	damage_out|Crit|Blightcaller Torvak|Slash (Offhand)|34|0|1|0|0
 You slash Blightcaller Torvak with your offhand for 38 points of damage.	damage_out|Crit|Blightcaller Torvak|Slash (Offhand)|38|0|0|0|0
@@ -4265,8 +4524,11 @@ You slash Blightcaller Torvak with your offhand for 58 points of damage.	damage_
 You slash Blightcaller Torvak with your offhand for 62 points of damage.	damage_out|Crit|Blightcaller Torvak|Slash (Offhand)|62|0|0|0|0
 You slash Blightcaller Torvak with your offhand for 66 points of damage.	damage_out|Crit|Blightcaller Torvak|Slash (Offhand)|66|0|0|0|0
 You slash Blightcaller Torvak with your offhand for 69 points of damage.	damage_out|Crit|Blightcaller Torvak|Slash (Offhand)|69|0|0|0|0
+You slash Blightcaller Torvak with your offhand for 73 points of damage.	damage_out|Crit|Blightcaller Torvak|Slash (Offhand)|73|0|0|0|0
 You slash Blightcaller Torvak with your offhand for 74 points of damage.	damage_out|Crit|Blightcaller Torvak|Slash (Offhand)|74|0|0|0|0
+You slash Blightcaller Torvak with your offhand for 76 points of damage. (Cr	damage_out|Crit|Blightcaller Torvak|Slash (Offhand)|76|0|1|0|0
 You slash Blightcaller Torvak with your offhand for 77 points of damage.	damage_out|Crit|Blightcaller Torvak|Slash (Offhand)|77|0|0|0|0
+You slash Blightcaller Torvak with your offhand for 8 points of damage. (Cri	damage_out|Crit|Blightcaller Torvak|Slash (Offhand)|8|0|1|0|0
 You slash Legoliath with your offhand for 117 points of damage. (Critical)	damage_out|Crit|Legoliath|Slash (Offhand)|117|0|1|0|0
 You slash Legoliath with your offhand for 15 points of damage.	damage_out|Crit|Legoliath|Slash (Offhand)|15|0|0|0|0
 You slash Legoliath with your offhand for 27 points of damage.	damage_out|Crit|Legoliath|Slash (Offhand)|27|0|0|0|0
@@ -4322,20 +4584,34 @@ You slash Lord Ga'Duuz with your offhand for 71 points of damage. (Critical)	dam
 You slash Lord Ga'Duuz with your offhand for 73 points of damage.	damage_out|Crit|Lord Ga'Duuz|Slash (Offhand)|73|0|0|0|0
 You slash Lord Ga'Duuz with your offhand for 8 points of damage.	damage_out|Crit|Lord Ga'Duuz|Slash (Offhand)|8|0|0|0|0
 You slash Lord Ga'Duuz with your offhand for 89 points of damage. (Critical)	damage_out|Crit|Lord Ga'Duuz|Slash (Offhand)|89|0|1|0|0
+You slash Magistrate Sivash with your offhand for 11 points of damage.	damage_out|Crit|Magistrate Sivash|Slash (Offhand)|11|0|0|0|0
 You slash Magistrate Sivash with your offhand for 131 points of damage. (Critical)	damage_out|Crit|Magistrate Sivash|Slash (Offhand)|131|0|1|0|0
 You slash Magistrate Sivash with your offhand for 15 points of damage.	damage_out|Crit|Magistrate Sivash|Slash (Offhand)|15|0|0|0|0
+You slash Magistrate Sivash with your offhand for 19 points of damage.	damage_out|Crit|Magistrate Sivash|Slash (Offhand)|19|0|0|0|0
 You slash Magistrate Sivash with your offhand for 20 points of damage.	damage_out|Crit|Magistrate Sivash|Slash (Offhand)|20|0|0|0|0
+You slash Magistrate Sivash with your offhand for 22 points of damage.	damage_out|Crit|Magistrate Sivash|Slash (Offhand)|22|0|0|0|0
 You slash Magistrate Sivash with your offhand for 23 points of damage.	damage_out|Crit|Magistrate Sivash|Slash (Offhand)|23|0|0|0|0
 You slash Magistrate Sivash with your offhand for 26 points of damage. (Critical)	damage_out|Crit|Magistrate Sivash|Slash (Offhand)|26|0|1|0|0
+You slash Magistrate Sivash with your offhand for 3 points of damage.	damage_out|Crit|Magistrate Sivash|Slash (Offhand)|3|0|0|0|0
+You slash Magistrate Sivash with your offhand for 33 points of damage.	damage_out|Crit|Magistrate Sivash|Slash (Offhand)|33|0|0|0|0
 You slash Magistrate Sivash with your offhand for 35 points of damage.	damage_out|Crit|Magistrate Sivash|Slash (Offhand)|35|0|0|0|0
+You slash Magistrate Sivash with your offhand for 36 points of damage.	damage_out|Crit|Magistrate Sivash|Slash (Offhand)|36|0|0|0|0
 You slash Magistrate Sivash with your offhand for 4 points of damage.	damage_out|Crit|Magistrate Sivash|Slash (Offhand)|4|0|0|0|0
+You slash Magistrate Sivash with your offhand for 40 points of damage.	damage_out|Crit|Magistrate Sivash|Slash (Offhand)|40|0|0|0|0
 You slash Magistrate Sivash with your offhand for 43 points of damage.	damage_out|Crit|Magistrate Sivash|Slash (Offhand)|43|0|0|0|0
+You slash Magistrate Sivash with your offhand for 44 points of damage.	damage_out|Crit|Magistrate Sivash|Slash (Offhand)|44|0|0|0|0
 You slash Magistrate Sivash with your offhand for 46 points of damage.	damage_out|Crit|Magistrate Sivash|Slash (Offhand)|46|0|0|0|0
+You slash Magistrate Sivash with your offhand for 47 points of damage.	damage_out|Crit|Magistrate Sivash|Slash (Offhand)|47|0|0|0|0
+You slash Magistrate Sivash with your offhand for 51 points of damage.	damage_out|Crit|Magistrate Sivash|Slash (Offhand)|51|0|0|0|0
 You slash Magistrate Sivash with your offhand for 54 points of damage.	damage_out|Crit|Magistrate Sivash|Slash (Offhand)|54|0|0|0|0
+You slash Magistrate Sivash with your offhand for 55 points of damage.	damage_out|Crit|Magistrate Sivash|Slash (Offhand)|55|0|0|0|0
 You slash Magistrate Sivash with your offhand for 62 points of damage.	damage_out|Crit|Magistrate Sivash|Slash (Offhand)|62|0|0|0|0
 You slash Magistrate Sivash with your offhand for 69 points of damage.	damage_out|Crit|Magistrate Sivash|Slash (Offhand)|69|0|0|0|0
+You slash Magistrate Sivash with your offhand for 73 points of damage.	damage_out|Crit|Magistrate Sivash|Slash (Offhand)|73|0|0|0|0
 You slash Magistrate Sivash with your offhand for 74 points of damage.	damage_out|Crit|Magistrate Sivash|Slash (Offhand)|74|0|0|0|0
 You slash Magistrate Sivash with your offhand for 77 points of damage.	damage_out|Crit|Magistrate Sivash|Slash (Offhand)|77|0|0|0|0
+You slash Magistrate Sivash with your offhand for 8 points of damage.	damage_out|Crit|Magistrate Sivash|Slash (Offhand)|8|0|0|0|0
+You slash Magistrate Sivash with your offhand for 80 points of damage. (Crit	damage_out|Crit|Magistrate Sivash|Slash (Offhand)|80|0|1|0|0
 You slash Whiplash for 14 points of damage (1 absorbed).	damage_out|Crit|Whiplash|Slash|14|1|0|0|0
 You slash Whiplash for 16 points of damage (2 absorbed).	damage_out|Crit|Whiplash|Slash|16|2|0|0|0
 You slash Whiplash for 17 points of damage (2 absorbed).	damage_out|Crit|Whiplash|Slash|17|2|0|0|0
@@ -4346,9 +4622,10 @@ You try to crush Blightcaller Torvak, but miss!	miss|Crit|Blightcaller Torvak|Mi
 You try to crush Bone Construct, but miss!	miss|Crit|Bone Construct|Miss|0|0|0|0|0
 You try to crush Lord Ga'Duuz, but miss!	miss|Crit|Lord Ga'Duuz|Miss|0|0|0|0|0
 You try to crush Magistrate Sivash, but miss!	miss|Crit|Magistrate Sivash|Miss|0|0|0|0|0
-You try to slash a Plagueborn drake with your offhand, but miss!	miss|Crit|Plagueborn drake with your offhand|Miss|0|0|0|0|0
-You try to slash Blightcaller Torvak with your offhand, but miss!	miss|Crit|Blightcaller Torvak with your offhand|Miss|0|0|0|0|0
-You try to slash Lord Ga'Duuz with your offhand, but miss!	miss|Crit|Lord Ga'Duuz with your offhand|Miss|0|0|0|0|0
+You try to slash a Plagueborn drake with your offhand, but miss!	miss|Crit|Plagueborn drake|Miss|0|0|0|0|0
+You try to slash Blightcaller Torvak with your offhand, but miss!	miss|Crit|Blightcaller Torvak|Miss|0|0|0|0|0
+You try to slash Lord Ga'Duuz with your offhand, but miss!	miss|Crit|Lord Ga'Duuz|Miss|0|0|0|0|0
+You try to slash Magistrate Sivash with your offhand, but miss!	miss|Crit|Magistrate Sivash|Miss|0|0|0|0|0
 You try to slash Whiplash, but miss!	miss|Crit|Whiplash|Miss|0|0|0|0|0
 Your Damage Shield hits a bone archer for 12 points of damage.	damage_out|Crit|bone archer|Damage Shield|12|0|0|0|1
 Your Damage Shield hits a feeble ratmancer for 8 points of damage.	damage_out|Crit|feeble ratmancer|Damage Shield|8|0|0|0|1
@@ -4432,8 +4709,11 @@ Your Feint IV hits Lord Ga'Duuz for 86 points of damage. (Critical)	damage_out|C
 Your Feint IV hits Lord Ga'Duuz for 87 points of damage.	damage_out|Crit|Lord Ga'Duuz|Feint IV|87|0|0|0|0
 Your Feint IV hits Lord Ga'Duuz for 88 points of damage.	damage_out|Crit|Lord Ga'Duuz|Feint IV|88|0|0|0|0
 Your Feint IV hits Lord Ga'Duuz for 92 points of damage.	damage_out|Crit|Lord Ga'Duuz|Feint IV|92|0|0|0|0
+Your Feint IV hits Magistrate Sivash for 111 points of damage.	damage_out|Crit|Magistrate Sivash|Feint IV|111|0|0|0|0
+Your Feint IV hits Magistrate Sivash for 146 points of damage.	damage_out|Crit|Magistrate Sivash|Feint IV|146|0|0|0|0
 Your Feint IV hits Magistrate Sivash for 52 points of damage.	damage_out|Crit|Magistrate Sivash|Feint IV|52|0|0|0|0
 Your Feint IV hits Magistrate Sivash for 63 points of damage.	damage_out|Crit|Magistrate Sivash|Feint IV|63|0|0|0|0
+Your Feint IV hits Magistrate Sivash for 86 points of damage.	damage_out|Crit|Magistrate Sivash|Feint IV|86|0|0|0|0
 Your Feint IV hits Mistress Maribeth for 100 points of damage.	damage_out|Crit|Mistress Maribeth|Feint IV|100|0|0|0|0
 Your Final Stand heals you for 680 Health.	heal|Crit|Crit|Heal|680|0|0|0|0
 Your Frenxy hits a Plagueborn drake for 104 points of damage. (Critical)	damage_out|Crit|Plagueborn drake|Frenxy|104|0|1|0|0
@@ -4470,9 +4750,13 @@ Your Frenzy hits Bone Construct for 75 points of damage. (Critical)	damage_out|C
 Your Frenzy hits Bone Construct for 79 points of damage.	damage_out|Crit|Bone Construct|Frenzy|79|0|0|0|0
 Your Frenzy hits Bone Construct for 79 points of damage. (Critical)	damage_out|Crit|Bone Construct|Frenzy|79|0|1|0|0
 Your Frenzy hits Bone Construct for 80 points of damage.	damage_out|Crit|Bone Construct|Frenzy|80|0|0|0|0
+Your Frenzy hits Magistrate Sivash for 16 points of damage.	damage_out|Crit|Magistrate Sivash|Frenzy|16|0|0|0|0
 Your Frenzy hits Magistrate Sivash for 45 points of damage.	damage_out|Crit|Magistrate Sivash|Frenzy|45|0|0|0|0
+Your Frenzy hits Magistrate Sivash for 47 points of damage.	damage_out|Crit|Magistrate Sivash|Frenzy|47|0|0|0|0
+Your Frenzy hits Magistrate Sivash for 58 points of damage.	damage_out|Crit|Magistrate Sivash|Frenzy|58|0|0|0|0
 Your Frenzy hits Magistrate Sivash for 68 points of damage.	damage_out|Crit|Magistrate Sivash|Frenzy|68|0|0|0|0
 Your Frenzy hits Magistrate Sivash for 77 points of damage.	damage_out|Crit|Magistrate Sivash|Frenzy|77|0|0|0|0
+Your Frenzy hits Magistrate Sivash for 85 points of damage.	damage_out|Crit|Magistrate Sivash|Frenzy|85|0|0|0|0
 Your Frenzy hits Magistrate Sivash for 89 points of damage.	damage_out|Crit|Magistrate Sivash|Frenzy|89|0|0|0|0
 Your Lay on Hands heals Walkback for 860 Health.	heal|Crit|Walkback|Heal|860|0|0|0|0
 Your Lesser Burst of Magic hits a restless skeleton for 244 points of Magic Damage.	damage_out|Crit|restless skeleton|Lesser Burst of Magic|244|0|0|0|0
@@ -4492,6 +4776,7 @@ Your Lesser Heal heals Walkback for 30 Health.	heal|Crit|Walkback|Heal|30|0|0|0|
 Your Life Sap heals you for 16 Health.	heal|Crit|Crit|Heal|16|0|0|0|0
 Your Life Sap heals you for 33 Health.	heal|Crit|Crit|Heal|33|0|0|0|0
 Your Life Sap heals you for 34 Health.	heal|Crit|Crit|Heal|34|0|0|0|0
+Your Life Sap heals you for 35 Health.	heal|Crit|Crit|Heal|35|0|0|0|0
 Your Life Sap heals you for 36 Health.	heal|Crit|Crit|Heal|36|0|0|0|0
 Your Life Sap heals you for 37 Health.	heal|Crit|Crit|Heal|37|0|0|0|0
 Your Life Sap heals you for 38 Health.	heal|Crit|Crit|Heal|38|0|0|0|0
@@ -4517,6 +4802,9 @@ Your Life Sap hits Lord Ga'Duuz for 33 points of Corruption Damage.	damage_out|C
 Your Life Sap hits Lord Ga'Duuz for 34 points of Corruption Damage.	damage_out|Crit|Lord Ga'Duuz|Life Sap|34|0|0|0|0
 Your Life Sap hits Lord Ga'Duuz for 36 points of Corruption Damage.	damage_out|Crit|Lord Ga'Duuz|Life Sap|36|0|0|0|0
 Your Life Sap hits Lord Ga'Duuz for 37 points of Corruption Damage.	damage_out|Crit|Lord Ga'Duuz|Life Sap|37|0|0|0|0
+Your Life Sap hits Magistrate Sivash for 34 points of Corruption Damage.	damage_out|Crit|Magistrate Sivash|Life Sap|34|0|0|0|0
+Your Life Sap hits Magistrate Sivash for 35 points of Corruption Damage.	damage_out|Crit|Magistrate Sivash|Life Sap|35|0|0|0|0
+Your Life Sap hits Magistrate Sivash for 36 points of Corruption Damage.	damage_out|Crit|Magistrate Sivash|Life Sap|36|0|0|0|0
 Your Life Sap hits Magistrate Sivash for 38 points of Corruption Damage.	damage_out|Crit|Magistrate Sivash|Life Sap|38|0|0|0|0
 Your Llfe Sap hits a Plagueborn drake for 33 points of Corruption Damage.	damage_out|Crit|Plagueborn drake|Llfe Sap|33|0|0|0|0
 Your Rend VI hits a bone archer for 122 points of damage.	damage_out|Crit|bone archer|Rend VI|122|0|0|0|0
@@ -4551,7 +4839,10 @@ Your Rend VI hits Blightcaller Torvak for 120 points of damage.	damage_out|Crit|
 Your Rend VI hits Blightcaller Torvak for 136 points of damage.	damage_out|Crit|Blightcaller Torvak|Rend VI|136|0|0|0|0
 Your Rend VI hits Blightcaller Torvak for 141 points of damage.	damage_out|Crit|Blightcaller Torvak|Rend VI|141|0|0|0|0
 Your Rend VI hits Blightcaller Torvak for 146 points of damage.	damage_out|Crit|Blightcaller Torvak|Rend VI|146|0|0|0|0
+Your Rend VI hits Blightcaller Torvak for 157 points of damage.	damage_out|Crit|Blightcaller Torvak|Rend VI|157|0|0|0|0
 Your Rend VI hits Blightcaller Torvak for 158 points of damage.	damage_out|Crit|Blightcaller Torvak|Rend VI|158|0|0|0|0
+Your Rend VI hits Blightcaller Torvak for 194 points of damage. (Critical)	damage_out|Crit|Blightcaller Torvak|Rend VI|194|0|1|0|0
+Your Rend VI hits Blightcaller Torvak for 214 points of damage.	damage_out|Crit|Blightcaller Torvak|Rend VI|214|0|0|0|0
 Your Rend VI hits Blightcaller Torvak for 63 points of damage.	damage_out|Crit|Blightcaller Torvak|Rend VI|63|0|0|0|0
 Your Rend VI hits Bone Construct for 112 points of damage.	damage_out|Crit|Bone Construct|Rend VI|112|0|0|0|0
 Your Rend VI hits Bone Construct for 122 points of damage.	damage_out|Crit|Bone Construct|Rend VI|122|0|0|0|0
@@ -4598,8 +4889,13 @@ Your Rend VI hits Lord Ga'Duuz for 93 points of damage.	damage_out|Crit|Lord Ga'
 Your Rend VI hits Lord Ga'Duuz for 97 points of damage.	damage_out|Crit|Lord Ga'Duuz|Rend VI|97|0|0|0|0
 Your Rend VI hits Lord Ga'Duuz for 98 points of damage.	damage_out|Crit|Lord Ga'Duuz|Rend VI|98|0|0|0|0
 Your Rend VI hits Magistrate Sivash for 136 points of damage.	damage_out|Crit|Magistrate Sivash|Rend VI|136|0|0|0|0
+Your Rend VI hits Magistrate Sivash for 138 points of damage. (Critical)	damage_out|Crit|Magistrate Sivash|Rend VI|138|0|1|0|0
+Your Rend VI hits Magistrate Sivash for 153 points of damage. (Critical)	damage_out|Crit|Magistrate Sivash|Rend VI|153|0|1|0|0
 Your Rend VI hits Magistrate Sivash for 163 points of damage.	damage_out|Crit|Magistrate Sivash|Rend VI|163|0|0|0|0
+Your Rend VI hits Magistrate Sivash for 236 points of damage. (Critical)	damage_out|Crit|Magistrate Sivash|Rend VI|236|0|1|0|0
 Your Rend VI hits Magistrate Sivash for 63 points of damage.	damage_out|Crit|Magistrate Sivash|Rend VI|63|0|0|0|0
+Your Rend VI hits Magistrate Sivash for 92 points of damage.	damage_out|Crit|Magistrate Sivash|Rend VI|92|0|0|0|0
+Your Rend VI hits Magistrate Sivash for 94 points of damage. (Critical)	damage_out|Crit|Magistrate Sivash|Rend VI|94|0|1|0|0
 Your Rend VI hits Mistress Maribeth for 188 points of damage. (Critical)	damage_out|Crit|Mistress Maribeth|Rend VI|188|0|1|0|0
 Your Rend VI hits Mistress Maribeth for 205 points of damage. (Critical)	damage_out|Crit|Mistress Maribeth|Rend VI|205|0|1|0|0
 Your Restorative Smite heals Archon for 9 Health.	heal|Crit|Archon|Heal|9|0|0|0|0
