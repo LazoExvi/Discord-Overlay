@@ -228,9 +228,10 @@ def test_lines_missing_their_actor_are_credited_to_unknown():
     assert parse("heals you for 20 Health.").actor == "Unknown"
     # Real names are untouched, including short ones.
     assert parse("Ax hits a rat for 5 points of damage.").actor == "Ax"
-    # A one- or two-letter lowercase fragment is a clipped name, not a combatant.
+    # A single lowercase letter is a clipped name, not a combatant; two letters are kept
+    # so the display-time merge can fold "om" into "Tom".
     assert parse("r slashes a Plagueborn myrmidon for 40 points of damage.").actor == "Unknown"
-    assert parse("la crushes a Plagueborn myrmidon for 40 points of damage.").actor == "Unknown"
+    assert parse("om's Greater Fireball hits a sandy broodling for 2030 points of Fire").actor == "om"
 
 
 def test_backtick_apostrophes_and_players_pet_are_understood():

@@ -4772,8 +4772,8 @@ Kush's Magmaburst hits Whiplash for 28 points of Fire Damage.	damage_other|Kush|
 Kush's Magmaburst hits Whiplash for 30 points of Fire Damage.	damage_other|Kush|Whiplash|Magmaburst|30|0|0|0|0
 Kush's Magmaburst hits Whiplash for 38 points of Fire Damage.	damage_other|Kush|Whiplash|Magmaburst|38|0|0|0|0
 Kush's Magmaburst hits Whiplash for 39 points of Fire Damage.	damage_other|Kush|Whiplash|Magmaburst|39|0|0|0|0
-la crushes a Plagueborn myrmidon for 36 points of damage.	damage_other|Unknown|Plagueborn myrmidon|Crushes|36|0|0|0|0
-la slashes a Plagueborn myrmidon with their offhand for 35 points of damage.	damage_other|Unknown|Plagueborn myrmidon|Slashes (Offhand)|35|0|0|0|0
+la crushes a Plagueborn myrmidon for 36 points of damage.	damage_other|la|Plagueborn myrmidon|Crushes|36|0|0|0|0
+la slashes a Plagueborn myrmidon with their offhand for 35 points of damage.	damage_other|la|Plagueborn myrmidon|Slashes (Offhand)|35|0|0|0|0
 Legoliath pierces YOU for 38 points of damage.	damage_in|Legoliath|Crit|Pierces|38|0|0|0|0
 Legoliath pierces YOU for 40 points of damage (4 absorbed).	damage_in|Legoliath|Crit|Pierces|40|4|0|0|0
 Legoliath pierces YOU for 40 points of damage.	damage_in|Legoliath|Crit|Pierces|40|0|0|0|0
@@ -5347,9 +5347,9 @@ Obiwand crushes a restless skeleton for 8 points of damage.	damage_other|Obiwand
 Obiwand's Lesser Arcane Volley hits a restless skeleton for 18 points of Magic Damage.	damage_other|Obiwand|restless skeleton|Lesser Arcane Volley|18|0|0|0|0
 Obiwand's Lesser Arcane Volley hits a restless skeleton for 19 points of Magic Damage.	damage_other|Obiwand|restless skeleton|Lesser Arcane Volley|19|0|0|0|0
 Obiwand's Lesser Iceblast hits a restless skeleton for 272 points of Cold Damage.	damage_other|Obiwand|restless skeleton|Lesser Iceblast|272|0|0|0|0
-om's Greater Fireball hits a sandy broodling for 2030 points of Fire	damage_other|Unknown|sandy broodling|Greater Fireball|2030|0|0|0|0
-ou crush Lord Ga'Duuz for 75 points of damage.	damage_other|Unknown|Lord Ga'Duuz|Crush|75|0|0|0|0
-ou slash Lord Ga'Duuz with your offhand for 30 points of damage.	damage_other|Unknown|Lord Ga'Duuz|Slash (Offhand)|30|0|0|0|0
+om's Greater Fireball hits a sandy broodling for 2030 points of Fire	damage_other|om|sandy broodling|Greater Fireball|2030|0|0|0|0
+ou crush Lord Ga'Duuz for 75 points of damage.	damage_other|ou|Lord Ga'Duuz|Crush|75|0|0|0|0
+ou slash Lord Ga'Duuz with your offhand for 30 points of damage.	damage_other|ou|Lord Ga'Duuz|Slash (Offhand)|30|0|0|0|0
 Ouch crushes a bone archer for 117 points of damage.	damage_other|Ouch|bone archer|Crushes|117|0|0|0|0
 Ouch crushes a bone archer for 165 points of damage.	damage_other|Ouch|bone archer|Crushes|165|0|0|0|0
 Ouch crushes a bone archer for 181 points of damage.	damage_other|Ouch|bone archer|Crushes|181|0|0|0|0
