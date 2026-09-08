@@ -268,7 +268,13 @@ class EncounterTracker:
             if event.kind in METRIC_KINDS:
                 seen.append(self.credited_actor(event).casefold().strip())
                 seen.append(self._target_key(event.target))
-        return merge_similar_names(seen, self.protected_names | {self.player_name.casefold().strip()})
+        names = merge_similar_names(seen, self.protected_names | {self.player_name.casefold().strip()})
+        # Player names are 3 to 15 letters and no mob is shorter either, so a two-letter
+        # name that merged into nothing is a clipped fragment: count it as Unknown.
+        for name, canonical in names.items():
+            if canonical == name and len(name) <= 2 and name != PLAYER_TARGET_KEY:
+                names[name] = "unknown"
+        return names
 
     @staticmethod
     def _row_type(key: tuple[str, str], events: list[CombatEvent]) -> str:
@@ -301,7 +307,7 @@ class EncounterTracker:
             merged = names.get(folded, folded)
             if merged != folded:
                 # Merged into a spelling never read this fight (a known NPC): show the shipped spelling.
-                actor = known_npc(merged) or actor
+                actor = "Unknown" if merged == "unknown" else (known_npc(merged) or actor)
             folded = merged
         actor_type = self.credited_actor_type(event, folded)
         bucket = NPC_BUCKET if actor_type in {"ENEMY", "OTHER"} else actor_type

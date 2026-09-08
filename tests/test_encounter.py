@@ -312,6 +312,16 @@ def test_name_missing_its_first_letters_merges_and_keeps_the_players_row():
     assert rows == {"Crit": ("PLAYER", 210, 65), "Stuffy": ("OTHER", 210, 0), "Ryan": ("OTHER", 10, 0)}
 
 
+def test_two_letter_fragments_merge_or_become_unknown():
+    tracker = EncounterTracker(player_name="Crit")
+    for _ in range(10):
+        tracker.add(_event("Tom", 10))
+    tracker.add(_event("om", 10))   # clipped Tom: merges
+    tracker.add(_event("la", 10))   # matches nothing: never a real name
+    rows = {r.actor: r.damage for r in tracker.actor_totals(now=10.5)}
+    assert rows == {"Tom": 110, "Unknown": 10}
+
+
 def test_clipped_head_allows_a_third_lost_letter_on_long_names():
     from discord_overlay.encounter import clipped_head
     assert clipped_head("ghtcaller torvak", "blightcaller torvak")
