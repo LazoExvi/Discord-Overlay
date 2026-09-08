@@ -574,7 +574,10 @@ class CombatTextParser:
             return "Pet"
         if value.casefold() in {"you", "your"}:
             return self.player_name
-        # OCR sometimes loses the start of a line; never credit an empty or article-only name.
+        # OCR sometimes loses the start of a line; never credit an empty or article-only name,
+        # nor a one- or two-letter lowercase fragment ("r slashes ...").
         if not re.search(r"[A-Za-z0-9]", value) or value.casefold() in _JUNK_ACTORS:
+            return "Unknown"
+        if len(value) <= 2 and value.islower():
             return "Unknown"
         return value

@@ -312,6 +312,14 @@ def test_name_missing_its_first_letters_merges_and_keeps_the_players_row():
     assert rows == {"Crit": ("PLAYER", 210, 65), "Stuffy": ("OTHER", 210, 0), "Ryan": ("OTHER", 10, 0)}
 
 
+def test_clipped_head_allows_a_third_lost_letter_on_long_names():
+    from discord_overlay.encounter import clipped_head
+    assert clipped_head("ghtcaller torvak", "blightcaller torvak")
+    assert clipped_head("uffy", "stuffy")
+    assert not clipped_head("aner", "lonaner")      # three letters off a short name is too little left
+    assert not clipped_head("konaner", "lonaner")
+
+
 def test_ocr_confusable_pairs():
     from discord_overlay.encounter import ocr_confusable
     assert ocr_confusable("bone construet", "bone construct")   # c/e

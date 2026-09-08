@@ -57,7 +57,8 @@ def ocr_confusable(a: str, b: str, max_edits: int = MAX_CONFUSIONS) -> bool:
 def clipped_head(name: str, known: str) -> bool:
     """``layername`` -> ``playername``: the capture edge or cursor cut off the first letter or two."""
     minimum = 2 if len(known) <= 4 else 3
-    return (len(name) >= minimum and 1 <= len(known) - len(name) <= 2 and known.endswith(name))
+    lost = 3 if len(known) >= 12 else 2  # a long name can lose a third letter and still be unmistakable
+    return (len(name) >= minimum and 1 <= len(known) - len(name) <= lost and known.endswith(name))
 
 
 def glued_article(name: str, known: str) -> bool:
