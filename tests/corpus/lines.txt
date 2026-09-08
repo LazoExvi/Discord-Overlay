@@ -33,8 +33,12 @@ a comely courtesan crushes YOU for 96 points of damage (11 absorbed). (Critical)
 a comely courtesan tries to crush YOU, but misses!
 a cryptic weaver pierces YOU for 12 points of damage (1 absorbed). (Block 13)
 a cryptic weaver pierces YOU for 23 points of damage (3 absorbed). (Critical)
+a desert bat tries to bite a patrolman, but misses!
+a dusty skeleton tries to hit a Plagueborn patrolman, but misses!
+a dusty skeleton's Bash hits a Plagueborn patrolman for 5 points of damage.
 a feeble ratmancer claws YOU for 432 points of damage (48 absorbed). (Critical)
 a feeble ratmancer claws YOU for 96 points of damage (11 absorbed). (Critical)
+a patrolman slashes a desert bat for 52 points of damage.
 a pestilent ghoul hits Firstedition for 954 points of damage.
 a pestilent ghoul hits Luck for 954 points of damage.
 a pestilent ghoul hits Pitborn for 954 points of damage.
@@ -191,6 +195,10 @@ a Plagueborn myrmidon's Strike hits Player for 130 points of damage.
 a Plagueborn myrmidon's Strike hits Player for 65 points of damage.
 a Plagueborn myrmidon's Strike hits Player for 88 points of damage.
 a Plagueborn myrmidon's Strike hits Tiberous for 96 points of damage.
+a Plagueborn patrolman hits a restless skeleton for 19 points of damage.
+a Plagueborn patrolman hits a restless skeleton for 72 points of damage.
+a Plagueborn patrolman hits a restless skeleton for 76 points of damage.
+a Plagueborn patrolman's Strike hits a restless skeleton for 25 points of damage.
 a Plagueborn runescribe pierces Arne for 12 points of damage.
 a Plagueborn runescribe pierces Arne for 14 points of damage. (Block 9)
 a Plagueborn runescribe pierces Arne for 222 points of damage.
@@ -258,6 +266,8 @@ a putrid ghoul's Putrid Slam hits Tom for 500 points of damage.
 a putrid ghoul's Putrid Slam hits Weratissimo for 500 points of damage.
 a putrid ghoul's Putrid Slam hits YOU for 205 points of damage!
 a putrid ghoul's Putrid Slam hits YOU for 270 points of damage!
+a Pyrmos mercenary hits a restless ghoul for 72 points of damage.
+a Pyrmos mercenary's pet's Strike hits a restless skeleton for 6 points of damage.
 a quivering mass claws Klog for 223 points of damage.
 a quivering mass claws Klog for 262 points of damage.
 a rabid plaguereaver claws YOU for 23 points of damage (3 absorbed). (Critical)
@@ -268,6 +278,21 @@ a rattlesnake bites Redmeat for 16 points of damage.
 a rattlesnake's Kick hits Fangkeeper for 2 points of damage.
 a rattlesnake's Poisonous Bite hits Fangkeeper for 5 points of damage.
 a rattlesnake's Poisonous Bite hits Redmeat for 5 points of damage.
+a Red Mantle escort hits a restless skeleton for 3 points of damage.
+a Red Mantle escort hits a restless skeleton for 43 points of damage.
+a Red Mantle escort shoots a dusty skeleton for 57 points of damage.
+a Red Mantle escort slashes a restless skeleton for 22 points of damage.
+a Red Mantle escort slashes a restless skeleton for 34 points of damage.
+a Red Mantle escort slashes a restless skeleton for 43 points of damage.
+a Red Mantle escort slashes a restless skeleton for 62 points of damage.
+a Red Mantle escort tries to slash a restless skeleton, but misses!
+a Red Mantle escort's Strike hits a restless skeleton for 26 points of damage.
+a restless ghoul tries to hit a Plagueborn patrolman, but misses!
+a restless ghoul tries to hit YOU, but misses!
+a restless ghoul's Strike hits a Plagueborn patrolman for 12 points of damage.
+a restless ghoul's Strike hits a Plagueborn patrolman for 14 points of damage.
+a restless ghoul's Strike hits a Plagueborn patrolman for 19 points of damage.
+a restless skeleton hits a Plagueborn patrolman for 2 points of damage.
 a restless skeleton hits Bag for 11 points of damage.
 a restless skeleton hits Bag for 2 points of damage.
 a restless skeleton hits Bag for 42 points of damage.
@@ -291,7 +316,13 @@ a restless skeleton hits Tommy for 29 points of damage.
 a restless skeleton hits Tommy for 31 points of damage.
 a restless skeleton hits Tommy for 33 points of damage.
 a restless skeleton hits Tommy for 44 points of damage.
+a restless skeleton tries to hit a Plagueborn patrolman, but misses!
+a restless skeleton tries to hit a Red Mantle escort, but misses!
+a restless skeleton tries to slash a Plagueborn patrolman, but misses!
+a restless skeleton's Bash hits a Plagueborn patrolman for 6 points of damage.
 a restless skeleton's Bash hits Tommy for 6 points of damage.
+a restless skeleton's Strike hits a Plagueborn patrolman for 14 points of damage.
+a restless skeleton's Strike hits a Plagueborn patrolman for 17 points of damage.
 a restless skeleton's Strike hits Bag for 14 points of damage.
 a restless skeleton's Strike hits Bag for 15 points of damage.
 a restless skeleton's Strike hits Tommy for 10 points of damage.
@@ -460,25 +491,42 @@ Arne crushes a Plagueborn templar for 71 points of damage.
 Arne crushes a Plagueborn templar for 9 points of damage.
 Arne crushes Blightcaller Torvak for 12 points of damage.
 Arne crushes Blightcaller Torvak for 16 points of damage.
+Arne crushes Blightcaller Torvak for 17 points of damage.
 Arne crushes Blightcaller Torvak for 22 points of damage.
+Arne crushes Blightcaller Torvak for 23 points of damage.
 Arne crushes Blightcaller Torvak for 25 points of damage.
+Arne crushes Blightcaller Torvak for 26 points of damage.
 Arne crushes Blightcaller Torvak for 28 points of damage.
 Arne crushes Blightcaller Torvak for 3 points of damage.
 Arne crushes Blightcaller Torvak for 31 points of damage.
 Arne crushes Blightcaller Torvak for 37 points of damage.
 Arne crushes Blightcaller Torvak for 40 points of damage.
 Arne crushes Blightcaller Torvak for 43 points of damage.
+Arne crushes Blightcaller Torvak for 46 points of damage.
 Arne crushes Blightcaller Torvak for 50 points of damage.
 Arne crushes Blightcaller Torvak for 62 points of damage.
 Arne crushes Blightcaller Torvak for 9 points of damage.
+Arne crushes Magistrate Sivash for 17 points of damage.
+Arne crushes Magistrate Sivash for 23 points of damage.
 Arne crushes Magistrate Sivash for 25 points of damage.
+Arne crushes Magistrate Sivash for 26 points of damage.
 Arne crushes Magistrate Sivash for 28 points of damage.
+Arne crushes Magistrate Sivash for 29 points of damage.
 Arne crushes Magistrate Sivash for 3 points of damage.
 Arne crushes Magistrate Sivash for 31 points of damage.
+Arne crushes Magistrate Sivash for 38 points of damage.
 Arne crushes Magistrate Sivash for 43 points of damage.
 Arne crushes Magistrate Sivash for 53 points of damage.
 Arne crushes Magistrate Sivash for 56 points of damage.
+Arne crushes Magistrate Sivash for 58 points of damage.
 Arne crushes Magistrate Sivash for 62 points of damage.
+Arne crushes Mayor Oisin for 26 points of damage.
+Arne crushes Mayor Oisin for 32 points of damage.
+Arne crushes Mayor Oisin for 52 points of damage.
+Arne crushes Sherrif Bahram for 20 points of damage.
+Arne crushes Sherrif Bahram for 38 points of damage.
+Arne crushes Sherrif Bahram for 41 points of damage.
+Arne crushes Sherrif Bahram for 80 points of damage.
 Arne is renewed by ancestral healing
 Arne spreads their Disease to you. YOU take 400 points of damage!
 Arne's ancestral healing fades.
@@ -511,27 +559,53 @@ Arne's Holy Strike hits Blightcaller Torvak for 103 points of Holy Damage.
 Arne's Holy Strike hits Blightcaller Torvak for 106 points of Holy Damage.
 Arne's Holy Strike hits Blightcaller Torvak for 108 points of Holy Damage.
 Arne's Holy Strike hits Blightcaller Torvak for 110 points of Holy Damage.
+Arne's Holy Strike hits Blightcaller Torvak for 111 points of Holy Damage.
 Arne's Holy Strike hits Blightcaller Torvak for 114 points of Holy Damage.
 Arne's Holy Strike hits Blightcaller Torvak for 117 points of Holy Damage.
+Arne's Holy Strike hits Blightcaller Torvak for 119 points of Holy Damage.
 Arne's Holy Strike hits Blightcaller Torvak for 120 points of Holy Damage.
+Arne's Holy Strike hits Blightcaller Torvak for 122 points of Holy Damage.
 Arne's Holy Strike hits Blightcaller Torvak for 123 points of Holy Damage.
 Arne's Holy Strike hits Blightcaller Torvak for 125 points of Holy Damage.
+Arne's Holy Strike hits Blightcaller Torvak for 127 points of Holy Damage.
 Arne's Holy Strike hits Blightcaller Torvak for 58 points of Holy Damage.
+Arne's Holy Strike hits Blightcaller Torvak for 76 points of Holy Damage.
 Arne's Holy Strike hits Blightcaller Torvak for 91 points of Holy Damage.
 Arne's Holy Strike hits Magistrate Sivash for 101 points of Holy Damage.
+Arne's Holy Strike hits Magistrate Sivash for 105 points of Holy Damage.
 Arne's Holy Strike hits Magistrate Sivash for 109 points of Holy Damage.
 Arne's Holy Strike hits Magistrate Sivash for 110 points of Holy Damage.
+Arne's Holy Strike hits Magistrate Sivash for 114 points of Holy Damage.
 Arne's Holy Strike hits Magistrate Sivash for 115 points of Holy Damage.
+Arne's Holy Strike hits Magistrate Sivash for 116 points of Holy Damage.
 Arne's Holy Strike hits Magistrate Sivash for 122 points of Holy Damage.
+Arne's Holy Strike hits Magistrate Sivash for 124 points of Holy Damage.
+Arne's Holy Strike hits Magistrate Sivash for 65 points of Holy Damage.
+Arne's Holy Strike hits Mayor Oisin for 119 points of Holy Damage.
+Arne's Holy Strike hits Mayor Oisin for 122 points of Holy Damage.
+Arne's Holy Strike hits Sherrif Bahram for 112 points of Holy Damage.
+Arne's Holy Strike hits Sherrif Bahram for 139 points of Holy Damage.
+Arne's Holy Strike hits Sherrif Bahram for 141 points of Holy Damage.
+Arne's Holy Strike hits Sherrif Bahram for 56 points of Holy Damage.
+Arne's Holy Strike hits Sherrif Bahram for 87 points of Holy Damage.
+Arne's Retribution II hits Blightcaller Torvak for 1493 points of Holy Damage.
 Arne's Retribution III hits Blightcaller Torvak for 1493 points of Holy Dama
 Arne's Retribution III hits Blightcaller Torvak for 1493 points of Holy Damage.
+Arne's Retribution III hits Blightcaller Torvak for 1553 points of Holy Damage.
+Arne's Retribution III hits Blightcaller Torvak for 1612 points of Holy Damage.
+Arne's Retribution III hits Blightcaller Torvak for 1642 points of Holy Damage.
 Arne's Retribution III hits Blightcaller Torvak for 955 points of Holy Damage.
 Arne's Retribution III hits Magistrate Sivash for 1357 points of Holy Damage
 Arne's Righteous Strike hits Blightcaller Torvak for 216 points of Holy Damage.
 Arne's Righteous Strike hits Blightcaller Torvak for 378 points of Holy Damage.
+Arne's Righteous Strike hits Blightcaller Torvak for 393 points of Holy Damage.
+Arne's Righteous Strike hits Blightcaller Torvak for 416 points of Holy Damage.
 Arne's Righteous Strike hits Blightcaller Torvak for 632 points of Holy Damage.
+Arne's Righteous Strike hits Mayor Oisin for 341 points of Holy Damage.
+Arne's Righteous Strike hits Sherrif Bahram for 416 points of Holy Damage.
 Arne's Sublime Heal heals Arne for 1253 Health.
 Arne's Sublime Heal heals Arne for 1365 Health.
+Arne's Sublime Heal heals Ebola for 1164 Health.
 Arne's Sublime Heal heals Entrari for 1365 Health.
 Arne's Sublime Heal heals Klog for 1164 Health.
 Arne's Sublime Heal heals Lonaner for 1365 Health.
@@ -539,6 +613,7 @@ Arne's Sublime Heal heals Luck for 1365 Health.
 Arne's Sublime Heal heals Ouch for 1253 Health.
 Arne's Sublime Heal heals Player for 1164 Health.
 Arne's Sublime Heal heals Stuffy for 1253 Health.
+Arne's Sublime Heal heals Tom for 1164 Health.
 Arne's Sublime Heal heals Visage for 1253 Health.
 Arne's Sublime Heal heals you for 1164 Health.
 Arne's Sublime Heal heals you for 1253 Health.
@@ -592,8 +667,11 @@ Blightcaller Torvak hits YOU for 158 points of damage.
 Blightcaller Torvak hits YOU for 172 points of damage.
 Blightcaller Torvak hits YOU for 185 points of damage.
 Blightcaller Torvak hits YOU for 188 points of damage (21 absorbed).
+Blightcaller Torvak hits YOU for 198 points of damage (22 absorbed).
 Blightcaller Torvak hits YOU for 211 points of damage.
+Blightcaller Torvak hits YOU for 214 points of damage (24 absorbed).
 Blightcaller Torvak hits YOU for 224 points of damage.
+Blightcaller Torvak hits YOU for 226 points of damage (25 absorbed).
 Blightcaller Torvak hits YOU for 23 points of damage (3 absorbed).
 Blightcaller Torvak hits YOU for 238 points of damage (26 absorbed).
 Blightcaller Torvak hits YOU for 238 points of damage.
@@ -603,6 +681,7 @@ Blightcaller Torvak hits YOU for 264 points of damage.
 Blightcaller Torvak hits YOU for 36 points of damage (4 absorbed).
 Blightcaller Torvak hits YOU for 40 points of damage.
 Blightcaller Torvak hits YOU for 53 points of damage.
+Blightcaller Torvak hits YOU for 66 points of damage.
 Blightcaller Torvak hits YOU for 71 points of damage (8 absorbed).
 Blightcaller Torvak hits YOU for 79 points of damage.
 Blightcaller Torvak hits YOU for 83 points of damage (9 absorbed).
@@ -617,8 +696,10 @@ Blightcaller Torvak's Strike hits YOU for 103 points of damage!
 Blightcaller Torvak's Strike hits YOU for 120 points of damage!
 Blightcaller Torvak's Strike hits YOU for 120 points of damagel
 Blightcaller Torvak's Strike hits YOU for 125 points of damagel
+Blightcaller Torvak's Strike hits YOU for 42 points of damage!
 Blightcaller Torvak's Strike hits YOU for 64 points of damage!
 Blightcaller Torvak's Strike hits YOU for 70 points of damage!
+Blightcaller Torvak's Strike hits YOU for 89 points of damage!
 Blightcaller Torvak's Strike hits YOU for 98 points of damage!
 Bloodgate's Lethal Deluge hits a bone archer for 461 points of Poison Damage.
 Bone Construct crushes Lonaner for 354 points of damage.
@@ -698,6 +779,7 @@ Bone Construet's Bone Smash hits YOU for 256 points of damage!
 Calvin spreads their Spreading Plague to Ouch. Ouch takes 400 points of damage
 Calvin spreads their Spreading Plague to Raan. Raan takes 400 points of damage!
 Calvin spreads their Spreading Plague to Tom. Tom takes 400 points of damage!
+Captain Belvoir hits a restless skeleton for 186 points of damage.
 Crit's Second Wind heals you for 58 Health
 Crit's Second Wind heals you for 58 Health,
 Crit's Second Wind heals you for 58 Health.
@@ -776,12 +858,17 @@ Ebola crushes a rotten sharpshooter for 79 points of damage.
 Ebola crushes a rotten sharpshooter for 91 points of damage.
 Ebola crushes Blightcaller Torvak for 15 points of damage.
 Ebola crushes Blightcaller Torvak for 18 points of damage.
+Ebola crushes Blightcaller Torvak for 22 points of damage.
 Ebola crushes Blightcaller Torvak for 25 points of damage.
 Ebola crushes Blightcaller Torvak for 29 points of damage.
 Ebola crushes Blightcaller Torvak for 33 points of damage.
+Ebola crushes Blightcaller Torvak for 36 points of damage.
+Ebola crushes Blightcaller Torvak for 40 points of damage.
+Ebola crushes Blightcaller Torvak for 43 points of damage.
 Ebola crushes Blightcaller Torvak for 47 points of damage.
 Ebola crushes Blightcaller Torvak for 51 points of damage.
 Ebola crushes Blightcaller Torvak for 54 points of damage.
+Ebola crushes Blightcaller Torvak for 58 points of damage.
 Ebola crushes Blightcaller Torvak for 61 points of damage.
 Ebola crushes Blightcaller Torvak for 65 points of damage.
 Ebola crushes Blightcaller Torvak for 69 points of damage.
@@ -791,19 +878,37 @@ Ebola crushes Blightcaller Torvak for 83 points of damage.
 Ebola crushes Magistrate Sivash for 15 points of damage.
 Ebola crushes Magistrate Sivash for 18 points of damage.
 Ebola crushes Magistrate Sivash for 22 points of damage.
+Ebola crushes Magistrate Sivash for 25 points of damage.
 Ebola crushes Magistrate Sivash for 29 points of damage.
 Ebola crushes Magistrate Sivash for 33 points of damage.
 Ebola crushes Magistrate Sivash for 36 points of damage.
 Ebola crushes Magistrate Sivash for 40 points of damage.
+Ebola crushes Magistrate Sivash for 43 points of damage.
 Ebola crushes Magistrate Sivash for 47 points of damage.
 Ebola crushes Magistrate Sivash for 51 points of damage.
+Ebola crushes Magistrate Sivash for 54 points of damage.
 Ebola crushes Magistrate Sivash for 58 points of damage.
 Ebola crushes Magistrate Sivash for 61 points of damage.
 Ebola crushes Magistrate Sivash for 65 points of damage.
 Ebola crushes Magistrate Sivash for 69 points of damage.
 Ebola crushes Magistrate Sivash for 72 points of damage.
 Ebola crushes Magistrate Sivash for 76 points of damage.
+Ebola crushes Magistrate Sivash for 79 points of damage.
 Ebola crushes Magistrate Sivash for 83 points of damage.
+Ebola crushes Mayor Oisin for 22 points of damage.
+Ebola crushes Mayor Oisin for 25 points of damage.
+Ebola crushes Mayor Oisin for 29 points of damage.
+Ebola crushes Mayor Oisin for 33 points of damage.
+Ebola crushes Mayor Oisin for 36 points of damage.
+Ebola crushes Mayor Oisin for 40 points of damage.
+Ebola crushes Mayor Oisin for 43 points of damage.
+Ebola crushes Mayor Oisin for 47 points of damage.
+Ebola crushes Mayor Oisin for 54 points of damage.
+Ebola crushes Mayor Oisin for 61 points of damage.
+Ebola crushes Mayor Oisin for 69 points of damage.
+Ebola crushes Mayor Oisin for 72 points of damage.
+Ebola crushes Mayor Oisin for 76 points of damage.
+Ebola crushes Mayor Oisin for 83 points of damage.
 Ebola crushes Pustulax the Avatar of Plagues for 14 points of damage.
 Ebola crushes Pustulax the Avatar of Plagues for 15 points of damage.
 Ebola crushes Pustulax the Avatar of Plagues for 16 points of damage.
@@ -830,6 +935,25 @@ Ebola crushes Pustulax the Avatar of Plagues for 76 points of damage.
 Ebola crushes Pustulax the Avatar of Plagues for 80 points of damage.
 Ebola crushes Pustulax the Avatar of Plagues for 83 points of damage.
 Ebola crushes Pustulax the Avatar of Plagues for 87 points of damage.
+Ebola crushes Sherrif Bahram for 15 points of damage.
+Ebola crushes Sherrif Bahram for 18 points of damage.
+Ebola crushes Sherrif Bahram for 25 points of damage.
+Ebola crushes Sherrif Bahram for 29 points of damage.
+Ebola crushes Sherrif Bahram for 33 points of damage.
+Ebola crushes Sherrif Bahram for 36 points of damage.
+Ebola crushes Sherrif Bahram for 40 points of damage.
+Ebola crushes Sherrif Bahram for 43 points of damage.
+Ebola crushes Sherrif Bahram for 47 points of damage.
+Ebola crushes Sherrif Bahram for 51 points of damage.
+Ebola crushes Sherrif Bahram for 54 points of damage.
+Ebola crushes Sherrif Bahram for 58 points of damage.
+Ebola crushes Sherrif Bahram for 61 points of damage.
+Ebola crushes Sherrif Bahram for 65 points of damage.
+Ebola crushes Sherrif Bahram for 69 points of damage.
+Ebola crushes Sherrif Bahram for 72 points of damage.
+Ebola crushes Sherrif Bahram for 76 points of damage.
+Ebola crushes Sherrif Bahram for 79 points of damage.
+Ebola crushes Sherrif Bahram for 83 points of damage.
 Ebola is renewed by ancestral healing
 Ebola slashes a bone archer with their offhand for 50 points of damage.
 Ebola slashes a Plagueborn myrmidon with their offhand for 12 points of damage.
@@ -849,10 +973,13 @@ Ebola slashes a rotten sharpshooter with their offhand for 33 points of damage.
 Ebola slashes a rotten sharpshooter with their offhand for 40 points of damage.
 Ebola slashes a rotten sharpshooter with their offhand for 43 points of damage.
 Ebola slashes Blightcaller Torvak with their offhand for 17 points of damage.
+Ebola slashes Blightcaller Torvak with their offhand for 20 points of damage.
 Ebola slashes Blightcaller Torvak with their offhand for 23 points of damage.
+Ebola slashes Blightcaller Torvak with their offhand for 26 points of damage.
 Ebola slashes Blightcaller Torvak with their offhand for 29 points of damage.
 Ebola slashes Blightcaller Torvak with their offhand for 3 points of damage.
 Ebola slashes Blightcaller Torvak with their offhand for 32 points of damage.
+Ebola slashes Blightcaller Torvak with their offhand for 35 points of damage.
 Ebola slashes Blightcaller Torvak with their offhand for 41 points of damage.
 Ebola slashes Blightcaller Torvak with their offhand for 44 points of damage.
 Ebola slashes Blightcaller Torvak with their offhand for 46 points of damage.
@@ -865,34 +992,89 @@ Ebola slashes Magistrate Sivash with their offhand for 17 points of damage.
 Ebola slashes Magistrate Sivash with their offhand for 20 points of damage.
 Ebola slashes Magistrate Sivash with their offhand for 23 points of damage.
 Ebola slashes Magistrate Sivash with their offhand for 26 points of damage.
+Ebola slashes Magistrate Sivash with their offhand for 29 points of damage.
 Ebola slashes Magistrate Sivash with their offhand for 3 points of damage.
+Ebola slashes Magistrate Sivash with their offhand for 32 points of damage.
 Ebola slashes Magistrate Sivash with their offhand for 35 points of damage.
 Ebola slashes Magistrate Sivash with their offhand for 38 points of damage.
 Ebola slashes Magistrate Sivash with their offhand for 41 points of damage.
 Ebola slashes Magistrate Sivash with their offhand for 44 points of damage.
+Ebola slashes Magistrate Sivash with their offhand for 46 points of damage.
 Ebola slashes Magistrate Sivash with their offhand for 49 points of damage.
+Ebola slashes Magistrate Sivash with their offhand for 52 points of damage.
+Ebola slashes Magistrate Sivash with their offhand for 55 points of damage.
 Ebola slashes Magistrate Sivash with their offhand for 58 points of damage.
 Ebola slashes Magistrate Sivash with their offhand for 6 points of damage.
+Ebola slashes Magistrate Sivash with their offhand for 9 points of damage.
+Ebola slashes Mayor Oisin with their offhand for 12 points of damage.
+Ebola slashes Mayor Oisin with their offhand for 15 points of damage.
+Ebola slashes Mayor Oisin with their offhand for 17 points of damage.
+Ebola slashes Mayor Oisin with their offhand for 23 points of damage.
+Ebola slashes Mayor Oisin with their offhand for 3 points of damage.
+Ebola slashes Mayor Oisin with their offhand for 35 points of damage.
+Ebola slashes Mayor Oisin with their offhand for 38 points of damage.
+Ebola slashes Mayor Oisin with their offhand for 41 points of damage.
+Ebola slashes Mayor Oisin with their offhand for 44 points of damage.
+Ebola slashes Mayor Oisin with their offhand for 46 points of damage.
+Ebola slashes Mayor Oisin with their offhand for 49 points of damage.
+Ebola slashes Mayor Oisin with their offhand for 58 points of damage.
+Ebola slashes Mayor Oisin with their offhand for 9 points of damage.
+Ebola slashes Sherrif Bahram with their offhand for 17 points of damage.
+Ebola slashes Sherrif Bahram with their offhand for 20 points of damage.
+Ebola slashes Sherrif Bahram with their offhand for 26 points of damage.
+Ebola slashes Sherrif Bahram with their offhand for 29 points of damage.
+Ebola slashes Sherrif Bahram with their offhand for 3 points of damage.
+Ebola slashes Sherrif Bahram with their offhand for 35 points of damage.
+Ebola slashes Sherrif Bahram with their offhand for 41 points of damage.
+Ebola slashes Sherrif Bahram with their offhand for 46 points of damage.
+Ebola slashes Sherrif Bahram with their offhand for 49 points of damage.
+Ebola slashes Sherrif Bahram with their offhand for 52 points of damage.
+Ebola slashes Sherrif Bahram with their offhand for 55 points of damage.
+Ebola slashes Sherrif Bahram with their offhand for 58 points of damage.
+Ebola slashes Sherrif Bahram with their offhand for 9 points of damage.
 Ebola spreads their Disease to you. YOU take 400 points of damage!
 Ebola's ancestral healing fades.
 Ebola's Arcane Detonation hits a rotten sharpshooter for 537 points of Magic
 Ebola's Arcane Detonation hits Blightcaller Torvak for 521 points of Magic Damage.
+Ebola's Arcane Detonation hits Blightcaller Torvak for 573 points of Magic Damage.
 Ebola's Arcane Detonation hits Magistrate Sivash for 521 points of Magic Damage.
+Ebola's Arcane Detonation hits Magistrate Sivash for 531 points of Magic Damage.
+Ebola's Arcane Detonation hits Mayor Oisin for 521 points of Magic Damage.
+Ebola's Arcane Detonation hits Mayor Oisin for 573 points of Magic Damage.
+Ebola's Arcane Detonation hits Sherrif Bahram for 542 points of Magic Damage.
 Ebola's Arcane Infusion hits Blightcaller Torvak for 52 points of Magic Damage.
 Ebola's Arcane Infusion hits Magistrate Sivash for 52 points of Magic Damage.
 Ebola's Blistering Rot hits a Plagueborn myrmidon for 5 points of Disease Damage.
 Ebola's Blistering Rot hits Magistrate Sivash for 10 points of Disease Damage.
 Ebola's Blistering Rot hits Magistrate Sivash for 3 points of Disease Damage.
+Ebola's Blistering Rot hits Mayor Oisin for 3 points of Disease Damage.
+Ebola's Blistering Rot hits Mayor Oisin for 5 points of Disease Damage.
+Ebola's Blistering Rot hits Sherrif Bahram for 3 points of Disease Damage.
+Ebola's Blistering Rot hits Sherrif Bahram for 5 points of Disease Damage.
 Ebola's Discharge VI hits Blightcaller Torvak for 295 points of Electric Damage.
 Ebola's Discharge VI hits Blightcaller Torvak for 466 points of Electric Damage.
+Ebola's Discharge VI hits Blightcaller Torvak for 490 points of Electric Damage.
 Ebola's Discharge VI hits Blightcaller Torvak for 591 points of Electric Damage.
+Ebola's Discharge VI hits Blightcaller Torvak for 615 points of Electric Damage.
+Ebola's Discharge VI hits Blightcaller Torvak for 626 points of Electric Damage.
+Ebola's Discharge VI hits Blightcaller Torvak for 638 points of Electric Damage.
 Ebola's Discharge VI hits Magistrate Sivash for 384 points of Electric Damage.
 Ebola's Discharge VI hits Magistrate Sivash for 591 points of Electric Damage.
+Ebola's Discharge VI hits Magistrate Sivash for 603 points of Electric Damage.
+Ebola's Discharge VI hits Mayor Oisin for 615 points of Electric Damage.
 Ebola's Electric Infusion hits a rotten sharpshooter for 54 points of Electric
 Ebola's Electric Infusion hits Blightcaller Torvak for 29 points of Electric Damage.
 Ebola's Electric Infusion hits Blightcaller Torvak for 52 points of Electric Damage.
+Ebola's Electric Infusion hits Magistrate Sivash for 26 points of Electric Damage.
 Ebola's Electric Infusion hits Magistrate Sivash for 29 points of Electric Damage.
 Ebola's Electric Infusion hits Magistrate Sivash for 52 points of Electric Damage.
+Ebola's Electric Infusion hits Magistrate Sivash for 53 points of Electric Damage.
+Ebola's Electric Infusion hits Mayor Oisin for 26 points of Electric Damage.
+Ebola's Electric Infusion hits Mayor Oisin for 45 points of Electric Damage.
+Ebola's Electric Infusion hits Mayor Oisin for 52 points of Electric Damage.
+Ebola's Electric Infusion hits Mayor Oisin for 54 points of Electric Damage.
+Ebola's Electric Infusion hits Mayor Oisin for 56 points of Electric Damage.
+Ebola's Electric Infusion hits Sherrif Bahram for 34 points of Electric Damage.
 Ebola's faith answers, healing them for 375 Health.
 Ebola's Infused Slash VI hits a bone archer for 72 points of damage.
 Ebola's Infused Slash VI hits a Plagueborn myrmidon for 66 points of damage.
@@ -900,21 +1082,48 @@ Ebola's Infused Slash VI hits a Plagueborn myrmidon for 89 points of damage.
 Ebola's Infused Slash VI hits a rabid plaguereaver for 77 points of damage.
 Ebola's Infused Slash VI hits a rotten sharpshooter for 40 points of damage.
 Ebola's Infused Slash VI hits a rotten sharpshooter for 81 points of damage.
+Ebola's Infused Slash VI hits Blightcaller Torvak for 45 points of damage.
 Ebola's Infused Slash VI hits Blightcaller Torvak for 48 points of damage.
 Ebola's Infused Slash VI hits Blightcaller Torvak for 84 points of damage.
+Ebola's Infused Slash VI hits Blightcaller Torvak for 89 points of damage.
+Ebola's Infused Slash VI hits Magistrate Sivash for 40 points of damage.
 Ebola's Infused Slash VI hits Magistrate Sivash for 48 points of damage.
+Ebola's Infused Slash VI hits Magistrate Sivash for 51 points of damage.
+Ebola's Infused Slash VI hits Magistrate Sivash for 52 points of damage.
 Ebola's Infused Slash VI hits Magistrate Sivash for 53 points of damage.
+Ebola's Infused Slash VI hits Magistrate Sivash for 79 points of damage.
+Ebola's Infused Slash VI hits Magistrate Sivash for 84 points of damage.
 Ebola's Infused Slash VI hits Magistrate Sivash for 89 points of damage.
+Ebola's Infused Slash VI hits Magistrate Sivash for 92 points of damage.
+Ebola's Infused Slash VI hits Magistrate Sivash for 93 points of damage.
+Ebola's Infused Slash VI hits Mayor Oisin for 68 points of damage.
+Ebola's Infused Slash VI hits Mayor Oisin for 79 points of damage.
+Ebola's Infused Slash VI hits Mayor Oisin for 94 points of damage.
+Ebola's Infused Slash VI hits Sherrif Bahram for 63 points of damage.
+Ebola's Infused Slash VI hits Sherrif Bahram for 71 points of damage.
+Ebola's Infused Slash VI hits Sherrif Bahram for 73 points of damage.
+Ebola's Infused Slash VI hits Sherrif Bahram for 89 points of damage.
 Ebola's Life Sap heals them for 50 Health.
+Ebola's Life Sap heals them for 51 Health.
+Ebola's Life Sap heals them for 52 Health.
 Ebola's Life Sap heals them for 53 Health.
+Ebola's Life Sap heals them for 54 Health.
+Ebola's Life Sap heals them for 55 Health.
 Ebola's Life Sap heals them for 58 Health.
 Ebola's Life Sap hits a Plagueborn myrmidon for 50 points of Corruption Damage.
 Ebola's Life Sap hits a rabid plaguereaver for 53 points of Corruption Damage.
 Ebola's Life Sap hits a rotten sharpshooter for 53 points of Corruption Damage.
+Ebola's Life Sap hits Blightcaller Torvak for 54 points of Corruption Damage.
 Ebola's Life Sap hits Magistrate Sivash for 50 points of Corruption Damage.
+Ebola's Life Sap hits Magistrate Sivash for 51 points of Corruption Damage.
+Ebola's Life Sap hits Sherrif Bahram for 52 points of Corruption Damage.
+Ebola's Life Sap hits Sherrif Bahram for 55 points of Corruption Damage.
 Ebola's Telekinetic Infusion hits a Plagueborn myrmidon for 30 points of damage.
 Ebola's Telekinetic Infusion hits a rabid plaguereaver for 30 points of damage.
+Ebola's Telekinetic Infusion hits Blightcaller Torvak for 30 points of damage.
 Ebola's Telekinetic Infusion hits Magistrate Sivash for 30 points of damage.
+Ebola's Telekinetic Infusion hits Mayor Oisin for 30 points of damage.
+Ebola's Telekinetic Infusion hits Sherrif Bahram for 30 points of damage.
 Echwig crushes Whiplash for 2 points of damage.
 Echwig crushes Whiplash for 6 points of damage (1 absorbed).
 Echwig's Life Sap heals them for 18 Health.
@@ -2370,38 +2579,90 @@ Magistrate Sivash crushes YOU for 55 points of damage (37 absorbed).
 Magistrate Sivash crushes YOU for 64 points of damage (42 absorbed).
 Magistrate Sivash crushes YOU for 71 points of damage (48 absorbed).
 Magistrate Sivash crushes YOU for 8 points of damage (5 absorbed).
+Magistrate Sivash hits Ebola for 154 points of damage.
+Magistrate Sivash hits Ebola for 211 points of damage.
+Magistrate Sivash hits Ebola for 220 points of damage.
+Magistrate Sivash hits Ebola for 251 points of damage.
 Magistrate Sivash hits YOU for 103 points of damage (69 absorbed).
 Magistrate Sivash hits YOU for 107 points of damage (12 absorbed).
+Magistrate Sivash hits YOU for 119 points of damage.
 Magistrate Sivash hits YOU for 127 points of damage (84 absorbed).
 Magistrate Sivash hits YOU for 13 points of damage.
 Magistrate Sivash hits YOU for 130 points of damage (15 absorbed).
+Magistrate Sivash hits YOU for 132 points of damage.
 Magistrate Sivash hits YOU for 143 points of damage (95 absorbed).
+Magistrate Sivash hits YOU for 145 points of damage.
 Magistrate Sivash hits YOU for 15 points of damage (249 absorbed).
 Magistrate Sivash hits YOU for 158 points of damage (106 absorbed).
 Magistrate Sivash hits YOU for 16 points of damage (10 absorbed).
 Magistrate Sivash hits YOU for 166 points of damage (19 absorbed).
+Magistrate Sivash hits YOU for 172 points of damage.
+Magistrate Sivash hits YOU for 185 points of damage.
+Magistrate Sivash hits YOU for 198 points of damage.
+Magistrate Sivash hits YOU for 211 points of damage.
+Magistrate Sivash hits YOU for 238 points of damage.
+Magistrate Sivash hits YOU for 26 points of damage.
+Magistrate Sivash hits YOU for 264 points of damage.
 Magistrate Sivash hits YOU for 32 points of damage (21 absorbed).
 Magistrate Sivash hits YOU for 36 points of damage (4 absorbed).
 Magistrate Sivash hits YOU for 40 points of damage (26 absorbed).
+Magistrate Sivash hits YOU for 40 points of damage.
 Magistrate Sivash hits YOU for 48 points of damage (5 absorbed).
 Magistrate Sivash hits YOU for 53 points of damage.
 Magistrate Sivash hits YOU for 55 points of damage (37 absorbed).
+Magistrate Sivash hits YOU for 66 points of damage.
 Magistrate Sivash hits YOU for 71 points of damage (48 absorbed).
 Magistrate Sivash hits YOU for 79 points of damage (53 absorbed).
 Magistrate Sivash hits YOU for 8 points of damage (5 absorbed).
+Magistrate Sivash hits YOU for 83 points of damage (9 absorbed).
+Magistrate Sivash hits YOU for 89 points of damage (10 absorbed).
+Magistrate Sivash hits YOU for 92 points of damage.
 Magistrate Sivash hits YOU for 95 points of damage (11 absorbed).
 Magistrate Sivash hits YOU for 95 points of damage (63 absorbed).
+Magistrate Sivash shoots Pitborn for 103 points of damage.
 Magistrate Sivash tries to crush YOU, but misses!
 Magistrate Sivash tries to hit YOU, but misses!
+Magistrate Sivash's Bash hits YOU for 14 points of damage!
 Magistrate Sivash's Bash hits YOU for 14 points of damagel
 Magistrate Sivash's Bash hits YOU for 8 points of damagel
 Magistrate Sivash's Strike hits Klog for 72 points of damage.
+Magistrate Sivash's Strike hits YOU for 102 points of damagel
 Magistrate Sivash's Strike hits YOU for 25 points of damage!
+Magistrate Sivash's Strike hits YOU for 49 points of damagel
+Magistrate Sivash's Strike hits YOU for 57 points of damage!
+Magistrate Sivash's Strike hits YOU for 57 points of damagel
 Magistrate Sivash's Strike hits YOU for 70 points of damage!
+Magistrate Sivash's Strike hits YOU for 78 points of damagel
 Magistrate Sivash's Strike hits YOU for 82 points of damagel
 Magistrate Sivash's Strike hits YOU for 84 points of damagel
+Magistrate Sivash's Strike hits YOU for 98 points of damage!
+Magistrate Sivash's Strike hits YOU for 98 points of damagel
 Mankisser's Heal heals Obiwand for 85 Health.
 Mankisser's Impart Prayer heals Tommy for 210 Health.
+Mayor Oisin hits Tom for 158 points of damage.
+Mayor Oisin hits Tom for 264 points of damage.
+Mayor Oisin hits YOU for 111 points of damage (74 absorbed).
+Mayor Oisin hits YOU for 119 points of damage (79 absorbed).
+Mayor Oisin hits YOU for 127 points of damage (84 absorbed).
+Mayor Oisin hits YOU for 132 points of damage.
+Mayor Oisin hits YOU for 134 points of damage (90 absorbed).
+Mayor Oisin hits YOU for 143 points of damage (95 absorbed).
+Mayor Oisin hits YOU for 158 points of damage (106 absorbed).
+Mayor Oisin hits YOU for 224 points of damage.
+Mayor Oisin hits YOU for 24 points of damage (16 absorbed).
+Mayor Oisin hits YOU for 55 points of damage (37 absorbed).
+Mayor Oisin hits YOU for 79 points of damage (53 absorbed).
+Mayor Oisin hits YOU for 79 points of damage.
+Mayor Oisin hits YOU for 8 points of damage (5 absorbed).
+Mayor Oisin hits YOU for 95 points of damage (63 absorbed).
+Mayor Oisin shoots Arne for 113 points of damage.
+Mayor Oisin shoots Ebola for 111 points of damage.
+Mayor Oisin shoots Pitborn for 112 points of damage.
+Mayor Oisin shoots YOU for 119 points of damage!
+Mayor Oisin tries to hit YOU, but misses!
+Mayor Oisin's Bash hits YOU for 8 points of damage!
+Mayor Oisin's Strike hits YOU for 22 points of damage!
+Mayor Oisin's Strike hits YOU for 33 points of damage!
 Nakor crushes Pustulax the Avatar of Plagues for 14 points of damage.
 Nakor crushes Pustulax the Avatar of Plagues for 35 points of damage.
 Nakor crushes Pustulax the Avatar of Plagues for 41 points of damage.
@@ -2752,7 +3013,27 @@ Pitborn's Ghostly Wrath hits Lord Ga'Duuz for 430 points of Magic
 Pitborn's Ghostly Wrath hits Lord Ga'Duuz for 430 points of Magic Damage.
 Pitborn's Ghostly Wrath hits Lord Ga'Duuz for 473 points of Magic
 Pitborn's Ghostly Wrath hits Lord Ga'Duuz for 473 points of Magic Damage.
+Pitborn's Ghostly Wrath hits Magistrate Sivash for 233 points of Magic Damage.
+Pitborn's Ghostly Wrath hits Magistrate Sivash for 403 points of Magic Damage.
+Pitborn's Ghostly Wrath hits Magistrate Sivash for 404 points of Magic Damage.
+Pitborn's Ghostly Wrath hits Magistrate Sivash for 412 points of Magic Damage.
+Pitborn's Ghostly Wrath hits Magistrate Sivash for 444 points of Magic Damage.
+Pitborn's Ghostly Wrath hits Magistrate Sivash for 453 points of Magic Damage.
+Pitborn's Ghostly Wrath hits Mayor Oisin for 359 points of Magic Damage.
+Pitborn's Ghostly Wrath hits Mayor Oisin for 404 points of Magic Damage.
+Pitborn's Ghostly Wrath hits Mayor Oisin for 412 points of Magic Damage.
+Pitborn's Ghostly Wrath hits Mayor Oisin for 419 points of Magic Damage.
+Pitborn's Ghostly Wrath hits Mayor Oisin for 420 points of Magic Damage.
+Pitborn's Ghostly Wrath hits Mayor Oisin for 428 points of Magic Damage.
+Pitborn's Ghostly Wrath hits Mayor Oisin for 436 points of Magic Damage.
+Pitborn's Ghostly Wrath hits Mayor Oisin for 471 points of Magic Damage.
+Pitborn's Ghostly Wrath hits Mayor Oisin for 480 points of Magic Damage.
+Pitborn's Ghostly Wrath hits Mayor Oisin for 488 points of Magic Damage.
+Pitborn's Ghostly Wrath hits Sherrif Bahram for 403 points of Magic Damage.
+Pitborn's Ghostly Wrath hits Sherrif Bahram for 428 points of Magic Damage.
+Pitborn's Ghostly Wrath hits Sherrif Bahram for 462 points of Magic Damage.
 Pitborn's GhostlyWrath hits Lord Ga'Duuz for 473 points of Magic Damage.
+Pitborn's Greater Pact of Revival heals Ebola for 485 Health.
 Pitborn's Greater Pact of Revival heals Ebola for 490 Health.
 Pitborn's Greater Pact of Revival heals Fangbang for 516 Health.
 Pitborn's Greater Pact of Revival heals Firstedition for 522 Health.
@@ -2775,7 +3056,9 @@ Pitborn's Greater Pestilence hits Lord Ga'Duuz for 456 points of Disease Damage.
 Pitborn's Greater Pestilence hits Lord Ga'Duuz for 464 points of Disease Damage.
 Pitborn's Greater Pestilence hits Lord Ga'Duuz for 473 points of Disease
 Pitborn's Greater Pestilence hits Lord Ga'Duuz for 473 points of Disease Damage.
+Pitborn's Greater Ritual of Mending heals Arne for 500 Health.
 Pitborn's Greater Ritual of Mending heals Ebola for 478 Health.
+Pitborn's Greater Ritual of Mending heals Ebola for 500 Health.
 Pitborn's Greater Ritual of Mending heals Fangbang for 532 Health.
 Pitborn's Greater Ritual of Mending heals Firstedition for 538 Health.
 Pitborn's Greater Ritual of Mending heals Kaufdoggy for 538 Health.
@@ -2784,14 +3067,17 @@ Pitborn's Greater Ritual of Mending heals Longjonn for 538 Health.
 Pitborn's Greater Ritual of Mending heals Necronomiconn for 478 Health.
 Pitborn's Greater Ritual of Mending heals Ouch for 532 Health.
 Pitborn's Greater Ritual of Mending heals Pitborn for 478 Health.
+Pitborn's Greater Ritual of Mending heals Pitborn for 500 Health.
 Pitborn's Greater Ritual of Mending heals Pitborn for 532 Health.
 Pitborn's Greater Ritual of Mending heals Pitborn for 538 Health.
 Pitborn's Greater Ritual of Mending heals Raan for 532 Health.
 Pitborn's Greater Ritual of Mending heals Skittles for 478 Health.
 Pitborn's Greater Ritual of Mending heals Stuffy for 532 Health.
+Pitborn's Greater Ritual of Mending heals Tom for 500 Health.
 Pitborn's Greater Ritual of Mending heals Velvet for 532 Health.
 Pitborn's Greater Ritual of Mending heals Weratissimo for 532 Health.
 Pitborn's Greater Ritual of Mending heals Weratissimo for 538 Health.
+Pitborn's Greater Ritual of Mending heals you for 500 Health.
 Pitborn's Transcendent Spirit Mending heals Firstedition for 1599 Health.
 Pitborn's Transcendent Spirit Mending heals Klog for 1501 Health.
 Pitborn's Transcendent Spirit Mending heals Ouch for 1580 Health.
@@ -3457,6 +3743,36 @@ Seattle's Sublime Heal heals Stuffy for 1065 Health.
 Seattle's Sublime Heal heals Tom for 985 Health.
 Seattle's Sublime Heal heals Visage for 1065 Health.
 Seattle's Sublime Heal heals you for 1065 Health.
+Sherrif Bahram hits Tom for 155 points of damage.
+Sherrif Bahram hits Tom for 181 points of damage.
+Sherrif Bahram hits YOU for 103 points of damage.
+Sherrif Bahram hits YOU for 11 points of damage.
+Sherrif Bahram hits YOU for 116 points of damage.
+Sherrif Bahram hits YOU for 129 points of damage.
+Sherrif Bahram hits YOU for 13 points of damage.
+Sherrif Bahram hits YOU for 139 points of damage.
+Sherrif Bahram hits YOU for 142 points of damage.
+Sherrif Bahram hits YOU for 155 points of damage.
+Sherrif Bahram hits YOU for 245 points of damage.
+Sherrif Bahram hits YOU for 258 points of damage.
+Sherrif Bahram hits YOU for 26 points of damage.
+Sherrif Bahram hits YOU for 32 points of damage.
+Sherrif Bahram hits YOU for 39 points of damage.
+Sherrif Bahram hits YOU for 52 points of damage.
+Sherrif Bahram hits YOU for 65 points of damage.
+Sherrif Bahram hits YOU for 77 points of damage.
+Sherrif Bahram shoots Pitborn for 116 points of damage.
+Sherrif Bahram shoots Pitborn for 117 points of damage.
+Sherrif Bahram shoots Pitborn for 132 points of damage.
+Sherrif Bahram shoots Tom for 135 points of damage.
+Sherrif Bahram tries to hit YOU, but misses!
+Sherrif Bahram's Bash hits YOU for 14 points of damage!
+Sherrif Bahram's Damage Shield hits Arne for 25 points of damage.
+Sherrif Bahram's Damage Shield hits Ebola for 25 points of damage.
+Sherrif Bahram's Damage Shield hits YOU for 25 points of damage.
+Sherrif Bahram's Strike hits YOU for 116 points of damage!
+Sherrif Bahram's Strike hits YOU for 43 points of damage!
+Sherrif Bahram's Strike hits YOU for 63 points of damage!
 Sirobae pierces Whiplash for 1 point of damage.
 Sirobae pierces Whiplash for 3 points of damage.
 Sirobae pierces Whiplash for 4 points of damage (1 absorbed).
@@ -3912,6 +4228,26 @@ Tom's Exceptional Fire Volley hits Lord Ga'Duuz for 91 points of Fire Damage. (C
 Tom's Exceptional Fire Volley hits Lord Ga'Duuz for 96 points of Fire Damage.
 Tom's Exceptional Fire Volley hits Lord Ga'Duuz for 98 points of Fire
 Tom's Exceptional Fire Volley hits Lord Ga'Duuz for 98 points of Fire Damage.
+Tom's Exceptional Lightning Surge hits Blightcaller Torvak for 1208 points of Electric Damage.
+Tom's Exceptional Lightning Surge hits Blightcaller Torvak for 1232 points of Electric Damage.
+Tom's Exceptional Lightning Surge hits Blightcaller Torvak for 1256 points of Electric Damage.
+Tom's Exceptional Lightning Surge hits Blightcaller Torvak for 1280 points of Electric Damage.
+Tom's Exceptional Lightning Surge hits Blightcaller Torvak for 1305 points of Electric Damage.
+Tom's Exceptional Lightning Surge hits Blightcaller Torvak for 757 points of Electric Damage.
+Tom's Exceptional Lightning Surge hits Magistrate Sivash for 1208 points of Electric Damage.
+Tom's Exceptional Lightning Surge hits Mayor Oisin for 1208 points of Electric Damage.
+Tom's Exceptional Lightning Surge hits Mayor Oisin for 1232 points of Electric Damage.
+Tom's Exceptional Lightning Surge hits Mayor Oisin for 1280 points of Electric Damage.
+Tom's Exceptional Lightning Surge hits Mayor Oisin for 1305 points of Electric Damage.
+Tom's Exceptional Lightning Surge hits Mayor Oisin for 1329 points of Electric Damage.
+Tom's Exceptional Lightning Surge hits Mayor Oisin for 1439 points of Electric Damage.
+Tom's Exceptional Lightning Surge hits Mayor Oisin for 1495 points of Electric Damage.
+Tom's Exceptional Lightning Surge hits Mayor Oisin for 628 points of Electric Damage.
+Tom's Exceptional Lightning Surge hits Sherrif Bahram for 1208 points of Electric Damage.
+Tom's Exceptional Lightning Surge hits Sherrif Bahram for 1256 points of Electric Damage.
+Tom's Exceptional Lightning Surge hits Sherrif Bahram for 1280 points of Electric Damage.
+Tom's Exceptional Lightning Surge hits Sherrif Bahram for 1305 points of Electric Damage.
+Tom's Exceptional Lightning Surge hits Sherrif Bahram for 1412 points of Electric Damage.
 Tom's Greater Fireball hits a sandy broodling for 1309 points of Fire
 Tom's Greater Fireball hits a sandy broodling for 1309 points of Fire Damage.
 Tom's Greater Fireball hits a sandy broodling for 1333 points of Fire Damage.
@@ -4288,7 +4624,9 @@ You crush Blightcaller Torvak for 171 points of damage. (Critical)
 You crush Blightcaller Torvak for 178 points of damage. (Critical)
 You crush Blightcaller Torvak for 182 points of damage. (Critical)
 You crush Blightcaller Torvak for 189 points of damage. (Critical)
+You crush Blightcaller Torvak for 201 points of damage. (Critical)
 You crush Blightcaller Torvak for 21 points of damage.
+You crush Blightcaller Torvak for 212 points of damage. (Critical)
 You crush Blightcaller Torvak for 222 points of damage. (Critical)
 You crush Blightcaller Torvak for 232 points of damage. (Critical)
 You crush Blightcaller Torvak for 243 points of damage. (Critical)
@@ -4297,24 +4635,32 @@ You crush Blightcaller Torvak for 31 points of damage.
 You crush Blightcaller Torvak for 34 points of damage.
 You crush Blightcaller Torvak for 35 points of damage.
 You crush Blightcaller Torvak for 40 points of damage.
+You crush Blightcaller Torvak for 43 points of damage.
 You crush Blightcaller Torvak for 44 points of damage.
 You crush Blightcaller Torvak for 48 points of damage. (Critical)
 You crush Blightcaller Torvak for 50 points of damage.
+You crush Blightcaller Torvak for 52 points of damage.
 You crush Blightcaller Torvak for 54 points of damage.
 You crush Blightcaller Torvak for 56 points of damage.
 You crush Blightcaller Torvak for 59 points of damage. (Critical)
 You crush Blightcaller Torvak for 62 points of damage. (Critical)
 You crush Blightcaller Torvak for 63 points of damage.
+You crush Blightcaller Torvak for 65 points of damage.
 You crush Blightcaller Torvak for 67 points of damage.
 You crush Blightcaller Torvak for 69 points of damage.
 You crush Blightcaller Torvak for 73 points of damage.
+You crush Blightcaller Torvak for 74 points of damage.
 You crush Blightcaller Torvak for 77 points of damage.
 You crush Blightcaller Torvak for 78 points of damage.
+You crush Blightcaller Torvak for 80 points of damage. (Critical)
 You crush Blightcaller Torvak for 81 points of damage.
+You crush Blightcaller Torvak for 82 points of damage.
 You crush Blightcaller Torvak for 86 points of damage.
+You crush Blightcaller Torvak for 87 points of damage.
 You crush Blightcaller Torvak for 88 points of damage. (Critical)
 You crush Blightcaller Torvak for 90 points of damage.
 You crush Blightcaller Torvak for 90 points of damage. (Critical)
+You crush Blightcaller Torvak for 91 points of damage.
 You crush Blightcaller Torvak for 92 points of damage. (Critical)
 You crush Blightcaller Torvak for 96 points of damage.
 You crush Bone Construct for 102 points of damage. (Critical)
@@ -4420,35 +4766,61 @@ You crush Lord Ga'Duuz for 91 points of damage. (Critical)
 You crush Lord Ga'Duuz for 96 points of damage.
 You crush Lord Ga'Duuz for 99 points of damage. (Critical)
 You crush Magistrate Sivash for 100 points of damage.
+You crush Magistrate Sivash for 103 points of damage. (Critical)
 You crush Magistrate Sivash for 104 points of damage.
+You crush Magistrate Sivash for 133 points of damage. (Critical)
+You crush Magistrate Sivash for 141 points of damage. (Critical)
 You crush Magistrate Sivash for 147 points of damage. (Critical)
+You crush Magistrate Sivash for 15 points of damage.
 You crush Magistrate Sivash for 16 points of damage.
 You crush Magistrate Sivash for 178 points of damage. (Critical)
 You crush Magistrate Sivash for 21 points of damage.
 You crush Magistrate Sivash for 25 points of damage.
 You crush Magistrate Sivash for 26 points of damage.
+You crush Magistrate Sivash for 27 points of damage.
+You crush Magistrate Sivash for 29 points of damage. (Critical)
 You crush Magistrate Sivash for 30 points of damage.
 You crush Magistrate Sivash for 34 points of damage.
 You crush Magistrate Sivash for 35 points of damage.
 You crush Magistrate Sivash for 38 points of damage.
+You crush Magistrate Sivash for 39 points of damage.
 You crush Magistrate Sivash for 40 points of damage.
 You crush Magistrate Sivash for 43 points of damage.
 You crush Magistrate Sivash for 44 points of damage.
 You crush Magistrate Sivash for 47 points of damage.
 You crush Magistrate Sivash for 50 points of damage.
+You crush Magistrate Sivash for 51 points of damage.
 You crush Magistrate Sivash for 52 points of damage.
 You crush Magistrate Sivash for 56 points of damage.
 You crush Magistrate Sivash for 58 points of damage.
+You crush Magistrate Sivash for 59 points of damage.
 You crush Magistrate Sivash for 60 points of damage.
 You crush Magistrate Sivash for 63 points of damage.
+You crush Magistrate Sivash for 65 points of damage.
+You crush Magistrate Sivash for 69 points of damage.
 You crush Magistrate Sivash for 73 points of damage.
+You crush Magistrate Sivash for 73 points of damage. (Critical)
+You crush Magistrate Sivash for 74 points of damage.
 You crush Magistrate Sivash for 77 points of damage.
 You crush Magistrate Sivash for 78 points of damage.
 You crush Magistrate Sivash for 81 points of damage.
 You crush Magistrate Sivash for 82 points of damage.
 You crush Magistrate Sivash for 86 points of damage.
+You crush Magistrate Sivash for 87 points of damage.
 You crush Magistrate Sivash for 90 points of damage.
+You crush Magistrate Sivash for 91 points of damage.
 You crush Magistrate Sivash for 96 points of damage.
+You crush Mayor Oisin for 100 points of damage.
+You crush Mayor Oisin for 25 points of damage.
+You crush Mayor Oisin for 35 points of damage. (Critical)
+You crush Mayor Oisin for 38 points of damage.
+You crush Mayor Oisin for 47 points of damage.
+You crush Mayor Oisin for 60 points of damage.
+You crush Mayor Oisin for 69 points of damage.
+You crush Mayor Oisin for 73 points of damage. (Critical)
+You crush Mayor Oisin for 82 points of damage.
+You crush Mayor Oisin for 88 points of damage. (Critical)
+You crush Mayor Oisin for 91 points of damage.
 You crush Mistress Maribeth for 15 points of damage.
 You crush Mistress Maribeth for 19 points of damage.
 You crush Mistress Maribeth for 27 points of damage.
@@ -4463,6 +4835,24 @@ You crush Pustulax the Avatar of Plagues for 42 points of damage.
 You crush Pustulax the Avatar of Plagues for 62 points of damage.
 You crush Pustulax the Avatar of Plagues for 73 points of damage.
 You crush Pustulax the Avatar of Plagues for 89 points of damage.
+You crush Sherrif Bahram for 100 points of damage.
+You crush Sherrif Bahram for 103 points of damage. (Critical)
+You crush Sherrif Bahram for 110 points of damage. (Critical)
+You crush Sherrif Bahram for 155 points of damage. (Critical)
+You crush Sherrif Bahram for 16 points of damage.
+You crush Sherrif Bahram for 170 points of damage. (Critical)
+You crush Sherrif Bahram for 30 points of damage.
+You crush Sherrif Bahram for 34 points of damage.
+You crush Sherrif Bahram for 38 points of damage.
+You crush Sherrif Bahram for 43 points of damage.
+You crush Sherrif Bahram for 52 points of damage.
+You crush Sherrif Bahram for 56 points of damage.
+You crush Sherrif Bahram for 60 points of damage.
+You crush Sherrif Bahram for 65 points of damage.
+You crush Sherrif Bahram for 74 points of damage.
+You crush Sherrif Bahram for 78 points of damage.
+You crush Sherrif Bahram for 82 points of damage.
+You crush Sherrif Bahram for 87 points of damage.
 You slash a Plagueborn drake with your offband for 77 points of damage.
 You slash a Plagueborn drake with your offhand for 131 points of damage. (Critical)
 You slash a Plagueborn drake with your offhand for 23 points of damage.
@@ -4495,6 +4885,8 @@ You slash a Plagueborn templar with your offhand for 38 points of damage.
 You slash a Plagueborn templar with your offhand for 4 points of damage.
 You slash a Plagueborn templar with your offhand for 62 points of damage.
 You slash a Plagueborn templar with your offhand for 77 points of damage.
+You slash Blightcaller Torvak with your offhand for 102 points of damage. (Critical)
+You slash Blightcaller Torvak with your offhand for 110 points of damage. (Critical)
 You slash Blightcaller Torvak with your offhand for 12 points of damage.
 You slash Blightcaller Torvak with your offhand for 125 points of damage. (Critical)
 You slash Blightcaller Torvak with your offhand for 131 points of damage. (Critical)
@@ -4503,6 +4895,7 @@ You slash Blightcaller Torvak with your offhand for 142 points of damage. (0
 You slash Blightcaller Torvak with your offhand for 15 points of damage.
 You slash Blightcaller Torvak with your offhand for 160 points of damage. (Critical)
 You slash Blightcaller Torvak with your offhand for 168 points of damage. (0
+You slash Blightcaller Torvak with your offhand for 168 points of damage. (Critical)
 You slash Blightcaller Torvak with your offhand for 178 points of damage. (Critical)
 You slash Blightcaller Torvak with your offhand for 20 points of damage.
 You slash Blightcaller Torvak with your offhand for 23 points of damage.
@@ -4513,14 +4906,17 @@ You slash Blightcaller Torvak with your offhand for 29 points of damage.
 You slash Blightcaller Torvak with your offhand for 3 points of damage.
 You slash Blightcaller Torvak with your offhand for 31 points of damage.
 You slash Blightcaller Torvak with your offhand for 34 points of damage. (Critical)
+You slash Blightcaller Torvak with your offhand for 36 points of damage.
 You slash Blightcaller Torvak with your offhand for 38 points of damage.
 You slash Blightcaller Torvak with your offhand for 4 points of damage.
+You slash Blightcaller Torvak with your offhand for 40 points of damage.
 You slash Blightcaller Torvak with your offhand for 43 points of damage.
 You slash Blightcaller Torvak with your offhand for 46 points of damage.
 You slash Blightcaller Torvak with your offhand for 46 points of damage. (Critical)
 You slash Blightcaller Torvak with your offhand for 51 points of damage.
 You slash Blightcaller Torvak with your offhand for 54 points of damage.
 You slash Blightcaller Torvak with your offhand for 58 points of damage.
+You slash Blightcaller Torvak with your offhand for 58 points of damage. (Critical)
 You slash Blightcaller Torvak with your offhand for 62 points of damage.
 You slash Blightcaller Torvak with your offhand for 66 points of damage.
 You slash Blightcaller Torvak with your offhand for 69 points of damage.
@@ -4529,6 +4925,7 @@ You slash Blightcaller Torvak with your offhand for 74 points of damage.
 You slash Blightcaller Torvak with your offhand for 76 points of damage. (Cr
 You slash Blightcaller Torvak with your offhand for 77 points of damage.
 You slash Blightcaller Torvak with your offhand for 8 points of damage. (Cri
+You slash Blightcaller Torvak with your offhand for 8 points of damage. (Critical)
 You slash Legoliath with your offhand for 117 points of damage. (Critical)
 You slash Legoliath with your offhand for 15 points of damage.
 You slash Legoliath with your offhand for 27 points of damage.
@@ -4584,14 +4981,21 @@ You slash Lord Ga'Duuz with your offhand for 71 points of damage. (Critical)
 You slash Lord Ga'Duuz with your offhand for 73 points of damage.
 You slash Lord Ga'Duuz with your offhand for 8 points of damage.
 You slash Lord Ga'Duuz with your offhand for 89 points of damage. (Critical)
+You slash Magistrate Sivash with your offhand for 10 points of damage.
 You slash Magistrate Sivash with your offhand for 11 points of damage.
+You slash Magistrate Sivash with your offhand for 123 points of damage. (Critical)
 You slash Magistrate Sivash with your offhand for 131 points of damage. (Critical)
+You slash Magistrate Sivash with your offhand for 14 points of damage.
 You slash Magistrate Sivash with your offhand for 15 points of damage.
+You slash Magistrate Sivash with your offhand for 17 points of damage.
 You slash Magistrate Sivash with your offhand for 19 points of damage.
 You slash Magistrate Sivash with your offhand for 20 points of damage.
 You slash Magistrate Sivash with your offhand for 22 points of damage.
 You slash Magistrate Sivash with your offhand for 23 points of damage.
+You slash Magistrate Sivash with your offhand for 24 points of damage. (Critical)
+You slash Magistrate Sivash with your offhand for 25 points of damage.
 You slash Magistrate Sivash with your offhand for 26 points of damage. (Critical)
+You slash Magistrate Sivash with your offhand for 29 points of damage.
 You slash Magistrate Sivash with your offhand for 3 points of damage.
 You slash Magistrate Sivash with your offhand for 33 points of damage.
 You slash Magistrate Sivash with your offhand for 35 points of damage.
@@ -4603,15 +5007,41 @@ You slash Magistrate Sivash with your offhand for 44 points of damage.
 You slash Magistrate Sivash with your offhand for 46 points of damage.
 You slash Magistrate Sivash with your offhand for 47 points of damage.
 You slash Magistrate Sivash with your offhand for 51 points of damage.
+You slash Magistrate Sivash with your offhand for 53 points of damage.
 You slash Magistrate Sivash with your offhand for 54 points of damage.
 You slash Magistrate Sivash with your offhand for 55 points of damage.
+You slash Magistrate Sivash with your offhand for 56 points of damage.
+You slash Magistrate Sivash with your offhand for 58 points of damage.
 You slash Magistrate Sivash with your offhand for 62 points of damage.
+You slash Magistrate Sivash with your offhand for 65 points of damage.
+You slash Magistrate Sivash with your offhand for 66 points of damage.
 You slash Magistrate Sivash with your offhand for 69 points of damage.
 You slash Magistrate Sivash with your offhand for 73 points of damage.
 You slash Magistrate Sivash with your offhand for 74 points of damage.
 You slash Magistrate Sivash with your offhand for 77 points of damage.
 You slash Magistrate Sivash with your offhand for 8 points of damage.
 You slash Magistrate Sivash with your offhand for 80 points of damage. (Crit
+You slash Mayor Oisin with your offhand for 19 points of damage.
+You slash Mayor Oisin with your offhand for 29 points of damage.
+You slash Mayor Oisin with your offhand for 3 points of damage.
+You slash Mayor Oisin with your offhand for 33 points of damage.
+You slash Mayor Oisin with your offhand for 36 points of damage.
+You slash Mayor Oisin with your offhand for 51 points of damage.
+You slash Mayor Oisin with your offhand for 6 points of damage. (Critical)
+You slash Mayor Oisin with your offhand for 65 points of damage.
+You slash Mayor Oisin with your offhand for 69 points of damage.
+You slash Mayor Oisin with your offhand for 73 points of damage.
+You slash Mayor Oisin with your offhand for 94 points of damage. (Critical)
+You slash Sherrif Bahram with your offhand for 123 points of damage. (Critical)
+You slash Sherrif Bahram with your offhand for 14 points of damage.
+You slash Sherrif Bahram with your offhand for 22 points of damage.
+You slash Sherrif Bahram with your offhand for 3 points of damage.
+You slash Sherrif Bahram with your offhand for 33 points of damage.
+You slash Sherrif Bahram with your offhand for 47 points of damage.
+You slash Sherrif Bahram with your offhand for 51 points of damage.
+You slash Sherrif Bahram with your offhand for 58 points of damage.
+You slash Sherrif Bahram with your offhand for 6 points of damage. (Critical)
+You slash Sherrif Bahram with your offhand for 73 points of damage.
 You slash Whiplash for 14 points of damage (1 absorbed).
 You slash Whiplash for 16 points of damage (2 absorbed).
 You slash Whiplash for 17 points of damage (2 absorbed).
@@ -4669,6 +5099,7 @@ Your Feint IV hits a rotten sharpshooter for 82 points of damage.
 Your Feint IV hits Advisor Sargolin for 122 points of damage.
 Your Feint IV hits Advisor Sargolin for 47 points of damage.
 Your Feint IV hits an armored revenant for 68 points of damage.
+Your Feint IV hits Blightcaller Torvak for 117 points of damage.
 Your Feint IV hits Blightcaller Torvak for 142 points of damage.
 Your Feint IV hits Blightcaller Torvak for 143 points of damage.
 Your Feint IV hits Blightcaller Torvak for 145 points of damage. (Critical)
@@ -4676,7 +5107,9 @@ Your Feint IV hits Blightcaller Torvak for 146 points of damage.
 Your Feint IV hits Blightcaller Torvak for 152 points of damage.
 Your Feint IV hits Blightcaller Torvak for 235 points of damage. (Critical)
 Your Feint IV hits Blightcaller Torvak for 52 points of damage.
+Your Feint IV hits Blightcaller Torvak for 91 points of damage.
 Your Feint IV hits Blightcaller Torvak for 93 points of damage.
+Your Feint IV hits Blightcaller Torvak for 94 points of damage. (Critical)
 Your Feint IV hits Legoliath for 100 points of damage.
 Your Feint IV hits Legoliath for 116 points of damage. (Critical)
 Your Feint IV hits Legoliath for 66 points of damage.
@@ -4709,12 +5142,17 @@ Your Feint IV hits Lord Ga'Duuz for 86 points of damage. (Critical)
 Your Feint IV hits Lord Ga'Duuz for 87 points of damage.
 Your Feint IV hits Lord Ga'Duuz for 88 points of damage.
 Your Feint IV hits Lord Ga'Duuz for 92 points of damage.
+Your Feint IV hits Magistrate Sivash for 101 points of damage.
 Your Feint IV hits Magistrate Sivash for 111 points of damage.
+Your Feint IV hits Magistrate Sivash for 115 points of damage.
+Your Feint IV hits Magistrate Sivash for 133 points of damage.
 Your Feint IV hits Magistrate Sivash for 146 points of damage.
 Your Feint IV hits Magistrate Sivash for 52 points of damage.
 Your Feint IV hits Magistrate Sivash for 63 points of damage.
 Your Feint IV hits Magistrate Sivash for 86 points of damage.
+Your Feint IV hits Mayor Oisin for 52 points of damage.
 Your Feint IV hits Mistress Maribeth for 100 points of damage.
+Your Feint IV hits Sherrif Bahram for 96 points of damage.
 Your Final Stand heals you for 680 Health.
 Your Frenxy hits a Plagueborn drake for 104 points of damage. (Critical)
 Your Frenxy hits a Plagueborn drake for 66 points of damage.
@@ -4732,6 +5170,8 @@ Your Frenzy hits a Plagueborn templar for 13 points of damage.
 Your Frenzy hits a Plagueborn templar for 45 points of damage.
 Your Frenzy hits a Plagueborn templar for 62 points of damage.
 Your Frenzy hits Blightcaller Torvak for 116 points of damage.
+Your Frenzy hits Blightcaller Torvak for 18 points of damage.
+Your Frenzy hits Blightcaller Torvak for 45 points of damage.
 Your Frenzy hits Blightcaller Torvak for 85 points of damage. (Critical)
 Your Frenzy hits Blightcaller Torvak for 89 points of damage.
 Your Frenzy hits Bone Construct for 12 points of damage.
@@ -4750,14 +5190,23 @@ Your Frenzy hits Bone Construct for 75 points of damage. (Critical)
 Your Frenzy hits Bone Construct for 79 points of damage.
 Your Frenzy hits Bone Construct for 79 points of damage. (Critical)
 Your Frenzy hits Bone Construct for 80 points of damage.
+Your Frenzy hits Magistrate Sivash for 13 points of damage.
 Your Frenzy hits Magistrate Sivash for 16 points of damage.
 Your Frenzy hits Magistrate Sivash for 45 points of damage.
 Your Frenzy hits Magistrate Sivash for 47 points of damage.
+Your Frenzy hits Magistrate Sivash for 55 points of damage.
 Your Frenzy hits Magistrate Sivash for 58 points of damage.
+Your Frenzy hits Magistrate Sivash for 66 points of damage.
 Your Frenzy hits Magistrate Sivash for 68 points of damage.
 Your Frenzy hits Magistrate Sivash for 77 points of damage.
 Your Frenzy hits Magistrate Sivash for 85 points of damage.
 Your Frenzy hits Magistrate Sivash for 89 points of damage.
+Your Frenzy hits Mayor Oisin for 125 points of damage.
+Your Frenzy hits Mayor Oisin for 85 points of damage. (Critical)
+Your Frenzy hits Sherrif Bahram for 21 points of damage.
+Your Frenzy hits Sherrif Bahram for 29 points of damage.
+Your Frenzy hits Sherrif Bahram for 74 points of damage.
+Your Frenzy hits Sherrif Bahram for 81 points of damage.
 Your Lay on Hands heals Walkback for 860 Health.
 Your Lesser Burst of Magic hits a restless skeleton for 244 points of Magic Damage.
 Your Lesser Burst of Magic hits Fraeja for 187 points of Magic Damage.
@@ -4780,7 +5229,9 @@ Your Life Sap heals you for 35 Health.
 Your Life Sap heals you for 36 Health.
 Your Life Sap heals you for 37 Health.
 Your Life Sap heals you for 38 Health.
+Your Life Sap heals you for 39 Health.
 Your Life Sap heals you for 40 Health.
+Your Life Sap heals you for 42 Health.
 Your Life Sap hits a bone archer for 40 points of Corruption Damage.
 Your Life Sap hits a comely courtesan for 40 points of Corruption Damage.
 Your Life Sap hits a contagious bleeder for 40 points of Corruption Damage.
@@ -4793,6 +5244,7 @@ Your Life Sap hits a rabid plaguereaver for 40 points of Corruption Damage.
 Your Life Sap hits a rotten sharpshooter for 40 points of Corruption Damage.
 Your Life Sap hits Blightcaller Torvak for 36 points of Corruption Damage.
 Your Life Sap hits Blightcaller Torvak for 38 points of Corruption Damage.
+Your Life Sap hits Blightcaller Torvak for 40 points of Corruption Damage.
 Your Life Sap hits Bone Construct for 36 points of Corruption Damage.
 Your Life Sap hits Bone Construct for 37 points of Corruption Damage.
 Your Life Sap hits Bone Construct for 38 points of Corruption Damage.
@@ -4806,6 +5258,10 @@ Your Life Sap hits Magistrate Sivash for 34 points of Corruption Damage.
 Your Life Sap hits Magistrate Sivash for 35 points of Corruption Damage.
 Your Life Sap hits Magistrate Sivash for 36 points of Corruption Damage.
 Your Life Sap hits Magistrate Sivash for 38 points of Corruption Damage.
+Your Life Sap hits Magistrate Sivash for 39 points of Corruption Damage.
+Your Life Sap hits Mayor Oisin for 40 points of Corruption Damage.
+Your Life Sap hits Sherrif Bahram for 40 points of Corruption Damage.
+Your Life Sap hits Sherrif Bahram for 42 points of Corruption Damage.
 Your Llfe Sap hits a Plagueborn drake for 33 points of Corruption Damage.
 Your Rend VI hits a bone archer for 122 points of damage.
 Your Rend VI hits a bone archer for 141 points of damage.
@@ -4833,14 +5289,17 @@ Your Rend VI hits a rotten sharpshooter for 120 points of damage.
 Your Rend VI hits Advisor Sargolin for 127 points of damage.
 Your Rend VI hits Advisor Sargolin for 141 points of damage.
 Your Rend VI hits an armored revenant for 141 points of damage.
+Your Rend VI hits Blightcaller Torvak for 103 points of damage. (Critical)
 Your Rend VI hits Blightcaller Torvak for 104 points of damage.
 Your Rend VI hits Blightcaller Torvak for 116 points of damage.
 Your Rend VI hits Blightcaller Torvak for 120 points of damage.
+Your Rend VI hits Blightcaller Torvak for 122 points of damage.
 Your Rend VI hits Blightcaller Torvak for 136 points of damage.
 Your Rend VI hits Blightcaller Torvak for 141 points of damage.
 Your Rend VI hits Blightcaller Torvak for 146 points of damage.
 Your Rend VI hits Blightcaller Torvak for 157 points of damage.
 Your Rend VI hits Blightcaller Torvak for 158 points of damage.
+Your Rend VI hits Blightcaller Torvak for 166 points of damage.
 Your Rend VI hits Blightcaller Torvak for 194 points of damage. (Critical)
 Your Rend VI hits Blightcaller Torvak for 214 points of damage.
 Your Rend VI hits Blightcaller Torvak for 63 points of damage.
@@ -4888,16 +5347,31 @@ Your Rend VI hits Lord Ga'Duuz for 92 points of damage.
 Your Rend VI hits Lord Ga'Duuz for 93 points of damage.
 Your Rend VI hits Lord Ga'Duuz for 97 points of damage.
 Your Rend VI hits Lord Ga'Duuz for 98 points of damage.
+Your Rend VI hits Magistrate Sivash for 102 points of damage.
+Your Rend VI hits Magistrate Sivash for 107 points of damage.
 Your Rend VI hits Magistrate Sivash for 136 points of damage.
 Your Rend VI hits Magistrate Sivash for 138 points of damage. (Critical)
+Your Rend VI hits Magistrate Sivash for 143 points of damage.
 Your Rend VI hits Magistrate Sivash for 153 points of damage. (Critical)
+Your Rend VI hits Magistrate Sivash for 157 points of damage.
 Your Rend VI hits Magistrate Sivash for 163 points of damage.
 Your Rend VI hits Magistrate Sivash for 236 points of damage. (Critical)
 Your Rend VI hits Magistrate Sivash for 63 points of damage.
+Your Rend VI hits Magistrate Sivash for 75 points of damage.
+Your Rend VI hits Magistrate Sivash for 88 points of damage.
 Your Rend VI hits Magistrate Sivash for 92 points of damage.
 Your Rend VI hits Magistrate Sivash for 94 points of damage. (Critical)
+Your Rend VI hits Magistrate Sivash for 97 points of damage.
+Your Rend VI hits Magistrate Sivash for 98 points of damage. (Critical)
+Your Rend VI hits Mayor Oisin for 118 points of damage.
+Your Rend VI hits Mayor Oisin for 128 points of damage.
+Your Rend VI hits Mayor Oisin for 77 points of damage.
 Your Rend VI hits Mistress Maribeth for 188 points of damage. (Critical)
 Your Rend VI hits Mistress Maribeth for 205 points of damage. (Critical)
+Your Rend VI hits Sherrif Bahram for 143 points of damage.
+Your Rend VI hits Sherrif Bahram for 157 points of damage.
+Your Rend VI hits Sherrif Bahram for 63 points of damage.
+Your Rend VI hits Sherrif Bahram for 94 points of damage. (Critical)
 Your Restorative Smite heals Archon for 9 Health.
 Your Restorative Smite heals Evildots for 9 Health.
 Your Restorative Smite heals Fanaskin for 9 Health.

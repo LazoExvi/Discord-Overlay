@@ -502,6 +502,10 @@ class CombatTextParser:
             possessive = split_possessive(actor_text)
             if possessive and possessive[1].casefold() == "pet":
                 pass  # "a Plagueborn runescribe's pet hits ...": the pet itself is the actor
+            elif possessive and possessive[1].casefold().startswith("pet's "):
+                # "a Pyrmos mercenary's pet's Strike hits ...": the pet is the actor, Strike the ability.
+                actor_text = f"{possessive[0]}'s pet"
+                action = possessive[1][6:].strip() or action
             elif possessive:
                 actor_text, ability = possessive
                 action = ability or action

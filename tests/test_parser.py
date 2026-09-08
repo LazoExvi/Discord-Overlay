@@ -404,6 +404,8 @@ def test_another_creatures_pet_is_one_actor():
         EventKind.DAMAGE_OTHER, "Plagueborn runescribe's pet", "Player", "Hits")
     shield = parse("a Plagueborn runescribe's pet's Damage Shield hits YOU for 14 points of damage.", name="Crit")
     assert (shield.actor, shield.target, shield.is_damage_shield) == ("Plagueborn runescribe's pet", "Crit", True)
+    ability = parse("a Pyrmos mercenary's pet's Strike hits a restless skeleton for 6 points of damage.", name="Crit")
+    assert (ability.actor, ability.action, ability.target) == ("Pyrmos mercenary's pet", "Strike", "restless skeleton")
     # Your own pet is still yours.
     mine = parse("Raan's pet hits a rat for 5 points of damage.")
     assert (mine.kind, mine.actor, mine.is_pet) == (EventKind.DAMAGE_OUT, "Pet", True)
