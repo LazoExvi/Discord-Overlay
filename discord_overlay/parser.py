@@ -67,7 +67,7 @@ _MISS = re.compile(
     r"^(?P<actor>You|Your|.+?)\s+(?:try|tries)\s+to\s+.+?\s+(?P<target>.+?),?\s+but\s+miss",
     re.IGNORECASE,
 )
-_OFFHAND = re.compile(r"\s+with\s+(?:your|their|its|his|her)\s+(?P<weapon>offhand|bow|crossbow|sling)\b", re.IGNORECASE)
+_OFFHAND = re.compile(r"\s+with\s+(?:your|their|its|his|her)\s+(?P<weapon>of[ft]\w{3,5}|bow|crossbow|sling)\b", re.IGNORECASE)
 # Environmental damage is not combat and must not start or extend an encounter.
 _ENVIRONMENT = re.compile(
     r"\b(?:from|by|due\s+to)\s+(?:falling|a\s+fall|drowning|starvation|hunger|thirst|suffocation)\b"
@@ -152,6 +152,8 @@ def repair_ocr_possessive(text: str) -> str:
 
 
 _GLUED_ARTICLE = re.compile(r"\b([A-Za-z]{4,})(an|a)(?=\s+[a-z])")
+_MISREAD_YOUR = re.compile(r"^Y[o0][uwv]{1,2}r(?=\s)")   # Yowr / Youwr / Yovr
+_MISREAD_YOU = re.compile(r"^Y[o0][uwv]{1,2}(?=\s)")     # Yow / Yov
 _GLUED_RANK_VERB = re.compile(rf"\b([A-Za-z]{{3,}})(I{{1,3}}|IV|VI{{0,3}}|V|IX|X)({_VERB_ALTERNATION})(?=\s)")
 
 
@@ -170,6 +172,8 @@ def repair_ocr_spacing(text: str) -> str:
     """Restore spaces OCR drops in a few grammar-backed spots; nothing broader."""
     text = repair_ocr_possessive(text)
     text = re.sub(r"\bfor-(?=\d)", "for ", text)  # "for-407 points"
+    text = _MISREAD_YOUR.sub("Your", text)
+    text = _MISREAD_YOU.sub("You", text)
     text = _GLUED_RANK_VERB.sub(lambda m: f"{m.group(1)} {m.group(2)} {m.group(3)}", text)
     text = _GLUED_ARTICLE.sub(_split_glued_article, text)
     # Player'sFireball / James'Fireball
@@ -252,7 +256,9 @@ def _strip_offhand(target: str, action: str) -> tuple[str, str]:
     target = re.sub(r"^(?:at|on|into|upon)\s+", "", target, flags=re.IGNORECASE)
     offhand = _OFFHAND.search(target)
     if offhand:
-        return target[:offhand.start()].strip(), f"{action} ({offhand.group('weapon').title()})"
+        weapon = offhand.group("weapon")
+        weapon = "Offhand" if weapon.casefold().startswith("of") else weapon.title()
+        return target[:offhand.start()].strip(), f"{action} ({weapon})"
     return target, action
 
 

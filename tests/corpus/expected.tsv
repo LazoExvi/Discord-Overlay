@@ -78,6 +78,12 @@ a pestilent ghoul's Putrid Slam hits Weratissimo for 500 points of damage.	damag
 a pestilent ghoul's Putrid Slam hits YOU for 270 points of damage!	damage_in|pestilent ghoul|Crit|Putrid Slam|270|0|0|0|0
 a pestilent ghoul's Putrid Slam hits YOU for 270 points of damagel	damage_in|pestilent ghoul|Crit|Putrid Slam|270|0|0|0|0
 a pestilent ghoul's Putrid Slam hits YOU for 450 points of damage!	damage_in|pestilent ghoul|Crit|Putrid Slam|450|0|0|0|0
+a Plagucborn drake bites YOU for 24 points of damage.	damage_in|Plagucborn drake|Crit|Bites|24|0|0|0|0
+a Plagucborn drake bites YOU for 27 points of damage.	damage_in|Plagucborn drake|Crit|Bites|27|0|0|0|0
+a Plagucborn drake bites YOU for 28 points of damage.	damage_in|Plagucborn drake|Crit|Bites|28|0|0|0|0
+a Plagucborn drake bites YOU for 61 points of damage.	damage_in|Plagucborn drake|Crit|Bites|61|0|0|0|0
+a Plagucborn drake's Strike hits YOU for 17 points of damagel	damage_in|Plagucborn drake|Crit|Strike|17|0|0|0|0
+a Plagucborn drake's Strike hits YOU for 29 points of damagel	damage_in|Plagucborn drake|Crit|Strike|29|0|0|0|0
 a plague rat bites Arne for 32 points of damage.	damage_other|plague rat|Arne|Bites|32|0|0|0|0
 a plague rat bites Arne for 8 points of damage.	damage_other|plague rat|Arne|Bites|8|0|0|0|0
 a plague rat bites Deaths for 69 points of damage (4 absorbed).	damage_other|plague rat|Deaths|Bites|69|4|0|0|0
@@ -131,6 +137,38 @@ a Plagueborn blightwarden hits Player for 10 points of damage (1 absorbed).	dama
 a Plagueborn blightwarden hits Tiberous for 23 points of damage.	damage_other|Plagueborn blightwarden|Tiberous|Hits|23|0|0|0|0
 a Plagueborn blightwarden hits Tiberous for 45 points of damage.	damage_other|Plagueborn blightwarden|Tiberous|Hits|45|0|0|0|0
 a Plagueborn blightwarden hits Tiberous for 7 points of damage (4 absorbed).	damage_other|Plagueborn blightwarden|Tiberous|Hits|7|4|0|0|0
+a Plagueborn drake bites YOU for 19 points of damage.	damage_in|Plagueborn drake|Crit|Bites|19|0|0|0|0
+a Plagueborn drake bites YOU for 27 points of damage.	damage_in|Plagueborn drake|Crit|Bites|27|0|0|0|0
+a Plagueborn drake bites YOU for 28 points of damage.	damage_in|Plagueborn drake|Crit|Bites|28|0|0|0|0
+a Plagueborn drake bites YOU for 32 points of damage.	damage_in|Plagueborn drake|Crit|Bites|32|0|0|0|0
+a Plagueborn drake bites YOU for 34 points of damage (4 absorbed).	damage_in|Plagueborn drake|Crit|Bites|34|4|0|0|0
+a Plagueborn drake bites YOU for 36 points of damage.	damage_in|Plagueborn drake|Crit|Bites|36|0|0|0|0
+a Plagueborn drake bites YOU for 38 points of damage.	damage_in|Plagueborn drake|Crit|Bites|38|0|0|0|0
+a Plagueborn drake bites YOU for 41 points of damage.	damage_in|Plagueborn drake|Crit|Bites|41|0|0|0|0
+a Plagueborn drake bites YOU for 45 points of damage.	damage_in|Plagueborn drake|Crit|Bites|45|0|0|0|0
+a Plagueborn drake bites YOU for 5 points of damage.	damage_in|Plagueborn drake|Crit|Bites|5|0|0|0|0
+a Plagueborn drake bites YOU for 54 points of damage.	damage_in|Plagueborn drake|Crit|Bites|54|0|0|0|0
+a Plagueborn drake bites YOU for 63 points of damage.	damage_in|Plagueborn drake|Crit|Bites|63|0|0|0|0
+a Plagueborn drake bites YOU for 68 points of damage.	damage_in|Plagueborn drake|Crit|Bites|68|0|0|0|0
+a Plagueborn drake bites YOU for 77 points of damage.	damage_in|Plagueborn drake|Crit|Bites|77|0|0|0|0
+a Plagueborn drake bites YOU for 9 points of damage.	damage_in|Plagueborn drake|Crit|Bites|9|0|0|0|0
+a Plagueborn drake bites YOU for 90 points of damage.	damage_in|Plagueborn drake|Crit|Bites|90|0|0|0|0
+a Plagueborn drake tries to bite YOU, but misses!	miss|Plagueborn drake|Crit|Miss|0|0|0|0|0
+a Plagueborn drake tries to bite YOU, but misses)	miss|Plagueborn drake|Crit|Miss|0|0|0|0|0
+a Plagueborn drake tries to bite YOU, but misses]	miss|Plagueborn drake|Crit|Miss|0|0|0|0|0
+a Plagueborn drake tries to bite YOU, but missesl	miss|Plagueborn drake|Crit|Miss|0|0|0|0|0
+a Plagueborn drake's Strike hits YOU for 17 points of damagel	damage_in|Plagueborn drake|Crit|Strike|17|0|0|0|0
+a Plagueborn drake's Strike hits YOU for 21 points of damage!	damage_in|Plagueborn drake|Crit|Strike|21|0|0|0|0
+a Plagueborn drake's Strike hits YOU for 21 points of damagel	damage_in|Plagueborn drake|Crit|Strike|21|0|0|0|0
+a Plagueborn drake's Strike hits YOU for 22 points of damage!	damage_in|Plagueborn drake|Crit|Strike|22|0|0|0|0
+a Plagueborn drake's Strike hits YOU for 22 points of damagel	damage_in|Plagueborn drake|Crit|Strike|22|0|0|0|0
+a Plagueborn drake's Strike hits YOU for 25 points of damage!	damage_in|Plagueborn drake|Crit|Strike|25|0|0|0|0
+a Plagueborn drake's Strike hits YOU for 25 points of damagel	damage_in|Plagueborn drake|Crit|Strike|25|0|0|0|0
+a Plagueborn drake's Strike hits YOU for 26 points of damage!	damage_in|Plagueborn drake|Crit|Strike|26|0|0|0|0
+a Plagueborn drake's Strike hits YOU for 26 points of damagel	damage_in|Plagueborn drake|Crit|Strike|26|0|0|0|0
+a Plagueborn drake's Strike hits YOU for 29 points of damage!	damage_in|Plagueborn drake|Crit|Strike|29|0|0|0|0
+a Plagueborn drake's Strike hits YOU for 29 points of damagel	damage_in|Plagueborn drake|Crit|Strike|29|0|0|0|0
+a Plagueborn drake's Strike hits YOU for 41 points of damagel	damage_in|Plagueborn drake|Crit|Strike|41|0|0|0|0
 a Plagueborn myrmidon hits Klog for 6 points of damage. (Block 5)	damage_other|Plagueborn myrmidon|Klog|Hits|6|0|0|0|0
 a Plagueborn myrmidon hits Player for 10 points of damage (1 absorbed).	damage_other|Plagueborn myrmidon|Player|Hits|10|1|0|0|0
 a Plagueborn myrmidon hits Player for 118 points of damage (6 absorbed).	damage_other|Plagueborn myrmidon|Player|Hits|118|6|0|0|0
@@ -627,6 +665,8 @@ Bone Construet's Bone Smash hits YOU for 256 points of damage!	damage_in|Bone Co
 Calvin spreads their Spreading Plague to Ouch. Ouch takes 400 points of damage	damage_other|Spreading Plague|Ouch|Spread by Calvin|400|0|0|0|0
 Calvin spreads their Spreading Plague to Raan. Raan takes 400 points of damage!	damage_other|Spreading Plague|Raan|Spread by Calvin|400|0|0|0|0
 Calvin spreads their Spreading Plague to Tom. Tom takes 400 points of damage!	damage_other|Spreading Plague|Tom|Spread by Calvin|400|0|0|0|0
+Crit's Second Wind heals you for 58 Health	heal|Crit|Crit|Heal|58|0|0|0|0
+Crit's Second Wind heals you for 58 Health,	heal|Crit|Crit|Heal|58|0|0|0|0
 Crit's Second Wind heals you for 58 Health.	heal|Crit|Crit|Heal|58|0|0|0|0
 Crit's Second Wind heals you for 63 Health.	heal|Crit|Crit|Heal|63|0|0|0|0
 Crit's Second Wind heals you for 65 Health.	heal|Crit|Crit|Heal|65|0|0|0|0
@@ -3922,6 +3962,29 @@ You crush a pestilent ghoul for 62 points of damage.	damage_out|Crit|pestilent g
 You crush a pestilent ghoul for 77 points of damage.	damage_out|Crit|pestilent ghoul|Crush|77|0|0|0|0
 You crush a pestilent ghoul for 81 points of damage.	damage_out|Crit|pestilent ghoul|Crush|81|0|0|0|0
 You crush a pestilent ghoul for 89 points of damage.	damage_out|Crit|pestilent ghoul|Crush|89|0|0|0|0
+You crush a Plagueborn drake for 100 points of damage.	damage_out|Crit|Plagueborn drake|Crush|100|0|0|0|0
+You crush a Plagueborn drake for 104 points of damage.	damage_out|Crit|Plagueborn drake|Crush|104|0|0|0|0
+You crush a Plagueborn drake for 123 points of damage. (Critical)	damage_out|Crit|Plagueborn drake|Crush|123|0|1|0|0
+You crush a Plagueborn drake for 146 points of damage. (Critical)	damage_out|Crit|Plagueborn drake|Crush|146|0|1|0|0
+You crush a Plagueborn drake for 153 points of damage. (Critical)	damage_out|Crit|Plagueborn drake|Crush|153|0|1|0|0
+You crush a Plagueborn drake for 16 points of damage.	damage_out|Crit|Plagueborn drake|Crush|16|0|0|0|0
+You crush a Plagueborn drake for 178 points of damage. (Critical)	damage_out|Crit|Plagueborn drake|Crush|178|0|1|0|0
+You crush a Plagueborn drake for 21 points of damage.	damage_out|Crit|Plagueborn drake|Crush|21|0|0|0|0
+You crush a Plagueborn drake for 26 points of damage.	damage_out|Crit|Plagueborn drake|Crush|26|0|0|0|0
+You crush a Plagueborn drake for 31 points of damage.	damage_out|Crit|Plagueborn drake|Crush|31|0|0|0|0
+You crush a Plagueborn drake for 35 points of damage.	damage_out|Crit|Plagueborn drake|Crush|35|0|0|0|0
+You crush a Plagueborn drake for 44 points of damage.	damage_out|Crit|Plagueborn drake|Crush|44|0|0|0|0
+You crush a Plagueborn drake for 50 points of damage.	damage_out|Crit|Plagueborn drake|Crush|50|0|0|0|0
+You crush a Plagueborn drake for 54 points of damage.	damage_out|Crit|Plagueborn drake|Crush|54|0|0|0|0
+You crush a Plagueborn drake for 58 points of damage.	damage_out|Crit|Plagueborn drake|Crush|58|0|0|0|0
+You crush a Plagueborn drake for 63 points of damage.	damage_out|Crit|Plagueborn drake|Crush|63|0|0|0|0
+You crush a Plagueborn drake for 67 points of damage.	damage_out|Crit|Plagueborn drake|Crush|67|0|0|0|0
+You crush a Plagueborn drake for 73 points of damage.	damage_out|Crit|Plagueborn drake|Crush|73|0|0|0|0
+You crush a Plagueborn drake for 77 points of damage.	damage_out|Crit|Plagueborn drake|Crush|77|0|0|0|0
+You crush a Plagueborn drake for 81 points of damage.	damage_out|Crit|Plagueborn drake|Crush|81|0|0|0|0
+You crush a Plagueborn drake for 86 points of damage.	damage_out|Crit|Plagueborn drake|Crush|86|0|0|0|0
+You crush a Plagueborn drake for 90 points of damage.	damage_out|Crit|Plagueborn drake|Crush|90|0|0|0|0
+You crush a Plagueborn drake for 96 points of damage.	damage_out|Crit|Plagueborn drake|Crush|96|0|0|0|0
 You crush a Plagueborn myrmidon for 104 points of damage.	damage_out|Crit|Plagueborn myrmidon|Crush|104|0|0|0|0
 You crush a Plagueborn myrmidon for 16 points of damage.	damage_out|Crit|Plagueborn myrmidon|Crush|16|0|0|0|0
 You crush a Plagueborn myrmidon for 44 points of damage.	damage_out|Crit|Plagueborn myrmidon|Crush|44|0|0|0|0
@@ -4146,6 +4209,24 @@ You crush Pustulax the Avatar of Plagues for 42 points of damage.	damage_out|Cri
 You crush Pustulax the Avatar of Plagues for 62 points of damage.	damage_out|Crit|Pustulax the Avatar of Plagues|Crush|62|0|0|0|0
 You crush Pustulax the Avatar of Plagues for 73 points of damage.	damage_out|Crit|Pustulax the Avatar of Plagues|Crush|73|0|0|0|0
 You crush Pustulax the Avatar of Plagues for 89 points of damage.	damage_out|Crit|Pustulax the Avatar of Plagues|Crush|89|0|0|0|0
+You slash a Plagueborn drake with your offband for 77 points of damage.	damage_out|Crit|Plagueborn drake|Slash (Offhand)|77|0|0|0|0
+You slash a Plagueborn drake with your offhand for 131 points of damage. (Critical)	damage_out|Crit|Plagueborn drake|Slash (Offhand)|131|0|1|0|0
+You slash a Plagueborn drake with your offhand for 23 points of damage.	damage_out|Crit|Plagueborn drake|Slash (Offhand)|23|0|0|0|0
+You slash a Plagueborn drake with your offhand for 26 points of damage. (Critical)	damage_out|Crit|Plagueborn drake|Slash (Offhand)|26|0|1|0|0
+You slash a Plagueborn drake with your offhand for 28 points of damage.	damage_out|Crit|Plagueborn drake|Slash (Offhand)|28|0|0|0|0
+You slash a Plagueborn drake with your offhand for 31 points of damage.	damage_out|Crit|Plagueborn drake|Slash (Offhand)|31|0|0|0|0
+You slash a Plagueborn drake with your offhand for 38 points of damage.	damage_out|Crit|Plagueborn drake|Slash (Offhand)|38|0|0|0|0
+You slash a Plagueborn drake with your offhand for 4 points of damage.	damage_out|Crit|Plagueborn drake|Slash (Offhand)|4|0|0|0|0
+You slash a Plagueborn drake with your offhand for 43 points of damage.	damage_out|Crit|Plagueborn drake|Slash (Offhand)|43|0|0|0|0
+You slash a Plagueborn drake with your offhand for 46 points of damage.	damage_out|Crit|Plagueborn drake|Slash (Offhand)|46|0|0|0|0
+You slash a Plagueborn drake with your offhand for 54 points of damage.	damage_out|Crit|Plagueborn drake|Slash (Offhand)|54|0|0|0|0
+You slash a Plagueborn drake with your offhand for 58 points of damage.	damage_out|Crit|Plagueborn drake|Slash (Offhand)|58|0|0|0|0
+You slash a Plagueborn drake with your offhand for 66 points of damage.	damage_out|Crit|Plagueborn drake|Slash (Offhand)|66|0|0|0|0
+You slash a Plagueborn drake with your offhand for 69 points of damage.	damage_out|Crit|Plagueborn drake|Slash (Offhand)|69|0|0|0|0
+You slash a Plagueborn drake with your offhand for 73 points of damage. (Critical)	damage_out|Crit|Plagueborn drake|Slash (Offhand)|73|0|1|0|0
+You slash a Plagueborn drake with your offhand for 74 points of damage.	damage_out|Crit|Plagueborn drake|Slash (Offhand)|74|0|0|0|0
+You slash a Plagueborn drake with your offhand for 77 points of damage.	damage_out|Crit|Plagueborn drake|Slash (Offhand)|77|0|0|0|0
+You slash a Plagueborn drake with your offhand for 8 points of damage.	damage_out|Crit|Plagueborn drake|Slash (Offhand)|8|0|0|0|0
 You slash a Plagueborn myrmidon with your offhand for 35 points of damage.	damage_out|Crit|Plagueborn myrmidon|Slash (Offhand)|35|0|0|0|0
 You slash a Plagueborn myrmidon with your offhand for 4 points of damage.	damage_out|Crit|Plagueborn myrmidon|Slash (Offhand)|4|0|0|0|0
 You slash a Plagueborn myrmidon with your offhand for 43 points of damage.	damage_out|Crit|Plagueborn myrmidon|Slash (Offhand)|43|0|0|0|0
@@ -4265,6 +4346,7 @@ You try to crush Blightcaller Torvak, but miss!	miss|Crit|Blightcaller Torvak|Mi
 You try to crush Bone Construct, but miss!	miss|Crit|Bone Construct|Miss|0|0|0|0|0
 You try to crush Lord Ga'Duuz, but miss!	miss|Crit|Lord Ga'Duuz|Miss|0|0|0|0|0
 You try to crush Magistrate Sivash, but miss!	miss|Crit|Magistrate Sivash|Miss|0|0|0|0|0
+You try to slash a Plagueborn drake with your offhand, but miss!	miss|Crit|Plagueborn drake with your offhand|Miss|0|0|0|0|0
 You try to slash Blightcaller Torvak with your offhand, but miss!	miss|Crit|Blightcaller Torvak with your offhand|Miss|0|0|0|0|0
 You try to slash Lord Ga'Duuz with your offhand, but miss!	miss|Crit|Lord Ga'Duuz with your offhand|Miss|0|0|0|0|0
 You try to slash Whiplash, but miss!	miss|Crit|Whiplash|Miss|0|0|0|0|0
@@ -4296,6 +4378,12 @@ Your Feint IV hits a cryptic weaver for 87 points of damage.	damage_out|Crit|cry
 Your Feint IV hits a feeble ratmancer for 131 points of damage.	damage_out|Crit|feeble ratmancer|Feint IV|131|0|0|0|0
 Your Feint IV hits a pestilent ghoul for 110 points of damage.	damage_out|Crit|pestilent ghoul|Feint IV|110|0|0|0|0
 Your Feint IV hits a pestilent ghoul for 91 points of damage.	damage_out|Crit|pestilent ghoul|Feint IV|91|0|0|0|0
+Your Feint IV hits a Plagueborn drake for 109 points of damage.	damage_out|Crit|Plagueborn drake|Feint IV|109|0|0|0|0
+Your Feint IV hits a Plagueborn drake for 142 points of damage.	damage_out|Crit|Plagueborn drake|Feint IV|142|0|0|0|0
+Your Feint IV hits a Plagueborn drake for 152 points of damage.	damage_out|Crit|Plagueborn drake|Feint IV|152|0|0|0|0
+Your Feint IV hits a Plagueborn drake for 52 points of damage.	damage_out|Crit|Plagueborn drake|Feint IV|52|0|0|0|0
+Your Feint IV hits a Plagueborn drake for 67 points of damage.	damage_out|Crit|Plagueborn drake|Feint IV|67|0|0|0|0
+Your Feint IV hits a Plagueborn drake for 77 points of damage.	damage_out|Crit|Plagueborn drake|Feint IV|77|0|0|0|0
 Your Feint IV hits a Plagueborn runescribe's pet for 130 points of damage.	damage_out|Crit|Plagueborn runescribe's pet|Feint IV|130|0|0|0|0
 Your Feint IV hits a putrid ghoul for 72 points of damage.	damage_out|Crit|putrid ghoul|Feint IV|72|0|0|0|0
 Your Feint IV hits a rotten sharpshooter for 100 points of damage.	damage_out|Crit|rotten sharpshooter|Feint IV|100|0|0|0|0
@@ -4348,6 +4436,18 @@ Your Feint IV hits Magistrate Sivash for 52 points of damage.	damage_out|Crit|Ma
 Your Feint IV hits Magistrate Sivash for 63 points of damage.	damage_out|Crit|Magistrate Sivash|Feint IV|63|0|0|0|0
 Your Feint IV hits Mistress Maribeth for 100 points of damage.	damage_out|Crit|Mistress Maribeth|Feint IV|100|0|0|0|0
 Your Final Stand heals you for 680 Health.	heal|Crit|Crit|Heal|680|0|0|0|0
+Your Frenxy hits a Plagueborn drake for 104 points of damage. (Critical)	damage_out|Crit|Plagueborn drake|Frenxy|104|0|1|0|0
+Your Frenxy hits a Plagueborn drake for 66 points of damage.	damage_out|Crit|Plagueborn drake|Frenxy|66|0|0|0|0
+Your Frenzy hits a Plagueborn drake for 104 points of damage.	damage_out|Crit|Plagueborn drake|Frenzy|104|0|0|0|0
+Your Frenzy hits a Plagueborn drake for 104 points of damage. (Critical)	damage_out|Crit|Plagueborn drake|Frenzy|104|0|1|0|0
+Your Frenzy hits a Plagueborn drake for 33 points of damage.	damage_out|Crit|Plagueborn drake|Frenzy|33|0|0|0|0
+Your Frenzy hits a Plagueborn drake for 50 points of damage.	damage_out|Crit|Plagueborn drake|Frenzy|50|0|0|0|0
+Your Frenzy hits a Plagueborn drake for 62 points of damage.	damage_out|Crit|Plagueborn drake|Frenzy|62|0|0|0|0
+Your Frenzy hits a Plagueborn drake for 66 points of damage.	damage_out|Crit|Plagueborn drake|Frenzy|66|0|0|0|0
+Your Frenzy hits a Plagueborn drake for 68 points of damage.	damage_out|Crit|Plagueborn drake|Frenzy|68|0|0|0|0
+Your Frenzy hits a Plagueborn drake for 81 points of damage.	damage_out|Crit|Plagueborn drake|Frenzy|81|0|0|0|0
+Your Frenzy hits a Plagueborn drake for 85 points of damage.	damage_out|Crit|Plagueborn drake|Frenzy|85|0|0|0|0
+Your Frenzy hits a Plagueborn drake for 89 points of damage.	damage_out|Crit|Plagueborn drake|Frenzy|89|0|0|0|0
 Your Frenzy hits a Plagueborn templar for 13 points of damage.	damage_out|Crit|Plagueborn templar|Frenzy|13|0|0|0|0
 Your Frenzy hits a Plagueborn templar for 45 points of damage.	damage_out|Crit|Plagueborn templar|Frenzy|45|0|0|0|0
 Your Frenzy hits a Plagueborn templar for 62 points of damage.	damage_out|Crit|Plagueborn templar|Frenzy|62|0|0|0|0
@@ -4401,6 +4501,7 @@ Your Life Sap hits a comely courtesan for 40 points of Corruption Damage.	damage
 Your Life Sap hits a contagious bleeder for 40 points of Corruption Damage.	damage_out|Crit|contagious bleeder|Life Sap|40|0|0|0|0
 Your Life Sap hits a feeble ratmancer for 40 points of Corruption Damage.	damage_out|Crit|feeble ratmancer|Life Sap|40|0|0|0|0
 Your Life Sap hits a grave magus for 40 points of Corruption Damage.	damage_out|Crit|grave magus|Life Sap|40|0|0|0|0
+Your Life Sap hits a Plagueborn drake for 33 points of Corruption Damage.	damage_out|Crit|Plagueborn drake|Life Sap|33|0|0|0|0
 Your Life Sap hits a Plagueborn myrmidon for 38 points of Corruption Damage.	damage_out|Crit|Plagueborn myrmidon|Life Sap|38|0|0|0|0
 Your Life Sap hits a Plagueborn templar for 36 points of Corruption Damage.	damage_out|Crit|Plagueborn templar|Life Sap|36|0|0|0|0
 Your Life Sap hits a rabid plaguereaver for 40 points of Corruption Damage.	damage_out|Crit|rabid plaguereaver|Life Sap|40|0|0|0|0
@@ -4417,6 +4518,7 @@ Your Life Sap hits Lord Ga'Duuz for 34 points of Corruption Damage.	damage_out|C
 Your Life Sap hits Lord Ga'Duuz for 36 points of Corruption Damage.	damage_out|Crit|Lord Ga'Duuz|Life Sap|36|0|0|0|0
 Your Life Sap hits Lord Ga'Duuz for 37 points of Corruption Damage.	damage_out|Crit|Lord Ga'Duuz|Life Sap|37|0|0|0|0
 Your Life Sap hits Magistrate Sivash for 38 points of Corruption Damage.	damage_out|Crit|Magistrate Sivash|Life Sap|38|0|0|0|0
+Your Llfe Sap hits a Plagueborn drake for 33 points of Corruption Damage.	damage_out|Crit|Plagueborn drake|Llfe Sap|33|0|0|0|0
 Your Rend VI hits a bone archer for 122 points of damage.	damage_out|Crit|bone archer|Rend VI|122|0|0|0|0
 Your Rend VI hits a bone archer for 141 points of damage.	damage_out|Crit|bone archer|Rend VI|141|0|0|0|0
 Your Rend VI hits a bone archer for 72 points of damage.	damage_out|Crit|bone archer|Rend VI|72|0|0|0|0
@@ -4426,6 +4528,15 @@ Your Rend VI hits a feeble ratmancer for 115 points of damage.	damage_out|Crit|f
 Your Rend VI hits a grave magus for 65 points of damage.	damage_out|Crit|grave magus|Rend VI|65|0|0|0|0
 Your Rend VI hits a pestilent ghoul for 110 points of damage.	damage_out|Crit|pestilent ghoul|Rend VI|110|0|0|0|0
 Your Rend VI hits a pestilent ghoul for 57 points of damage.	damage_out|Crit|pestilent ghoul|Rend VI|57|0|0|0|0
+Your Rend VI hits a Plagueborn drake for 100 points of damage.	damage_out|Crit|Plagueborn drake|Rend VI|100|0|0|0|0
+Your Rend VI hits a Plagueborn drake for 110 points of damage.	damage_out|Crit|Plagueborn drake|Rend VI|110|0|0|0|0
+Your Rend VI hits a Plagueborn drake for 116 points of damage.	damage_out|Crit|Plagueborn drake|Rend VI|116|0|0|0|0
+Your Rend VI hits a Plagueborn drake for 120 points of damage.	damage_out|Crit|Plagueborn drake|Rend VI|120|0|0|0|0
+Your Rend VI hits a Plagueborn drake for 156 points of damage. (Critical)	damage_out|Crit|Plagueborn drake|Rend VI|156|0|1|0|0
+Your Rend VI hits a Plagueborn drake for 157 points of damage.	damage_out|Crit|Plagueborn drake|Rend VI|157|0|0|0|0
+Your Rend VI hits a Plagueborn drake for 163 points of damage.	damage_out|Crit|Plagueborn drake|Rend VI|163|0|0|0|0
+Your Rend VI hits a Plagueborn drake for 173 points of damage. (Critical)	damage_out|Crit|Plagueborn drake|Rend VI|173|0|1|0|0
+Your Rend VI hits a Plagueborn drake for 74 points of damage.	damage_out|Crit|Plagueborn drake|Rend VI|74|0|0|0|0
 Your Rend VI hits a Plagueborn myrmidon for 163 points of damage.	damage_out|Crit|Plagueborn myrmidon|Rend VI|163|0|0|0|0
 Your Rend VI hits a Plagueborn templar for 126 points of damage.	damage_out|Crit|Plagueborn templar|Rend VI|126|0|0|0|0
 Your Rend VI hits a putrid ghoul for 137 points of damage.	damage_out|Crit|putrid ghoul|Rend VI|137|0|0|0|0
@@ -4503,6 +4614,9 @@ Your Slam hits Whiplash for 12 points of damage.	damage_out|Crit|Whiplash|Slam|1
 Your Slam hits Whiplash for 5 points of damage.	damage_out|Crit|Whiplash|Slam|5|0|0|0|0
 Your Vampirism heals you for 35 Health.	heal|Crit|Crit|Heal|35|0|0|0|0
 Your Vampirism heals you for 37 Health.	heal|Crit|Crit|Heal|37|0|0|0|0
+Youwr Frenzy hits a Plagueborn drake for 104 points of damage.	damage_out|Crit|Plagueborn drake|Frenzy|104|0|0|0|0
+Yowr Frenzy hits a Plagueborn drake for 81 points of damage.	damage_out|Crit|Plagueborn drake|Frenzy|81|0|0|0|0
+Yowr Frenzy hits a Plagueborn drake for 89 points of damage.	damage_out|Crit|Plagueborn drake|Frenzy|89|0|0|0|0
 Zenekn hits Bone Construct for 10 points of damage.	damage_other|Zenekn|Bone Construct|Hits|10|0|0|0|0
 Zenekn hits Bone Construct for 14 points of damage.	damage_other|Zenekn|Bone Construct|Hits|14|0|0|0|0
 Zenekn hits Bone Construct for 17 points of damage.	damage_other|Zenekn|Bone Construct|Hits|17|0|0|0|0

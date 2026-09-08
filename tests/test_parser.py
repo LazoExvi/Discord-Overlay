@@ -366,6 +366,19 @@ def test_names_ending_in_a_verb_are_not_split():
     assert repair_ocr_spacing("Klogpunches a zealot for 5 points of damage.").startswith("Klog punches")
 
 
+def test_small_font_misreads_of_your_and_offhand():
+    # At small font sizes "Your" reads as "Yowr"/"Youwr" and "offhand" as "offband".
+    event = parse("Yowr Frenzy hits a Plagueborn drake for 89 points of damage.", name="Crit")
+    assert (event.kind, event.actor, event.action) == (EventKind.DAMAGE_OUT, "Crit", "Frenzy")
+    event = parse("Youwr Frenzy hits a Plagueborn drake for 104 points of damage.", name="Crit")
+    assert (event.kind, event.actor, event.action) == (EventKind.DAMAGE_OUT, "Crit", "Frenzy")
+    event = parse("You slash a Plagueborn drake with your offband for 77 points of damage.", name="Crit")
+    assert (event.target, event.action) == ("Plagueborn drake", "Slash (Offhand)")
+    # Real names that merely start with "Yo" are untouched.
+    assert parse("Yowler bites YOU for 5 points of damage.").actor == "Yowler"
+    assert parse("Youngblood's Slice VI hits a rat for 5 points of damage.").actor == "Youngblood"
+
+
 def test_bow_suffix_and_clipped_critical_lines():
     event = parse("Firstedition pierces Lord Ga'Duuz with their bow for 34 points of damage.", name="Crit")
     assert (event.actor, event.target, event.action, event.amount) == ("Firstedition", "Lord Ga'Duuz", "Pierces (Bow)", 34)

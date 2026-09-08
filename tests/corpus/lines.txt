@@ -78,6 +78,12 @@ a pestilent ghoul's Putrid Slam hits Weratissimo for 500 points of damage.
 a pestilent ghoul's Putrid Slam hits YOU for 270 points of damage!
 a pestilent ghoul's Putrid Slam hits YOU for 270 points of damagel
 a pestilent ghoul's Putrid Slam hits YOU for 450 points of damage!
+a Plagucborn drake bites YOU for 24 points of damage.
+a Plagucborn drake bites YOU for 27 points of damage.
+a Plagucborn drake bites YOU for 28 points of damage.
+a Plagucborn drake bites YOU for 61 points of damage.
+a Plagucborn drake's Strike hits YOU for 17 points of damagel
+a Plagucborn drake's Strike hits YOU for 29 points of damagel
 a plague rat bites Arne for 32 points of damage.
 a plague rat bites Arne for 8 points of damage.
 a plague rat bites Deaths for 69 points of damage (4 absorbed).
@@ -131,6 +137,38 @@ a Plagueborn blightwarden hits Player for 10 points of damage (1 absorbed).
 a Plagueborn blightwarden hits Tiberous for 23 points of damage.
 a Plagueborn blightwarden hits Tiberous for 45 points of damage.
 a Plagueborn blightwarden hits Tiberous for 7 points of damage (4 absorbed).
+a Plagueborn drake bites YOU for 19 points of damage.
+a Plagueborn drake bites YOU for 27 points of damage.
+a Plagueborn drake bites YOU for 28 points of damage.
+a Plagueborn drake bites YOU for 32 points of damage.
+a Plagueborn drake bites YOU for 34 points of damage (4 absorbed).
+a Plagueborn drake bites YOU for 36 points of damage.
+a Plagueborn drake bites YOU for 38 points of damage.
+a Plagueborn drake bites YOU for 41 points of damage.
+a Plagueborn drake bites YOU for 45 points of damage.
+a Plagueborn drake bites YOU for 5 points of damage.
+a Plagueborn drake bites YOU for 54 points of damage.
+a Plagueborn drake bites YOU for 63 points of damage.
+a Plagueborn drake bites YOU for 68 points of damage.
+a Plagueborn drake bites YOU for 77 points of damage.
+a Plagueborn drake bites YOU for 9 points of damage.
+a Plagueborn drake bites YOU for 90 points of damage.
+a Plagueborn drake tries to bite YOU, but misses!
+a Plagueborn drake tries to bite YOU, but misses)
+a Plagueborn drake tries to bite YOU, but misses]
+a Plagueborn drake tries to bite YOU, but missesl
+a Plagueborn drake's Strike hits YOU for 17 points of damagel
+a Plagueborn drake's Strike hits YOU for 21 points of damage!
+a Plagueborn drake's Strike hits YOU for 21 points of damagel
+a Plagueborn drake's Strike hits YOU for 22 points of damage!
+a Plagueborn drake's Strike hits YOU for 22 points of damagel
+a Plagueborn drake's Strike hits YOU for 25 points of damage!
+a Plagueborn drake's Strike hits YOU for 25 points of damagel
+a Plagueborn drake's Strike hits YOU for 26 points of damage!
+a Plagueborn drake's Strike hits YOU for 26 points of damagel
+a Plagueborn drake's Strike hits YOU for 29 points of damage!
+a Plagueborn drake's Strike hits YOU for 29 points of damagel
+a Plagueborn drake's Strike hits YOU for 41 points of damagel
 a Plagueborn myrmidon hits Klog for 6 points of damage. (Block 5)
 a Plagueborn myrmidon hits Player for 10 points of damage (1 absorbed).
 a Plagueborn myrmidon hits Player for 118 points of damage (6 absorbed).
@@ -627,6 +665,8 @@ Bone Construet's Bone Smash hits YOU for 256 points of damage!
 Calvin spreads their Spreading Plague to Ouch. Ouch takes 400 points of damage
 Calvin spreads their Spreading Plague to Raan. Raan takes 400 points of damage!
 Calvin spreads their Spreading Plague to Tom. Tom takes 400 points of damage!
+Crit's Second Wind heals you for 58 Health
+Crit's Second Wind heals you for 58 Health,
 Crit's Second Wind heals you for 58 Health.
 Crit's Second Wind heals you for 63 Health.
 Crit's Second Wind heals you for 65 Health.
@@ -3922,6 +3962,29 @@ You crush a pestilent ghoul for 62 points of damage.
 You crush a pestilent ghoul for 77 points of damage.
 You crush a pestilent ghoul for 81 points of damage.
 You crush a pestilent ghoul for 89 points of damage.
+You crush a Plagueborn drake for 100 points of damage.
+You crush a Plagueborn drake for 104 points of damage.
+You crush a Plagueborn drake for 123 points of damage. (Critical)
+You crush a Plagueborn drake for 146 points of damage. (Critical)
+You crush a Plagueborn drake for 153 points of damage. (Critical)
+You crush a Plagueborn drake for 16 points of damage.
+You crush a Plagueborn drake for 178 points of damage. (Critical)
+You crush a Plagueborn drake for 21 points of damage.
+You crush a Plagueborn drake for 26 points of damage.
+You crush a Plagueborn drake for 31 points of damage.
+You crush a Plagueborn drake for 35 points of damage.
+You crush a Plagueborn drake for 44 points of damage.
+You crush a Plagueborn drake for 50 points of damage.
+You crush a Plagueborn drake for 54 points of damage.
+You crush a Plagueborn drake for 58 points of damage.
+You crush a Plagueborn drake for 63 points of damage.
+You crush a Plagueborn drake for 67 points of damage.
+You crush a Plagueborn drake for 73 points of damage.
+You crush a Plagueborn drake for 77 points of damage.
+You crush a Plagueborn drake for 81 points of damage.
+You crush a Plagueborn drake for 86 points of damage.
+You crush a Plagueborn drake for 90 points of damage.
+You crush a Plagueborn drake for 96 points of damage.
 You crush a Plagueborn myrmidon for 104 points of damage.
 You crush a Plagueborn myrmidon for 16 points of damage.
 You crush a Plagueborn myrmidon for 44 points of damage.
@@ -4146,6 +4209,24 @@ You crush Pustulax the Avatar of Plagues for 42 points of damage.
 You crush Pustulax the Avatar of Plagues for 62 points of damage.
 You crush Pustulax the Avatar of Plagues for 73 points of damage.
 You crush Pustulax the Avatar of Plagues for 89 points of damage.
+You slash a Plagueborn drake with your offband for 77 points of damage.
+You slash a Plagueborn drake with your offhand for 131 points of damage. (Critical)
+You slash a Plagueborn drake with your offhand for 23 points of damage.
+You slash a Plagueborn drake with your offhand for 26 points of damage. (Critical)
+You slash a Plagueborn drake with your offhand for 28 points of damage.
+You slash a Plagueborn drake with your offhand for 31 points of damage.
+You slash a Plagueborn drake with your offhand for 38 points of damage.
+You slash a Plagueborn drake with your offhand for 4 points of damage.
+You slash a Plagueborn drake with your offhand for 43 points of damage.
+You slash a Plagueborn drake with your offhand for 46 points of damage.
+You slash a Plagueborn drake with your offhand for 54 points of damage.
+You slash a Plagueborn drake with your offhand for 58 points of damage.
+You slash a Plagueborn drake with your offhand for 66 points of damage.
+You slash a Plagueborn drake with your offhand for 69 points of damage.
+You slash a Plagueborn drake with your offhand for 73 points of damage. (Critical)
+You slash a Plagueborn drake with your offhand for 74 points of damage.
+You slash a Plagueborn drake with your offhand for 77 points of damage.
+You slash a Plagueborn drake with your offhand for 8 points of damage.
 You slash a Plagueborn myrmidon with your offhand for 35 points of damage.
 You slash a Plagueborn myrmidon with your offhand for 4 points of damage.
 You slash a Plagueborn myrmidon with your offhand for 43 points of damage.
@@ -4265,6 +4346,7 @@ You try to crush Blightcaller Torvak, but miss!
 You try to crush Bone Construct, but miss!
 You try to crush Lord Ga'Duuz, but miss!
 You try to crush Magistrate Sivash, but miss!
+You try to slash a Plagueborn drake with your offhand, but miss!
 You try to slash Blightcaller Torvak with your offhand, but miss!
 You try to slash Lord Ga'Duuz with your offhand, but miss!
 You try to slash Whiplash, but miss!
@@ -4296,6 +4378,12 @@ Your Feint IV hits a cryptic weaver for 87 points of damage.
 Your Feint IV hits a feeble ratmancer for 131 points of damage.
 Your Feint IV hits a pestilent ghoul for 110 points of damage.
 Your Feint IV hits a pestilent ghoul for 91 points of damage.
+Your Feint IV hits a Plagueborn drake for 109 points of damage.
+Your Feint IV hits a Plagueborn drake for 142 points of damage.
+Your Feint IV hits a Plagueborn drake for 152 points of damage.
+Your Feint IV hits a Plagueborn drake for 52 points of damage.
+Your Feint IV hits a Plagueborn drake for 67 points of damage.
+Your Feint IV hits a Plagueborn drake for 77 points of damage.
 Your Feint IV hits a Plagueborn runescribe's pet for 130 points of damage.
 Your Feint IV hits a putrid ghoul for 72 points of damage.
 Your Feint IV hits a rotten sharpshooter for 100 points of damage.
@@ -4348,6 +4436,18 @@ Your Feint IV hits Magistrate Sivash for 52 points of damage.
 Your Feint IV hits Magistrate Sivash for 63 points of damage.
 Your Feint IV hits Mistress Maribeth for 100 points of damage.
 Your Final Stand heals you for 680 Health.
+Your Frenxy hits a Plagueborn drake for 104 points of damage. (Critical)
+Your Frenxy hits a Plagueborn drake for 66 points of damage.
+Your Frenzy hits a Plagueborn drake for 104 points of damage.
+Your Frenzy hits a Plagueborn drake for 104 points of damage. (Critical)
+Your Frenzy hits a Plagueborn drake for 33 points of damage.
+Your Frenzy hits a Plagueborn drake for 50 points of damage.
+Your Frenzy hits a Plagueborn drake for 62 points of damage.
+Your Frenzy hits a Plagueborn drake for 66 points of damage.
+Your Frenzy hits a Plagueborn drake for 68 points of damage.
+Your Frenzy hits a Plagueborn drake for 81 points of damage.
+Your Frenzy hits a Plagueborn drake for 85 points of damage.
+Your Frenzy hits a Plagueborn drake for 89 points of damage.
 Your Frenzy hits a Plagueborn templar for 13 points of damage.
 Your Frenzy hits a Plagueborn templar for 45 points of damage.
 Your Frenzy hits a Plagueborn templar for 62 points of damage.
@@ -4401,6 +4501,7 @@ Your Life Sap hits a comely courtesan for 40 points of Corruption Damage.
 Your Life Sap hits a contagious bleeder for 40 points of Corruption Damage.
 Your Life Sap hits a feeble ratmancer for 40 points of Corruption Damage.
 Your Life Sap hits a grave magus for 40 points of Corruption Damage.
+Your Life Sap hits a Plagueborn drake for 33 points of Corruption Damage.
 Your Life Sap hits a Plagueborn myrmidon for 38 points of Corruption Damage.
 Your Life Sap hits a Plagueborn templar for 36 points of Corruption Damage.
 Your Life Sap hits a rabid plaguereaver for 40 points of Corruption Damage.
@@ -4417,6 +4518,7 @@ Your Life Sap hits Lord Ga'Duuz for 34 points of Corruption Damage.
 Your Life Sap hits Lord Ga'Duuz for 36 points of Corruption Damage.
 Your Life Sap hits Lord Ga'Duuz for 37 points of Corruption Damage.
 Your Life Sap hits Magistrate Sivash for 38 points of Corruption Damage.
+Your Llfe Sap hits a Plagueborn drake for 33 points of Corruption Damage.
 Your Rend VI hits a bone archer for 122 points of damage.
 Your Rend VI hits a bone archer for 141 points of damage.
 Your Rend VI hits a bone archer for 72 points of damage.
@@ -4426,6 +4528,15 @@ Your Rend VI hits a feeble ratmancer for 115 points of damage.
 Your Rend VI hits a grave magus for 65 points of damage.
 Your Rend VI hits a pestilent ghoul for 110 points of damage.
 Your Rend VI hits a pestilent ghoul for 57 points of damage.
+Your Rend VI hits a Plagueborn drake for 100 points of damage.
+Your Rend VI hits a Plagueborn drake for 110 points of damage.
+Your Rend VI hits a Plagueborn drake for 116 points of damage.
+Your Rend VI hits a Plagueborn drake for 120 points of damage.
+Your Rend VI hits a Plagueborn drake for 156 points of damage. (Critical)
+Your Rend VI hits a Plagueborn drake for 157 points of damage.
+Your Rend VI hits a Plagueborn drake for 163 points of damage.
+Your Rend VI hits a Plagueborn drake for 173 points of damage. (Critical)
+Your Rend VI hits a Plagueborn drake for 74 points of damage.
 Your Rend VI hits a Plagueborn myrmidon for 163 points of damage.
 Your Rend VI hits a Plagueborn templar for 126 points of damage.
 Your Rend VI hits a putrid ghoul for 137 points of damage.
@@ -4503,6 +4614,9 @@ Your Slam hits Whiplash for 12 points of damage.
 Your Slam hits Whiplash for 5 points of damage.
 Your Vampirism heals you for 35 Health.
 Your Vampirism heals you for 37 Health.
+Youwr Frenzy hits a Plagueborn drake for 104 points of damage.
+Yowr Frenzy hits a Plagueborn drake for 81 points of damage.
+Yowr Frenzy hits a Plagueborn drake for 89 points of damage.
 Zenekn hits Bone Construct for 10 points of damage.
 Zenekn hits Bone Construct for 14 points of damage.
 Zenekn hits Bone Construct for 17 points of damage.
