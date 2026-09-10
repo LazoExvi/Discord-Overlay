@@ -165,7 +165,6 @@ Layout:
 | `scripts/build_npc_names.py` | Refreshes `assets/npc-names.txt` from the community wiki and mnmdrops.com |
 | `scripts/build_corpus.py`, `tests/corpus/` | Real-gameplay regression corpus: raw OCR lines and their expected parse |
 | `scripts/compare_logs.py` | Compares two exported logs of the same recording (coverage, gaps, per-actor totals) |
-| `docs/FUNCTIONS.md` | Module-by-module description of what the program does, written for an AI or new developer |
 
 Run `python scripts/build_grammar_seed.py` after adding real combat lines to
 `scripts/grammar-samples.txt`; names are masked before anything is written.
