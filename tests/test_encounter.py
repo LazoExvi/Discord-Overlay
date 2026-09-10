@@ -106,6 +106,26 @@ def test_damage_shields_toggle_between_wearer_and_separate_entity():
     assert rows(default, now=10.5) == [("Damage Shield", "DAMAGE SHIELD", 60, 100.0, 60.0, 60.0, 2, 0, 0, 0.0)]
 
 
+def test_friendly_and_enemy_damage_shields_are_separate_rows():
+    def shield(actor, target, amount, kind):
+        return _event(actor, amount, kind, target=target, is_damage_shield=True)
+
+    tracker = EncounterTracker(player_name="Crit")
+    tracker.add(shield("Crit", "Plagueborn myrmidon", 12, EventKind.DAMAGE_OUT))          # mine, burning a mob
+    tracker.add(shield("Ebola", "Plagueborn myrmidon", 30, EventKind.DAMAGE_OTHER))       # a friend's, burning a mob
+    tracker.add(shield("Plagueborn blightwarden", "Crit", 14, EventKind.DAMAGE_IN))        # a mob's, burning me
+    tracker.add(shield("Plagueborn blightwarden", "Ebola", 14, EventKind.DAMAGE_OTHER))    # a mob's, burning a friend
+    tracker.add(shield("Damage Shield", "Ebola", 5, EventKind.DAMAGE_OTHER))               # wearer unreadable, hit a player
+    rows = {r.actor: (r.actor_type, r.damage) for r in tracker.actor_totals(now=10.5)}
+    assert rows == {"Damage Shield": ("DAMAGE SHIELD", 42), "Enemy Damage Shield": ("ENEMY SHIELD", 33)}
+
+    by_wearer = EncounterTracker(player_name="Crit", damage_shields_by_wearer=True)
+    by_wearer.add(shield("Plagueborn blightwarden", "Crit", 14, EventKind.DAMAGE_IN))
+    by_wearer.add(shield("Ebola", "Plagueborn myrmidon", 30, EventKind.DAMAGE_OTHER))
+    assert {r.actor: r.actor_type for r in by_wearer.actor_totals(now=10.5)} == {
+        "Plagueborn blightwarden": "ENEMY", "Ebola": "OTHER"}
+
+
 def test_heal_only_actor_has_healing_and_hps_breakdown():
     tracker = EncounterTracker(player_name="Raan")
     tracker.add(_heal("Raan", 80))

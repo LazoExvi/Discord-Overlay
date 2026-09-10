@@ -314,16 +314,31 @@ class EncounterTracker:
         bucket = NPC_BUCKET if actor_type in {"ENEMY", "OTHER"} else actor_type
         return (folded, bucket), actor
 
+    def _enemy_shield(self, event: CombatEvent) -> bool:
+        """Was this damage-shield hit dealt by something fighting against the player?"""
+        if event.kind == EventKind.DAMAGE_IN:
+            return True
+        if event.kind == EventKind.DAMAGE_OUT or event.is_pet:
+            return False
+        wearer, target = event.actor, event.target
+        if wearer.casefold().strip() in self.protected_names:
+            return False
+        if wearer != "Damage Shield" and (known_npc(wearer) or wearer[:1].islower()):
+            return True   # a mob wore it
+        if known_npc(target) or target[:1].islower():
+            return False  # it burned a mob, so whoever the mob attacked (a friend) wore it
+        return True       # it burned a player, so the player's enemy wore it
+
     def credited_actor(self, event: CombatEvent) -> str:
         if event.is_damage_shield and not self.damage_shields_by_wearer:
-            return "Damage Shield"
+            return "Enemy Damage Shield" if self._enemy_shield(event) else "Damage Shield"
         if event.is_pet and self.combine_pet_damage:
             return self.player_name
         return event.actor
 
     def credited_actor_type(self, event: CombatEvent, actor: str) -> str:
         if event.is_damage_shield and not self.damage_shields_by_wearer:
-            return "DAMAGE SHIELD"
+            return "ENEMY SHIELD" if self._enemy_shield(event) else "DAMAGE SHIELD"
         if actor.casefold() == self.player_name.casefold():
             return "PLAYER"
         if event.is_pet:

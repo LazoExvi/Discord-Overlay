@@ -299,7 +299,7 @@ a Plagueborn blightcaller's Damage Shield hits Ebola for 25 points of damage.	da
 a Plagueborn blightcaller's Damage Shield hits Player for 24 points of damage.	damage_other|Plagueborn blightcaller|Player|Damage Shield|24|0|0|0|1
 a Plagueborn blightcaller's Damage Shield hits Stuffy for 24 points of damage.	damage_other|Plagueborn blightcaller|Stuffy|Damage Shield|24|0|0|0|1
 a Plagueborn blightcaller's Damage Shield hits Weratissimo for 25 points of damage.	damage_other|Plagueborn blightcaller|Weratissimo|Damage Shield|25|0|0|0|1
-a Plagueborn blightcaller's Damage Shield hits YOU for 25 points of damage.	damage_other|Plagueborn blightcaller|Crit|Damage Shield|25|0|0|0|1
+a Plagueborn blightcaller's Damage Shield hits YOU for 25 points of damage.	damage_in|Plagueborn blightcaller|Crit|Damage Shield|25|0|0|0|1
 a Plagueborn blightcaller's Tremendous Heal heals a Plagueborn blightcaller for 950 Health.	heal|Plagueborn blightcaller|Plagueborn blightcaller|Heal|950|0|0|0|0
 a Plagueborn blightcaller's Tremendous Heal heals a Plagueborn myrmidon for 950 Health.	heal|Plagueborn blightcaller|Plagueborn myrmidon|Heal|950|0|0|0|0
 a Plagueborn blightcaller's Tremendous Heal heals a Plagueborn runescribe for 950 Health.	heal|Plagueborn blightcaller|Plagueborn runescribe|Heal|950|0|0|0|0
@@ -362,10 +362,10 @@ a Plagueborn blightwarden's Damage Shield hits Ebola for 25 points of damage.	da
 a Plagueborn blightwarden's Damage Shield hits Player for 24 points of damage.	damage_other|Plagueborn blightwarden|Player|Damage Shield|24|0|0|0|1
 a Plagueborn blightwarden's Damage Shield hits Stuffy for 24 points of damage.	damage_other|Plagueborn blightwarden|Stuffy|Damage Shield|24|0|0|0|1
 a Plagueborn blightwarden's Damage Shield hits Weratissimo for 25 points of damage.	damage_other|Plagueborn blightwarden|Weratissimo|Damage Shield|25|0|0|0|1
-a Plagueborn blightwarden's Damage Shield hits YOU for 13 points of damage.	damage_other|Plagueborn blightwarden|Crit|Damage Shield|13|0|0|0|1
-a Plagueborn blightwarden's Damage Shield hits YOU for 15 points of damage.	damage_other|Plagueborn blightwarden|Crit|Damage Shield|15|0|0|0|1
-a Plagueborn blightwarden's Damage Shield hits YOU for 22 points of damage.	damage_other|Plagueborn blightwarden|Crit|Damage Shield|22|0|0|0|1
-a Plagueborn blightwarden's Damage Shield hits YOU for 25 points of damage.	damage_other|Plagueborn blightwarden|Crit|Damage Shield|25|0|0|0|1
+a Plagueborn blightwarden's Damage Shield hits YOU for 13 points of damage.	damage_in|Plagueborn blightwarden|Crit|Damage Shield|13|0|0|0|1
+a Plagueborn blightwarden's Damage Shield hits YOU for 15 points of damage.	damage_in|Plagueborn blightwarden|Crit|Damage Shield|15|0|0|0|1
+a Plagueborn blightwarden's Damage Shield hits YOU for 22 points of damage.	damage_in|Plagueborn blightwarden|Crit|Damage Shield|22|0|0|0|1
+a Plagueborn blightwarden's Damage Shield hits YOU for 25 points of damage.	damage_in|Plagueborn blightwarden|Crit|Damage Shield|25|0|0|0|1
 a Plagueborn blightwarden's Exceptional Heal heals a Plagueborn blightwarden for 470 Health.	heal|Plagueborn blightwarden|Plagueborn blightwarden|Heal|470|0|0|0|0
 a Plagueborn blightwarden's Smoldering Embers hits Ebola for 30 points of Fire Damage.	damage_other|Plagueborn blightwarden|Ebola|Smoldering Embers|30|0|0|0|0
 a Plagueborn blightwarden's Smoldering Embers hits Player for 30 points of Fire Damage.	damage_other|Plagueborn blightwarden|Player|Smoldering Embers|30|0|0|0|0
@@ -564,8 +564,8 @@ a Plagueborn hag's Damage Shield hits Entrari for 25 points of damage.	damage_ot
 a Plagueborn hag's Damage Shield hits Entrari for 25 soipoints of damage.	-
 a Plagueborn hag's Damage Shield hits Pitborn for 25 points of damage.	damage_other|Plagueborn hag|Pitborn|Damage Shield|25|0|0|0|1
 a Plagueborn hag's Damage Shield hits Weratissimo for 25 points of damage.	damage_other|Plagueborn hag|Weratissimo|Damage Shield|25|0|0|0|1
-a Plagueborn hag's Damage Shield hits YOU for 22 points of damage.	damage_other|Plagueborn hag|Crit|Damage Shield|22|0|0|0|1
-a Plagueborn hag's Damage Shield hits YOU for 22 points of damagege.	damage_other|Plagueborn hag|Crit|Damage Shield|22|0|0|0|1
+a Plagueborn hag's Damage Shield hits YOU for 22 points of damage.	damage_in|Plagueborn hag|Crit|Damage Shield|22|0|0|0|1
+a Plagueborn hag's Damage Shield hits YOU for 22 points of damagege.	damage_in|Plagueborn hag|Crit|Damage Shield|22|0|0|0|1
 a Plagueborn hag's pet slashes Pitborn for 17 points of damage.	damage_other|Plagueborn hag's pet|Pitborn|Slashes|17|0|0|0|0
 a Plagueborn hag's pet slashes Pitborn for 19 points of damage.	damage_other|Plagueborn hag's pet|Pitborn|Slashes|19|0|0|0|0
 a Plagueborn hag's pet slashes Pitborn for 2 points of damage.	damage_other|Plagueborn hag's pet|Pitborn|Slashes|2|0|0|0|0
@@ -1117,8 +1117,8 @@ a Plagueborn myrmidon's Damage Shield hits Player for 14 points of damage.	damag
 a Plagueborn myrmidon's Damage Shield hits Player for 24 points of damage.	damage_other|Plagueborn myrmidon|Player|Damage Shield|24|0|0|0|1
 a Plagueborn myrmidon's Damage Shield hits Stuffy for 24 points of damage.	damage_other|Plagueborn myrmidon|Stuffy|Damage Shield|24|0|0|0|1
 a Plagueborn myrmidon's Damage Shield hits Weratissimo for 25 points of damage.	damage_other|Plagueborn myrmidon|Weratissimo|Damage Shield|25|0|0|0|1
-a Plagueborn myrmidon's Damage Shield hits YOU for 15 points of damage.	damage_other|Plagueborn myrmidon|Crit|Damage Shield|15|0|0|0|1
-a Plagueborn myrmidon's Damage Shield hits YOU for 25 points of damage.	damage_other|Plagueborn myrmidon|Crit|Damage Shield|25|0|0|0|1
+a Plagueborn myrmidon's Damage Shield hits YOU for 15 points of damage.	damage_in|Plagueborn myrmidon|Crit|Damage Shield|15|0|0|0|1
+a Plagueborn myrmidon's Damage Shield hits YOU for 25 points of damage.	damage_in|Plagueborn myrmidon|Crit|Damage Shield|25|0|0|0|1
 a Plagueborn myrmidon's Strike hits a restless skeleton for 30 points of damage.	damage_other|Plagueborn myrmidon|restless skeleton|Strike|30|0|0|0|0
 a Plagueborn myrmidon's Strike hits a restless skeleton for 87 points of damage.	damage_other|Plagueborn myrmidon|restless skeleton|Strike|87|0|0|0|0
 a Plagueborn myrmidon's Strike hits Arne for 111 points of damage.	damage_other|Plagueborn myrmidon|Arne|Strike|111|0|0|0|0
@@ -1318,8 +1318,8 @@ a Plagueborn oracle's Damage Shield hits Ebola for 25 points of damage.	damage_o
 a Plagueborn oracle's Damage Shield hits Player for 24 points of damage.	damage_other|Plagueborn oracle|Player|Damage Shield|24|0|0|0|1
 a Plagueborn oracle's Damage Shield hits Stuffy for 24 points of damage.	damage_other|Plagueborn oracle|Stuffy|Damage Shield|24|0|0|0|1
 a Plagueborn oracle's Damage Shield hits Weratissimo for 25 points of damage.	damage_other|Plagueborn oracle|Weratissimo|Damage Shield|25|0|0|0|1
-a Plagueborn oracle's Damage Shield hits YOU for 15 points of damage.	damage_other|Plagueborn oracle|Crit|Damage Shield|15|0|0|0|1
-a Plagueborn oracle's Damage Shield hits YOU for 25 points of damage.	damage_other|Plagueborn oracle|Crit|Damage Shield|25|0|0|0|1
+a Plagueborn oracle's Damage Shield hits YOU for 15 points of damage.	damage_in|Plagueborn oracle|Crit|Damage Shield|15|0|0|0|1
+a Plagueborn oracle's Damage Shield hits YOU for 25 points of damage.	damage_in|Plagueborn oracle|Crit|Damage Shield|25|0|0|0|1
 a Plagueborn oracle's Exceptional Heal heals a Plagueborn oracle for 470 Health.	heal|Plagueborn oracle|Plagueborn oracle|Heal|470|0|0|0|0
 a Plagueborn oracle's Spectral Hoarfrost hits Player for 217 points of Cold Damage.	damage_other|Plagueborn oracle|Player|Spectral Hoarfrost|217|0|0|0|0
 a Plagueborn oracle's Spectral Hoarfrost hits Stuffy for 179 points of Cold Damage.	damage_other|Plagueborn oracle|Stuffy|Spectral Hoarfrost|179|0|0|0|0
@@ -1408,8 +1408,8 @@ a Plagueborn runescribe's pet's Damage Shield hits Ebola for 14 points of damage
 a Plagueborn runescribe's pet's Damage Shield hits Kaufdoggy for 14 points of damage.	damage_other|Plagueborn runescribe's pet|Kaufdoggy|Damage Shield|14|0|0|0|1
 a Plagueborn runescribe's pet's Damage Shield hits Longjonn for 14 points of damage.	damage_other|Plagueborn runescribe's pet|Longjonn|Damage Shield|14|0|0|0|1
 a Plagueborn runescribe's pet's Damage Shield hits Player for 13 points of damage.	damage_other|Plagueborn runescribe's pet|Player|Damage Shield|13|0|0|0|1
-a Plagueborn runescribe's pet's Damage Shield hits YOU for 14 points of damage.	damage_other|Plagueborn runescribe's pet|Crit|Damage Shield|14|0|0|0|1
-a Plagueborn runescribe's pet's Damage Shield hits YOU for 8 points of damage.	damage_other|Plagueborn runescribe's pet|Crit|Damage Shield|8|0|0|0|1
+a Plagueborn runescribe's pet's Damage Shield hits YOU for 14 points of damage.	damage_in|Plagueborn runescribe's pet|Crit|Damage Shield|14|0|0|0|1
+a Plagueborn runescribe's pet's Damage Shield hits YOU for 8 points of damage.	damage_in|Plagueborn runescribe's pet|Crit|Damage Shield|8|0|0|0|1
 a Plagueborn runescribe's pet's Elemental Fire hits Ebola for 75 points of Fire Damage.	damage_other|Plagueborn runescribe's pet|Ebola|Elemental Fire|75|0|0|0|0
 a Plagueborn templar hits Ebola for 121 points of damage.	damage_other|Plagueborn templar|Ebola|Hits|121|0|0|0|0
 a Plagueborn templar hits Ebola for 124 points of damage.	damage_other|Plagueborn templar|Ebola|Hits|124|0|0|0|0
@@ -8677,7 +8677,7 @@ Sherrif Bahram's Bash hits YOU for 13 points of damage!	damage_in|Sherrif Bahram
 Sherrif Bahram's Bash hits YOU for 14 points of damage!	damage_in|Sherrif Bahram|Crit|Bash|14|0|0|0|0
 Sherrif Bahram's Damage Shield hits Arne for 25 points of damage.	damage_other|Sherrif Bahram|Arne|Damage Shield|25|0|0|0|1
 Sherrif Bahram's Damage Shield hits Ebola for 25 points of damage.	damage_other|Sherrif Bahram|Ebola|Damage Shield|25|0|0|0|1
-Sherrif Bahram's Damage Shield hits YOU for 25 points of damage.	damage_other|Sherrif Bahram|Crit|Damage Shield|25|0|0|0|1
+Sherrif Bahram's Damage Shield hits YOU for 25 points of damage.	damage_in|Sherrif Bahram|Crit|Damage Shield|25|0|0|0|1
 Sherrif Bahram's Strike hits Ebola for 31 points of damage.	damage_other|Sherrif Bahram|Ebola|Strike|31|0|0|0|0
 Sherrif Bahram's Strike hits Player for 109 points of damage.	damage_other|Sherrif Bahram|Player|Strike|109|0|0|0|0
 Sherrif Bahram's Strike hits Player for 120 points of damage.	damage_other|Sherrif Bahram|Player|Strike|120|0|0|0|0
@@ -10299,7 +10299,7 @@ Whiplash's Damage Shield hits Lenektik for 30 points of damage.	damage_other|Whi
 Whiplash's Damage Shield hits Redmeat for 30 points of damage.	damage_other|Whiplash|Redmeat|Damage Shield|30|0|0|0|1
 Whiplash's Damage Shield hits Sirobae for 30 points of damage.	damage_other|Whiplash|Sirobae|Damage Shield|30|0|0|0|1
 Whiplash's Damage Shield hits Walkback for 20 points of damage.	damage_other|Whiplash|Walkback|Damage Shield|20|0|0|0|1
-Whiplash's Damage Shield hits YOU for 19 points of damage.	damage_other|Whiplash|Crit|Damage Shield|19|0|0|0|1
+Whiplash's Damage Shield hits YOU for 19 points of damage.	damage_in|Whiplash|Crit|Damage Shield|19|0|0|0|1
 Whiplash's Damage Shield hits Zephnulo for 30 points of damage.	damage_other|Whiplash|Zephnulo|Damage Shield|30|0|0|0|1
 Whiplash's Rend hits Archon for 38 points of damage.	damage_other|Whiplash|Archon|Rend|38|0|0|0|0
 Whiplash's Rend hits Archon for 64 points of damage.	damage_other|Whiplash|Archon|Rend|64|0|0|0|0

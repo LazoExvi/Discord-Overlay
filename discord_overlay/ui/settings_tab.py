@@ -96,8 +96,9 @@ class SettingsTab:
             row=6, column=0, columnspan=2, padx=20, pady=8, sticky="w")
         self.group_button = ctk.CTkButton(body, text="", command=self.show_group_filter, width=150, **theme.STEEL_BUTTON)
         self.group_button.grid(row=6, column=2, padx=20, pady=8)
-        ctk.CTkCheckBox(body, text="Combine pet damage with mine", variable=self.combine_pet_var, **theme.CHECKBOX).grid(
-            row=7, column=0, padx=20, pady=8, sticky="w")
+        apply_now = lambda: self.app.save_settings(silent=True)  # noqa: E731 - these take effect immediately
+        ctk.CTkCheckBox(body, text="Combine pet damage with mine", variable=self.combine_pet_var, command=apply_now,
+                        **theme.CHECKBOX).grid(row=7, column=0, padx=20, pady=8, sticky="w")
         pet_row = ctk.CTkFrame(body, fg_color="transparent")
         pet_row.grid(row=7, column=1, columnspan=2, padx=8, pady=8, sticky="ew")
         pet_row.grid_columnconfigure(1, weight=1)
@@ -107,8 +108,9 @@ class SettingsTab:
         theme.note(body, ("Pets are learned automatically from \"Your pet <Name>\" lines. Listing them here attributes "
                           "their damage to you from the first line and is saved per character."), 650).grid(
             row=8, column=1, columnspan=2, padx=8, pady=(0, 4), sticky="w")
-        ctk.CTkCheckBox(body, text="Attribute damage shields to buff wearer (off = one Damage Shield actor)",
-                        variable=self.shield_wearer_var, **theme.CHECKBOX).grid(row=8, column=0, padx=20, pady=8, sticky="w")
+        ctk.CTkCheckBox(body, text="Attribute damage shields to buff wearer (off = Damage Shield / Enemy Damage Shield rows)",
+                        variable=self.shield_wearer_var, command=apply_now, **theme.CHECKBOX).grid(
+            row=8, column=0, padx=20, pady=8, sticky="w")
         ctk.CTkCheckBox(body, text="Use GPU acceleration when available", variable=self.gpu_var, **theme.CHECKBOX).grid(
             row=9, column=0, padx=20, pady=8, sticky="w")
         self.problem_frames_var = ctk.BooleanVar()
@@ -117,7 +119,7 @@ class SettingsTab:
         ctk.CTkCheckBox(stack, text="Repair lines partly hidden by the mouse cursor", variable=self.repair_var,
                         **theme.CHECKBOX).pack(anchor="w")
         ctk.CTkCheckBox(stack, text="Save frames of unreadable lines to the diagnostics folder (troubleshooting)",
-                        variable=self.problem_frames_var, **theme.CHECKBOX).pack(anchor="w", pady=(8, 0))
+                        variable=self.problem_frames_var, command=apply_now, **theme.CHECKBOX).pack(anchor="w", pady=(8, 0))
 
     def _build_timer_boards(self, body) -> None:
         frame = ctk.CTkFrame(body, fg_color=theme.PANEL_2, corner_radius=10)

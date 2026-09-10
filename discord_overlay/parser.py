@@ -459,12 +459,19 @@ class CombatTextParser:
                 rf"(?:^|\b(?:by|from)\s+)(?:(?:a|an|the)\s+)?(?P<wearer>{_NAME}(?:\s+{_NAME}){{0,3}})'s\s+damage[\s-]*shield\b",
                 text, re.IGNORECASE,
             )
+            hits_me = target in {self.player_name, "Pet"}
             if wearer:
                 actor = self._pretty_name(wearer.group("wearer"))
                 wearer_is_pet = self._is_known_pet(actor)
                 mine = actor.casefold() == self.player_name.casefold() or wearer_is_pet
-                return actor, target, action, EventKind.DAMAGE_OUT if mine else EventKind.DAMAGE_OTHER, wearer_is_pet
-            return "Damage Shield", target, action, kind, False
+                if mine:
+                    shield_kind = EventKind.DAMAGE_OUT
+                elif hits_me:
+                    shield_kind = EventKind.DAMAGE_IN  # an enemy's shield burning you
+                else:
+                    shield_kind = EventKind.DAMAGE_OTHER
+                return actor, target, action, shield_kind, wearer_is_pet
+            return "Damage Shield", target, action, EventKind.DAMAGE_IN if hits_me else kind, False
 
         folded = text.casefold()
         if _PASSIVE_SELF.match(text):

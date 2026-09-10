@@ -38,6 +38,7 @@ DAMAGE_IN_COLOR = RED
 HEAL_COLOR = GREEN
 ACTOR_TYPE_COLORS = {
     "PLAYER": ACCENT_DEEP, "PET": CYAN, "OTHER": "#4a5878", "ENEMY": "#b0384f", "DAMAGE SHIELD": "#b57d1c",
+    "ENEMY SHIELD": "#8a3a2a",
 }
 
 ACCENT_BUTTON = dict(fg_color=ACCENT_DEEP, hover_color="#6b78ff")

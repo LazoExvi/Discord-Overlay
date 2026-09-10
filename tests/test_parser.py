@@ -432,6 +432,15 @@ def test_bow_suffix_and_clipped_critical_lines():
     assert (event.actor, event.target, event.amount, event.critical) == ("Remco", "Lord Ga'Duuz", 166, True)
 
 
+def test_enemy_damage_shield_burning_you_is_incoming():
+    event = parse("a Plagueborn blightwarden's Damage Shield hits YOU for 14 points of damage.", name="Crit")
+    assert (event.kind, event.actor, event.target, event.is_damage_shield) == (
+        EventKind.DAMAGE_IN, "Plagueborn blightwarden", "Crit", True)
+    event = parse("a Plagueborn blightwarden's Damage Shield hits Ebola for 14 points of damage.", name="Crit")
+    assert (event.kind, event.actor) == (EventKind.DAMAGE_OTHER, "Plagueborn blightwarden")
+    assert parse("Your Damage Shield hits a Plagueborn myrmidon for 12 points of damage.", name="Crit").kind == EventKind.DAMAGE_OUT
+
+
 def test_another_creatures_pet_is_one_actor():
     event = parse("a Plagueborn runescribe's pet hits Player for 2 points of damage.", name="Crit")
     assert (event.kind, event.actor, event.target, event.action) == (
