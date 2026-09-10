@@ -728,6 +728,7 @@ a Plagueborn myrmidon hits Ebola for 125 points of damage.
 a Plagueborn myrmidon hits Ebola for 127 points of damage.
 a Plagueborn myrmidon hits Ebola for 130 points of damage.
 a Plagueborn myrmidon hits Ebola for 134 points of damage.
+a Plagueborn myrmidon hits Ebola for 136 points of damage.
 a Plagueborn myrmidon hits Ebola for 140 points of damage.
 a Plagueborn myrmidon hits Ebola for 144 points of damage.
 a Plagueborn myrmidon hits Ebola for 146 points of damage.
@@ -745,6 +746,7 @@ a Plagueborn myrmidon hits Ebola for 186 points of damage.
 a Plagueborn myrmidon hits Ebola for 19 points of damage.
 a Plagueborn myrmidon hits Ebola for 192 points of damage.
 a Plagueborn myrmidon hits Ebola for 222 points of damage.
+a Plagueborn myrmidon hits Ebola for 226 points of damage.
 a Plagueborn myrmidon hits Ebola for 236 points of damage.
 a Plagueborn myrmidon hits Ebola for 28 points of damage.
 a Plagueborn myrmidon hits Ebola for 29 points of damage.
@@ -757,6 +759,7 @@ a Plagueborn myrmidon hits Ebola for 56 points of damage.
 a Plagueborn myrmidon hits Ebola for 65 points of damage.
 a Plagueborn myrmidon hits Ebola for 66 points of damage.
 a Plagueborn myrmidon hits Ebola for 67 points of damage.
+a Plagueborn myrmidon hits Ebola for 68 points of damage.
 a Plagueborn myrmidon hits Ebola for 74 points of damage.
 a Plagueborn myrmidon hits Ebola for 77 points of damage.
 a Plagueborn myrmidon hits Ebola for 84 points of damage.
@@ -765,6 +768,9 @@ a Plagueborn myrmidon hits Ebola for 9 points of damage.
 a Plagueborn myrmidon hits Ebola for 92 points of damage.
 a Plagueborn myrmidon hits Ebola for 93 points of damage.
 a Plagueborn myrmidon hits Ebola for 96 points of damage.
+a Plagueborn myrmidon hits Entrari for 140 points of damage.
+a Plagueborn myrmidon hits Entrari for 65 points of damage.
+a Plagueborn myrmidon hits Entrari for 65 points of damage.e.
 a Plagueborn myrmidon hits Klog for 192 points of damage.
 a Plagueborn myrmidon hits Klog for 226 points of damage.
 a Plagueborn myrmidon hits Klog for 6 points of damage. (Block 5)
@@ -924,6 +930,7 @@ a Plagueborn myrmidon hits YOU for 11 points of damage (8 absorbed).
 a Plagueborn myrmidon hits YOU for 11 points of damage.
 a Plagueborn myrmidon hits YOU for 112 points of damage (74 absorbed).
 a Plagueborn myrmidon hits YOU for 112 points of damage.
+a Plagueborn myrmidon hits YOU for 113 points of damage.
 a Plagueborn myrmidon hits YOU for 115 points of damage (77 absorbed).
 a Plagueborn myrmidon hits YOU for 115 points of damage.
 a Plagueborn myrmidon hits YOU for 117 points of damage.
@@ -935,6 +942,7 @@ a Plagueborn myrmidon hits YOU for 129 points of damage.
 a Plagueborn myrmidon hits YOU for 130 points of damage (14 absorbed).
 a Plagueborn myrmidon hits YOU for 130 points of damage.
 a Plagueborn myrmidon hits YOU for 134 points of damage.
+a Plagueborn myrmidon hits YOU for 136 points of damage.
 a Plagueborn myrmidon hits YOU for 140 points of damage.
 a Plagueborn myrmidon hits YOU for 144 points of damage.
 a Plagueborn myrmidon hits YOU for 149 points of damage.
@@ -945,6 +953,7 @@ a Plagueborn myrmidon hits YOU for 158 points of damage.
 a Plagueborn myrmidon hits YOU for 163 points of damage.
 a Plagueborn myrmidon hits YOU for 167 points of damage.
 a Plagueborn myrmidon hits YOU for 17 points of damage (2 absorbed).
+a Plagueborn myrmidon hits YOU for 170 points of damage.
 a Plagueborn myrmidon hits YOU for 173 points of damage (19 absorbed).
 a Plagueborn myrmidon hits YOU for 173 points of damage.
 a Plagueborn myrmidon hits YOU for 176 points of damage.
@@ -976,10 +985,12 @@ a Plagueborn myrmidon hits YOU for 5 points of damage (4 absorbed).
 a Plagueborn myrmidon hits YOU for 52 points of damage (6 absorbed).
 a Plagueborn myrmidon hits YOU for 52 points of damage (92 absorbed).
 a Plagueborn myrmidon hits YOU for 56 points of damage.
+a Plagueborn myrmidon hits YOU for 57 points of damage.
 a Plagueborn myrmidon hits YOU for 58 points of damage.
 a Plagueborn myrmidon hits YOU for 60 points of damage (107 absorbed).
 a Plagueborn myrmidon hits YOU for 65 points of damage.
 a Plagueborn myrmidon hits YOU for 67 points of damage.
+a Plagueborn myrmidon hits YOU for 68 points of damage.
 a Plagueborn myrmidon hits YOU for 69 points of damage (17 absorbed).
 a Plagueborn myrmidon hits YOU for 74 points of damage.
 a Plagueborn myrmidon hits YOU for 77 points of damage.
@@ -1076,6 +1087,7 @@ a Plagueborn myrmidon tries to hit YOU, but misses!point absomage.
 a Plagueborn myrmidon tries to slash YOU, but misses!
 a Plagueborn myrmidon's Bash hits a restless skeleton for 14 points of damage.
 a Plagueborn myrmidon's Bash hits Arne for 14 points of damage.
+a Plagueborn myrmidon's Bash hits Ebola for 10 points of damage.
 a Plagueborn myrmidon's Bash hits Ebola for 14 points of damage.
 a Plagueborn myrmidon's Bash hits Pitborn for 14 points of damage.
 a Plagueborn myrmidon's Bash hits Player for 13 points of damage.
@@ -1088,7 +1100,13 @@ a Plagueborn myrmidon's Bash hits YOU for 14 points of damagel
 a Plagueborn myrmidon's Bash hits YOU for 8 points of damage!
 a Plagueborn myrmidon's Damage Shield hits Arne for 25 points of damage.
 a Plagueborn myrmidon's Damage Shield hits Ebola for 19 points of damage.
+a Plagueborn myrmidon's Damage Shield hits Ebola for 25 points of dainrage.
 a Plagueborn myrmidon's Damage Shield hits Ebola for 25 points of damage.
+a Plagueborn myrmidon's Damage Shield hits Ebola for 25 points of damage.e
+a Plagueborn myrmidon's Damage Shield hits Entrari for 25 points of damag
+a Plagueborn myrmidon's Damage Shield hits Entrari for 25 points of damage.
+a Plagueborn myrmidon's Damage Shield hits Entrari for 25 points of damagelge,
+a Plagueborn myrmidon's Damage Shield hits Entrari for 25 points of damagemage.
 a Plagueborn myrmidon's Damage Shield hits Player for 14 points of damage.
 a Plagueborn myrmidon's Damage Shield hits Player for 24 points of damage.
 a Plagueborn myrmidon's Damage Shield hits Stuffy for 24 points of damage.
@@ -1108,9 +1126,11 @@ a Plagueborn myrmidon's Strike hits Ebola for 106 points of damage.
 a Plagueborn myrmidon's Strike hits Ebola for 107 points of damage.
 a Plagueborn myrmidon's Strike hits Ebola for 113 points of damage.
 a Plagueborn myrmidon's Strike hits Ebola for 116 points of damage.
+a Plagueborn myrmidon's Strike hits Ebola for 126 points of damage.
 a Plagueborn myrmidon's Strike hits Ebola for 128 points of damage.
 a Plagueborn myrmidon's Strike hits Ebola for 131 points of damage.
 a Plagueborn myrmidon's Strike hits Ebola for 142 points of damage.
+a Plagueborn myrmidon's Strike hits Ebola for 25 points of damage.
 a Plagueborn myrmidon's Strike hits Ebola for 40 points of damage.
 a Plagueborn myrmidon's Strike hits Ebola for 50 points of damage.
 a Plagueborn myrmidon's Strike hits Ebola for 53 points of damage.
@@ -1122,6 +1142,8 @@ a Plagueborn myrmidon's Strike hits Ebola for 85 points of damage.
 a Plagueborn myrmidon's Strike hits Ebola for 86 points of damage.
 a Plagueborn myrmidon's Strike hits Ebola for 90 points of damage.
 a Plagueborn myrmidon's Strike hits Ebola for 96 points of damage.
+a Plagueborn myrmidon's Strike hits Ebola for 97 points of damage.
+a Plagueborn myrmidon's Strike hits Ebola for 98 points of damage.
 a Plagueborn myrmidon's Strike hits Entrari for 107 points of damage.
 a Plagueborn myrmidon's Strike hits Fwbot for 29 points of damage.
 a Plagueborn myrmidon's Strike hits Pitborn for 101 points of damage.
@@ -1238,6 +1260,7 @@ a Plagueborn myrmidon's Strike hits YOU for 95 points of damagel
 a Plagueborn myrmidon's Strike hits YOU for 96 points of damage!
 a Plagueborn myrmidon's Strike hits YOU for 98 points of damagel
 a Plagueborn myrmidon's weight lifts. s9 points of damage,
+a Plagueborn myrmidon'srn myrmidon with their offhand for 4 points of damage.
 a Plagueborn oracle hits Ebola for 11 points of damage.
 a Plagueborn oracle hits Ebola for 158 points of damage.
 a Plagueborn oracle hits Ebola for 215 points of damage.
@@ -1988,6 +2011,7 @@ Arne crushes a Plagueborn myrmidon for 3 points of damage.
 Arne crushes a Plagueborn myrmidon for 31 points of damage.
 Arne crushes a Plagueborn myrmidon for 34 points of damage.
 Arne crushes a Plagueborn myrmidon for 37 points of damage.
+Arne crushes a Plagueborn myrmidon for 38 points of damage.
 Arne crushes a Plagueborn myrmidon for 4 points of damage.
 Arne crushes a Plagueborn myrmidon for 40 points of damage.
 Arne crushes a Plagueborn myrmidon for 43 points of damage.
@@ -2071,6 +2095,7 @@ Arne crushes Blightcaller Torvak for 46 points of damage.
 Arne crushes Blightcaller Torvak for 50 points of damage.
 Arne crushes Blightcaller Torvak for 62 points of damage.
 Arne crushes Blightcaller Torvak for 9 points of damage.
+Arne crushes Dew for 2 points of damage.
 Arne crushes Dew for 21 points of damage.
 Arne crushes Dew for 29 points of damage.
 Arne crushes Khaotics for 17 points of damage (2 absorbed).
@@ -2226,6 +2251,7 @@ Arne's Holy Strike hits a Plagueborn myrmidon for 105 points of Holy Damage.
 Arne's Holy Strike hits a Plagueborn myrmidon for 106 points of Holy Damage.
 Arne's Holy Strike hits a Plagueborn myrmidon for 107 points of Holy Damage.
 Arne's Holy Strike hits a Plagueborn myrmidon for 108 points of Holy Damage.
+Arne's Holy Strike hits a Plagueborn myrmidon for 109 points of Holy Damage.
 Arne's Holy Strike hits a Plagueborn myrmidon for 110 points of Holy Damage.
 Arne's Holy Strike hits a Plagueborn myrmidon for 111 points of Holy Damage.
 Arne's Holy Strike hits a Plagueborn myrmidon for 112 points of Holy Damage.
@@ -2240,6 +2266,7 @@ Arne's Holy Strike hits a Plagueborn myrmidon for 120 points of Holy Damage.
 Arne's Holy Strike hits a Plagueborn myrmidon for 121 points of Holy Damage.
 Arne's Holy Strike hits a Plagueborn myrmidon for 122 points of Holy Damage.
 Arne's Holy Strike hits a Plagueborn myrmidon for 123 points of Holy Damage.
+Arne's Holy Strike hits a Plagueborn myrmidon for 124 points of Holy Damage.
 Arne's Holy Strike hits a Plagueborn myrmidon for 125 points of Holy Damage.
 Arne's Holy Strike hits a Plagueborn myrmidon for 128 points of Holy Damage.
 Arne's Holy Strike hits a Plagueborn myrmidon for 129 points of Holy Damage.
@@ -2249,6 +2276,7 @@ Arne's Holy Strike hits a Plagueborn myrmidon for 51 points of Holy Damage.
 Arne's Holy Strike hits a Plagueborn myrmidon for 55 points of Holy Damage.
 Arne's Holy Strike hits a Plagueborn myrmidon for 56 points of Holy Damage.
 Arne's Holy Strike hits a Plagueborn myrmidon for 60 points of Holy Damage.
+Arne's Holy Strike hits a Plagueborn myrmidon for 65 points of Holy Damage.
 Arne's Holy Strike hits a Plagueborn myrmidon for 66 points of Holy Damage.
 Arne's Holy Strike hits a Plagueborn myrmidon for 67 points of Holy Damage.
 Arne's Holy Strike hits a Plagueborn myrmidon for 68 points of Holy Damage.
@@ -2335,6 +2363,7 @@ Arne's Holy Strike hits Blightcaller Torvak for 127 points of Holy Damage.
 Arne's Holy Strike hits Blightcaller Torvak for 58 points of Holy Damage.
 Arne's Holy Strike hits Blightcaller Torvak for 76 points of Holy Damage.
 Arne's Holy Strike hits Blightcaller Torvak for 91 points of Holy Damage.
+Arne's Holy Strike hits Dew for 24 points of Holy Damage.
 Arne's Holy Strike hits Khaotics for 58 points of Holy Damage.
 Arne's Holy Strike hits Magistrate Sivash for 101 points of Holy Damage.
 Arne's Holy Strike hits Magistrate Sivash for 102 points of Holy Damage.
@@ -2382,6 +2411,7 @@ Arne's Holy Strike hits Sherrif Bahram for 87 points of Holy Damage.
 Arne's Retribution II hits a Plagueborn butler for 1553 points of Holy Damage.
 Arne's Retribution II hits Blightcaller Torvak for 1493 points of Holy Damage.
 Arne's Retribution III hits a Plagueborn myrmidon for 1493 points of Holy Damage.
+Arne's Retribution III hits a Plagueborn myrmidon for 746 points of Holy Damage.
 Arne's Retribution III hits Blightcaller Torvak for 1493 points of Holy Dama
 Arne's Retribution III hits Blightcaller Torvak for 1493 points of Holy Damage.
 Arne's Retribution III hits Blightcaller Torvak for 1553 points of Holy Damage.
@@ -2393,6 +2423,7 @@ Arne's Retribution III hits Sherrif Bahram for 1642 points of Holy Damage.
 Arne's Righteous Strike hits a Plagueborn blightcaller for 632 points of Holy Damage.
 Arne's Righteous Strike hits a Plagueborn blightwarden for 378 points of Holy Damage.
 Arne's Righteous Strike hits a Plagueborn blightwarden for 416 points of Holy Damage.
+Arne's Righteous Strike hits a Plagueborn myrmidon for 189 points of Holy Damage.
 Arne's Righteous Strike hits a Plagueborn myrmidon for 378 points of Holy Damage.
 Arne's Righteous Strike hits a Plagueborn myrmidon for 385 points of Holy Damage.
 Arne's Righteous Strike hits a Plagueborn myrmidon for 386 points of Holy Damage.
@@ -2556,6 +2587,7 @@ Blightcaller Torvak's Strike hits YOU for 70 points of damage!
 Blightcaller Torvak's Strike hits YOU for 89 points of damage!
 Blightcaller Torvak's Strike hits YOU for 98 points of damage!
 Bloodgate's Lethal Deluge hits a bone archer for 461 points of Poison Damage.
+bola's Life Sap heals them for 50 Health. ints of damage.
 bolzzrtshes an unstable oozeling but they a3 points of damage.
 Bone Construct crushes Lonaner for 354 points of damage.
 Bone Construct crushes Lonaner for 42 points of damage.
@@ -2643,6 +2675,7 @@ Crit's Damage Shield hits Khaotics for 3 points of damage.
 Crit's Damage Shield hits Memory for 8 points of damage.
 Crit's Damage Shield hits Pewjitsu for 8 points of damage.
 Crit's Second Wind heals you for 56 Health.
+Crit's Second Wind heals you for 56 Health.oints ofdamage.
 Crit's Second Wind heals you for 58 Health
 Crit's Second Wind heals you for 58 Health,
 Crit's Second Wind heals you for 58 Health.
@@ -2660,6 +2693,7 @@ crushes a Plagueborn templar for 15 points of damage.
 crushes a Plagueborn templar for 25 points of damage.
 d for 23 points of damage.
 d for 73 points of damage.
+Damage.hes a PlaguebornsnVocalization hits a Plagueborn myrmidon for 187 points of Magic
 Deaths crushes Pustulax the Avatar of Plagues for 15 points of damage.
 Deaths crushes Pustulax the Avatar of Plagues for 24 points of damage.
 Deaths crushes Pustulax the Avatar of Plagues for 32 points of damage.
@@ -2696,8 +2730,14 @@ Dew crushes YOU for 17 points of damage.
 Dew's Supreme Heal heals Nitwit for 1711 Health.
 Dew's Supreme Heal heals Vymm for 1711 Health.
 do for 186 points of damage.
+Ebagueborn myrmidon tries to hit YOU, butimiss
+Eboigueborn myrmidon hits Ebola for 121 points of damage.
 Ebol crush a Plagueborn templar for 94 points of damage. (Critical)
 Ebol crush a Plagueborn tertplar for 26 points of damage.pontof damag
+Ebol slash 'a Plagueburh myrmidon with your offhand for 37 points of damage.
+Ebola cnashes a Plagueborn myrmidon for 77 points of damage.
+Ebola cne Sap hits a Plagueborn myrmidon for 38 points of Corruption Damage.
+Ebola crush a Plaguebaebonyrmidoidfor 94 points of damage.
 Ebola crushes a bloated plague rat for 15 points of damage.
 Ebola crushes a bloated plague rat for 15 points of damage.odamag
 Ebola crushes a bloated plague rat for 22 points of damage.
@@ -2991,7 +3031,9 @@ Ebola crushes a Plagueborn myrmidon for 132 points of damage.
 Ebola crushes a Plagueborn myrmidon for 14 points of damage.
 Ebola crushes a Plagueborn myrmidon for 15 points of damage.
 Ebola crushes a Plagueborn myrmidon for 18 points of damage.
+Ebola crushes a Plagueborn myrmidon for 21 points of damage.
 Ebola crushes a Plagueborn myrmidon for 22 points of damage.
+Ebola crushes a Plagueborn myrmidon for 24 points of damage.
 Ebola crushes a Plagueborn myrmidon for 25 points of damage.
 Ebola crushes a Plagueborn myrmidon for 26 points of damage.
 Ebola crushes a Plagueborn myrmidon for 28 points of damage.
@@ -3001,6 +3043,7 @@ Ebola crushes a Plagueborn myrmidon for 31 points of damage.
 Ebola crushes a Plagueborn myrmidon for 32 points of damage.
 Ebola crushes a Plagueborn myrmidon for 33 points of damage.
 Ebola crushes a Plagueborn myrmidon for 34 points of damage.
+Ebola crushes a Plagueborn myrmidon for 34 points of damage.orn myrmidon
 Ebola crushes a Plagueborn myrmidon for 35 points of damage.
 Ebola crushes a Plagueborn myrmidon for 36 points of damage.
 Ebola crushes a Plagueborn myrmidon for 37 points of damage.
@@ -3008,6 +3051,8 @@ Ebola crushes a Plagueborn myrmidon for 38 points of damage.
 Ebola crushes a Plagueborn myrmidon for 39 points of damage.
 Ebola crushes a Plagueborn myrmidon for 40 points of damage.
 Ebola crushes a Plagueborn myrmidon for 41 points of damage.
+Ebola crushes a Plagueborn myrmidon for 41 points of damage.f
+Ebola crushes a Plagueborn myrmidon for 41 points of damagçe.
 Ebola crushes a Plagueborn myrmidon for 42 points of damage.
 Ebola crushes a Plagueborn myrmidon for 43 points of damage.
 Ebola crushes a Plagueborn myrmidon for 44 points of damage.
@@ -3020,7 +3065,10 @@ Ebola crushes a Plagueborn myrmidon for 51 points of damage.
 Ebola crushes a Plagueborn myrmidon for 52 points of damage.
 Ebola crushes a Plagueborn myrmidon for 53 points of damage.
 Ebola crushes a Plagueborn myrmidon for 54 points of damage.
+Ebola crushes a Plagueborn myrmidon for 54 points of úamage.
 Ebola crushes a Plagueborn myrmidon for 55 points of damage.
+Ebola crushes a Plagueborn myrmidon for 57 points of damage.
+Ebola crushes a Plagueborn myrmidon for 57 points of damage.6points
 Ebola crushes a Plagueborn myrmidon for 58 points of damage.
 Ebola crushes a Plagueborn myrmidon for 59 points of damage.
 Ebola crushes a Plagueborn myrmidon for 60 points of damage.
@@ -3030,14 +3078,17 @@ Ebola crushes a Plagueborn myrmidon for 63 points of damage.
 Ebola crushes a Plagueborn myrmidon for 64 points of damage.
 Ebola crushes a Plagueborn myrmidon for 65 points of damage.
 Ebola crushes a Plagueborn myrmidon for 67 points of damage.
+Ebola crushes a Plagueborn myrmidon for 67 points of damage.ts or
 Ebola crushes a Plagueborn myrmidon for 68 points of damage.
 Ebola crushes a Plagueborn myrmidon for 69 points of damage.
 Ebola crushes a Plagueborn myrmidon for 70 points of damage.
 Ebola crushes a Plagueborn myrmidon for 71 points of damage.
 Ebola crushes a Plagueborn myrmidon for 72 points of damage.
+Ebola crushes a Plagueborn myrmidon for 74 points of daarage.
 Ebola crushes a Plagueborn myrmidon for 74 points of damage.
 Ebola crushes a Plagueborn myrmidon for 75 points of damage.
 Ebola crushes a Plagueborn myrmidon for 76 points of damage.
+Ebola crushes a Plagueborn myrmidon for 77 points of damage.
 Ebola crushes a Plagueborn myrmidon for 78 points of damage.
 Ebola crushes a Plagueborn myrmidon for 79 points of damage.
 Ebola crushes a Plagueborn myrmidon for 80 points of damage.
@@ -3054,6 +3105,7 @@ Ebola crushes a Plagueborn myrmidon for 96 points of damage.
 Ebola crushes a Plagueborn myrmidon for 97 points of damage.
 Ebola crushes a Plagueborn myrmidon for 98 points of damage.
 Ebola crushes a Plagueborn myrmidon for 99 points of damage.
+Ebola crushes a Plagueborn myrmidon with their offhand for22 points of damage.
 Ebola crushes a Plagueborn oracle for 101 points of damage.
 Ebola crushes a Plagueborn oracle for 102 points of damage.
 Ebola crushes a Plagueborn oracle for 106 points of damage.
@@ -3281,6 +3333,7 @@ Ebola crushes Dew for 22 points of damage.
 Ebola crushes Dew for 34 points of damage.
 Ebola crushes Dew for 36 points of damage (15 absorbed).
 Ebola crushes Dew for 46 points of damage.
+Ebola crushes Dew for 50 points of damage.
 Ebola crushes Dew for 53 points of damage.
 Ebola crushes Dew for 56 points of damage.
 Ebola crushes Gibmedalute for 12 points of damage.
@@ -3492,6 +3545,7 @@ Ebola crushes Vymm for 56 points of damage
 Ebola Dashage Shield hits Khaotics for 3 points of damage. age
 Ebola is renewed by ancestral healing
 Ebola sBlistering Rot hits a bloated plague rat for 3 points o
+Ebola slash a Plagueborn myrmidoddor itlpoints offdamdfor 36 points of damage.
 Ebola slashes a bloated plague rat with their offhand for 12 points of damage.
 Ebola slashes a bloated plague rat with their offhand for 17 points of damage.
 Ebola slashes a bloated plague rat with their offhand for 23 points of damage.
@@ -3600,6 +3654,7 @@ Ebola slashes a Plagueborn leywalker with their offhand for 52 points of damage.
 Ebola slashes a Plagueborn leywalker with their offhand for 55 points of damage.
 Ebola slashes a Plagueborn leywalker with their offhand for 58 points of damage.
 Ebola slashes a Plagueborn leywalker with their offhand for 9 points of damage.
+Ebola slashes a Plagueborn myrmidon with their offhand for 11 points of damage.
 Ebola slashes a Plagueborn myrmidon with their offhand for 12 points of damage.
 Ebola slashes a Plagueborn myrmidon with their offhand for 14 points of damage.
 Ebola slashes a Plagueborn myrmidon with their offhand for 15 points of damage.
@@ -3607,6 +3662,7 @@ Ebola slashes a Plagueborn myrmidon with their offhand for 16 points of damage.
 Ebola slashes a Plagueborn myrmidon with their offhand for 17 points of damage.
 Ebola slashes a Plagueborn myrmidon with their offhand for 19 points of damage.
 Ebola slashes a Plagueborn myrmidon with their offhand for 20 points of damage.
+Ebola slashes a Plagueborn myrmidon with their offhand for 20 points of damage:
 Ebola slashes a Plagueborn myrmidon with their offhand for 22 points of damage.
 Ebola slashes a Plagueborn myrmidon with their offhand for 23 points of damage.
 Ebola slashes a Plagueborn myrmidon with their offhand for 25 points of damage.
@@ -3618,16 +3674,20 @@ Ebola slashes a Plagueborn myrmidon with their offhand for 31 points of damage.
 Ebola slashes a Plagueborn myrmidon with their offhand for 32 points of damage.
 Ebola slashes a Plagueborn myrmidon with their offhand for 34 points of damage.
 Ebola slashes a Plagueborn myrmidon with their offhand for 35 points of damage.
+Ebola slashes a Plagueborn myrmidon with their offhand for 36 points of damage.
 Ebola slashes a Plagueborn myrmidon with their offhand for 37 points of damage.
 Ebola slashes a Plagueborn myrmidon with their offhand for 38 points of damage.
 Ebola slashes a Plagueborn myrmidon with their offhand for 39 points of damage.
 Ebola slashes a Plagueborn myrmidon with their offhand for 40 points of damage.
 Ebola slashes a Plagueborn myrmidon with their offhand for 41 points of damage.
+Ebola slashes a Plagueborn myrmidon with their offhand for 42 points of dam
+Ebola slashes a Plagueborn myrmidon with their offhand for 42 points of damage.
 Ebola slashes a Plagueborn myrmidon with their offhand for 43 points of damage.
 Ebola slashes a Plagueborn myrmidon with their offhand for 44 points of damage.
 Ebola slashes a Plagueborn myrmidon with their offhand for 45 points of damage.
 Ebola slashes a Plagueborn myrmidon with their offhand for 46 points of damage.
 Ebola slashes a Plagueborn myrmidon with their offhand for 47 points of damage.
+Ebola slashes a Plagueborn myrmidon with their offhand for 48 points of damage.
 Ebola slashes a Plagueborn myrmidon with their offhand for 49 points of damage.
 Ebola slashes a Plagueborn myrmidon with their offhand for 50 points of damage.
 Ebola slashes a Plagueborn myrmidon with their offhand for 52 points of damage.
@@ -3635,11 +3695,14 @@ Ebola slashes a Plagueborn myrmidon with their offhand for 53 points of damage.
 Ebola slashes a Plagueborn myrmidon with their offhand for 55 points of damage.
 Ebola slashes a Plagueborn myrmidon with their offhand for 56 points of damage.
 Ebola slashes a Plagueborn myrmidon with their offhand for 58 points of damage.
+Ebola slashes a Plagueborn myrmidon with their offhand for 58 points of damage:
 Ebola slashes a Plagueborn myrmidon with their offhand for 59 points of damage.
 Ebola slashes a Plagueborn myrmidon with their offhand for 6 points of damage.
 Ebola slashes a Plagueborn myrmidon with their offhand for 62 points of damage.
 Ebola slashes a Plagueborn myrmidon with their offhand for 8 points of damage.
 Ebola slashes a Plagueborn myrmidon with their offhand for 9 points of damage.
+Ebola slashes a Plagueborn myrmidon with their offhandfor 3 points of damage.
+Ebola slashes a Plagueborn myrmidornwyir 67 points of damage.points of damage.
 Ebola slashes a Plagueborn oracle with their offhand for 14 points of damage.
 Ebola slashes a Plagueborn oracle with their offhand for 22 points of damage.
 Ebola slashes a Plagueborn oracle with their offhand for 28 points of damage.
@@ -3946,6 +4009,7 @@ Ebola's Arcane Detonation hits Blightcaller Torvak for 521 points of Magic Damag
 Ebola's Arcane Detonation hits Blightcaller Torvak for 568 points of Magic Damage.
 Ebola's Arcane Detonation hits Blightcaller Torvak for 573 points of Magic Damage.
 Ebola's Arcane Detonation hits Crack for 521 points of Magic Damage.
+Ebola's Arcane Detonation hits Dew for 260 points of Magic Damage.
 Ebola's Arcane Detonation hits Legoliath for 260 points of Magic Damage.
 Ebola's Arcane Detonation hits Magistrate Sivash for 407 points of Magic Damage.
 Ebola's Arcane Detonation hits Magistrate Sivash for 516 points of Magic Damage.
@@ -3993,6 +4057,7 @@ Ebola's Blistering Rot hits a Plagueborn myrmidon for 10 points of Disease Damag
 Ebola's Blistering Rot hits a Plagueborn myrmidon for 11 points of Disease Damage.
 Ebola's Blistering Rot hits a Plagueborn myrmidon for 3 points of Disease Damage.
 Ebola's Blistering Rot hits a Plagueborn myrmidon for 5 points of Disease Damage.
+Ebola's Blistering Rot hits a Plagueborn myrmidon for 7 points of Disease Damage.
 Ebola's Blistering Rot hits a Plagueborn myrmidon for 9 points of Disease Damage.
 Ebola's Blistering Rot hits a Plagueborn oracle for 10 points of Disease Damage.
 Ebola's Blistering Rot hits a Plagueborn oracle for 3 points of Disease Damage.
@@ -4017,6 +4082,9 @@ Ebola's Blistering Rot hits Sherrif Bahram for 3 points of Disease Damage.
 Ebola's Blistering Rot hits Sherrif Bahram for 5 points of Disease Damage.
 Ebola's Blistering Rot hits Theomnipotent for 5 points of Disease Damage.
 Ebola's Blistering Rot hits Vymm for 5 points of Disease Damage.
+Ebola's BlisteringRot hits a Plaguebrmidoyrmidoffhand for 48 points of damage.
+Ebola's Dischamyrmidon's Damaeborn myrmidon for 59125 points of damage.
+Ebola's Discharge VI hit's Damage Shield hits Entrari for 25 points of damage.
 Ebola's Discharge VI hits a Plagueborn blightcaller for 585 points of Electric Damage.
 Ebola's Discharge VI hits a Plagueborn blightcaller for 591 points of Electric Damage.
 Ebola's Discharge VI hits a Plagueborn blightwarden for 292 points of Electric Damage.
@@ -4428,6 +4496,8 @@ Ebola's Infused Slash VI hits Sherrif Bahram for 97 points of damage.
 Ebola's Life Sap heals them for 25 Health.
 Ebola's Life Sap heals them for 48 Health.
 Ebola's Life Sap heals them for 50 Health.
+Ebola's Life Sap heals them for 50 Health.50points ofCorruptio
+Ebola's Life Sap heals them for 50 Health.yrmidonro
 Ebola's Life Sap heals them for 51 Health.
 Ebola's Life Sap heals them for 52 Health.
 Ebola's Life Sap heals them for 53 Health.
@@ -4464,9 +4534,12 @@ Ebola's Phase Strike hits a Plagueborn myrmidon for 27 points of damage.
 Ebola's Phase Strike hits a Plagueborn myrmidon for 28 points of damage.
 Ebola's Phase Strike hits a Plagueborn myrmidon for 55 points of damage.
 Ebola's Phase Strike hits Dew for 19 points of damage.
+Ebola's Phase Strike hits Dew for 21 points of damage.
 Ebola's Phase Strike hits Legoliath for 5 points of damage.
 Ebola's Phase Strike hits Nitwit for 21 points of damage.
 Ebola's Phase Strike hits Theomnipotent for 31 points of damage.
+Ebola's pierces a Plagueborn myrmidon for 67 points of damage. ats of
+Ebola's TaleSap hit Infusion hits a Riyrmidontor 50 points of Corruption Damage.
 Ebola's Telekinetic Infusion hits a bloated plague rat for 30 points of damage.
 Ebola's Telekinetic Infusion hits a Plagueborn blightcaller for 30 points of damage.
 Ebola's Telekinetic Infusion hits a Plagueborn blightwarden for 30 points of damage.
@@ -4476,6 +4549,7 @@ Ebola's Telekinetic Infusion hits a Plagueborn defiler for 30 points of damage.
 Ebola's Telekinetic Infusion hits a Plagueborn hag for 30 points of damage.
 Ebola's Telekinetic Infusion hits a Plagueborn leywalker for 30 points of damage.
 Ebola's Telekinetic Infusion hits a Plagueborn myrmidon for 30 points of damage.
+Ebola's Telekinetic Infusion hits a Plagueborn myrmidon for 30 points of dang.
 Ebola's Telekinetic Infusion hits a Plagueborn oracle for 30 points of damage.
 Ebola's Telekinetic Infusion hits a Plagueborn runescribe for 30 points of damage.
 Ebola's Telekinetic Infusion hits a Plagueborn templar for 30 points of aa.age.
@@ -4502,6 +4576,7 @@ Ebola's Vampirism hits a Plagueborn templar for 55 points of Corruption Damage.
 Ebola's Vampirism hits Sherrif Bahram for 55 points of Corruption Damage.
 Ebolalerishes Theomnipotent for 51 points of damage.nts of d
 Ebolg ueborn templar slashes YOU for 50 points of damage (6 absorbed)
+Eborari's Slice VI hits a Plagueborn myrmidon for 144 points of Bleed Damage.
 Echwig crushes Whiplash for 2 points of damage.
 Echwig crushes Whiplash for 6 points of damage (1 absorbed).
 Echwig's Life Sap heals them for 18 Health.
@@ -4523,7 +4598,10 @@ Echwig's Surging Shadows hits Whiplash for 5 points of Corruption Damage.
 Eeratissimo ershes Peie for 22 points of damage.age.
 Ehołarleshshes Dkwitkutheir offhand for 31 points of damage.
 Eitborn's casting is interrupted. 63 Health. nd for 62 poi.
+Emne's Sublime Heal heals Entrari for 1164 dead.
 En unstable oozeling claws Wers for 23 points of damage.
+Eniagueborn myrmidon's Damage Shield hitsEntrari for 25 points of damage.
+Enlaari pierces a Plagueborn myrmidon for 64 points of damage. dam
 Enneis Holy Strike hits Memory for 29 points of Holy Damage.
 Ente crushes a Plagueborn myrmidon for 47 points of damage.
 Entr crush a Plagueborn myrmidon for 41 points of damage.
@@ -4531,6 +4609,7 @@ Entr crush Magistrate Sivash for 68 points of damage.
 Entr slash Magistrate Sivash with your offhand for 51 points of damage.
 Entrali pierPla a Plagueborn myrmidon fon71 points of damage.
 Entrals Holy Strike hits a Plaa weyrmidoyrmidon for 104 points of Holy Damage. e.
+Entralı drusPlagueborn myrmidon uith vonn offhand for 68 points of damage.
 Entrar pierces Vymm for 48 points of damage.
 Entrari crushes a bone archer with their offhand for 72 points of damage.
 Entrari crushes a bone archer with their offhand for 96 points of damage.
@@ -4553,22 +4632,37 @@ Entrari crushes a Plagueborn hag with their offhand for 87 points of damage.
 Entrari crushes a Plagueborn hag with their offhand for 92 points of damage.
 Entrari crushes a Plagueborn mhyamidor with their offhand for 41 points of damage.
 Entrari crushes a Plagueborn myrmidon onth their offhand for 51 points of damage.
+Entrari crushes a Plagueborn myrmidon with their offhand for 13 points of damage.
 Entrari crushes a Plagueborn myrmidon with their offhand for 14 points of damage.
+Entrari crushes a Plagueborn myrmidon with their offhand for 17 points of damage.
 Entrari crushes a Plagueborn myrmidon with their offhand for 18 points of damage.
 Entrari crushes a Plagueborn myrmidon with their offhand for 23 points of damage.
+Entrari crushes a Plagueborn myrmidon with their offhand for 26 points of damage.
 Entrari crushes a Plagueborn myrmidon with their offhand for 28 points of damage.
+Entrari crushes a Plagueborn myrmidon with their offhand for 30 points of damage.
 Entrari crushes a Plagueborn myrmidon with their offhand for 32 points of damage.
+Entrari crushes a Plagueborn myrmidon with their offhand for 39 points of damage.
+Entrari crushes a Plagueborn myrmidon with their offhand for 4 points of damage.
 Entrari crushes a Plagueborn myrmidon with their offhand for 41 points of damage.
+Entrari crushes a Plagueborn myrmidon with their offhand for 43 points of damage.
 Entrari crushes a Plagueborn myrmidon with their offhand for 5 points of damage.
 Entrari crushes a Plagueborn myrmidon with their offhand for 51 points of damage.
+Entrari crushes a Plagueborn myrmidon with their offhand for 52 points of damage.
 Entrari crushes a Plagueborn myrmidon with their offhand for 55 points of damage.
+Entrari crushes a Plagueborn myrmidon with their offhand for 56 points of damage.
 Entrari crushes a Plagueborn myrmidon with their offhand for 60 points of damage.
 Entrari crushes a Plagueborn myrmidon with their offhand for 64 points of damage.
+Entrari crushes a Plagueborn myrmidon with their offhand for 65 points of damage.
 Entrari crushes a Plagueborn myrmidon with their offhand for 69 points of damage.
+Entrari crushes a Plagueborn myrmidon with their offhand for 73 points of damage.
+Entrari crushes a Plagueborn myrmidon with their offhand for 77 points of damage.
 Entrari crushes a Plagueborn myrmidon with their offhand for 78 points of damage.
 Entrari crushes a Plagueborn myrmidon with their offhand for 83 points of damage.
+Entrari crushes a Plagueborn myrmidon with their offhand for 86 points of damage.
 Entrari crushes a Plagueborn myrmidon with their offhand for 9 points of damage.
 Entrari crushes a Plagueborn myrmidon with their offhand for 92 points of damage.
+Entrari crushes a Plagueborn myrmidon with their offhand for69 points of damage.
+Entrari crushes a Plagueborn myrmidon withoth for 115 points of Holy Damage.
 Entrari crushes a Plagueborn myrmidon withr57 points of damage.
 Entrari crushes a Plagueborn templar with their offhand for 23 points of damage.
 Entrari crushes a Plagueborn templar with their offhand for 46 points of damage.
@@ -4709,6 +4803,7 @@ Entrari crushes Vymm with their offhand for 62 points of damage.
 Entrari crushes Whiplash with their offhand for 19 points of damage (2 absorbed).
 Entrari crushes Whiplash with their offhand for 56 points of damage (6 absorbed).
 Entrari crusing Dew withheir offhand for 58 points of damage.
+Entrari crusllaguPlagueboyrmidomiith youh offhand for 68 points of damage.
 Entrari pierces a bone archer for 36 points of damage.
 Entrari pierces a bone archer for 42 points of damage.
 Entrari pierces a bone archer for 58 points of damage.
@@ -4743,22 +4838,35 @@ Entrari pierces a Plagueborn hag for 71 points of damage3
 Entrari pierces a Plagueborn myonidon for 14 poits of damage.
 Entrari pierces a Plagueborn myrmidon for 14 points of damage.
 Entrari pierces a Plagueborn myrmidon for 17 points of damage.
+Entrari pierces a Plagueborn myrmidon for 19 points of damage.
 Entrari pierces a Plagueborn myrmidon for 20 points of damage.
+Entrari pierces a Plagueborn myrmidon for 22 points of damage.
 Entrari pierces a Plagueborn myrmidon for 23 points of damage.
+Entrari pierces a Plagueborn myrmidon for 25 points of damage.
 Entrari pierces a Plagueborn myrmidon for 26 points of damage.
+Entrari pierces a Plagueborn myrmidon for 28 points of damage.
 Entrari pierces a Plagueborn myrmidon for 29 points of damage.
 Entrari pierces a Plagueborn myrmidon for 29 points of damagorbed).
+Entrari pierces a Plagueborn myrmidon for 31 points of damage.
 Entrari pierces a Plagueborn myrmidon for 32 points of damage.
+Entrari pierces a Plagueborn myrmidon for 33 points of damage.
 Entrari pierces a Plagueborn myrmidon for 35 points of damage.
+Entrari pierces a Plagueborn myrmidon for 36 points of damage.
+Entrari pierces a Plagueborn myrmidon for 39 points of damage.
 Entrari pierces a Plagueborn myrmidon for 41 points of damage.
+Entrari pierces a Plagueborn myrmidon for 42 points of damage.
 Entrari pierces a Plagueborn myrmidon for 44 points of damage.
+Entrari pierces a Plagueborn myrmidon for 45 points of damage.
 Entrari pierces a Plagueborn myrmidon for 47 points of damage.
 Entrari pierces a Plagueborn myrmidon for 47 points of dap
 Entrari pierces a Plagueborn myrmidon for 50 points of damage.
 Entrari pierces a Plagueborn myrmidon for 53 points of damage.
 Entrari pierces a Plagueborn myrmidon for 56 points of damage.
 Entrari pierces a Plagueborn myrmidon for 59 points of damage.
+Entrari pierces a Plagueborn myrmidon for 61 points of damage.
 Entrari pierces a Plagueborn myrmidon for 62 points of damage.
+Entrari pierces a Plagueborn myrmidon for 64 points of damage.
+Entrari pierces a Plagueborn myrmidon for 67 points of damage.
 Entrari pierces a Plagueborn myrmidon for 68 points of damage.
 Entrari pierces a Plagueborn myrmidon for 71 points of damage.
 Entrari pierces a Plagueborn templar for 14 points of damage.
@@ -5008,6 +5116,7 @@ Entrari pierces Whiplash for 43 points of damage (5 absorbed).
 Entrari pierces Whiplash for 7 points of damage (2 absorbed).
 Entrari pierceßap hegueborn fay132 Hon for 71 points of damage.
 Entrari piercesvelRits a Plagueborn myrmidon for 90 points of
+Entrari pifused SlashVI hits a Plagueboriion for 79 points of damage.
 Entrari s takstàDew with their offhan for 58 points of damage.
 Entrari spreads their Disease to you. YOU take 400 points of damage!
 Entrari throws at a Plagueborn myrmidon for 15 points of damage. (Critical)
@@ -5017,11 +5126,22 @@ Entrari's Backstab VI hits a Plagueborn citizen for 385 points of damage.
 Entrari's Backstab VI hits a Plagueborn hag for 311 points of damage.
 Entrari's Backstab VI hits a Plagueborn hag for 470 points of damage. (Critical)
 Entrari's Backstab VI hits a Plagueborn hag for 719 points of damage. (Critical)
+Entrari's Backstab VI hits a Plagueborn myrmidon for 1148 points of damage. (Critical)
+Entrari's Backstab VI hits a Plagueborn myrmidon for 1171 points of damage. (Critical)
+Entrari's Backstab VI hits a Plagueborn myrmidon for 302 points of damage. (Critical)
+Entrari's Backstab VI hits a Plagueborn myrmidon for 302 points of damage. (Grécae.
+Entrari's Backstab VI hits a Plagueborn myrmidon for 336 points of damage.
 Entrari's Backstab VI hits a Plagueborn myrmidon for 415 points of damage.
 Entrari's Backstab VI hits a Plagueborn myrmidon for 441 points of damage. (Critical)
+Entrari's Backstab VI hits a Plagueborn myrmidon for 460 points of damage. (Critical)
+Entrari's Backstab VI hits a Plagueborn myrmidon for 528 points of damage. (Critical)
 Entrari's Backstab VI hits a Plagueborn myrmidon for 532 points of damage.
 Entrari's Backstab VI hits a Plagueborn myrmidon for 546 points of damage.
+Entrari's Backstab VI hits a Plagueborn myrmidon for 690 points of damage. (Critical)
+Entrari's Backstab VI hits a Plagueborn myrmidon for 746 points of damage. (Critical)
 Entrari's Backstab VI hits a Plagueborn myrmidon for 819 points of damage. (Critical)
+Entrari's Backstab VI hits a Plagueborn myrmidon for 955 points of damage. (Critical)
+Entrari's Backstab VI hits a Plagueborn myrmidr offhand for 11 points of damage.
 Entrari's Backstab VI hits a Plagueborn templar for 346 points of damage. (Critical)
 Entrari's Backstab VI hits a Plagueborn templar for 646 points of damage. (Critical)
 Entrari's Backstab VI hits a Plagueborn templar for 827 points of damage. (Critical)
@@ -5082,6 +5202,7 @@ Entrari's Life Sap heals them for 37 Health.
 Entrari's Life Sap heals them for 38 Health.
 Entrari's Life Sap hits a Plagueborn citizen for 37 points of Corruption Damage.
 Entrari's Life Sap hits a Plagueborn myrmidon for 32 points of Corruption Damage.
+Entrari's Life Sap hits a Plagueborn myrmidon for 37 points of Corruption Damage.
 Entrari's Life Sap hits a Plagueborn templar for 37 points of Corruption Damage.
 Entrari's Life Sap hits a rabid plaguereaver for 37 points of Corruption Damage.
 Entrari's Life Sap hits a skeletal servant for 35 points of Corruption Damage.
@@ -5092,6 +5213,8 @@ Entrari's Life Sap hits Crack for 32 points of Corruption Damage.
 Entrari's Life Sap hits Magistrate Sivash for 32 points of Corruption Damage.
 Entrari's Life Sap hits Memory for 18 points of Corruption Damage.
 Entrari's Life Sap hits Memory for 18 points ofCorruption Damage.
+Entrari's magic resistance fades.6 Health.
+Entrari's Slice Va PiagaRorneborn myrmidon for 99 points of damage. (Critical)
 Entrari's Slice VI hits a bone archer for 27 points of damage. (Critical)
 Entrari's Slice VI hits a Plagueborn citizen for 116 points of damage. (Critical)
 Entrari's Slice VI hits a Plagueborn citizen for 72 points of Bleed Damage.
@@ -5100,12 +5223,19 @@ Entrari's Slice VI hits a Plagueborn hag for 60 points of damage.
 Entrari's Slice VI hits a Plagueborn hag for 60 points of ge.
 Entrari's Slice VI hits a Plagueborn hag for 72 points of Bleed Damage.
 Entrari's Slice VI hits a Plagueborn hag for 77 points of damage.
+Entrari's Slice VI hits a Plagueborn myrmidon for 108 points of damage. (Critical)
 Entrari's Slice VI hits a Plagueborn myrmidon for 116 points of damage. (Critical)
+Entrari's Slice VI hits a Plagueborn myrmidon for 14 points of ofdamof damage.
 Entrari's Slice VI hits a Plagueborn myrmidon for 144 points of Bleed Damage.
+Entrari's Slice VI hits a Plagueborn myrmidon for 23 points of damage.
 Entrari's Slice VI hits a Plagueborn myrmidon for 27 points of damage. (Critical)
+Entrari's Slice VI hits a Plagueborn myrmidon for 48 points of damage.
+Entrari's Slice VI hits a Plagueborn myrmidon for 51 points of damage.
 Entrari's Slice VI hits a Plagueborn myrmidon for 72 points of Bleed Damage.
+Entrari's Slice VI hits a Plagueborn myrmidon for 72 points of damage.
 Entrari's Slice VI hits a Plagueborn myrmidon for 77 points of damage.
 Entrari's Slice VI hits a Plagueborn myrmidon for 90 points of damage. (Critical)
+Entrari's Slice VI hits a Plagueborn myrmidon for 99 points of damage. (Critical)
 Entrari's Slice VI hits a Plagueborn myrmir 14 points of damage.
 Entrari's Slice VI hits a Plagueborn templar for 105 points of damage. (Critical)
 Entrari's Slice VI hits a Plagueborn templar for 144 points of Bleed Damage.
@@ -5177,6 +5307,8 @@ Entrari's Slice VI hits Vymm for 36 points of damage.
 Entrari's Slice VI hits Vymm for 48 points of Bleed Damage.
 Entrari's Slice VI hits Vymm for 96 points of Bleed Damage.
 Entrari's Slice VI hitsVym for 29 poiatsof damage.
+Entrari's Stab VI hits a Plagueborn myrmidon for 138 points of damage.
+Entrari's Stab VI hits a Plagueborn myrmidon for 52 points of damage.
 Entrari's Stab VI hits a skeletal servant for 128 points of damage.
 Entrari's Stab VI hits a skeletal servant for 148 points of damage.
 Entrari's Stab VI hits Bone Construct for 374 points of damage. (Critical)
@@ -5192,14 +5324,18 @@ Entrarils Slice VI hits Bone Construct for 72 points of Bleed Damage.
 Entrarils Stab VI hits Bone Construct for 374 points of damage. (Critical)
 Entraripierces Bone Construct for 30 points of damage.
 Entraripierces Bone Construct for 58 points of damage.
+Entraripíerces a Plagueborn myrmidon for 22 points of damage.
 Entrarush a Plagueborn myrmidon for 63 points of damageamage.
 Entrtical) Plagueborn myrmidon with their offhand for 23 points of damage.
+Enttals Life Sap heals them for 50 Health.or 67 points of dama
 Eotari cmage Shield hits a Plagueborn myithitfor 72 points of Bleed Damage
 Eou crush a Plagueborn myrmidon for 41 points of damage. r oupuon Damag
+Eou crush a Plagueborn myrmidon for 94 points of damage. irsints of dama
 Eour Damage Shield hits a Plagueborn myrmidon for 12 points of damed).
 ERtrgueborn myrmidon is bleeding outmidon for 57 points of damage.
 es a Plagueborn myrmidon for 83 points of damage.
 es Plagueborn myrmidon for 15 point of damage...
+Etrari pierces a Plagueborn myrmidon for 67 points of damag
 Evildots's Leech Lifeforce hits Whiplash for 11 points of Corruption Damage.
 Evildots's Leech Lifeforce hits Whiplash for 5 points of Corruption Damage.
 Evildots's Leech Lifeforce hits Whiplash for 6 points of Corruption Damage.
@@ -6967,6 +7103,7 @@ Pewjitsu slashes YOU for 33 points of damage.
 Pewjitsu slashes YOU for 51 points of damage (6 absorbed).
 Pewjitsu's Censuring Strike V hits Ebola for 36 points of damage.
 Pewjitsu's Censuring Strike V hits YOU for 60 points of damage!
+Pitb's Sebead Winting Invisibility ver 1164 Health.
 Pitbor' ' 's' o 12 Health
 Pitboril lal lal l tedin al rne ol 12 Health.
 Pitborn crushes a Plagueborn hag for 3 points of damage.
@@ -7055,9 +7192,11 @@ Pitborn's Greater Pestilence hits Mystik for 277 points of Disease Damage.
 Pitborn's Greater Pestilence hits Mystik for 304 points of Disease Damage.
 Pitborn's Greater Pestilence hits Sherrif Bahram for 454 points of Disease Damage.
 Pitborn's Greater Pestilence hits Whiplash for 277 points of Disease Damage.
+Pitborn's Greater Ritual of Mending heals Arne for 492 Health.
 Pitborn's Greater Ritual of Mending heals Arne for 500 Health.
 Pitborn's Greater Ritual of Mending heals Arne for 512 Health.
 Pitborn's Greater Ritual of Mending heals Ebola for 478 Health.
+Pitborn's Greater Ritual of Mending heals Ebola for 492 Health.
 Pitborn's Greater Ritual of Mending heals Ebola for 500 Health.
 Pitborn's Greater Ritual of Mending heals Ebola for 512 Health.
 Pitborn's Greater Ritual of Mending heals Entrari for 512 Health.
@@ -7069,6 +7208,7 @@ Pitborn's Greater Ritual of Mending heals Longjonn for 538 Health.
 Pitborn's Greater Ritual of Mending heals Necronomiconn for 478 Health.
 Pitborn's Greater Ritual of Mending heals Ouch for 532 Health.
 Pitborn's Greater Ritual of Mending heals Pitborn for 478 Health.
+Pitborn's Greater Ritual of Mending heals Pitborn for 492 Health.
 Pitborn's Greater Ritual of Mending heals Pitborn for 500 Health.
 Pitborn's Greater Ritual of Mending heals Pitborn for 512 Health.
 Pitborn's Greater Ritual of Mending heals Pitborn for 532 Health.
@@ -7078,9 +7218,11 @@ Pitborn's Greater Ritual of Mending heals Skittles for 478 Health.
 Pitborn's Greater Ritual of Mending heals Stuffy for 532 Health.
 Pitborn's Greater Ritual of Mending heals Tom for 500 Health.
 Pitborn's Greater Ritual of Mending heals Velvet for 532 Health.
+Pitborn's Greater Ritual of Mending heals Weratissimo for 492 Health.
 Pitborn's Greater Ritual of Mending heals Weratissimo for 512 Health.
 Pitborn's Greater Ritual of Mending heals Weratissimo for 532 Health.
 Pitborn's Greater Ritual of Mending heals Weratissimo for 538 Health.
+Pitborn's Greater Ritual of Mending heals you for 492 Health.
 Pitborn's Greater Ritual of Mending heals you for 500 Health.
 Pitborn's Greater Ritual of Mending heals you for 512 Health.
 Pitborn's Greater Ritual of Mending heals you for 512 Health. e.
@@ -9767,7 +9909,10 @@ Walkback's Slice I hits Whiplash for 3 points of damage.
 Walkback's Slice I hits Whiplash for 4 points of damage.
 Walkback's SliceIhits Whiplash for 8 points of damage.
 Walkback's Stab hits Whiplash for 12 points of damage.
+Wer slash a Plagueborn myrmidon with your offhand for 41 points f damage.
 Weratis Maushes Magistrate Sivash for 26 points of damage.
+Weratispiercesegins casting Hymn ofdnspiro7 points of damage.
+Weratissimo begins casting Hymn of Inspiration. d f68 points of damage.
 Weratissimo crushes a Plagueborn blightcaller for 15 points of damage.
 Weratissimo crushes a Plagueborn blightcaller for 22 points of damage.
 Weratissimo crushes a Plagueborn blightcaller for 28 points of damage.
@@ -9853,6 +9998,7 @@ Weratissimo crushes a Plagueborn myrmidon for 26 points of damage.
 Weratissimo crushes a Plagueborn myrmidon for 29 points of damage.
 Weratissimo crushes a Plagueborn myrmidon for 30 points of damage.
 Weratissimo crushes a Plagueborn myrmidon for 33 points of damage.
+Weratissimo crushes a Plagueborn myrmidon for 35 points of damage.
 Weratissimo crushes a Plagueborn myrmidon for 36 points of damage.
 Weratissimo crushes a Plagueborn myrmidon for 38 points of damage.
 Weratissimo crushes a Plagueborn myrmidon for 40 points of damage.
@@ -9860,6 +10006,7 @@ Weratissimo crushes a Plagueborn myrmidon for 41 points of damage.
 Weratissimo crushes a Plagueborn myrmidon for 42 points of damage.
 Weratissimo crushes a Plagueborn myrmidon for 43 points of damage.
 Weratissimo crushes a Plagueborn myrmidon for 44 points of damage.
+Weratissimo crushes a Plagueborn myrmidon for 45 points of damage.
 Weratissimo crushes a Plagueborn myrmidon for 47 points of damage.
 Weratissimo crushes a Plagueborn myrmidon for 48 points of damage.
 Weratissimo crushes a Plagueborn myrmidon for 51 points of damage.
@@ -9867,6 +10014,7 @@ Weratissimo crushes a Plagueborn myrmidon for 52 points of damage.
 Weratissimo crushes a Plagueborn myrmidon for 54 points of damage.
 Weratissimo crushes a Plagueborn myrmidon for 55 points of damage.
 Weratissimo crushes a Plagueborn myrmidon for 58 points of damage.
+Weratissimo crushes a Plagueborn myrmidon for 59 points of damage.
 Weratissimo crushes a Plagueborn myrmidon for 61 points of damage.
 Weratissimo crushes a Plagueborn myrmidon for 62 points of damage.
 Weratissimo crushes a Plagueborn myrmidon for 63 points of damage.
@@ -9875,6 +10023,7 @@ Weratissimo crushes a Plagueborn myrmidon for 69 points of damage.
 Weratissimo crushes a Plagueborn myrmidon for 72 points of damage.
 Weratissimo crushes a Plagueborn myrmidon for 74 points of damage.
 Weratissimo crushes a Plagueborn myrmidon for 76 points of damage.
+Weratissimo crushes a Plagueborn myrmidon for 78 points of damage.
 Weratissimo crushes a Plagueborn myrmidon for 79 points of damage.
 Weratissimo crushes a Plagueborn myrmidon for 81 points of damage.
 Weratissimo crushes a Plagueborn myrmidon for 83 points of damage.
@@ -9925,8 +10074,10 @@ Weratissimo crushes a sandy broodling for 79 points of damage.
 Weratissimo crushes a sandy broodling for 87 points of damage.
 Weratissimo crushes an unstable oozeling for 63 points of damage.
 Weratissimo crushes an unstable oozeling for 67 points of damage.
+Weratissimo crushes asting Aboro cym ridon for 79 points of daed Damag
 Weratissimo crushes Dew for 10 points of damage.
 Weratissimo crushes Dew for 15 points of damage.
+Weratissimo crushes Dew for 21 points of damage.
 Weratissimo crushes Dew for 27 points of damage.
 Weratissimo crushes Dew for 35 points of damage.
 Weratissimo crushes Dew for 47 points of damage.
@@ -10080,10 +10231,16 @@ Weratissimo's Thunderous Vocalization hits a Plagueborn hag for 95 points of Mag
 Weratissimo's Thunderous Vocalization hits a Plagueborn myrmidon for 109 points of Magic Damage.
 Weratissimo's Thunderous Vocalization hits a Plagueborn myrmidon for 113 points of Magic Damage.
 Weratissimo's Thunderous Vocalization hits a Plagueborn myrmidon for 129 points of Magic Damage.
+Weratissimo's Thunderous Vocalization hits a Plagueborn myrmidon for 131 points of Magic Damage.
 Weratissimo's Thunderous Vocalization hits a Plagueborn myrmidon for 166 points of Magic Damage.
 Weratissimo's Thunderous Vocalization hits a Plagueborn myrmidon for 168 points of Magic Damage.
+Weratissimo's Thunderous Vocalization hits a Plagueborn myrmidon for 187 points of Magic Damage.
+Weratissimo's Thunderous Vocalization hits a Plagueborn myrmidon for 27 points of Magic Damage.
+Weratissimo's Thunderous Vocalization hits a Plagueborn myrmidon for 47 points of Magic Damage.
 Weratissimo's Thunderous Vocalization hits a Plagueborn myrmidon for 67 points of Magic Damage.
+Weratissimo's Thunderous Vocalization hits a Plagueborn myrmidon for 73 points of Magic Damage.
 Weratissimo's Thunderous Vocalization hits a Plagueborn templar for 150 points of Magic Damage.
+Weratissimo's Thunderous Vocalization hits a Plagueborpoints of Disease Damage. Damage. ush a Plagueborn myrmidon, but a Plagd for 29 points of damage.
 Weratissimo's Thunderous Vocalization hits Dew for 33 points of Magic Damage.
 Weratissimo's Thunderous Vocalization hits Dew for 42 points of Magic Damage.
 Weratissimo's Thunderous Vocalization hits Dew for 44 points of Magic Damage.
@@ -10105,6 +10262,7 @@ Weratissimo's Vampirism hits Lord Ga'Duuz for 21 points of Corruption Damage.
 Weratissimo's Vampirism hits Lord Ga'Duuz for 43 points of Corruption Damage.
 Weratissimrack with your offhand for 23 points or
 Wercrush Magistrate Sivash for 48 points of damage. (Critical)
+Werstashi a Plagueborn myrmidon with your offhand for 18 points of damag
 Whiplash slashes Archon for 14 points of damage.
 Whiplash slashes Archon for 50 points of damage.
 Whiplash slashes Echwig for 127 points of damage. (Crippling Blow)
@@ -10156,8 +10314,13 @@ Whitewidow's Torture hits Whiplash for 57 points of Magic Damage.
 Whitewidow's Torture hits Whiplash for 65 points of Magic Damage.
 Whitewidow's Torture hits Whiplash for 77 points of Magic Damage.
 Wour Life Sap heals you for 16 Health.
+Y ou creborn myrmidon hits Ebola for 102 points of damage. Critical)
 Yntrari pierces Vymm for 23 points of damage.
 Yoeratissimo crushes Dew for 57 points ofarget.
+Yone crushes a Plagueborn myrmidon for 9 points of danrage.
+Yotrari pierces a eborn myrmidrmidon for 28 points of damage damag
+Yotrari pierces a Pboueborn nidormidon for 45 points of damagec ama
+Yotrari pierces a Plagueborn myrmidon for 14 points of damage.amage.
 Yotrarisn a Plagueborn myrmidon with your offhand for 19 points of dam
 Yotrcrisarmor breakssivash for 26 points of damage.
 You are fueled by vengeance.cakg8n for 14 points of damage.
@@ -10266,6 +10429,7 @@ You crush a pestilent ghoul for 62 points of damage.
 You crush a pestilent ghoul for 77 points of damage.
 You crush a pestilent ghoul for 81 points of damage.
 You crush a pestilent ghoul for 89 points of damage.
+You crush a Plaguebbrn myrmfor 56 Health. mts of daage.
 You crush a Plagueborn blightcaller for 100 points of damage.
 You crush a Plagueborn blightcaller for 104 points of damage.
 You crush a Plagueborn blightcaller for 109 points of damage. (Critical)
@@ -10522,6 +10686,7 @@ You crush a Plagueborn myrmidon for 100 points of damage.
 You crush a Plagueborn myrmidon for 101 points of damage. (Critical)
 You crush a Plagueborn myrmidon for 104 points of damage.
 You crush a Plagueborn myrmidon for 107 points of damage. (Critical)
+You crush a Plagueborn myrmidon for 110 points of damage. (Critical)
 You crush a Plagueborn myrmidon for 114 points of damage. (Critical)
 You crush a Plagueborn myrmidon for 123 points of damage. (Critical)
 You crush a Plagueborn myrmidon for 131 points of damage. (Critical)
@@ -10532,6 +10697,7 @@ You crush a Plagueborn myrmidon for 146 points of damage. (Critical)
 You crush a Plagueborn myrmidon for 15 points of damage.
 You crush a Plagueborn myrmidon for 152 points of damage. (Critical)
 You crush a Plagueborn myrmidon for 153 points of damage. (Critical)
+You crush a Plagueborn myrmidon for 158 points of damage. (Critical)
 You crush a Plagueborn myrmidon for 16 points of damage.
 You crush a Plagueborn myrmidon for 163 points of damage. (Critical)
 You crush a Plagueborn myrmidon for 166 points of damage. (Critical)
@@ -10539,6 +10705,7 @@ You crush a Plagueborn myrmidon for 170 points of damage. (Critical)
 You crush a Plagueborn myrmidon for 178 points of damage. (Critical)
 You crush a Plagueborn myrmidon for 18 points of damage.
 You crush a Plagueborn myrmidon for 189 points of damage. (Critical)
+You crush a Plagueborn myrmidon for 20 points of damage.
 You crush a Plagueborn myrmidon for 21 points of damage.
 You crush a Plagueborn myrmidon for 22 points of damage.
 You crush a Plagueborn myrmidon for 232 points of damage. (Critical)
@@ -10552,6 +10719,7 @@ You crush a Plagueborn myrmidon for 33 points of damage.
 You crush a Plagueborn myrmidon for 34 points of damage.
 You crush a Plagueborn myrmidon for 35 points of damage.
 You crush a Plagueborn myrmidon for 35 points of damage. (Critical)
+You crush a Plagueborn myrmidon for 36 points of damage.
 You crush a Plagueborn myrmidon for 37 points of damage.
 You crush a Plagueborn myrmidon for 38 points of damage (39 absorbed).
 You crush a Plagueborn myrmidon for 40 points of damage.
@@ -10560,17 +10728,21 @@ You crush a Plagueborn myrmidon for 42 points of damage.
 You crush a Plagueborn myrmidon for 43 points of damage. (Critical)
 You crush a Plagueborn myrmidon for 44 points of dah amage.
 You crush a Plagueborn myrmidon for 44 points of damage.
+You crush a Plagueborn myrmidon for 45 points of damage.
 You crush a Plagueborn myrmidon for 45 points of damage. (Critical)
 You crush a Plagueborn myrmidon for 46 points of damage.
 You crush a Plagueborn myrmidon for 47 points of damage.
+You crush a Plagueborn myrmidon for 48 points of
 You crush a Plagueborn myrmidon for 48 points of damage.
 You crush a Plagueborn myrmidon for 50 points of damage.
 You crush a Plagueborn myrmidon for 51 points of damage.
 You crush a Plagueborn myrmidon for 51 points of damage. (Critical)
+You crush a Plagueborn myrmidon for 53 points of damage.
 You crush a Plagueborn myrmidon for 53 points of damage. (Critical)
 You crush a Plagueborn myrmidon for 54 points of damage.
 You crush a Plagueborn myrmidon for 55 points of damage.
 You crush a Plagueborn myrmidon for 56 points of damage. (Critical)
+You crush a Plagueborn myrmidon for 57 points of damage.
 You crush a Plagueborn myrmidon for 58 points of damage.
 You crush a Plagueborn myrmidon for 58 points of damage. (Critical)
 You crush a Plagueborn myrmidon for 59 points of damage.
@@ -10598,6 +10770,7 @@ You crush a Plagueborn myrmidon for 80 points of damage.
 You crush a Plagueborn myrmidon for 81 points of damage.
 You crush a Plagueborn myrmidon for 84 points of damage. (Critical)
 You crush a Plagueborn myrmidon for 85 points of damage.
+You crush a Plagueborn myrmidon for 86 points of dam
 You crush a Plagueborn myrmidon for 86 points of damage.
 You crush a Plagueborn myrmidon for 86 points of damage. (Critical)
 You crush a Plagueborn myrmidon for 89 points of damage.
@@ -10911,8 +11084,10 @@ You crush Crack for 81 points of damage.
 You crush Crack for 90 points of damage.
 You crush Crack for 96 points of damage.
 You crush Dew for 119 points of damage. (Critical)
+You crush Dew for 14 points of damage. (Block 18)
 You crush Dew for 45 points of damage.
 You crush Dew for 52 points of damage.
+You crush Dew for 52 points of damage. (Critical)
 You crush Dew for 58 points of damage.
 You crush Dew for 58 points of damage.lage.
 You crush Dew for 60 points of damage.
@@ -11224,6 +11399,7 @@ You crush Vymm for 54 points of damage.
 You crush Vymm for 58 points of damage.
 You crush Vymm for 60 points of damage.
 You crush Vymm for 70 points of damage.
+You crusrushes a Plbornborn mycmidon with their offhand for 4 points of da
 You slash a bloated plague rat with your offhand for 104 points of damage. (Critical)
 You slash a bloated plague rat with your offhand for 11 points of damage.
 You slash a bloated plague rat with your offhand for 123 points of damage. (Critical)
@@ -11578,6 +11754,7 @@ You slash a Plagueborn myrmidon for 89 points of damage.
 You slash a Plagueborn myrmidon for 96 points of damage.
 You slash a Plagueborn myrmidon for 97 points of damage.
 You slash a Plagueborn myrmidon for 97 points of damage. (Critical)
+You slash a Plagueborn myrmidon with your offhand for 10 points of damage.
 You slash a Plagueborn myrmidon with your offhand for 105 points of damage. (Critical)
 You slash a Plagueborn myrmidon with your offhand for 109 points of damage. (Critical)
 You slash a Plagueborn myrmidon with your offhand for 11 points of damage.
@@ -11589,6 +11766,7 @@ You slash a Plagueborn myrmidon with your offhand for 128 points of damage. (Cri
 You slash a Plagueborn myrmidon with your offhand for 134 points of damage. (Crippling Blow)
 You slash a Plagueborn myrmidon with your offhand for 14 points of damage.
 You slash a Plagueborn myrmidon with your offhand for 15 points of damage.
+You slash a Plagueborn myrmidon with your offhand for 16 points of damage. (Critical)
 You slash a Plagueborn myrmidon with your offhand for 174 points of damage. (Critical)
 You slash a Plagueborn myrmidon with your offhand for 18 points of damage.
 You slash a Plagueborn myrmidon with your offhand for 19 points of damage.
@@ -11604,6 +11782,7 @@ You slash a Plagueborn myrmidon with your offhand for 29 points of damage.
 You slash a Plagueborn myrmidon with your offhand for 3 points of damage.
 You slash a Plagueborn myrmidon with your offhand for 30 points of damage.
 You slash a Plagueborn myrmidon with your offhand for 30 points of damage. (Critical)
+You slash a Plagueborn myrmidon with your offhand for 31 points of damage.
 You slash a Plagueborn myrmidon with your offhand for 32 points of damage.
 You slash a Plagueborn myrmidon with your offhand for 32 points of damage. (Critical)
 You slash a Plagueborn myrmidon with your offhand for 34 points of damage.
@@ -11617,12 +11796,15 @@ You slash a Plagueborn myrmidon with your offhand for 41 points of damage.
 You slash a Plagueborn myrmidon with your offhand for 42 points of damage.
 You slash a Plagueborn myrmidon with your offhand for 42 points of damage. (Critical)
 You slash a Plagueborn myrmidon with your offhand for 43 points of damage.
+You slash a Plagueborn myrmidon with your offhand for 44 points of damage.
 You slash a Plagueborn myrmidon with your offhand for 45 points of damage.
 You slash a Plagueborn myrmidon with your offhand for 46 points of damage.
+You slash a Plagueborn myrmidon with your offhand for 46 points of damage. (Critical)
 You slash a Plagueborn myrmidon with your offhand for 47 points of damage.
 You slash a Plagueborn myrmidon with your offhand for 48 points of damage.
 You slash a Plagueborn myrmidon with your offhand for 50 points of damage.
 You slash a Plagueborn myrmidon with your offhand for 51 points of damage.
+You slash a Plagueborn myrmidon with your offhand for 52 points of damage.
 You slash a Plagueborn myrmidon with your offhand for 53 points of damage.
 You slash a Plagueborn myrmidon with your offhand for 54 points of damage. (Critical)
 You slash a Plagueborn myrmidon with your offhand for 55 points of damage.
@@ -11635,6 +11817,7 @@ You slash a Plagueborn myrmidon with your offhand for 62 points of damage.
 You slash a Plagueborn myrmidon with your offhand for 64 points of damage.
 You slash a Plagueborn myrmidon with your offhand for 65 points of damage.
 You slash a Plagueborn myrmidon with your offhand for 67 points of damage.
+You slash a Plagueborn myrmidon with your offhand for 68 points of damage.
 You slash a Plagueborn myrmidon with your offhand for 69 points of damage.
 You slash a Plagueborn myrmidon with your offhand for 69 points of damage. (Critical)
 You slash a Plagueborn myrmidon with your offhand for 7 points of damage.
@@ -11864,6 +12047,8 @@ You slash Crack with your offhand for 66 points of damage.
 You slash Crack with your offhand for 69 points of damage.
 You slash Crack with your offhand for 74 points of damage.
 You slash Crack with your offhand for 77 points of damage.
+You slash Dew with your offhand for 19 points of damage.
+You slash Dew with your offhand for 21 points of damage.
 You slash Dew with your offhand for 29 points of damage.
 You slash Dew with your offhand for 31 points of damage.
 You slash Dew with your offhand for 32 points of damage.
@@ -11876,6 +12061,7 @@ You slash Dew with your offhand for 52 points of dama
 You slash Dew with your offhand for 52 points of damage.
 You slash Dew with your offhand for 52 points of dan
 You slash Dew with your offhand for 52 points ofdamage.
+You slash Dew with your offhand for 66 points of damage. (Critical)
 You slash Gibmedalute with your offhand for 23 points of damage.
 You slash Gibmedalute with your offhand for 52 points of damage.
 You slash Khaotics with your offhand for 14 points of damage (1 absorbed).
@@ -12137,6 +12323,7 @@ You slash Whiplash for 16 points of damage (2 absorbed).
 You slash Whiplash for 17 points of damage (2 absorbed).
 You slash Whiplash for 27 points of damage (3 absorbed).
 You slash Whiplash for 3 points of damage.
+You słassimo crushes a Plagueborn myrmidon for 72 points of damage. am
 You try to crush a bloated plague rat, but miss!
 You try to crush a cursed plague rat, but miss!
 You try to crush a pestilent ghoul, but miss!
@@ -12184,6 +12371,7 @@ You try to slash Vymm with your offhand, but miss!
 You try to slash Whiplash, but miss!
 You tryısh Dewlfob 70 points of damagerf damage.
 Youetauntly Plagkehitsmhaggueborn myrmidon or 496 Health.
+Youlcrush a Plagueborn myrmidon for 89 points of darhage.
 Your Damage Shield hits a bone archer for 12 points of damage.
 Your Damage Shield hits a feeble ratmancer for 8 points of damage.
 Your Damage Shield hits a pestilent ghoul for 12 points of damage.
@@ -12335,6 +12523,8 @@ Your Feint IV hits a Plagueborn myrmidon for 100 points of damage.
 Your Feint IV hits a Plagueborn myrmidon for 100 points of damage. (Critical)
 Your Feint IV hits a Plagueborn myrmidon for 101 points of damage.
 Your Feint IV hits a Plagueborn myrmidon for 105 points of damage.
+Your Feint IV hits a Plagueborn myrmidon for 107 points of damage.
+Your Feint IV hits a Plagueborn myrmidon for 107 pond for 56 points of damage.
 Your Feint IV hits a Plagueborn myrmidon for 108 points of damage.
 Your Feint IV hits a Plagueborn myrmidon for 109 points of damage.
 Your Feint IV hits a Plagueborn myrmidon for 110 points of damage.
@@ -12389,6 +12579,7 @@ Your Feint IV hits a Plagueborn myrmidon for 52 points of damage.
 Your Feint IV hits a Plagueborn myrmidon for 61 points of damage.
 Your Feint IV hits a Plagueborn myrmidon for 62 points of damage.
 Your Feint IV hits a Plagueborn myrmidon for 63 points of damage.
+Your Feint IV hits a Plagueborn myrmidon for 65 points of damage.
 Your Feint IV hits a Plagueborn myrmidon for 65 points of damage. (Critical)
 Your Feint IV hits a Plagueborn myrmidon for 66 points of damage.
 Your Feint IV hits a Plagueborn myrmidon for 67 points of damage.
@@ -12401,9 +12592,11 @@ Your Feint IV hits a Plagueborn myrmidon for 77 points of damage.
 Your Feint IV hits a Plagueborn myrmidon for 78 points of damage.
 Your Feint IV hits a Plagueborn myrmidon for 79 points of damage.
 Your Feint IV hits a Plagueborn myrmidon for 83 points of damage.
+Your Feint IV hits a Plagueborn myrmidon for 84 points of damage.
 Your Feint IV hits a Plagueborn myrmidon for 85 points of damage.
 Your Feint IV hits a Plagueborn myrmidon for 89 points of damage.
 Your Feint IV hits a Plagueborn myrmidon for 90 points of damage.
+Your Feint IV hits a Plagueborn myrmidon for 92 points of damage.
 Your Feint IV hits a Plagueborn myrmidon for 93 points of damage.
 Your Feint IV hits a Plagueborn myrmidon for 96 points of damage.
 Your Feint IV hits a Plagueborn myrmidon for 97 points of damage.
@@ -12603,10 +12796,14 @@ Your Frenzy hits a Plagueborn drake for 68 points of damage.
 Your Frenzy hits a Plagueborn drake for 81 points of damage.
 Your Frenzy hits a Plagueborn drake for 85 points of damage.
 Your Frenzy hits a Plagueborn drake for 89 points of damage.
+Your Frenzy hits a Plagueborn myrmidon for 13 points of damage.
 Your Frenzy hits a Plagueborn myrmidon for 29 points of damage.
 Your Frenzy hits a Plagueborn myrmidon for 29 points of damage. (Critical)
 Your Frenzy hits a Plagueborn myrmidon for 33 points of damage.
+Your Frenzy hits a Plagueborn myrmidon for 38 points of damage.
 Your Frenzy hits a Plagueborn myrmidon for 44 points of damage.
+Your Frenzy hits a Plagueborn myrmidon for 75 points of damage. (Critical)
+Your Frenzy hits a Plagueborn myrmidon for 79 points of damage.
 Your Frenzy hits a Plagueborn myrmidon for 85 points of damage.
 Your Frenzy hits a Plagueborn templar for 13 points of damage.
 Your Frenzy hits a Plagueborn templar for 35 points of damage.
@@ -12693,6 +12890,7 @@ Your Life Sap heals you for 35 Health.
 Your Life Sap heals you for 36 Health.
 Your Life Sap heals you for 37 Health.
 Your Life Sap heals you for 38 Health.
+Your Life Sap heals you for 38 Health.a
 Your Life Sap heals you for 39 Health.
 Your Life Sap heals you for 40 Health.
 Your Life Sap heals you for 41 Health.
@@ -12879,14 +13077,17 @@ Your Rend VI hits a Plagueborn leywalker for 94 points of damage.
 Your Rend VI hits a Plagueborn myrmidon for 100 points of damage.
 Your Rend VI hits a Plagueborn myrmidon for 101 points of damage.
 Your Rend VI hits a Plagueborn myrmidon for 102 points of damage.
+Your Rend VI hits a Plagueborn myrmidon for 103 points of damage.
 Your Rend VI hits a Plagueborn myrmidon for 104 points of damage.
 Your Rend VI hits a Plagueborn myrmidon for 107 points of damage.
 Your Rend VI hits a Plagueborn myrmidon for 107 points of damage. (Critical)
+Your Rend VI hits a Plagueborn myrmidon for 109 points of damage.
 Your Rend VI hits a Plagueborn myrmidon for 110 points of damage.
 Your Rend VI hits a Plagueborn myrmidon for 111 points of damage.
 Your Rend VI hits a Plagueborn myrmidon for 112 points of damage.
 Your Rend VI hits a Plagueborn myrmidon for 113 points of damage. (Critical)
 Your Rend VI hits a Plagueborn myrmidon for 116 points of damage.
+Your Rend VI hits a Plagueborn myrmidon for 118 points of damage.
 Your Rend VI hits a Plagueborn myrmidon for 119 points of damage.
 Your Rend VI hits a Plagueborn myrmidon for 119 points of damage. (Critical)
 Your Rend VI hits a Plagueborn myrmidon for 120 points of damage.
@@ -12934,6 +13135,7 @@ Your Rend VI hits a Plagueborn myrmidon for 185 points of damage. (Critical)
 Your Rend VI hits a Plagueborn myrmidon for 194 points of damage. (Critical)
 Your Rend VI hits a Plagueborn myrmidon for 209 points of damage. (Critical)
 Your Rend VI hits a Plagueborn myrmidon for 222 points of damage.
+Your Rend VI hits a Plagueborn myrmidon for 226 points of damage. (Critical)
 Your Rend VI hits a Plagueborn myrmidon for 233 points of damage. (Critical)
 Your Rend VI hits a Plagueborn myrmidon for 246 points of damage. (Critical)
 Your Rend VI hits a Plagueborn myrmidon for 247 points of damage. (Critical)
@@ -12944,6 +13146,7 @@ Your Rend VI hits a Plagueborn myrmidon for 67 points of damage.
 Your Rend VI hits a Plagueborn myrmidon for 72 points of damage.
 Your Rend VI hits a Plagueborn myrmidon for 73 points of damage.
 Your Rend VI hits a Plagueborn myrmidon for 74 points of damage.
+Your Rend VI hits a Plagueborn myrmidon for 76 points of damage.
 Your Rend VI hits a Plagueborn myrmidon for 77 points of damage.
 Your Rend VI hits a Plagueborn myrmidon for 82 points of damage.
 Your Rend VI hits a Plagueborn myrmidon for 84 points of damage.
@@ -13049,6 +13252,7 @@ Your Rend VI hits Crack for 218 points of damage. (Critical)
 Your Rend VI hits Dew for 109 points of damage.
 Your Rend VI hits Dew for 130 points of damage. (Critical)
 Your Rend VI hits Dew for 51 points of damage.
+Your Rend VI hits Dew for 79 points of damage.
 Your Rend VI hits Gibmedalute for 58 points of damage.
 Your Rend VI hits Khaotics for 120 points of damage. (Critical)
 Your Rend VI hits Khaotics for 38 points of damage.
@@ -13166,11 +13370,13 @@ Your Vampirism hits a Plagueborn myrmidon for 40 points of Corruption Damage.
 Your Vampirism hits a Plagueborn templar for 40 points of Corruption Damage.
 Your Vampirism hits Magistrate Sivash for 40 points of Corruption Damage.
 Your Vampirism hits Sherrif Bahram for 40 points of Corruption Damage.
+YouraLife Sap heals you for 38 Healthyrmidon for 14 points of damage.
 Yourciush Dew for 70 points of damage.eDamage.
 Yourerisimnagistrate Sivash for 48 poinforof damage.of dama
 Youwr Frenzy hits a Plagueborn drake for 104 points of damage.
 Yowr Frenzy hits a Plagueborn drake for 81 points of damage.
 Yowr Frenzy hits a Plagueborn drake for 89 points of damage.
+Y∂lagueborn myrmidon hits YOU for 136 points of damage.
 Zenekn hits Bone Construct for 10 points of damage.
 Zenekn hits Bone Construct for 14 points of damage.
 Zenekn hits Bone Construct for 17 points of damage.

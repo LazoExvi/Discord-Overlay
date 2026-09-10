@@ -382,6 +382,18 @@ def test_right_edge_clipping_keeps_criticals_and_miss_targets_drop_offhand():
     assert (miss.kind, miss.actor, miss.target) == (EventKind.MISS, "Crit", "Magistrate Sivash")
 
 
+def test_two_messages_fused_into_one_line_are_dropped():
+    # Rows read mid-scroll fuse the start of one message with the tail of another.
+    for text in ("YouraLife Sap heals you for 38 Healthyrmidon for 14 points of damage.",
+                 "Your Feint IV hits a Plagueborn myrmidon for 107 pond for 56 points of damage.",
+                 "Enttals Life Sap heals them for 50 Health.or 67 points of dama",
+                 "You crush Magistrate Sivash for 81 pointsafidamagd for 64 points of damage."):
+        assert parse(text, name="Crit") is None, text
+    # One amount plus an absorbed figure is a single message.
+    event = parse("a bone archer hits YOU for 193 points of damage (21 absorbed). (Critical)", name="Crit")
+    assert (event.amount, event.absorbed) == (193, 21)
+
+
 def test_mangled_points_of_damage_still_counts():
     cases = {
         "an unstable oozeling claws YOU for 5 ppints of damag": ("unstable oozeling", "Crit", 5),

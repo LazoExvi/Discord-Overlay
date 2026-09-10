@@ -108,6 +108,14 @@ _HEAL_FRAGMENT = re.compile(rf"(?:heal|heals|healed|healing)\s+(?P<name>{_NAME})
 _DIGIT_FIXES = str.maketrans({"O": "0", "o": "0", "I": "1", "l": "1", "S": "5", "B": "8"})
 
 MAX_AMOUNT = 10_000_000
+# Two amounts in one line means two messages were read as one (rows fused mid-scroll or
+# mid-redraw). Crediting either half would be a guess, so such lines are dropped.
+_AMOUNT_PHRASE = re.compile(r"\b\d[\d,]*\s+p[a-z0-9]{3,6}|\b\d[\d,]*\s+Health", re.IGNORECASE)
+
+
+def is_fused_line(text: str) -> bool:
+    """True when a line carries more than one damage or heal amount."""
+    return len(_AMOUNT_PHRASE.findall(text)) >= 2
 
 
 # "(Critical)" even when the region edge cut it short; the only other parenthetical
@@ -320,6 +328,8 @@ class CombatTextParser:
               timestamp: float | None = None) -> CombatEvent | None:
         text = repair_ocr_spacing(re.sub(r"\s+", " ", normalize_quotes(text)).strip())
         self.observe(text)
+        if is_fused_line(text):
+            return None
         now = time.monotonic() if timestamp is None else timestamp
         wall = datetime.now()
         return (
