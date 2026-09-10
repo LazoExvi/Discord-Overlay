@@ -111,8 +111,13 @@ class SettingsTab:
                         variable=self.shield_wearer_var, **theme.CHECKBOX).grid(row=8, column=0, padx=20, pady=8, sticky="w")
         ctk.CTkCheckBox(body, text="Use GPU acceleration when available", variable=self.gpu_var, **theme.CHECKBOX).grid(
             row=9, column=0, padx=20, pady=8, sticky="w")
-        ctk.CTkCheckBox(body, text="Repair lines partly hidden by the mouse cursor", variable=self.repair_var,
-                        **theme.CHECKBOX).grid(row=9, column=1, columnspan=2, padx=8, pady=8, sticky="w")
+        self.problem_frames_var = ctk.BooleanVar()
+        stack = ctk.CTkFrame(body, fg_color="transparent")
+        stack.grid(row=9, column=1, columnspan=2, padx=8, pady=8, sticky="w")
+        ctk.CTkCheckBox(stack, text="Repair lines partly hidden by the mouse cursor", variable=self.repair_var,
+                        **theme.CHECKBOX).pack(anchor="w")
+        ctk.CTkCheckBox(stack, text="Save frames of unreadable lines to the diagnostics folder (troubleshooting)",
+                        variable=self.problem_frames_var, **theme.CHECKBOX).pack(anchor="w", pady=(8, 0))
 
     def _build_timer_boards(self, body) -> None:
         frame = ctk.CTkFrame(body, fg_color=theme.PANEL_2, corner_radius=10)
@@ -201,6 +206,7 @@ class SettingsTab:
         self.shield_wearer_var.set(s.damage_shields_by_wearer)
         self.gpu_var.set(s.prefer_gpu)
         self.repair_var.set(s.repair_occluded_lines)
+        self.problem_frames_var.set(s.save_problem_frames)
         self.close_enabled_var.set(s.overlay_close_enabled)
         self.modifier1_menu.set(s.overlay_close_modifier1.title())
         self.modifier2_menu.set(s.overlay_close_modifier2.title())
@@ -272,6 +278,7 @@ class SettingsTab:
         s.damage_shields_by_wearer = bool(self.shield_wearer_var.get())
         s.prefer_gpu = bool(self.gpu_var.get())
         s.repair_occluded_lines = bool(self.repair_var.get())
+        s.save_problem_frames = bool(self.problem_frames_var.get())
         s.timer_layout = LAYOUT_MODES[self.layout_menu.get()]
         s.overlay_close_enabled = bool(self.close_enabled_var.get())
         s.overlay_close_modifier1, s.overlay_close_modifier2 = modifier1, modifier2

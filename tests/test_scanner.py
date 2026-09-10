@@ -112,3 +112,29 @@ def test_scanner_learns_templates_and_saves_them(app_data, tmp_path):
     frames = [["baseline"]] + [[f"Sean punches a snake for {n} points of damage"] for n in (501, 505, 540)]
     run_worker(settings, frames, tmp_path)
     assert (tmp_path / "templates.json").is_file()
+
+
+def test_scanner_saves_frames_for_unreadable_lines_when_enabled(app_data, tmp_path):
+    from discord_overlay.paths import diagnostics_dir
+
+    settings = Settings(region=Region(0, 0, 160, 90), save_problem_frames=True, repair_occluded_lines=False)
+    frames = [
+        ["baseline line"],
+        ["baseline line", "You crush a rat for 5 points of damage."],
+        ["You crush a rat for 5 points of damage.", "Your Feint IV hits a rat for 107 pond for 56 points of damage."],
+        ["Your Feint IV hits a rat for 107 pond for 56 points of damage.", "Klog hits a rat for 6 points of damage."],
+    ]
+    messages = run_worker(settings, frames, tmp_path)
+    assert [m[1].amount for m in messages if m[0] == "event"] == [5, 6]
+    saved = sorted((diagnostics_dir() / "problem-frames").glob("*"))
+    assert [p.suffix for p in saved] == [".png", ".txt"]
+    report = saved[1].read_text(encoding="utf-8")
+    assert "two messages fused into one line" in report and "107 pond" in report
+
+
+def test_scanner_saves_nothing_when_disabled(app_data, tmp_path):
+    from discord_overlay.paths import diagnostics_dir
+
+    settings = Settings(region=Region(0, 0, 160, 90), repair_occluded_lines=False)
+    run_worker(settings, [["baseline"], ["baseline", "for 74 points of damage."]], tmp_path)
+    assert not (diagnostics_dir() / "problem-frames").exists()

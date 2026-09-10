@@ -131,6 +131,9 @@ size change.
 - If real lines are rejected, lower OCR confidence gradually (0.52 → 0.45). If
   garbage appears, raise it.
 - Start monitoring before combat; the first visible viewport is only a baseline.
+- If lines come out garbled, turn on **Save frames of unreadable lines** in Settings for
+  one fight. Each unreadable line saves the captured pixels and the OCR text under
+  `diagnostics\problem-frames`, which shows whether the capture or the parser is at fault.
 
 ## Developer notes
 

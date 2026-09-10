@@ -117,6 +117,7 @@ class Settings:
     always_on_top: bool = True
     prefer_gpu: bool = True
     save_debug_images: bool = False
+    save_problem_frames: bool = False
     repair_occluded_lines: bool = True
     events_column_order: list[str] = field(default_factory=list)
     breakdown_column_order: list[str] = field(default_factory=list)

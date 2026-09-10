@@ -26,7 +26,8 @@ from .dedup import ScrollingTextDeduplicator
 from .diagnostics import LOGGER_NAME
 from .models import CombatEvent, OCRLine, Region
 from .parser import CombatTextParser
-from .paths import debug_scans_dir, template_path_for
+from .paths import debug_scans_dir, diagnostics_dir, template_path_for
+from .problem_frames import ProblemFrameSaver
 from .repair import LineRepairer, bundled_grammar, event_names
 from .triggers import TriggerEngine
 
@@ -91,6 +92,8 @@ class ScannerWorker:
         self._grammar = grammar
         self._template_path = template_path
         self._log = logging.getLogger(LOGGER_NAME)
+        self._problem_frames = (ProblemFrameSaver(diagnostics_dir() / "problem-frames")
+                                if settings.save_problem_frames else None)
 
     def start(self) -> None:
         self.thread = threading.Thread(target=self.run, name="ocr-scanner", daemon=True)
@@ -184,6 +187,7 @@ class ScannerWorker:
             self._put("ocr", (lines, time.monotonic() - tick, repairer.repaired if repairer else 0))
             for line in lines:  # learn pet aliases even from the initial baseline
                 parser.observe(line.text)
+        saver = self._problem_frames if is_combat else None
         for line in source.dedup.new_lines(lines):
             text = line.text
             event: CombatEvent | None = None
@@ -191,9 +195,16 @@ class ScannerWorker:
                 event = parser.parse(text, line.confidence)
                 if repairer is not None:
                     event, text = repair_line(repairer, parser, line, event)
+                if saver is not None:
+                    saver.note(line, event)
             for match in trigger_engine.process(text, source_key):
                 self._put("trigger", match)
             if event is not None:
                 self._put("event", event)
+        if saver is not None:
+            try:
+                saver.flush(frame, lines)
+            except Exception as exc:  # noqa: BLE001 - diagnostics must never stop monitoring
+                self._log.warning("Could not save problem frame: %s", exc)
         for name in parser.pop_new_pets():
             self._put("pet", name)  # lets the tracker re-attribute this pet's earlier lines
