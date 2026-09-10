@@ -24,6 +24,7 @@ A Benu Dhai brother
 A Benu Dhai elder
 A Benu Dhai priest
 A Benu Dhai sister
+A bewitching raider
 A bight asp
 A black bat
 A black bear
@@ -171,6 +172,7 @@ A cranky pirate
 A craven cultist
 A crocodile
 A crocodile hatchling
+A crown-tied helmsman
 A crowned skeleton
 A crumbling elven curate
 A crushed blacksmith
@@ -250,6 +252,7 @@ A dryad prankster
 A dune scarab
 A dunes madman
 A dunes scarab
+A dust asp
 A dust drake
 A dust drake scout
 A dust drake sentinel
@@ -506,6 +509,7 @@ A Mur'Hua shaman
 A Mur'Hua slave
 A Mur'Hua tracker
 A mutated thrall
+A muttering deckwitch
 A myconid price
 A myconid prince
 A mycothane
@@ -622,6 +626,7 @@ A rattlesnake
 A ravenous ghoul
 A reagent vendor
 A reanimated elven archer
+A reckless thrillseeker
 A Red Mantle escort
 A Red Mantle guard
 A Red Mantle inquisitor
@@ -848,6 +853,7 @@ A trixie pixie
 A trusted oathkeeper
 A twisted fae
 A used weapons dealer
+A usurer
 A Valtheris andrapodist
 A Valtheris bloodknight
 A Valtheris bloodlord
@@ -907,6 +913,7 @@ A wide-eyed reveler
 A widow matron
 A wild elemental
 A willowisp
+A windborne duelist
 A winterveil dryad
 A wise elder
 A Witchguard corruptor
@@ -938,6 +945,7 @@ A Wyrmsbane war wizard
 A wyrmseer
 A wyrmseer vizier
 A young albino crocodile
+A young aspirant
 A young basilisk
 A young crypt scarab
 A zealot
@@ -992,6 +1000,7 @@ An ashira ambusher
 An ashira archer
 An ashira bruiser
 An ashira cook
+An ashira druid scribe
 An ashira drunk
 An ashira elite guard
 An ashira fisher
@@ -1056,6 +1065,7 @@ An escaped minion
 An exhausted Red Mantle guard
 An exiled researcher
 An exotic cook
+An expert mason
 An herbalist
 An immolated grovekeeper
 An infamous swashbuckler
@@ -1064,6 +1074,7 @@ An innkeeper
 An inquisitive sister
 An inquisitor instructor
 An Iron Emissaries envoy
+An oathbound corsair
 An obedient sniffer
 An off-duty Red Mantle guard
 An old elven skeleton
@@ -1335,6 +1346,7 @@ Irfan Raz
 Ivor Thrym
 Ixelda Jackalfang
 Jaakima
+Jabir Il-hamar
 Jabir Ilhamar
 Jaffar Jhaym
 Jailer Benedict

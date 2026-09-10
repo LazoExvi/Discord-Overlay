@@ -29,8 +29,12 @@ DROPS_URL = "https://mnmdrops.com/mobs"
 QUALIFIER = re.compile(r"\s*\((?:[^()]*)\)\s*$")
 
 
+HEADERS = {"User-Agent": UA, "Accept": "text/html,application/json;q=0.9,*/*;q=0.8",
+           "Accept-Language": "en-US,en;q=0.9"}
+
+
 def fetch(url: str) -> bytes:
-    request = urllib.request.Request(url, headers={"User-Agent": UA})
+    request = urllib.request.Request(url, headers=HEADERS)
     with urllib.request.urlopen(request, timeout=60) as response:
         return response.read()
 
@@ -81,11 +85,28 @@ def clean(name: str) -> str | None:
     return re.sub(r"\s+", " ", name)
 
 
+def existing_names() -> set[str]:
+    if not ASSET.exists():
+        return set()
+    return {line.strip() for line in ASSET.read_text(encoding="utf-8").splitlines()
+            if line.strip() and not line.startswith("#")}
+
+
 def main() -> int:
-    print("wiki...", file=sys.stderr)
-    raw = wiki_names()
-    print("mnmdrops...", file=sys.stderr)
-    raw |= drops_names()
+    # Names are only ever added. A source that is unreachable (the wiki answers 403 to
+    # some hosting networks) keeps its previously gathered names from the committed file.
+    raw = existing_names()
+    succeeded = 0
+    for label, source in (("wiki", wiki_names), ("mnmdrops", drops_names)):
+        print(f"{label}...", file=sys.stderr)
+        try:
+            raw |= source()
+            succeeded += 1
+        except Exception as exc:  # noqa: BLE001 - one blocked site must not lose the other
+            print(f"  {label} unavailable ({type(exc).__name__}: {exc}); keeping its committed names", file=sys.stderr)
+    if not succeeded:
+        print("no source reachable; list left unchanged", file=sys.stderr)
+        return 1
     by_key: dict[str, str] = {}
     for name in sorted(raw):
         cleaned = clean(name)
