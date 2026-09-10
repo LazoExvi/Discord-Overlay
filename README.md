@@ -127,6 +127,8 @@ size change.
 - Black, opaque combat background; `/chatfontsize 5` as a starting point; wide enough that lines do not wrap.
 - Taller panel so more lines survive between scans.
 - Keep the mouse pointer and overlay windows out of the capture region.
+- Turn off driver frame generation for the game (NVIDIA Smooth Motion, AMD Fluid Motion
+  Frames, Lossless Scaling). Interpolated frames smear scrolling text and OCR reads ghosted lines.
 - Hide message categories you do not need (for example melee misses).
 - If real lines are rejected, lower OCR confidence gradually (0.52 → 0.45). If
   garbage appears, raise it.

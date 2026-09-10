@@ -31,6 +31,11 @@ ACCURACY_TIP_ITEMS = (
     "words the cursor hides using recently seen lines, marked with ~ in the Log, but it never guesses "
     "hidden numbers.",
 
+    "Turn off driver frame generation for the game: NVIDIA Smooth Motion, AMD Fluid Motion Frames, "
+    "and Lossless Scaling insert interpolated frames that smear scrolling text. The game looks fine to "
+    "your eyes, but the capture often lands on a generated frame and reads ghosted, doubled lines. "
+    "In-game DLSS or FSR frame generation has the same effect.",
+
     "Arrange timer overlays outside every OCR capture region. Click-through stops them from "
     "intercepting input, but visible overlay pixels still cover combat text if the windows overlap.",
 
