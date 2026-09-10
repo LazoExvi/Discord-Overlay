@@ -153,6 +153,9 @@ def test_csv_exports_combatants_and_log_and_preserves_pet_source(tmp_path):
     assert (combatants[1][0], combatants[1][2]) == ("Raan", "216")
     assert events[0] == list(LOG_COLUMNS)
     assert (events[1][2], events[1][3]) == ("Raan", "Pet")
+    # Every exported row carries the app version so a log can be tied to a build.
+    from discord_overlay import __version__
+    assert combatants[1][-1] == events[1][-1] == __version__
 
 
 def test_unknown_export_type_is_rejected(tmp_path):

@@ -8,6 +8,7 @@ from collections import Counter, deque
 from dataclasses import astuple, dataclass
 from pathlib import Path
 
+from . import __version__
 from .models import DAMAGE_KINDS, CombatEvent, EncounterSnapshot, EventKind
 from .names import (  # noqa: F401  (re-exported for callers and tests)
     OCR_CONFUSIONS, clipped_head, glued_article, known_npc, merge_similar_names, ocr_confusable,
@@ -20,9 +21,9 @@ PLAYER_TARGET_KEY = "__player__"
 NPC_BUCKET = "NPC"  # enemies and bystanders share rows; the row type is decided afterwards
 
 COMBATANT_COLUMNS = ("Actor", "Type", "Damage", "Share Percent", "DPS", "10s DPS",
-                     "Hits", "Crits", "Healing", "HPS")
+                     "Hits", "Crits", "Healing", "HPS", "App Version")
 LOG_COLUMNS = ("Time", "Type", "Actor", "Source Actor", "Target", "Action", "Amount",
-               "Absorbed", "Critical", "Pet", "Damage Shield", "OCR Confidence", "Raw Text")
+               "Absorbed", "Critical", "Pet", "Damage Shield", "OCR Confidence", "Raw Text", "App Version")
 
 
 @dataclass(slots=True)
@@ -342,7 +343,7 @@ class EncounterTracker:
             writer = csv.writer(handle)
             if export_type == "combatants":
                 writer.writerow(COMBATANT_COLUMNS)
-                writer.writerows(row.as_tuple() for row in self.actor_totals())
+                writer.writerows(row.as_tuple() + (__version__,) for row in self.actor_totals())
                 return
             writer.writerow(LOG_COLUMNS)
             for event in self.events:
@@ -350,7 +351,7 @@ class EncounterTracker:
                     event.wall_time.isoformat(sep=" ", timespec="milliseconds"),
                     event.kind.value, self.credited_actor(event), event.actor, event.target,
                     event.action, event.amount, event.absorbed, event.critical, event.is_pet,
-                    event.is_damage_shield, event.confidence, event.raw_text,
+                    event.is_damage_shield, event.confidence, event.raw_text, __version__,
                 ])
 
 

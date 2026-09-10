@@ -780,7 +780,7 @@ class App(ctk.CTk):
         export_type = "combatants" if choice else "log"
         filename = filedialog.asksaveasfilename(
             parent=self, title=f"Export {export_type} CSV", defaultextension=".csv", filetypes=[("CSV files", "*.csv")],
-            initialfile=time.strftime(f"discord_overlay_{export_type}_%Y%m%d_%H%M%S.csv"))
+            initialfile=time.strftime(f"discord_overlay_{export_type}_v{__version__}_%Y%m%d_%H%M%S.csv"))
         if not filename:
             return
         try:
