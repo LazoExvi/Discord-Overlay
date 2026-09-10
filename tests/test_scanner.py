@@ -138,3 +138,13 @@ def test_scanner_saves_nothing_when_disabled(app_data, tmp_path):
     settings = Settings(region=Region(0, 0, 160, 90), repair_occluded_lines=False)
     run_worker(settings, [["baseline"], ["baseline", "for 74 points of damage."]], tmp_path)
     assert not (diagnostics_dir() / "problem-frames").exists()
+
+
+def test_problem_frames_are_saved_only_during_combat(app_data, tmp_path):
+    from discord_overlay.paths import diagnostics_dir
+
+    settings = Settings(region=Region(0, 0, 160, 90), save_problem_frames=True, repair_occluded_lines=False)
+    # A garbled numbered line with no combat event anywhere near it: menus, other windows.
+    frames = [["baseline"], ["baseline", "Ran 4 commands, read 20260909_203337_003.png"]]
+    run_worker(settings, frames, tmp_path)
+    assert not (diagnostics_dir() / "problem-frames").exists()

@@ -93,6 +93,7 @@ class ScannerWorker:
         self._template_path = template_path
         self._log = logging.getLogger(LOGGER_NAME)
         self._problem_frames: ProblemFrameSaver | None = None
+        self._last_event_at = float("-inf")  # problem frames are only worth saving during combat
 
     def _problem_saver(self) -> ProblemFrameSaver | None:
         """Honour the Settings toggle live, so it can be turned on mid-session."""
@@ -208,9 +209,13 @@ class ScannerWorker:
                 self._put("trigger", match)
             if event is not None:
                 self._put("event", event)
+                self._last_event_at = time.monotonic()
         if saver is not None:
+            # Between fights the region often holds menus, other windows, or the app
+            # itself; only frames within a fight are evidence of a reading problem.
+            in_combat = time.monotonic() - self._last_event_at <= self.settings.encounter_timeout
             try:
-                saver.flush(frame, lines)
+                saver.flush(frame if in_combat else None, lines)
             except Exception as exc:  # noqa: BLE001 - diagnostics must never stop monitoring
                 self._log.warning("Could not save problem frame: %s", exc)
         for name in parser.pop_new_pets():
