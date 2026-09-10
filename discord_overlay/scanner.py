@@ -196,7 +196,10 @@ class ScannerWorker:
             for line in lines:  # learn pet aliases even from the initial baseline
                 parser.observe(line.text)
         saver = self._problem_saver() if is_combat else None
-        for line in source.dedup.new_lines(lines):
+        fresh = source.dedup.new_lines(lines)
+        if saver is not None:
+            saver.log_lines(fresh)
+        for line in fresh:
             text = line.text
             event: CombatEvent | None = None
             if is_combat:

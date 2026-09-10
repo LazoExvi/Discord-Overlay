@@ -136,6 +136,9 @@ size change.
 - If lines come out garbled, turn on **Save frames of unreadable lines** in Settings for
   one fight. Each unreadable line saves the captured pixels and the OCR text under
   `diagnostics\problem-frames`, which shows whether the capture or the parser is at fault.
+  While it is on, `problem-frames\ocr-lines.log` also records every line OCR reads,
+  combat or not, which is the way to check that a message a trigger waits for is
+  actually reaching the parser.
 
 ## Developer notes
 

@@ -41,6 +41,13 @@ def test_saver_writes_frame_and_report_only_for_problem_frames(tmp_path):
     assert "two messages fused into one line" in report and "y=  30.0" in report and "conf=0.88" in report
 
 
+def test_feed_log_records_every_new_line_including_non_combat(tmp_path):
+    saver = ProblemFrameSaver(tmp_path / "problem-frames")
+    saver.log_lines([_line("Sulferon is imbued by the elements.", 0.97), _line("You crush a rat for 5 points of damage.")])
+    text = (tmp_path / "problem-frames" / "ocr-lines.log").read_text(encoding="utf-8")
+    assert "0.97  Sulferon is imbued by the elements." in text and "You crush a rat" in text
+
+
 def test_saver_rate_limits_and_caps(tmp_path):
     saver = ProblemFrameSaver(tmp_path, max_files=2, min_interval=1.0)
     frame = np.zeros((4, 4, 3), dtype=np.uint8)

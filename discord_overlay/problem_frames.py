@@ -17,6 +17,8 @@ from .parser import is_fused_line
 
 MAX_FILES = 300          # keep the folder bounded; oldest are not pruned, saving just stops
 MIN_INTERVAL = 0.5       # seconds between saves, so a bad minute does not write hundreds of frames
+FEED_FILE = "ocr-lines.log"     # every new line the scanner read, for trigger troubleshooting
+FEED_MAX_BYTES = 5_000_000
 _DIGIT = re.compile(r"\d")
 _ZERO_AMOUNT = re.compile(r"\bfor\s+0\s+p", re.IGNORECASE)
 
@@ -45,6 +47,26 @@ class ProblemFrameSaver:
         self.saved = 0
         self._last_saved_at = 0.0
         self._pending: list[tuple[OCRLine, str]] = []
+
+    def log_lines(self, lines: list[OCRLine]) -> None:
+        """Append every newly read line to ``ocr-lines.log`` next to the frames.
+
+        Unlike the CSV export, this includes lines that are not combat events, so it
+        answers "did the message a trigger waits for ever reach OCR?".
+        """
+        if not lines:
+            return
+        self.directory.mkdir(parents=True, exist_ok=True)
+        path = self.directory / FEED_FILE
+        try:
+            if path.exists() and path.stat().st_size >= FEED_MAX_BYTES:
+                return
+            stamp = f"{datetime.now():%Y-%m-%d %H:%M:%S.%f}"[:-3]
+            with path.open("a", encoding="utf-8") as handle:
+                for line in lines:
+                    handle.write(f"{stamp}  {line.confidence:.2f}  {line.text}\n")
+        except OSError:
+            pass
 
     def note(self, line: OCRLine, event: CombatEvent | None) -> None:
         """Record a line from the current frame; call ``flush`` once the frame is done."""

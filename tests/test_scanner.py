@@ -126,8 +126,11 @@ def test_scanner_saves_frames_for_unreadable_lines_when_enabled(app_data, tmp_pa
     ]
     messages = run_worker(settings, frames, tmp_path)
     assert [m[1].amount for m in messages if m[0] == "event"] == [5, 6]
-    saved = sorted((diagnostics_dir() / "problem-frames").glob("*"))
+    folder = diagnostics_dir() / "problem-frames"
+    saved = sorted(p for p in folder.glob("*") if p.suffix in {".png", ".txt"})
     assert [p.suffix for p in saved] == [".png", ".txt"]
+    feed = (folder / "ocr-lines.log").read_text(encoding="utf-8")
+    assert "107 pond" in feed and "Klog hits a rat" in feed  # every new line, not just problems
     report = saved[1].read_text(encoding="utf-8")
     assert "two messages fused into one line" in report and "107 pond" in report
 
@@ -147,4 +150,4 @@ def test_problem_frames_are_saved_only_during_combat(app_data, tmp_path):
     # A garbled numbered line with no combat event anywhere near it: menus, other windows.
     frames = [["baseline"], ["baseline", "Ran 4 commands, read 20260909_203337_003.png"]]
     run_worker(settings, frames, tmp_path)
-    assert not (diagnostics_dir() / "problem-frames").exists()
+    assert not list((diagnostics_dir() / "problem-frames").glob("*.png"))
