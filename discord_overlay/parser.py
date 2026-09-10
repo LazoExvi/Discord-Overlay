@@ -27,6 +27,7 @@ COMBAT_VERBS: tuple[str, ...] = (
     "throws", "throw", "strikes", "strike", "stings", "sting", "whips", "whip", "lashes", "lash",
     "gores", "gore", "stomps", "stomp", "tramples", "trample", "slams", "slam", "rakes", "rake",
     "backstabs", "backstab", "impales", "impale", "scratches", "scratch",
+    "bleeds", "bleed", "clobbers", "clobber", "bludgeons", "bludgeon",
 )
 _VERB_SET = frozenset(COMBAT_VERBS)
 _VERB_ALTERNATION = "|".join(COMBAT_VERBS)
@@ -34,10 +35,10 @@ _VERB_PATTERN = re.compile(rf"\b({_VERB_ALTERNATION})\b", re.IGNORECASE)
 _GLUED_VERBS = tuple(sorted(_VERB_SET | {"tries", "try"}, key=len, reverse=True))
 
 _NUMBER_CLASS = r"[\dOoIlSB,]+"
-_POINTS_OF = r"p[o0][il1]nts?\s+(?:[oa]f?\s+)?"
+_POINTS_OF = r"p[a-z0-9]{3,6}\s+(?:[oa][a-z]?f?\s*)?"
 _DAMAGE = re.compile(
     rf"^(?P<prefix>.+?)\s+for\s+(?P<amount>{_NUMBER_CLASS})\s+{_POINTS_OF}"
-    r"(?:(?P<school>[A-Za-z]+)\s+)?(?:damage[.!]?|(?P<school_end>[A-Za-z]+)(?=\s*(?:\(|$))|$)"
+    r"(?:(?P<school>[A-Za-z]+)\s+)?(?:da[a-z]*[.,!]?|(?P<school_end>[A-Za-z]+)(?=\s*(?:\(|$))|$)"
     rf"(?:\s*\((?P<absorbed>{_NUMBER_CLASS})\s+[a-z]{{6,9}}\))?",
     re.IGNORECASE,
 )

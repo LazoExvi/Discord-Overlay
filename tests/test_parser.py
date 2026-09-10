@@ -382,6 +382,24 @@ def test_right_edge_clipping_keeps_criticals_and_miss_targets_drop_offhand():
     assert (miss.kind, miss.actor, miss.target) == (EventKind.MISS, "Crit", "Magistrate Sivash")
 
 
+def test_mangled_points_of_damage_still_counts():
+    cases = {
+        "an unstable oozeling claws YOU for 5 ppints of damag": ("unstable oozeling", "Crit", 5),
+        "a unstable oozeling claws Ebola for 64 puints of damage.": ("unstable oozeling", "Ebola", 64),
+        "Zymm hits Pitborn with their offhand for 28 points of damagge.": ("Zymm", "Pitborn", 28),
+        "You slash Dew with your offhand for 52 points ofdamage.": ("Crit", "Dew", 52),
+        "You crush Crack for 104 points of daage.": ("Crit", "Crack", 104),
+        "an unstable oozeling claws Pitborath for 6 points orfdamage.": ("unstable oozeling", "Pitborath", 6),
+        "Entrari pierces a Plagueborn myonidon for 14 poits of damage.": ("Entrari", "Plagueborn myonidon", 14),
+        "Legoliath's Barbed Arrow VI bleeds Pitborn for 80 points of Bleed Damage.": ("Legoliath", "Pitborn", 80),
+    }
+    for text, expected in cases.items():
+        event = parse(text, name="Crit")
+        assert event is not None, text
+        assert (event.actor, event.target, event.amount) == expected, text
+    assert parse("You gain 5 points of experience.") is None
+
+
 def test_small_font_misreads_of_your_and_offhand():
     # At small font sizes "Your" reads as "Yowr"/"Youwr" and "offhand" as "offband".
     event = parse("Yowr Frenzy hits a Plagueborn drake for 89 points of damage.", name="Crit")
