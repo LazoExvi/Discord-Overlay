@@ -84,7 +84,7 @@ _SPREAD = re.compile(
 )
 # "Tom takes 400 points of damage!" (or a truncated "takes 400 points of damage!")
 _TAKES = re.compile(r"^(?:(?P<target>you|[A-Za-z][A-Za-z'-]*)\s+)?takes?\s+\S*\d", re.IGNORECASE)
-_JUNK_ACTORS = frozenset({"takes", "take", "hits", "hit", "for", "is", "are", "the", "a", "an"})
+_JUNK_ACTORS = frozenset({"takes", "take", "hits", "hit", "for", "is", "are", "the", "a", "an", "hand", "offhand", "with", "and", "or"})
 _FROM_SOURCE = re.compile(r"\b(?:from|by)\s+(?P<source>[A-Za-z][A-Za-z' -]*?)(?:'s\s+\w+)?[.!]?$", re.IGNORECASE)
 _DAMAGE_SHIELD = re.compile(r"\bdamage[\s-]*shield\b", re.IGNORECASE)
 _UNKNOWN_VERB = re.compile(

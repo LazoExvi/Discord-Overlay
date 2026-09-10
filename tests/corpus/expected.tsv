@@ -1011,7 +1011,7 @@ a Plagueborn myrmidon hits YOU for 9 points of damage (1 absorbed).	damage_in|Pl
 a Plagueborn myrmidon hits YOU for 9 points of damage.	damage_in|Plagueborn myrmidon|Crit|Hits|9|0|0|0|0
 a Plagueborn myrmidon hits YOU for 93 points of damage.	damage_in|Plagueborn myrmidon|Crit|Hits|93|0|0|0|0
 a Plagueborn myrmidon hits YOU for 96 points of damage.	damage_in|Plagueborn myrmidon|Crit|Hits|96|0|0|0|0
-a Plagueborn myrmidon is dulled by poison. offhand for 40 points of damage.	damage_other|Plagueborn myrmidon is dulled by|offhand|Poison|40|0|0|0|0
+a Plagueborn myrmidon is dulled by poison. offhand for 40 points of damage.	damage_other|Plagueborn myrmidon is dulled by|Unknown|Poison|40|0|0|0|0
 a Plagueborn myrmidon pierces Player for 10 points of damage.	damage_other|Plagueborn myrmidon|Player|Pierces|10|0|0|0|0
 a Plagueborn myrmidon pierces Player for 101 points of damage (5 absorbed).	damage_other|Plagueborn myrmidon|Player|Pierces|101|5|0|0|0
 a Plagueborn myrmidon pierces Player for 127 points of damage (7 absorbed).	damage_other|Plagueborn myrmidon|Player|Pierces|127|7|0|0|0
@@ -12984,7 +12984,7 @@ Your Life Sap hits Sherrif Bahram for 42 points of Corruption Damage.	damage_out
 Your Life Sap hits Theomnipotent for 19 points of Corruption Damage.	damage_out|Crit|Theomnipotent|Life Sap|19|0|0|0|0
 Your Lind VI hits Dew for 109 points of damage.	damage_out|Crit|Dew|Lind VI|109|0|0|0|0
 Your Llfe Sap hits a Plagueborn drake for 33 points of Corruption Damage.	damage_out|Crit|Plagueborn drake|Llfe Sap|33|0|0|0|0
-your offhand for 53 points of damage.	damage_out|Crit|offhand|Ability|53|0|0|0|0
+your offhand for 53 points of damage.	damage_out|Crit|Unknown|Ability|53|0|0|0|0
 Your Rend VI hits a bloated plague rat for 112 points of damage.	damage_out|Crit|bloated plague rat|Rend VI|112|0|0|0|0
 Your Rend VI hits a bloated plague rat for 118 points of damage.	damage_out|Crit|bloated plague rat|Rend VI|118|0|0|0|0
 Your Rend VI hits a bloated plague rat for 128 points of damage.	damage_out|Crit|bloated plague rat|Rend VI|128|0|0|0|0
