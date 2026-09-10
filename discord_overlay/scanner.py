@@ -92,8 +92,15 @@ class ScannerWorker:
         self._grammar = grammar
         self._template_path = template_path
         self._log = logging.getLogger(LOGGER_NAME)
-        self._problem_frames = (ProblemFrameSaver(diagnostics_dir() / "problem-frames")
-                                if settings.save_problem_frames else None)
+        self._problem_frames: ProblemFrameSaver | None = None
+
+    def _problem_saver(self) -> ProblemFrameSaver | None:
+        """Honour the Settings toggle live, so it can be turned on mid-session."""
+        if not self.settings.save_problem_frames:
+            return None
+        if self._problem_frames is None:
+            self._problem_frames = ProblemFrameSaver(diagnostics_dir() / "problem-frames")
+        return self._problem_frames
 
     def start(self) -> None:
         self.thread = threading.Thread(target=self.run, name="ocr-scanner", daemon=True)
@@ -187,7 +194,7 @@ class ScannerWorker:
             self._put("ocr", (lines, time.monotonic() - tick, repairer.repaired if repairer else 0))
             for line in lines:  # learn pet aliases even from the initial baseline
                 parser.observe(line.text)
-        saver = self._problem_frames if is_combat else None
+        saver = self._problem_saver() if is_combat else None
         for line in source.dedup.new_lines(lines):
             text = line.text
             event: CombatEvent | None = None

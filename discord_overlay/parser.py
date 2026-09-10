@@ -35,7 +35,7 @@ _VERB_PATTERN = re.compile(rf"\b({_VERB_ALTERNATION})\b", re.IGNORECASE)
 _GLUED_VERBS = tuple(sorted(_VERB_SET | {"tries", "try"}, key=len, reverse=True))
 
 _NUMBER_CLASS = r"[\dOoIlSB,]+"
-_POINTS_OF = r"p[a-z0-9]{3,6}\s+(?:[oa][a-z]?f?\s*)?"
+_POINTS_OF = r"p\S{3,6}\s+(?:[oa][a-z]?f?\s*)?"  # "p∂ints", "pomints"
 _DAMAGE = re.compile(
     rf"^(?P<prefix>.+?)\s+for\s+(?P<amount>{_NUMBER_CLASS})\s+{_POINTS_OF}"
     r"(?:(?P<school>[A-Za-z]+)\s+)?(?:da[a-z]*[.,!]?|(?P<school_end>[A-Za-z]+)(?=\s*(?:\(|$))|$)"

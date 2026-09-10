@@ -27,14 +27,18 @@ a bloated plague rat bites Pitborn for 35 points of damage.3	damage_other|bloate
 a bloated plague rat bites Pitborn for 87 points of damage.	damage_other|bloated plague rat|Pitborn|Bites|87|0|0|0|0
 a bloated plague rat bites YOU for 106 points of damage.	damage_in|bloated plague rat|Crit|Bites|106|0|0|0|0
 a bloated plague rat bites YOU for 11 points of damage.	damage_in|bloated plague rat|Crit|Bites|11|0|0|0|0
+a bloated plague rat bites YOU for 112 points of damage.	damage_in|bloated plague rat|Crit|Bites|112|0|0|0|0
 a bloated plague rat bites YOU for 116 points of damage.	damage_in|bloated plague rat|Crit|Bites|116|0|0|0|0
 a bloated plague rat bites YOU for 12 points of damage.	damage_in|bloated plague rat|Crit|Bites|12|0|0|0|0
+a bloated plague rat bites YOU for 22 points of damage.	damage_in|bloated plague rat|Crit|Bites|22|0|0|0|0
 a bloated plague rat bites YOU for 23 points of damage.	damage_in|bloated plague rat|Crit|Bites|23|0|0|0|0
 a bloated plague rat bites YOU for 28 points of damage.	damage_in|bloated plague rat|Crit|Bites|28|0|0|0|0
 a bloated plague rat bites YOU for 29 points of damage.	damage_in|bloated plague rat|Crit|Bites|29|0|0|0|0
 a bloated plague rat bites YOU for 35 points of damage.	damage_in|bloated plague rat|Crit|Bites|35|0|0|0|0
 a bloated plague rat bites YOU for 41 points of damage.	damage_in|bloated plague rat|Crit|Bites|41|0|0|0|0
+a bloated plague rat bites YOU for 45 points of damage.	damage_in|bloated plague rat|Crit|Bites|45|0|0|0|0
 a bloated plague rat bites YOU for 46 points of damage.	damage_in|bloated plague rat|Crit|Bites|46|0|0|0|0
+a bloated plague rat bites YOU for 5 points of damage (1 absorbed).	damage_in|bloated plague rat|Crit|Bites|5|1|0|0|0
 a bloated plague rat bites YOU for 50 points of damage.	damage_in|bloated plague rat|Crit|Bites|50|0|0|0|0
 a bloated plague rat bites YOU for 52 points of damage.	damage_in|bloated plague rat|Crit|Bites|52|0|0|0|0
 a bloated plague rat bites YOU for 56 points of damage.	damage_in|bloated plague rat|Crit|Bites|56|0|0|0|0
@@ -42,6 +46,7 @@ a bloated plague rat bites YOU for 58 points of damage.	damage_in|bloated plague
 a bloated plague rat bites YOU for 6 points of damage.	damage_in|bloated plague rat|Crit|Bites|6|0|0|0|0
 a bloated plague rat bites YOU for 64 points of damage.	damage_in|bloated plague rat|Crit|Bites|64|0|0|0|0
 a bloated plague rat bites YOU for 70 points of damage.	damage_in|bloated plague rat|Crit|Bites|70|0|0|0|0
+a bloated plague rat bites YOU for 73 points of dama	damage_in|bloated plague rat|Crit|Bites|73|0|0|0|0
 a bloated plague rat bites YOU for 73 points of damage.	damage_in|bloated plague rat|Crit|Bites|73|0|0|0|0
 a bloated plague rat bites YOU for 78 points of damage.	damage_in|bloated plague rat|Crit|Bites|78|0|0|0|0
 a bloated plague rat bites YOU for 81 points of damage.	damage_in|bloated plague rat|Crit|Bites|81|0|0|0|0
@@ -86,6 +91,7 @@ a bone archer slashes Stuffy for 429 points of damage (23 absorbed). (Critical)	
 a bone archer tries to hit YOU, but misses!	miss|bone archer|Crit|Miss|0|0|0|0|0
 a bone archer's Quick Shot hits Player for 165 points of damage.	damage_other|bone archer|Player|Quick Shot|165|0|0|0|0
 a bone archer's Quick Shot hits Player for 36 points of damage.	damage_other|bone archer|Player|Quick Shot|36|0|0|0|0
+a bu crush a bloatat tries to bite YOU, but misses!	miss|bu crush a bloatat|Crit|Miss|0|0|0|0|0
 a comely courtesan crushes Klog for 13 points of damage. (Block 13)	damage_other|comely courtesan|Klog|Crushes|13|0|0|0|0
 a comely courtesan crushes Klog for 532 points of damage. (Critical)	damage_other|comely courtesan|Klog|Crushes|532|0|1|0|0
 a comely courtesan crushes Klog for 80 points of damage. (Critical)	damage_other|comely courtesan|Klog|Crushes|80|0|1|0|0
@@ -10334,6 +10340,7 @@ You crush a bloated plague rat for 110 points of damage. (Critical)	damage_out|C
 You crush a bloated plague rat for 133 points of damage. (Critical)	damage_out|Crit|bloated plague rat|Crush|133|0|1|0|0
 You crush a bloated plague rat for 147 points of damage. (Critical)	damage_out|Crit|bloated plague rat|Crush|147|0|1|0|0
 You crush a bloated plague rat for 16 points of damage.	damage_out|Crit|bloated plague rat|Crush|16|0|0|0|0
+You crush a bloated plague rat for 170 points of damage. (Critical)	damage_out|Crit|bloated plague rat|Crush|170|0|1|0|0
 You crush a bloated plague rat for 21 points of damage.	damage_out|Crit|bloated plague rat|Crush|21|0|0|0|0
 You crush a bloated plague rat for 25 points of damage.	damage_out|Crit|bloated plague rat|Crush|25|0|0|0|0
 You crush a bloated plague rat for 26 points of damage.	damage_out|Crit|bloated plague rat|Crush|26|0|0|0|0
@@ -10348,6 +10355,7 @@ You crush a bloated plague rat for 56 points of damage.	damage_out|Crit|bloated 
 You crush a bloated plague rat for 60 points of damage.	damage_out|Crit|bloated plague rat|Crush|60|0|0|0|0
 You crush a bloated plague rat for 65 points of damage.	damage_out|Crit|bloated plague rat|Crush|65|0|0|0|0
 You crush a bloated plague rat for 66 points of damage. (Critical)	damage_out|Crit|bloated plague rat|Crush|66|0|1|0|0
+You crush a bloated plague rat for 69 points of damage.	damage_out|Crit|bloated plague rat|Crush|69|0|0|0|0
 You crush a bloated plague rat for 74 points of damage.	damage_out|Crit|bloated plague rat|Crush|74|0|0|0|0
 You crush a bloated plague rat for 78 points of damage.	damage_out|Crit|bloated plague rat|Crush|78|0|0|0|0
 You crush a bloated plague rat for 82 points of damage.	damage_out|Crit|bloated plague rat|Crush|82|0|0|0|0
@@ -11404,6 +11412,8 @@ You slash a bloated plague rat with your offhand for 104 points of damage. (Crit
 You slash a bloated plague rat with your offhand for 11 points of damage.	damage_out|Crit|bloated plague rat|Slash (Offhand)|11|0|0|0|0
 You slash a bloated plague rat with your offhand for 123 points of damage. (Critical)	damage_out|Crit|bloated plague rat|Slash (Offhand)|123|0|1|0|0
 You slash a bloated plague rat with your offhand for 14 points of damage.	damage_out|Crit|bloated plague rat|Slash (Offhand)|14|0|0|0|0
+You slash a bloated plague rat with your offhand for 14 p∂ints of damage.	damage_out|Crit|bloated plague rat|Slash (Offhand)|14|0|0|0|0
+You slash a bloated plague rat with your offhand for 19 points of damage.	damage_out|Crit|bloated plague rat|Slash (Offhand)|19|0|0|0|0
 You slash a bloated plague rat with your offhand for 22 points of damage.	damage_out|Crit|bloated plague rat|Slash (Offhand)|22|0|0|0|0
 You slash a bloated plague rat with your offhand for 24 points of damage. (Critical)	damage_out|Crit|bloated plague rat|Slash (Offhand)|24|0|1|0|0
 You slash a bloated plague rat with your offhand for 25 points of damage.	damage_out|Crit|bloated plague rat|Slash (Offhand)|25|0|0|0|0
@@ -11418,6 +11428,7 @@ You slash a bloated plague rat with your offhand for 51 points of damage.	damage
 You slash a bloated plague rat with your offhand for 55 points of damage.	damage_out|Crit|bloated plague rat|Slash (Offhand)|55|0|0|0|0
 You slash a bloated plague rat with your offhand for 56 points of damage. (Critical)	damage_out|Crit|bloated plague rat|Slash (Offhand)|56|0|1|0|0
 You slash a bloated plague rat with your offhand for 58 points of damage.	damage_out|Crit|bloated plague rat|Slash (Offhand)|58|0|0|0|0
+You slash a bloated plague rat with your offhand for 6 points of damage. (Critical)	damage_out|Crit|bloated plague rat|Slash (Offhand)|6|0|1|0|0
 You slash a bloated plague rat with your offhand for 62 points of damage.	damage_out|Crit|bloated plague rat|Slash (Offhand)|62|0|0|0|0
 You slash a bloated plague rat with your offhand for 65 points of damage.	damage_out|Crit|bloated plague rat|Slash (Offhand)|65|0|0|0|0
 You slash a bloated plague rat with your offhand for 67 points of damage. (Critical)	damage_out|Crit|bloated plague rat|Slash (Offhand)|67|0|1|0|0
@@ -12415,9 +12426,15 @@ Your Damage Shield hits Sherrif Bahram for 12 points of damage.	damage_out|Crit|
 Your faith answers, healing you for 375 Health!	heal|Crit|Crit|Healing|375|0|0|0|0
 Your faith answers, healing you for 750 Health!	heal|Crit|Crit|Healing|750|0|0|0|0
 Your Feint IV hits a bloated plague rat for 111 points of damage.	damage_out|Crit|bloated plague rat|Feint IV|111|0|0|0|0
+Your Feint IV hits a bloated plague rat for 121 points of damage.	damage_out|Crit|bloated plague rat|Feint IV|121|0|0|0|0
+Your Feint IV hits a bloated plague rat for 127 points of damage.	damage_out|Crit|bloated plague rat|Feint IV|127|0|0|0|0
+Your Feint IV hits a bloated plague rat for 136 points of damage.	damage_out|Crit|bloated plague rat|Feint IV|136|0|0|0|0
+Your Feint IV hits a bloated plague rat for 140 points of damage. (Critical)	damage_out|Crit|bloated plague rat|Feint IV|140|0|1|0|0
 Your Feint IV hits a bloated plague rat for 146 points of damage.	damage_out|Crit|bloated plague rat|Feint IV|146|0|0|0|0
 Your Feint IV hits a bloated plague rat for 169 points of damage. (Critical)	damage_out|Crit|bloated plague rat|Feint IV|169|0|1|0|0
 Your Feint IV hits a bloated plague rat for 52 points of damage.	damage_out|Crit|bloated plague rat|Feint IV|52|0|0|0|0
+Your Feint IV hits a bloated plague rat for 56 points of damage.	damage_out|Crit|bloated plague rat|Feint IV|56|0|0|0|0
+Your Feint IV hits a bloated plague rat for 66 points of damage.	damage_out|Crit|bloated plague rat|Feint IV|66|0|0|0|0
 Your Feint IV hits a bloated plague rat for 79 points of damage. (Critical)	damage_out|Crit|bloated plague rat|Feint IV|79|0|1|0|0
 Your Feint IV hits a bloated plague rat for 86 points of damage.	damage_out|Crit|bloated plague rat|Feint IV|86|0|0|0|0
 Your Feint IV hits a bloated plague rat for 99 points of damage. (Critical)	damage_out|Crit|bloated plague rat|Feint IV|99|0|1|0|0
@@ -12969,12 +12986,14 @@ Your Lind VI hits Dew for 109 points of damage.	damage_out|Crit|Dew|Lind VI|109|
 Your Llfe Sap hits a Plagueborn drake for 33 points of Corruption Damage.	damage_out|Crit|Plagueborn drake|Llfe Sap|33|0|0|0|0
 your offhand for 53 points of damage.	damage_out|Crit|offhand|Ability|53|0|0|0|0
 Your Rend VI hits a bloated plague rat for 112 points of damage.	damage_out|Crit|bloated plague rat|Rend VI|112|0|0|0|0
+Your Rend VI hits a bloated plague rat for 118 points of damage.	damage_out|Crit|bloated plague rat|Rend VI|118|0|0|0|0
 Your Rend VI hits a bloated plague rat for 128 points of damage.	damage_out|Crit|bloated plague rat|Rend VI|128|0|0|0|0
 Your Rend VI hits a bloated plague rat for 132 points of damage.	damage_out|Crit|bloated plague rat|Rend VI|132|0|0|0|0
 Your Rend VI hits a bloated plague rat for 143 points of damage.	damage_out|Crit|bloated plague rat|Rend VI|143|0|0|0|0
 Your Rend VI hits a bloated plague rat for 147 points of damage.	damage_out|Crit|bloated plague rat|Rend VI|147|0|0|0|0
 Your Rend VI hits a bloated plague rat for 153 points of damage.	damage_out|Crit|bloated plague rat|Rend VI|153|0|0|0|0
 Your Rend VI hits a bloated plague rat for 157 points of damage.	damage_out|Crit|bloated plague rat|Rend VI|157|0|0|0|0
+Your Rend VI hits a bloated plague rat for 212 points of damage. (Critical)	damage_out|Crit|bloated plague rat|Rend VI|212|0|1|0|0
 Your Rend VI hits a bloated plague rat for 220 points of damage. (Critical)	damage_out|Crit|bloated plague rat|Rend VI|220|0|1|0|0
 Your Rend VI hits a bloated plague rat for 236 points of damage. (Critical)	damage_out|Crit|bloated plague rat|Rend VI|236|0|1|0|0
 Your Rend VI hits a bloated plague rat for 63 points of damage.	damage_out|Crit|bloated plague rat|Rend VI|63|0|0|0|0
