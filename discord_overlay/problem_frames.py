@@ -18,6 +18,7 @@ from .parser import is_fused_line
 MAX_FILES = 300          # keep the folder bounded; oldest are not pruned, saving just stops
 MIN_INTERVAL = 0.5       # seconds between saves, so a bad minute does not write hundreds of frames
 _DIGIT = re.compile(r"\d")
+_ZERO_AMOUNT = re.compile(r"\bfor\s+0\s+p", re.IGNORECASE)
 
 
 def problem_reason(line: OCRLine, event: CombatEvent | None) -> str | None:
@@ -28,6 +29,8 @@ def problem_reason(line: OCRLine, event: CombatEvent | None) -> str | None:
     if not _DIGIT.search(text):
         return None  # flavour text carries no amount and is meant to be ignored
     if event is None:
+        if _ZERO_AMOUNT.search(text):
+            return None  # "hits Nitwit for 0 points of damage." is a real message with nothing to count
         return "numbered line did not parse"
     if event.actor == "Unknown" or event.target == "Unknown":
         return "actor or target unreadable"
