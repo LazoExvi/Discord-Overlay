@@ -12,7 +12,7 @@ MATCH_MODES = ("contains", "exact", "regex")
 LOGIC_MODES = ("all", "any")
 RETRIGGER_MODES = ("restart", "replace", "ignore", "new")
 OVERLAY_LAYOUTS = ("docked", "independent")
-OVERLAY_SIZES = ("compact", "standard", "large")
+OVERLAY_SIZES = ("micro", "tiny", "compact", "standard", "large")
 BUILTIN_PREFIX = "builtin:"
 HEX_COLOR = re.compile(r"#[0-9a-fA-F]{6}")
 

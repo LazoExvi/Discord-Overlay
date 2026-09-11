@@ -18,11 +18,13 @@ from ..timers import TimerInstance
 from . import theme
 
 CARD_STYLES = {  # size -> (font, bar height, label pady, bar pady, time width, radius)
+    "micro": (8, 2, (1, 0), (1, 2), 26, 2),
+    "tiny": (9, 3, (3, 1), (2, 3), 30, 3),
     "compact": (11, 4, (5, 2), (3, 5), 38, 4),
     "standard": (17, 8, (10, 4), (4, 10), 58, 8),
     "large": (27, 12, (16, 8), (7, 16), 92, 12),
 }
-CARD_GAPS = {"compact": 2, "standard": 5, "large": 8}
+CARD_GAPS = {"micro": 0, "tiny": 1, "compact": 2, "standard": 5, "large": 8}
 PREVIEW_HEADER = "#3b3f7a"
 
 # Win32 constants used to toggle click-through and keep the window topmost.

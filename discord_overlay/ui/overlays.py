@@ -19,7 +19,7 @@ from .mini_overlay import MiniMeterOverlay
 from .overlay import OverlayWindow, TimerOverlay
 
 DEFAULT_SIZE = (420, 320)
-INDEPENDENT_SIZES = {"compact": (250, 80), "standard": (360, 125), "large": (540, 210)}
+INDEPENDENT_SIZES = {"micro": (150, 38), "tiny": (190, 52), "compact": (250, 80), "standard": (360, 125), "large": (540, 210)}
 STACK_OFFSET = 28
 VIRTUAL_KEYS = {"control": 0x11, "shift": 0x10, "alt": 0x12}
 VK_LBUTTON = 0x01
