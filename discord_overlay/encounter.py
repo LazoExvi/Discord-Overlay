@@ -68,6 +68,34 @@ class EncounterTracker:
         self._completed_damage_duration = 0.0
         self._completed_healing_duration = 0.0
         self._last_segment_damage_duration = 0.0
+        # Name merging and per-actor grouping walk every event; with running totals over
+        # a long session that is tens of thousands of events several times a second on
+        # the UI thread. Both are cached until the event list actually changes.
+        self._version = 0            # bumps on every change to the event list
+        self._names_version = 0      # bumps only when a never-seen name key appears (or on rebuild)
+        self._seen_keys: set[str] = set()
+        self._name_map_cache: tuple[tuple, dict[str, str]] | None = None
+        self._grouping_cache: dict = {}
+        self._sums_cache: tuple | None = None   # (built_up_to, settings_key, sums)
+
+    def _bump(self, rebuild: bool = False) -> None:
+        """Note an appended event; ``rebuild`` when earlier events changed or were cleared."""
+        self._version += 1
+        if rebuild:
+            self._names_version += 1
+            self._seen_keys = {self.credited_actor(e).casefold().strip() for e in self.events}
+            self._seen_keys |= {self._target_key(e.target) for e in self.events}
+            self._grouping_cache.clear()
+            self._sums_cache = None
+
+    def _note_names(self, event: CombatEvent) -> None:
+        if event.kind not in METRIC_KINDS:
+            return
+        for key in (self.credited_actor(event).casefold().strip(), self._target_key(event.target)):
+            if key not in self._seen_keys:
+                self._seen_keys.add(key)
+                self._names_version += 1
+                self._grouping_cache.clear()
 
     # -- event intake ---------------------------------------------------------
 
@@ -80,6 +108,8 @@ class EncounterTracker:
             self._begin_segment(event.timestamp)
         self.events.append(event)
         self._recent.append(event)
+        self._bump()
+        self._note_names(event)
         if is_combat:
             self.last_combat_at = event.timestamp
         if event.kind in DAMAGE_KINDS:
@@ -92,6 +122,7 @@ class EncounterTracker:
             if self.events:
                 self.history.append(self.events.copy())
             self.events.clear()
+            self._bump(rebuild=True)
             self._completed_damage_duration = 0.0
             self._completed_healing_duration = 0.0
         self._recent.clear()
@@ -133,11 +164,14 @@ class EncounterTracker:
             if event.kind == EventKind.DAMAGE_OTHER:
                 event.kind = EventKind.DAMAGE_OUT
             changed += 1
+        if changed:
+            self._bump(rebuild=True)
         return changed
 
     def reset(self) -> None:
         self.events.clear()
         self._recent.clear()
+        self._bump(rebuild=True)
         self.active = False
         self.started_at = None
         self.last_combat_at = None
@@ -171,6 +205,10 @@ class EncounterTracker:
                             else self._last_segment_damage_duration)
         return min(self.rolling_window, max(1.0, rolling_duration))
 
+    def _settings_key(self) -> tuple:
+        return (self.player_name, self.combine_pet_damage, self.damage_shields_by_wearer,
+                frozenset(self.protected_names))
+
     def _counts_toward_headline(self, event: CombatEvent) -> bool:
         return event.kind == EventKind.DAMAGE_OUT and (self.combine_pet_damage or not event.is_pet)
 
@@ -182,21 +220,39 @@ class EncounterTracker:
         # Completed segments contribute only their active time, so running totals
         # can combine fights without counting the idle gaps between them.
         duration = self._completed_damage_duration + self._segment_damage_duration()
-        total_out = sum(e.amount for e in self.events if self._counts_toward_headline(e))
+        settings_key = self._settings_key()
+        cache = self._sums_cache
+        if cache is None or cache[1] != settings_key or cache[0] > len(self.events):
+            start, sums = 0, [0, 0, 0, 0, 0, 0]
+        else:
+            start, sums = cache[0], list(cache[2])
+        for e in self.events[start:]:
+            if self._counts_toward_headline(e):
+                sums[0] += e.amount
+            if e.kind == EventKind.DAMAGE_IN:
+                sums[1] += e.amount
+            elif e.kind == EventKind.HEAL:
+                sums[2] += e.amount
+            if e.kind in BREAKDOWN_DAMAGE_KINDS:
+                sums[3] += 1
+                sums[4] += bool(e.critical)
+            elif e.kind == EventKind.MISS:
+                sums[5] += 1
+        self._sums_cache = (len(self.events), settings_key, tuple(sums))
+        total_out, total_in, total_heal, hits, crits, misses = sums
         rolling_out = sum(e.amount for e in self._recent if self._counts_toward_headline(e))
-        total_heal = sum(e.amount for e in self.events if e.kind == EventKind.HEAL)
         return EncounterSnapshot(
             active=self.active,
             duration=duration,
             total_out=total_out,
-            total_in=sum(e.amount for e in self.events if e.kind == EventKind.DAMAGE_IN),
+            total_in=total_in,
             total_heal=total_heal,
             dps=total_out / max(1.0, duration),
             rolling_dps=rolling_out / self._rolling_span(),
             hps=total_heal / max(1.0, self._healing_duration()),
-            hits=sum(e.kind in BREAKDOWN_DAMAGE_KINDS for e in self.events),
-            crits=sum(e.critical and e.kind in BREAKDOWN_DAMAGE_KINDS for e in self.events),
-            misses=sum(e.kind == EventKind.MISS for e in self.events),
+            hits=hits,
+            crits=crits,
+            misses=misses,
             events=self.events.copy(),
         )
 
@@ -209,28 +265,43 @@ class EncounterTracker:
         def in_scope(event: CombatEvent) -> bool:
             return target_key is None or names.get(self._target_key(event.target)) == target_key
 
-        metric_events = [e for e in self.events if e.kind in METRIC_KINDS and in_scope(e)]
-
-        grouped: dict[tuple[str, str], list[CombatEvent]] = {}
-        display_names: dict[tuple[str, str], Counter] = {}
-        for event in metric_events:
-            key, actor = self._actor_key(event, names)
-            grouped.setdefault(key, []).append(event)
-            display_names.setdefault(key, Counter())[actor] += 1
+        cache_key = ("group", target_key, self._settings_key(), self._names_version)
+        cached = self._grouping_cache.get(cache_key)
+        if cached is None or cached["built"] > len(self.events):
+            cached = {"built": 0, "metric_events": [], "grouped": {}, "display_names": {}, "damage": {}, "has_in": set()}
+            if len(self._grouping_cache) > 8:
+                self._grouping_cache.clear()
+            self._grouping_cache[cache_key] = cached
+        if cached["built"] < len(self.events):
+            metric_events, grouped, display_names = cached["metric_events"], cached["grouped"], cached["display_names"]
+            for event in self.events[cached["built"]:]:
+                if event.kind in METRIC_KINDS and in_scope(event):
+                    metric_events.append(event)
+                    key, actor = self._actor_key(event, names)
+                    grouped.setdefault(key, []).append(event)
+                    display_names.setdefault(key, Counter())[actor] += 1
+                    if event.kind in DAMAGE_KINDS:
+                        cached["damage"][key] = cached["damage"].get(key, 0) + event.amount
+                        if event.kind == EventKind.DAMAGE_IN:
+                            cached["has_in"].add(key)
+            cached["built"] = len(self.events)
+            # A mob that hit you and also hit your group is one enemy, not two rows; its
+            # share is measured against everything enemies dealt, friendly rows against
+            # everything the friendly side dealt.
+            row_types = {key: (key[1] if key[1] != NPC_BUCKET else "ENEMY" if key in cached["has_in"] else "OTHER")
+                         for key in grouped}
+            totals = {"enemy": 0, "friendly": 0}
+            for key in grouped:
+                side = "enemy" if row_types[key] == "ENEMY" else "friendly"
+                totals[side] += cached["damage"].get(key, 0)
+            cached["row_types"], cached["totals"] = row_types, totals
+        metric_events, grouped, display_names = cached["metric_events"], cached["grouped"], cached["display_names"]
+        row_types, totals = cached["row_types"], cached["totals"]
         recent_damage: dict[tuple[str, str], int] = {}
         for event in self._recent:
             if event.kind in DAMAGE_KINDS and in_scope(event):
                 key, _actor = self._actor_key(event, names)
                 recent_damage[key] = recent_damage.get(key, 0) + event.amount
-
-        # A mob that hit you and also hit your group is one enemy, not two rows; its
-        # share is measured against everything enemies dealt, friendly rows against
-        # everything the friendly side dealt.
-        row_types = {key: self._row_type(key, events) for key, events in grouped.items()}
-        totals = {"enemy": 0, "friendly": 0}
-        for key, events in grouped.items():
-            side = "enemy" if row_types[key] == "ENEMY" else "friendly"
-            totals[side] += sum(e.amount for e in events if e.kind in DAMAGE_KINDS)
 
         if target_key is None:
             damage_duration = max(1.0, snapshot.duration)
@@ -264,6 +335,9 @@ class EncounterTracker:
 
     def _name_map(self) -> dict[str, str]:
         """Canonical spelling for every actor and target name seen this encounter."""
+        cache_tag = (self._names_version, self._settings_key())
+        if self._name_map_cache is not None and self._name_map_cache[0] == cache_tag:
+            return self._name_map_cache[1]
         seen = []
         for event in self.events:
             if event.kind in METRIC_KINDS:
@@ -275,6 +349,7 @@ class EncounterTracker:
         for name, canonical in names.items():
             if canonical == name and len(name) <= 2 and name != PLAYER_TARGET_KEY:
                 names[name] = "unknown"
+        self._name_map_cache = (cache_tag, names)
         return names
 
     @staticmethod
@@ -285,6 +360,9 @@ class EncounterTracker:
 
     def encounter_targets(self) -> list[str]:
         """Distinct damage and healing targets, one entry per (fuzzy) case-insensitive name."""
+        targets_key = ("targets", self._names_version, self._settings_key())
+        if targets_key in self._grouping_cache:
+            return list(self._grouping_cache[targets_key])
         canonical = self._name_map()
         names: dict[str, Counter] = {}
         for event in self.events:
@@ -295,7 +373,9 @@ class EncounterTracker:
             if key == PLAYER_TARGET_KEY:
                 target = "You"
             names.setdefault(canonical.get(key, key), Counter())[target] += 1
-        return sorted((_preferred_spelling(c) for c in names.values()), key=str.casefold)
+        result = sorted((_preferred_spelling(c) for c in names.values()), key=str.casefold)
+        self._grouping_cache[targets_key] = result
+        return list(result)
 
     def _target_key(self, target: str) -> str:
         key = target.casefold().strip()
