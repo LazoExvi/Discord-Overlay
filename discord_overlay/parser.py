@@ -495,7 +495,15 @@ class CombatTextParser:
         """Split the text before ``for N points`` into actor, target, action, and kind."""
         prefix = prefix.strip(" .")
 
-        pet_match = _NAMED_PET_SPELL.match(prefix) or _UNNAMED_PET_SPELL.match(prefix) or _PET_ATTACK.match(prefix)
+        pet_match = _NAMED_PET_SPELL.match(prefix)
+        if pet_match:
+            # "Your pet Stratocia hits Belot's pet": a verb before the apostrophe means the
+            # possessive belongs to the target, so this is a melee hit, not "<pet>'s <ability>".
+            attack = _PET_ATTACK.match(prefix)
+            verb = _VERB_PATTERN.search(attack.group("rest")) if attack else None
+            if verb and verb.start() < attack.group("rest").find("'s"):
+                pet_match = attack
+        pet_match = pet_match or _UNNAMED_PET_SPELL.match(prefix) or _PET_ATTACK.match(prefix)
         if pet_match:
             return self._pet_parties(prefix, pet_match)
 
@@ -599,4 +607,6 @@ class CombatTextParser:
             return "Unknown"
         if len(value) == 1 and value.islower():
             return "Unknown"
+        if re.search(r"\d", value):
+            return "Unknown"  # no player or mob name contains a digit; this is OCR debris
         return value

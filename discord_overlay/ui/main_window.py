@@ -709,17 +709,26 @@ class App(ctk.CTk):
         self._preview_photo = None
 
     def _tick(self) -> None:
-        self.tracker.update()
-        self._refresh_metrics()
-        now = time.monotonic()
-        if self.running or self.tracker.active or self.sparkline.samples:
-            self.sparkline.add(now, self.tracker.snapshot(now).rolling_dps)
-        self._render_mini()
-        self._refresh_arrange_button()
-        for notification in self.timers.tick(now):
-            self._timer_notification(notification)
-        self.overlays.render(now)
-        self.after(250, self._tick)
+        # This loop drives timer countdowns and overlay redraws, so it must survive a
+        # failing step: the error is logged once and the loop keeps running.
+        try:
+            self.tracker.update()
+            self._refresh_metrics()
+            now = time.monotonic()
+            if self.running or self.tracker.active or self.sparkline.samples:
+                self.sparkline.add(now, self.tracker.snapshot(now).rolling_dps)
+            self._render_mini()
+            self._refresh_arrange_button()
+            for notification in self.timers.tick(now):
+                self._timer_notification(notification)
+            self.overlays.render(now)
+        except Exception:  # noqa: BLE001 - reported, never allowed to stop the clocks
+            if not getattr(self, "_tick_error_reported", False):
+                self._tick_error_reported = True
+                self.logger.exception("Error inside the UI tick; the loop continues")
+                self.set_status("A display error was saved in the diagnostics folder", theme.ACCENT)
+        finally:
+            self.after(250, self._tick)
 
     # -- events & metrics -----------------------------------------------------
 

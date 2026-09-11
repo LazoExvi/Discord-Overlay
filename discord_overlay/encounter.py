@@ -268,7 +268,8 @@ class EncounterTracker:
         cache_key = ("group", target_key, self._settings_key(), self._names_version)
         cached = self._grouping_cache.get(cache_key)
         if cached is None or cached["built"] > len(self.events):
-            cached = {"built": 0, "metric_events": [], "grouped": {}, "display_names": {}, "damage": {}, "has_in": set()}
+            cached = {"built": 0, "metric_events": [], "grouped": {}, "display_names": {}, "damage": {},
+                      "has_in": set(), "row_types": {}, "totals": {"enemy": 0, "friendly": 0}}
             if len(self._grouping_cache) > 8:
                 self._grouping_cache.clear()
             self._grouping_cache[cache_key] = cached

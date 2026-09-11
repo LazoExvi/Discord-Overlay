@@ -441,6 +441,17 @@ def test_enemy_damage_shield_burning_you_is_incoming():
     assert parse("Your Damage Shield hits a Plagueborn myrmidon for 12 points of damage.", name="Crit").kind == EventKind.DAMAGE_OUT
 
 
+def test_your_pet_hitting_another_pet_and_digit_debris_names():
+    event = parse("Your pet Stratocia hits Belot's pet for 3 points of damage.", name="Exvi")
+    assert (event.kind, event.actor, event.action, event.target, event.is_pet) == (
+        EventKind.DAMAGE_OUT, "Stratocia", "Hits", "Belot's pet", True)
+    spell = parse("Your pet Stratocia's Staggering Winds hits a risen officer for 39 points of Magic Damage.", name="Exvi")
+    assert (spell.actor, spell.action, spell.target) == ("Stratocia", "Staggering Winds", "risen officer")
+    # A garbled render with digits inside the name is debris, never a combatant.
+    debris = parse("1oui Eiementai Fiasn m11 mits a Deepcut uracker ror 24 pomits o1 iviagic Damage.", name="Exvi")
+    assert debris is None or debris.actor == "Unknown"
+
+
 def test_another_creatures_pet_is_one_actor():
     event = parse("a Plagueborn runescribe's pet hits Player for 2 points of damage.", name="Crit")
     assert (event.kind, event.actor, event.target, event.action) == (

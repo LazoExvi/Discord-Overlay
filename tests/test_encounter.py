@@ -18,6 +18,17 @@ def rows(tracker, **kw):
     return [row.as_tuple() for row in tracker.actor_totals(**kw)]
 
 
+def test_totals_work_with_no_events_and_after_reset():
+    tracker = EncounterTracker(player_name="Raan")
+    assert tracker.actor_totals(now=1.0) == [] and tracker.encounter_targets() == []
+    tracker.add(_event("Klog", 20))
+    assert len(tracker.actor_totals(now=10.5)) == 1
+    tracker.reset()
+    assert tracker.actor_totals(now=11.0) == [] and tracker.snapshot(now=11.0).total_out == 0
+    tracker.add(_event("Klog", 5, timestamp=12.0))
+    assert [(r.actor, r.damage) for r in tracker.actor_totals(now=12.5)] == [("Klog", 5)]
+
+
 def test_actor_breakdown_merges_ocr_case_variants():
     tracker = EncounterTracker()
     tracker.add(_event("klog", 20))
