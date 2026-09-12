@@ -7,6 +7,7 @@ import customtkinter as ctk
 
 from .. import __version__, shortcuts
 from ..config import MINI_STAT_SLOTS, MINI_STATS, TimerBoard
+from ..triggers import OVERLAY_SIZES
 
 STAT_NONE = "None"
 STAT_KEYS = {label: key for key, label in MINI_STATS.items()}
@@ -37,7 +38,49 @@ class SettingsTab:
         self._build_timer_boards(body)
         self._build_mini_overlay(body)
         self._build_hardware(body)
+        self._loading = False
+        self._status_after: str | None = None
         self.refresh_from_settings()
+        self._wire_auto_apply(body)
+
+    # -- automatic saving ------------------------------------------------------
+
+    def _wire_auto_apply(self, root) -> None:
+        """Every entry saves on Enter or when it loses focus; every menu saves on choice."""
+        stack = [root]
+        while stack:
+            widget = stack.pop()
+            stack.extend(widget.winfo_children())
+            if isinstance(widget, ctk.CTkEntry):
+                widget.bind("<Return>", self._auto_apply, add="+")
+                widget.bind("<FocusOut>", self._auto_apply, add="+")
+            elif isinstance(widget, ctk.CTkOptionMenu):
+                previous = getattr(widget, "_command", None)
+
+                def chosen(value, _previous=previous):
+                    if _previous:
+                        _previous(value)
+                    self._auto_apply()
+
+                widget.configure(command=chosen)
+
+    def _auto_apply(self, _event=None) -> None:
+        if self._loading:
+            return
+        try:
+            self.apply_to_settings()
+        except ValueError as exc:
+            self._show_save_status(str(exc), theme.RED, hold=6000)
+            return
+        self.app.save_settings(silent=True)
+        self._show_save_status("Saved", theme.GREEN)
+
+    def _show_save_status(self, text: str, color: str, hold: int = 2500) -> None:
+        self.save_status.configure(text=text, text_color=color)
+        if self._status_after:
+            self.save_status.after_cancel(self._status_after)
+        self._status_after = self.save_status.after(
+            hold, lambda: self.save_status.configure(text="Changes save automatically", text_color=theme.MUTED))
 
     def _build_mini_overlay(self, body) -> None:
         frame = ctk.CTkFrame(body, fg_color=theme.PANEL_2, corner_radius=10)
@@ -136,7 +179,7 @@ class SettingsTab:
         self.layout_menu.grid(row=3, column=0, padx=16, pady=(0, 8), sticky="w")
         self.board_menu = ctk.CTkOptionMenu(frame, values=["Default"], width=170, command=self._board_selected, **theme.MENU)
         self.board_menu.grid(row=3, column=1, padx=16, pady=(0, 8), sticky="w")
-        self.size_menu = ctk.CTkOptionMenu(frame, values=["Compact", "Standard", "Large"], width=150, **theme.MENU)
+        self.size_menu = ctk.CTkOptionMenu(frame, values=[size.title() for size in OVERLAY_SIZES], width=150, **theme.MENU)
         self.size_menu.grid(row=3, column=2, padx=16, pady=(0, 8), sticky="w")
         self.columns_menu = ctk.CTkOptionMenu(frame, values=[str(v) for v in range(1, 7)], width=90, **theme.MENU)
         self.columns_menu.grid(row=3, column=3, padx=16, pady=(0, 8), sticky="w")
@@ -183,8 +226,9 @@ class SettingsTab:
         self.hardware_label.grid(row=1, column=0, padx=16, pady=(0, 12), sticky="ew")
         ctk.CTkButton(frame, text="Run hardware setup", command=self.app.show_hardware_setup, width=150, **theme.STEEL_BUTTON).grid(
             row=0, column=1, rowspan=2, padx=14, pady=12)
-        ctk.CTkButton(frame, text="Save settings", command=self.app.save_settings, width=120, **theme.ACCENT_BUTTON).grid(
-            row=0, column=2, rowspan=2, padx=(0, 14), pady=12)
+        self.save_status = ctk.CTkLabel(frame, text="Changes save automatically", text_color=theme.MUTED,
+                                        font=theme.font(12), width=220, anchor="e")
+        self.save_status.grid(row=0, column=2, rowspan=2, padx=(0, 14), pady=12)
         footer = ctk.CTkFrame(body, fg_color="transparent")
         footer.grid(row=13, column=0, columnspan=3, padx=20, pady=(12, 18), sticky="ew")
         ctk.CTkButton(footer, text="About Discord Overlay", command=lambda: AboutWindow(self.app), width=170,
@@ -200,6 +244,13 @@ class SettingsTab:
     # -- settings <-> widgets -------------------------------------------------
 
     def refresh_from_settings(self) -> None:
+        self._loading = True
+        try:
+            self._refresh_from_settings()
+        finally:
+            self._loading = False
+
+    def _refresh_from_settings(self) -> None:
         s = self.settings
         for entry, value in zip(self.number_entries, (s.scan_interval, s.encounter_timeout, s.rolling_window, s.min_confidence)):
             entry.delete(0, "end")
