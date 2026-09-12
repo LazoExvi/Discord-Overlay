@@ -441,6 +441,27 @@ def test_enemy_damage_shield_burning_you_is_incoming():
     assert parse("Your Damage Shield hits a Plagueborn myrmidon for 12 points of damage.", name="Crit").kind == EventKind.DAMAGE_OUT
 
 
+def test_for_read_as_tor_and_of_as_ot():
+    cases = {
+        "Dalic's Damage Shield hits a grove warden tor 5 points of damage.": ("Dalic", "grove warden", 5),
+        "You crush a rutfian tor 25 points ot damage.": ("Crit", "rutfian", 25),
+        "a river bandit hits YOU tor 30 points ot damage.": ("river bandit", "Crit", 30),
+        "Dalic's Gavel of Light hits a spore seerfor 83 points of HolyDamage.": ("Dalic", "spore seer", 83),
+        "a Skri'Var taskmaster's Slam hits Dalic for8points of damage.": ("Skri'Var taskmaster", "Dalic", 8),
+        "Sugar's Arcane Spear I1 hits an exiled noble tor 45 points ot Magic Damage.": ("Sugar", "exiled noble", 45),
+    }
+    for text, expected in cases.items():
+        event = parse(text, name="Crit")
+        assert event is not None, text
+        assert (event.actor, event.target, event.amount) == expected, text
+    heal = parse("Dalic's Crusader's Mark heals them tor 3 Health.", name="Crit")
+    assert (heal.kind, heal.actor, heal.target, heal.amount) == (EventKind.HEAL, "Dalic", "Dalic", 3)
+    heal = parse("a Skrı'Var tracker's Lesser Heal heals a Skri'Var tracker tor 24 Health,", name="Crit")
+    assert (heal.actor, heal.target, heal.amount) == ("Skri'Var tracker", "Skri'Var tracker", 24)
+    heal = parse("a nursery mender's Greater Heal heals a grove warden tor 57 Health.", name="Crit")
+    assert (heal.actor, heal.target, heal.amount) == ("nursery mender", "grove warden", 57)
+
+
 def test_your_pet_hitting_another_pet_and_digit_debris_names():
     event = parse("Your pet Stratocia hits Belot's pet for 3 points of damage.", name="Exvi")
     assert (event.kind, event.actor, event.action, event.target, event.is_pet) == (

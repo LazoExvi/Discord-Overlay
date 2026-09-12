@@ -171,6 +171,9 @@ def repair_ocr_possessive(text: str) -> str:
 
 
 _GLUED_ARTICLE = re.compile(r"\b([A-Za-z]{4,})(an|a)(?=\s+[a-z])")
+_MISREAD_FOR = re.compile(r"(?:(?<=[A-Za-z.!?])|\b)\s*(?:for|tor|f0r|fon)\s*(?=\d[\d,]*\s*(?:p\S{3,6}|Health)\b)", re.IGNORECASE)
+_MISREAD_OF = re.compile(r"(\d\s+p\S{3,6})\s*(?:of|ot|o1|0f)\s*(?=[A-Za-z])", re.IGNORECASE)
+_GLUED_DAMAGE = re.compile(r"\b([A-Z][a-z]+)(Damage)\b")
 _MISREAD_YOUR = re.compile(r"^Y[o0][uwv]{1,2}r(?=\s)")   # Yowr / Youwr / Yovr
 _MISREAD_YOU = re.compile(r"^Y[o0][uwv]{1,2}(?=\s)")     # Yow / Yov
 _GLUED_RANK_VERB = re.compile(rf"\b([A-Za-z]{{3,}})(I{{1,3}}|IV|VI{{0,3}}|V|IX|X)({_VERB_ALTERNATION})(?=\s)")
@@ -191,6 +194,10 @@ def repair_ocr_spacing(text: str) -> str:
     """Restore spaces OCR drops in a few grammar-backed spots; nothing broader."""
     text = repair_ocr_possessive(text)
     text = re.sub(r"\bfor-(?=\d)", "for ", text)  # "for-407 points"
+    text = _MISREAD_FOR.sub(" for ", text)          # "hits X tor 5 points", "seerfor 83", "for8points"
+    text = re.sub(r"(\d)(?=p[a-z]{3,6}\b)", r"\1 ", text)  # "8points"
+    text = _MISREAD_OF.sub(r"\1 of ", text)         # "points ot damage", "points ofdamage"
+    text = _GLUED_DAMAGE.sub(r"\1 \2", text)        # "HolyDamage"
     text = _MISREAD_YOUR.sub("Your", text)
     text = _MISREAD_YOU.sub("You", text)
     text = _GLUED_RANK_VERB.sub(lambda m: f"{m.group(1)} {m.group(2)} {m.group(3)}", text)
@@ -256,6 +263,7 @@ def _pet_key(value: str) -> str:
 def normalize_quotes(text: str) -> str:
     """OCR renders apostrophes as backticks or acute accents; the grammar needs a plain one."""
     text = text.replace("`", "'").replace("´", "'").replace("’", "'").replace("‘", "'")
+    text = text.replace("ı", "i").replace("İ", "I")
     if not text.isascii():
         # "ąf damage": strip diacritics the game never prints, keep anything else as-is.
         text = "".join(c for c in unicodedata.normalize("NFKD", text) if not unicodedata.combining(c))
