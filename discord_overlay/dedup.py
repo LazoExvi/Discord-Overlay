@@ -13,8 +13,18 @@ SIMILARITY = 0.94
 OVERLAP_RATIO = 0.85
 
 
+_DIGIT_LOOKALIKES = str.maketrans({"o": "0", "i": "1", "l": "1", "s": "5", "b": "8"})
+_NUMBER_TOKEN = re.compile(r"\b[0-9oilsb]*[0-9][0-9oilsb]*\b")
+
+
 def line_key(text: str) -> str:
+    """Case-, punctuation-, and digit-jitter-insensitive identity of a chat line.
+
+    OCR may read the same line as ``for 5O points`` on one scan and ``for 50 points``
+    on the next; both must map to one key or the second reading counts as a new hit.
+    """
     text = re.sub(r"[^a-z0-9]+", " ", text.casefold())
+    text = _NUMBER_TOKEN.sub(lambda m: m.group(0).translate(_DIGIT_LOOKALIKES), text)
     return re.sub(r"\s+", " ", text).strip()
 
 

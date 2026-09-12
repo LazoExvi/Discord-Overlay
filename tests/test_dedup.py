@@ -100,3 +100,13 @@ def test_scrolling_back_through_history_counts_nothing():
     # Scrolling forward to genuinely new lines still counts only the new one.
     assert texts(dedup.new_lines(lines(*history[35:39], "Klog hits a phoenix for 99 points of damage."))) == [
         "Klog hits a phoenix for 99 points of damage."]
+
+
+def test_line_key_ignores_digit_lookalike_jitter():
+    assert line_key("You crush a rat for 5O points of damage.") == line_key("You crush a rat for 50 points of damage.")
+    assert line_key("Klog hits a rat for l2 points of damage.") == line_key("Klog hits a rat for 12 points of damage.")
+    # Words are left alone: "boil" must not become "8011".
+    assert line_key("Klog's Boil hits a rat for 12 points of damage.") == "klog s boil hits a rat for 12 points of damage"
+    dedup = ScrollingTextDeduplicator()
+    dedup.new_lines(lines("one", "You crush a rat for 5O points of damage."))
+    assert dedup.new_lines(lines("one", "You crush a rat for 50 points of damage.")) == []
