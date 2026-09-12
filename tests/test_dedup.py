@@ -83,3 +83,20 @@ def test_reset_reprimes_and_empty_input_is_ignored():
     dedup.reset()
     assert dedup.new_lines(lines("a", "b")) == []
     assert line_key("  You Crush, a Rat!! ") == "you crush a rat"
+
+
+def test_scrolling_back_through_history_counts_nothing():
+    dedup = ScrollingTextDeduplicator()
+    mobs = ["rat", "bat", "wolf", "bear", "snake", "ghoul", "zombie", "spider", "beetle", "crab",
+            "lion", "tiger", "hawk", "eagle", "boar", "elk", "moose", "yak", "goat", "hound",
+            "imp", "wisp", "golem", "troll", "ogre", "gnoll", "kobold", "orc", "harpy", "wraith",
+            "lich", "drake", "wyrm", "hydra", "basilisk", "manticore", "griffin", "sphinx", "naga"]
+    history = [f"Klog hits a {mob} for {(n * 37) % 90 + 10} points of damage." for n, mob in enumerate(mobs)]
+    dedup.new_lines(lines(*history[:5]))
+    for start in range(1, 35):
+        dedup.new_lines(lines(*history[start:start + 5]))      # normal scrolling, each line counted once
+    # The user drags the chat back to lines seen long ago: no overlap with the last viewport.
+    assert dedup.new_lines(lines(*history[2:7])) == []
+    # Scrolling forward to genuinely new lines still counts only the new one.
+    assert texts(dedup.new_lines(lines(*history[35:39], "Klog hits a phoenix for 99 points of damage."))) == [
+        "Klog hits a phoenix for 99 points of damage."]

@@ -8,7 +8,7 @@ from math import ceil
 
 from .models import OCRLine
 
-RECENT_KEYS = 80
+RECENT_KEYS = 500      # several minutes of history, so a jump or scroll-back cannot replay old lines
 SIMILARITY = 0.94
 OVERLAP_RATIO = 0.85
 
