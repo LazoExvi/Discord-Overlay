@@ -89,7 +89,8 @@ class SettingsTab:
         self.shield_wearer_var = ctk.BooleanVar()
         self.gpu_var = ctk.BooleanVar()
         self.repair_var = ctk.BooleanVar()
-        ctk.CTkCheckBox(body, text="Keep parser above the game", variable=self.topmost_var, **theme.CHECKBOX).grid(
+        ctk.CTkCheckBox(body, text="Keep parser above the game", variable=self.topmost_var,
+                        command=lambda: self.app.save_settings(silent=True), **theme.CHECKBOX).grid(
             row=5, column=0, columnspan=2, padx=20, pady=(24, 8), sticky="w")
         theme.note(body, ("All targets includes every recognized damage and healing actor. Enable the Group filter "
                           "to drop fights that do not involve your group."), 650).grid(
