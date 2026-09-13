@@ -80,7 +80,7 @@ class Trigger:
     timer_seconds: float = 0.0
     timer_key_template: str = ""
     retrigger_mode: str = "restart"
-    bar_color: str = "#d39b47"
+    bar_color: str = "#5b2d8e"
     overlay_text_color: str = "#e7edf4"
     timer_board: str = "Default"
     overlay_layout: str = "docked"
@@ -130,7 +130,7 @@ class Trigger:
             timer_seconds=number("timer_seconds", 0.0),
             timer_key_template=text("timer_key_template"),
             retrigger_mode=text("retrigger_mode", "restart").casefold(),
-            bar_color=text("bar_color", "#d39b47"),
+            bar_color=text("bar_color", "#5b2d8e"),
             overlay_text_color=text("overlay_text_color", "#e7edf4"),
             timer_board=text("timer_board", "Default").strip() or "Default",
             overlay_layout=text("overlay_layout", "docked").casefold(),

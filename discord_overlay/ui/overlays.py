@@ -304,7 +304,7 @@ class OverlayManager:
         prefix = f"{BOARD_PREVIEW_PREFIX}{board.id}-"
         self.timers.remove_where(lambda timer: timer.id.startswith(prefix))
         now = time.monotonic()
-        samples = (("Sample Timer A", 18.0, 30.0, "#d39b47"), ("Sample Timer B", 11.0, 24.0, "#57c7ff"),
+        samples = (("Sample Timer A", 18.0, 30.0, "#5b2d8e"), ("Sample Timer B", 11.0, 24.0, "#57c7ff"),
                    ("Sample Timer C", 25.0, 40.0, "#67d391"))
         for index, (label, remaining, duration, color) in enumerate(samples, start=1):
             timer = TimerInstance(
