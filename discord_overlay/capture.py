@@ -1,6 +1,8 @@
 """Screen capture. Reads pixels only; never touches the game process."""
 from __future__ import annotations
 
+import re
+
 import threading
 
 import numpy as np
@@ -32,6 +34,36 @@ def monitor_rects() -> list[dict[str, int]]:
 
     with mss.mss() as capture:
         return [dict(monitor) for monitor in capture.monitors[1:]]
+
+
+def region_on_screen(region: Region) -> bool:
+    """True when the whole rectangle lies inside one physical monitor."""
+    monitor = monitor_containing(region.left + region.width // 2, region.top + region.height // 2)
+    if monitor is None:
+        return False
+    return (region.left >= monitor["left"] and region.top >= monitor["top"]
+            and region.left + region.width <= monitor["left"] + monitor["width"]
+            and region.top + region.height <= monitor["top"] + monitor["height"])
+
+
+def tk_geometry(width: int, height: int, x: int, y: int) -> str:
+    """A Tk geometry string that also works left of or above the primary monitor.
+
+    ``-2560-139`` means "2560 px from the right edge" to Tk; a negative desktop
+    coordinate must be written ``+-2560+-139``.
+    """
+    return f"{width}x{height}+{x}+{y}"
+
+
+_GEOMETRY = re.compile(r"(\d+)x(\d+)\+?(-?\d+)\+?(-?\d+)")
+
+
+def parse_geometry(geometry: str) -> tuple[int, int, int, int] | None:
+    """``340x230+-2560+-139`` -> (340, 230, -2560, -139); None when malformed."""
+    match = _GEOMETRY.fullmatch(geometry.strip()) if geometry else None
+    if not match:
+        return None
+    return tuple(int(group) for group in match.groups())  # type: ignore[return-value]
 
 
 def monitor_containing(x: int, y: int) -> dict[str, int] | None:

@@ -3,13 +3,12 @@ from __future__ import annotations
 
 import ctypes
 import os
-import re
 import time
 import tkinter as tk
 from collections.abc import Callable
 from ctypes import wintypes
 
-from ..capture import monitor_containing
+from ..capture import monitor_containing, parse_geometry, tk_geometry
 from ..config import Settings, TimerBoard
 from ..encounter import ActorRow
 from ..models import EncounterSnapshot
@@ -28,11 +27,12 @@ BOARD_PREVIEW_PREFIX = "board-preview-"
 
 
 def offset_geometry(geometry: str, index: int) -> str:
-    match = re.fullmatch(r"(\d+x\d+)([+-]\d+)([+-]\d+)", geometry)
-    if not match or index <= 0:
+    parsed = parse_geometry(geometry)
+    if not parsed or index <= 0:
         return geometry
+    width, height, x, y = parsed
     delta = index * STACK_OFFSET
-    return f"{match.group(1)}{int(match.group(2)) + delta:+d}{int(match.group(3)) + delta:+d}"
+    return tk_geometry(width, height, x + delta, y + delta)
 
 
 class OverlayManager:
@@ -114,7 +114,7 @@ class OverlayManager:
                 below = region.top + region.height + 24
                 y = below if below + height <= bottom - 12 else region.top + 24
             y = min(max(y, monitor["top"] + 12), bottom - height - 12)
-        return f"{width}x{height}{x:+d}{y:+d}"
+        return tk_geometry(width, height, x, y)
 
     def _board_overlay(self, board: TimerBoard) -> TimerOverlay:
         overlay = self.board_overlays.get(board.id)
@@ -149,9 +149,9 @@ class OverlayManager:
                 geometry = offset_geometry(geometry, max(0, index - 1))
             if not geometry:
                 width, height = INDEPENDENT_SIZES.get(self.settings.timer_visual_size, INDEPENDENT_SIZES["standard"])
-                match = re.fullmatch(r"\d+x\d+([+-]\d+)([+-]\d+)", self._anchor_geometry())
-                x, y = (int(match.group(1)), int(match.group(2))) if match else (40, 80)
-                geometry = f"{width}x{height}{x + index * STACK_OFFSET:+d}{y + index * STACK_OFFSET:+d}"
+                anchor = parse_geometry(self._anchor_geometry())
+                x, y = anchor[2:] if anchor else (40, 80)
+                geometry = tk_geometry(width, height, x + index * STACK_OFFSET, y + index * STACK_OFFSET)
             overlay = TimerOverlay(
                 self.root, geometry,
                 lambda value, t=trigger_id, p=placement_key: self._independent_moved(t, p, value),
@@ -222,9 +222,9 @@ class OverlayManager:
         if self.mini is None or not self.mini.winfo_exists():
             geometry = self.settings.mini_overlay_geometry
             if not geometry:
-                match = re.fullmatch(r"\d+x\d+([+-]\d+)([+-]\d+)", self._anchor_geometry())
-                x, y = (int(match.group(1)), int(match.group(2))) if match else (40, 80)
-                geometry = f"340x230{x:+d}{y:+d}"
+                anchor = parse_geometry(self._anchor_geometry())
+                x, y = anchor[2:] if anchor else (40, 80)
+                geometry = tk_geometry(340, 230, x, y)
             self.mini = MiniMeterOverlay(self.root, geometry, self._mini_moved)
         return self.mini
 

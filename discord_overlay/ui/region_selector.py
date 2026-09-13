@@ -4,7 +4,7 @@ from __future__ import annotations
 import tkinter as tk
 from collections.abc import Callable
 
-from ..capture import monitor_rects
+from ..capture import monitor_rects, tk_geometry
 from ..models import Region
 
 DIM = "#06111a"
@@ -52,7 +52,7 @@ class RegionSelector:
         overlay.attributes("-topmost", True)
         overlay.attributes("-alpha", 0.38)
         overlay.configure(bg=DIM, cursor="crosshair")
-        overlay.geometry(f"{monitor['width']}x{monitor['height']}{monitor['left']:+d}{monitor['top']:+d}")
+        overlay.geometry(tk_geometry(monitor["width"], monitor["height"], monitor["left"], monitor["top"]))
         overlay.update_idletasks()
 
         canvas = tk.Canvas(overlay, bg=DIM, highlightthickness=0, borderwidth=0, cursor="crosshair")

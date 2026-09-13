@@ -16,7 +16,7 @@ from PIL import Image
 from .. import APP_NAME, __version__
 from ..actor_filter import actor_event_allowed
 from ..audio import SoundPlayer, ensure_default_sounds
-from ..capture import ScreenCapture
+from ..capture import ScreenCapture, region_on_screen
 from ..config import Settings
 from ..diagnostics import LOGGER_NAME
 from ..encounter import EncounterTracker
@@ -118,7 +118,26 @@ class App(ctk.CTk):
         self.settings_tab = SettingsTab(self.tabs.add("Settings"), self)
         self._build_tips_tab(self.tabs.add("OCR Tips"))
         self.tabs.set("Combatants")
+        self._forget_offscreen_region()
         self._refresh_start_button()
+
+    def _forget_offscreen_region(self) -> None:
+        """After monitors are swapped or unplugged the saved rectangle may point at nothing."""
+        region = self.settings.region
+        if region is None:
+            return
+        try:
+            on_screen = region_on_screen(region)
+        except Exception:  # noqa: BLE001 - enumeration failure is not a reason to drop the region
+            return
+        if on_screen:
+            return
+        self.settings.region = None
+        self.settings.region_history.clear()
+        self.settings.save()
+        self.region_label.configure(text=self._region_text())
+        self.set_status("Display layout changed - the saved capture region was off-screen, select it again",
+                        theme.MUTED)
 
     def _build_header(self) -> None:
         header = ctk.CTkFrame(self, fg_color=theme.PANEL, corner_radius=0, height=58, border_width=0)
