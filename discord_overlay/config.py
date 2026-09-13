@@ -17,7 +17,7 @@ from pathlib import Path
 
 from .models import Region
 from .paths import settings_path
-from .triggers import OVERLAY_LAYOUTS, OVERLAY_SIZES, Trigger
+from .triggers import HEX_COLOR, OVERLAY_LAYOUTS, OVERLAY_SIZES, Trigger
 
 SCHEMA_VERSION = 1
 PLACEHOLDER_CHARACTER = "Default"
@@ -41,6 +41,11 @@ MINI_STATS: dict[str, str] = {
 }
 MINI_STAT_SLOTS = 4
 DEFAULT_MINI_STATS = ["dps", "rolling_dps", "damage", "healing"]
+
+
+def _hex_color(value, default: str) -> str:
+    value = str(value or "").strip().lower()
+    return value if HEX_COLOR.fullmatch(value) else default
 
 
 def _choice(value, allowed: tuple[str, ...], default: str) -> str:
@@ -148,6 +153,8 @@ class Settings:
     timer_boards: list[TimerBoard] = field(default_factory=lambda: [TimerBoard()])
     timer_layout: str = "docked"
     timer_visual_size: str = "standard"
+    default_bar_color: str = "#5b2d8e"
+    default_text_color: str = "#e7edf4"
     active_trigger_profile: str = "Default"
     trigger_states: dict[str, bool] = field(default_factory=dict)  # trigger id -> enabled, per character
     actor_filter_enabled: bool = False
@@ -233,6 +240,8 @@ class Settings:
             self.overlay_close_modifier2 = "none"
         self.timer_layout = _choice(self.timer_layout, OVERLAY_LAYOUTS, "docked")
         self.timer_visual_size = _choice(self.timer_visual_size, OVERLAY_SIZES, "standard")
+        self.default_bar_color = _hex_color(self.default_bar_color, "#5b2d8e")
+        self.default_text_color = _hex_color(self.default_text_color, "#e7edf4")
         self.mini_overlay_rows = int(_clamp(self.mini_overlay_rows, 1, 12, 6))
         self.mini_overlay_opacity = _clamp(self.mini_overlay_opacity, 0.2, 1.0, 0.9)
         self.mini_overlay_metric = _choice(self.mini_overlay_metric, MINI_METRICS, "damage")

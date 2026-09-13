@@ -126,7 +126,9 @@ class AlertsTab:
         self.status(f"Active trigger profile: {profile}")
 
     def new_trigger(self) -> None:
-        self._open_editor(Trigger(profile=self.settings.active_trigger_profile, overlay_enabled=True))
+        self._open_editor(Trigger(profile=self.settings.active_trigger_profile, overlay_enabled=True,
+                                  bar_color=self.settings.default_bar_color,
+                                  overlay_text_color=self.settings.default_text_color))
 
     def edit_selected(self) -> None:
         trigger = self._selected()

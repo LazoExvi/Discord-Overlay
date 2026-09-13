@@ -1,13 +1,13 @@
 """The Settings tab: scan tuning, attribution options, timer boards, hardware profile."""
 from __future__ import annotations
 
-from tkinter import messagebox, simpledialog
+from tkinter import colorchooser, messagebox, simpledialog
 
 import customtkinter as ctk
 
 from .. import __version__, shortcuts
 from ..config import MINI_STAT_SLOTS, MINI_STATS, TimerBoard
-from ..triggers import OVERLAY_SIZES
+from ..triggers import HEX_COLOR, OVERLAY_SIZES
 
 STAT_NONE = "None"
 STAT_KEYS = {label: key for key, label in MINI_STATS.items()}
@@ -203,18 +203,68 @@ class SettingsTab:
         ctk.CTkButton(frame, text="Preview selected board", width=170, command=self.preview_board, **theme.ACCENT_BUTTON).grid(
             row=7, column=2, columnspan=2, padx=16, pady=(0, 12), sticky="w")
 
-        theme.note(frame, "Close overlay gesture").grid(row=8, column=0, padx=16, pady=(5, 3), sticky="w")
+        theme.note(frame, "Default bar color").grid(row=8, column=0, padx=16, pady=(5, 3), sticky="w")
+        theme.note(frame, "Default text color").grid(row=8, column=1, padx=16, pady=(5, 3), sticky="w")
+        self.bar_color_entry, self.bar_swatch = self._color_picker(frame, 9, 0)
+        self.text_color_entry, self.text_swatch = self._color_picker(frame, 9, 1)
+        ctk.CTkButton(frame, text="Apply colors to all triggers", width=190, command=self.apply_colors_to_triggers,
+                      **theme.STEEL_BUTTON).grid(row=9, column=2, columnspan=2, padx=16, pady=(0, 5), sticky="w")
+        theme.note(frame, "New triggers start with these colors; each trigger can still override them in its editor.",
+                   760).grid(row=10, column=0, columnspan=4, padx=16, pady=(0, 8), sticky="ew")
+
+        theme.note(frame, "Close overlay gesture").grid(row=11, column=0, padx=16, pady=(5, 3), sticky="w")
         self.close_enabled_var = ctk.BooleanVar()
         ctk.CTkCheckBox(frame, text="Modifier(s) + left-click", width=190, variable=self.close_enabled_var,
-                        **theme.CHECKBOX).grid(row=9, column=0, padx=16, pady=(0, 5), sticky="w")
+                        **theme.CHECKBOX).grid(row=12, column=0, padx=16, pady=(0, 5), sticky="w")
         modifiers = ["Control", "Shift", "Alt"]
         self.modifier1_menu = ctk.CTkOptionMenu(frame, values=modifiers, width=130, **theme.MENU)
-        self.modifier1_menu.grid(row=9, column=1, padx=16, pady=(0, 5), sticky="w")
+        self.modifier1_menu.grid(row=12, column=1, padx=16, pady=(0, 5), sticky="w")
         self.modifier2_menu = ctk.CTkOptionMenu(frame, values=["None", *modifiers], width=130, **theme.MENU)
-        self.modifier2_menu.grid(row=9, column=2, padx=16, pady=(0, 5), sticky="w")
+        self.modifier2_menu.grid(row=12, column=2, padx=16, pady=(0, 5), sticky="w")
         theme.note(frame, ("Works while overlays are locked and click-through. Hold the selected modifier(s), then "
                            "left-click one timer to close only that timer. Other timers stay visible."), 760).grid(
-            row=10, column=0, columnspan=4, padx=16, pady=(0, 12), sticky="ew")
+            row=13, column=0, columnspan=4, padx=16, pady=(0, 12), sticky="ew")
+
+    def _color_picker(self, parent, row: int, column: int) -> tuple[ctk.CTkEntry, ctk.CTkButton]:
+        holder = ctk.CTkFrame(parent, fg_color="transparent")
+        holder.grid(row=row, column=column, padx=16, pady=(0, 5), sticky="w")
+        entry = ctk.CTkEntry(holder, width=108)
+        entry.pack(side="left")
+        swatch = ctk.CTkButton(holder, text="", width=34, height=28, fg_color=theme.PANEL, hover_color=theme.PANEL)
+        swatch.configure(command=lambda: self._choose_color(entry, swatch))
+        swatch.pack(side="left", padx=(7, 0))
+        entry.bind("<KeyRelease>", lambda _event: self._sync_swatch(entry, swatch))
+        return entry, swatch
+
+    def _choose_color(self, entry, swatch) -> None:
+        initial = entry.get().strip()
+        _rgb, selected = colorchooser.askcolor(color=initial if HEX_COLOR.fullmatch(initial) else None,
+                                               parent=self.app, title="Choose default color")
+        if selected:
+            entry.delete(0, "end")
+            entry.insert(0, selected.lower())
+            self._sync_swatch(entry, swatch)
+            self._auto_apply()
+
+    @staticmethod
+    def _sync_swatch(entry, swatch) -> None:
+        value = entry.get().strip()
+        if HEX_COLOR.fullmatch(value):
+            swatch.configure(fg_color=value, hover_color=value)
+
+    def apply_colors_to_triggers(self) -> None:
+        """Recolor every existing trigger's bar and text to the defaults."""
+        bar, text = self.bar_color_entry.get().strip().lower(), self.text_color_entry.get().strip().lower()
+        if not (HEX_COLOR.fullmatch(bar) and HEX_COLOR.fullmatch(text)):
+            messagebox.showerror("Invalid color", "Colors must look like #5b2d8e.", parent=self.app)
+            return
+        if not messagebox.askyesno("Apply colors", f"Set the bar and text color of all {len(self.settings.triggers)} "
+                                   "triggers to the defaults? Per-trigger colors will be replaced.", parent=self.app):
+            return
+        for trigger in self.settings.triggers:
+            trigger.bar_color, trigger.overlay_text_color = bar, text
+        self.app.save_settings(silent=True)
+        self.app.set_status("Trigger colors updated", theme.GREEN)
 
     def _build_hardware(self, body) -> None:
         frame = ctk.CTkFrame(body, fg_color=theme.PANEL_2, corner_radius=10)
@@ -256,6 +306,11 @@ class SettingsTab:
             entry.delete(0, "end")
             entry.insert(0, str(value))
         self.topmost_var.set(s.always_on_top)
+        for entry, swatch, value in ((self.bar_color_entry, self.bar_swatch, s.default_bar_color),
+                                     (self.text_color_entry, self.text_swatch, s.default_text_color)):
+            entry.delete(0, "end")
+            entry.insert(0, value)
+            self._sync_swatch(entry, swatch)
         self.combine_pet_var.set(s.combine_pet_damage)
         self.shield_wearer_var.set(s.damage_shields_by_wearer)
         self.gpu_var.set(s.prefer_gpu)
@@ -315,6 +370,9 @@ class SettingsTab:
         modifier2 = self.modifier2_menu.get().casefold()
         if modifier2 != "none" and modifier1 == modifier2:
             raise ValueError("Choose two different overlay-close modifiers, or set the second to None.")
+        bar_color, text_color = self.bar_color_entry.get().strip().lower(), self.text_color_entry.get().strip().lower()
+        if not (HEX_COLOR.fullmatch(bar_color) and HEX_COLOR.fullmatch(text_color)):
+            raise ValueError("Default colors must be six-digit hex values such as #5b2d8e.")
         mini_opacity = float(self.mini_opacity_entry.get()) / 100.0
         if not 0.2 <= mini_opacity <= 1.0:
             raise ValueError("Mini meter opacity must be between 20 and 100 percent.")
@@ -334,6 +392,7 @@ class SettingsTab:
         s.repair_occluded_lines = bool(self.repair_var.get())
         s.save_problem_frames = bool(self.problem_frames_var.get())
         s.timer_layout = LAYOUT_MODES[self.layout_menu.get()]
+        s.default_bar_color, s.default_text_color = bar_color, text_color
         s.overlay_close_enabled = bool(self.close_enabled_var.get())
         s.overlay_close_modifier1, s.overlay_close_modifier2 = modifier1, modifier2
         # Independent timers use the selected board's visual size as their default.
