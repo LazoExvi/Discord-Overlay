@@ -1,4 +1,4 @@
 """Discord Overlay: a screen-only OCR combat parser with alerts and timers."""
 
-__version__ = "1.2.27"
+__version__ = "1.2.28"
 APP_NAME = "Discord Overlay"

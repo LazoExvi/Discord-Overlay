@@ -17,14 +17,16 @@ import customtkinter as ctk
 from ..timers import TimerInstance
 from . import theme
 
-CARD_STYLES = {  # size -> (font, bar height, label pady, bar pady, time width, radius)
-    "micro": (8, 2, (1, 0), (1, 2), 26, 2),
-    "tiny": (9, 3, (3, 1), (2, 3), 30, 3),
-    "compact": (11, 4, (5, 2), (3, 5), 38, 4),
-    "standard": (17, 8, (10, 4), (4, 10), 58, 8),
-    "large": (27, 12, (16, 8), (7, 16), 92, 12),
+BAR_STYLES = {  # size -> (font size, bar height, corner radius, text inset)
+    "micro": (8, 12, 3, 4),
+    "tiny": (9, 15, 4, 5),
+    "compact": (11, 20, 5, 7),
+    "standard": (16, 30, 8, 10),
+    "large": (24, 44, 11, 14),
 }
-CARD_GAPS = {"micro": 0, "tiny": 1, "compact": 2, "standard": 5, "large": 8}
+CARD_GAPS = {"micro": 0, "tiny": 1, "compact": 1, "standard": 2, "large": 3}
+FILL_STRENGTH = 0.62    # how much of the bar color survives in the elapsed fill (lower = more "glassy")
+TRACK_STRENGTH = 0.16   # tint of the empty track
 PREVIEW_HEADER = "#3b3f7a"
 
 # Win32 constants used to toggle click-through and keep the window topmost.
@@ -252,45 +254,92 @@ class OverlayWindow(tk.Toplevel):
             pass
 
 
-class TimerCard(ctk.CTkFrame):
+def _blend(color: str, base: str, strength: float) -> str:
+    """Mix ``color`` over ``base`` (both #rrggbb). strength 1 = pure color, 0 = base."""
+    try:
+        c = tuple(int(color[i:i + 2], 16) for i in (1, 3, 5))
+        b = tuple(int(base[i:i + 2], 16) for i in (1, 3, 5))
+    except (ValueError, TypeError):
+        return base
+    return "#%02x%02x%02x" % tuple(max(0, min(255, round(b[i] + (c[i] - b[i]) * strength))) for i in range(3))
+
+
+def _round_rect(canvas: tk.Canvas, x1: float, y1: float, x2: float, y2: float, r: float, **kw) -> int:
+    r = max(0.0, min(r, (x2 - x1) / 2, (y2 - y1) / 2))
+    pts = [x1 + r, y1, x2 - r, y1, x2, y1, x2, y1 + r, x2, y2 - r, x2, y2, x2 - r, y2, x1 + r, y2,
+           x1, y2, x1, y2 - r, x1, y1 + r, x1, y1]
+    return canvas.create_polygon(pts, smooth=True, splinesteps=12, **kw)
+
+
+class TimerCard(tk.Canvas):
+    """One timer drawn as a single bar: label on the left and countdown on the right, both inside
+    the bar. The elapsed fill is a muted blend of the trigger color so it reads as translucent."""
+
     def __init__(self, parent) -> None:
-        super().__init__(parent, fg_color=theme.PANEL, corner_radius=9)
+        super().__init__(parent, bg=theme.BG_DEEP, highlightthickness=0, bd=0, height=30)
         self._visual_size = ""
-        self.grid_columnconfigure(0, weight=1)
-        self.label = ctk.CTkLabel(self, text="", text_color=theme.TEXT, anchor="w", justify="left",
-                                  font=theme.font(17, bold=True), wraplength=320)
-        self.label.grid(row=0, column=0, padx=(13, 6), pady=(9, 3), sticky="ew")
-        self.time_label = ctk.CTkLabel(self, text="", text_color=theme.TEXT, width=58,
-                                       font=theme.font(17, bold=True), anchor="e")
-        self.time_label.grid(row=0, column=1, padx=(4, 13), pady=(9, 3), sticky="e")
-        self.progress = ctk.CTkProgressBar(self, height=9, corner_radius=5, fg_color="#263440",
-                                           progress_color=theme.ACCENT)
-        self.progress.grid(row=1, column=0, columnspan=2, padx=13, pady=(3, 11), sticky="ew")
+        self._timer: TimerInstance | None = None
+        self._now = 0.0
+        self._font = (theme.DISPLAY_FAMILY, 16, "bold")
+        self._style = BAR_STYLES["standard"]
+        self.bind("<Configure>", lambda _e: self._redraw())
 
     def update_timer(self, timer: TimerInstance, now: float) -> None:
         self._apply_visual_size(timer.overlay_size)
-        self.label.configure(text=timer.label, text_color=timer.text_color)
-        if timer.show_bar:
-            self.time_label.configure(text=f"{math.ceil(timer.remaining(now))}s", text_color=timer.text_color)
-            self.progress.configure(progress_color=timer.bar_color)
-            self.progress.set(timer.fraction(now))
-            self.progress.grid()
-        else:
-            self.time_label.configure(text="")
-            self.progress.grid_remove()
+        self._timer, self._now = timer, now
+        self._redraw()
 
     def _apply_visual_size(self, size: str) -> None:
         if size == self._visual_size:
             return
         self._visual_size = size
-        font_size, bar_height, label_y, bar_y, time_width, radius = CARD_STYLES.get(size, CARD_STYLES["standard"])
-        self.configure(corner_radius=radius)
-        self.label.configure(font=theme.font(font_size, bold=True))
-        self.time_label.configure(font=theme.font(font_size, bold=True), width=time_width)
-        self.label.grid_configure(pady=label_y, padx=(label_y[0] + 3, 4))
-        self.time_label.grid_configure(pady=label_y, padx=(3, label_y[0] + 3))
-        self.progress.configure(height=bar_height, corner_radius=max(2, bar_height // 2))
-        self.progress.grid_configure(padx=label_y[0] + 3, pady=bar_y)
+        self._style = BAR_STYLES.get(size, BAR_STYLES["standard"])
+        font_size, bar_height, _radius, _inset = self._style
+        self._font = (theme.DISPLAY_FAMILY, font_size, "bold")
+        self.configure(height=bar_height)
+
+    def _fit_text(self, text: str, max_width: int) -> str:
+        import tkinter.font as tkfont
+        f = tkfont.Font(font=self._font)
+        if f.measure(text) <= max_width:
+            return text
+        for n in range(len(text) - 1, 0, -1):
+            candidate = text[:n].rstrip() + "…"
+            if f.measure(candidate) <= max_width:
+                return candidate
+        return "…"
+
+    def _redraw(self) -> None:
+        self.delete("all")
+        timer = self._timer
+        if timer is None:
+            return
+        font_size, bar_height, radius, inset = self._style
+        w, h = max(1, self.winfo_width()), bar_height
+        color = timer.bar_color if timer.show_bar else theme.SLATE
+        track = _blend(color, theme.BG, TRACK_STRENGTH if timer.show_bar else 0.32)
+        fill = _blend(color, theme.PANEL, FILL_STRENGTH)
+        edge = _blend(color, theme.BG, 0.45)
+        _round_rect(self, 0, 0, w, h, radius, fill=track, outline=edge, width=1)
+        if timer.show_bar:
+            frac = timer.fraction(self._now)
+            fw = max(0.0, (w - 1) * frac)
+            if fw >= 2:
+                _round_rect(self, 0.5, 0.5, fw + 0.5, h - 0.5, radius, fill=fill, outline="")
+                # thin bright leading edge so the boundary stays readable at low opacity
+                self.create_line(fw, 2, fw, h - 2, fill=_blend(color, theme.TEXT, 0.35), width=1)
+        shadow = theme.BG
+        time_text = f"{math.ceil(timer.remaining(self._now))}s" if timer.show_bar else ""
+        import tkinter.font as tkfont
+        f = tkfont.Font(font=self._font)
+        time_w = f.measure(time_text) if time_text else 0
+        cy = h / 2
+        if time_text:
+            self.create_text(w - inset + 1, cy + 1, text=time_text, anchor="e", font=self._font, fill=shadow)
+            self.create_text(w - inset, cy, text=time_text, anchor="e", font=self._font, fill=timer.text_color)
+        label = self._fit_text(timer.label, max(10, w - 2 * inset - time_w - (inset if time_text else 0)))
+        self.create_text(inset + 1, cy + 1, text=label, anchor="w", font=self._font, fill=shadow)
+        self.create_text(inset, cy, text=label, anchor="w", font=self._font, fill=timer.text_color)
 
 
 class TimerOverlay(OverlayWindow):
