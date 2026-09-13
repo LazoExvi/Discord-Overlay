@@ -62,11 +62,15 @@ class ScrollingTextDeduplicator:
 
         previous = self.previous
         overlap, still_visible = self._overlap(previous, current)
+        reliable = still_visible is not None
         candidates = current[overlap:] if overlap else current
-        # Count only the old rows that are still on screen. A row that scrolled off
-        # the top must not cancel out an identical new row at the bottom, or every
-        # repeated heal tick and fixed-damage auto-attack loses lines.
-        old_counts = Counter(line_key(line.text) for line in (still_visible if overlap else previous))
+        # With a confirmed scroll, count only the old rows that are still on screen:
+        # a row that scrolled off the top must not cancel out an identical new row
+        # at the bottom, or every repeated heal tick loses lines. Without one, every
+        # previous row is evidence, or a fixed header row would make the whole
+        # viewport look new on every scan.
+        old_rows = still_visible if reliable else previous
+        old_counts = Counter(line_key(line.text) for line in old_rows)
         extra_counts = Counter(line_key(line.text) for line in current) - old_counts
         fresh: list[OCRLine] = []
         for line in candidates:
@@ -77,7 +81,7 @@ class ScrollingTextDeduplicator:
                 if extra_counts[key] <= 0:
                     continue  # a still-visible old line that slipped past the overlap
                 extra_counts[key] -= 1
-            elif not overlap and key in self.recent_keys:
+            elif not reliable and key in self.recent_keys:
                 continue  # no reliable overlap; recent keys are the only evidence
             fresh.append(line)
         self.previous = current
@@ -86,19 +90,37 @@ class ScrollingTextDeduplicator:
         del self.recent_keys[:-RECENT_KEYS]
         return fresh
 
+    @classmethod
+    def _overlap(cls, previous: list[OCRLine], current: list[OCRLine]) -> tuple[int, list[OCRLine] | None]:
+        """Rows at the top of ``current`` that repeat ``previous``, and which old rows they are.
+
+        The row list is ``None`` when no scroll could be confirmed and the count is
+        only a static prefix (a chat tab label, a window title) that never scrolls.
+        """
+        found = cls._scrolled(previous, current)
+        if found:
+            return found
+        # Rows that stay put at the top (the "COMBAT" tab label) are not part of the
+        # scroll; align the chat rows below them.
+        prefix = 0
+        for a, b in zip(previous, current):
+            if not _similar(a.text, b.text):
+                break
+            prefix += 1
+        if 0 < prefix < min(len(previous), len(current)):
+            found = cls._scrolled(previous[prefix:], current[prefix:])
+            if found:
+                size, rows = found
+                return prefix + size, previous[:prefix] + rows
+        # A static window keeps its prefix and appends at the bottom.
+        return prefix, None
+
     @staticmethod
-    def _overlap(previous: list[OCRLine], current: list[OCRLine]) -> tuple[int, list[OCRLine]]:
-        """Rows at the top of ``current`` that repeat ``previous``, and which old rows they are."""
+    def _scrolled(previous: list[OCRLine], current: list[OCRLine]) -> tuple[int, list[OCRLine]] | None:
         for size in range(min(len(previous), len(current)), 0, -1):
             matches = [_similar(a.text, b.text) for a, b in zip(previous[-size:], current[:size])]
             # Both boundary rows must match, otherwise a viewport with one new
             # bottom line is mistaken for a complete overlap.
             if matches[0] and matches[-1] and sum(matches) >= max(1, ceil(size * OVERLAP_RATIO)):
                 return size, previous[-size:]
-        # A static window keeps its prefix and appends at the bottom.
-        prefix = 0
-        for a, b in zip(previous, current):
-            if not _similar(a.text, b.text):
-                break
-            prefix += 1
-        return prefix, previous[:prefix]
+        return None

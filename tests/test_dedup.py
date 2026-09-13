@@ -110,3 +110,32 @@ def test_line_key_ignores_digit_lookalike_jitter():
     dedup = ScrollingTextDeduplicator()
     dedup.new_lines(lines("one", "You crush a rat for 5O points of damage."))
     assert dedup.new_lines(lines("one", "You crush a rat for 50 points of damage.")) == []
+
+
+def test_fixed_header_row_does_not_make_the_viewport_look_new():
+    # The capture region often includes the chat tab label above the log. That row
+    # never scrolls, so it must not break overlap detection and re-count every line.
+    dedup = ScrollingTextDeduplicator()
+    dedup.new_lines(lines("COMBAT", "Klog hits a rat for 10 points of damage.", "Klog hits a bat for 11 points of damage.",
+                          "Klog hits a wolf for 12 points of damage."))
+    fresh = dedup.new_lines(lines("COMBAT", "Klog hits a bat for 11 points of damage.", "Klog hits a wolf for 12 points of damage.",
+                                  "Klog hits a bear for 13 points of damage."))
+    assert texts(fresh) == ["Klog hits a bear for 13 points of damage."]
+    # Nothing scrolled: nothing is new, even with slight OCR jitter on one row.
+    assert dedup.new_lines(lines("COMBAT", "Klog hits a bat for 11 points of damage.", "Klog hits a wolf tor 12 points of damage.",
+                                 "Klog hits a bear for 13 points of damage.")) == []
+    # Header plus a still-visible twin: the scroll is confirmed, so the repeated tick counts once.
+    dedup = ScrollingTextDeduplicator()
+    tick = "Crit's Second Wind heals you for 66 Health."
+    dedup.new_lines(lines("COMBAT", tick, "filler one", "filler two"))
+    assert texts(dedup.new_lines(lines("COMBAT", "filler one", "filler two", tick))) == [tick]
+
+
+def test_prefix_only_match_is_not_treated_as_a_confirmed_scroll():
+    # Only the top row matches (a header) and the rest is unrelated: with no
+    # confirmed scroll, every previous row still counts as evidence.
+    dedup = ScrollingTextDeduplicator()
+    dedup.new_lines(lines("COMBAT", "Klog hits a rat for 10 points of damage.", "Klog hits a bat for 11 points of damage."))
+    fresh = dedup.new_lines(lines("COMBAT", "Klog hits a bat for 11 points of damage.", "unrelated line one", "unrelated line two",
+                                  "Klog hits a rat for 10 points of damage."))
+    assert texts(fresh) == ["unrelated line one", "unrelated line two"]
