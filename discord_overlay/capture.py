@@ -66,6 +66,27 @@ def parse_geometry(geometry: str) -> tuple[int, int, int, int] | None:
     return tuple(int(group) for group in match.groups())  # type: ignore[return-value]
 
 
+def geometry_on_screen(geometry: str) -> bool:
+    """True when a saved window position still shows enough of the window to grab.
+
+    After a monitor swap the old coordinates can point past every display; such a
+    window would open invisibly and could never be dragged back.
+    """
+    parsed = parse_geometry(geometry)
+    if not parsed:
+        return False
+    width, height, x, y = parsed
+    try:
+        monitors = monitor_rects()
+    except Exception:  # noqa: BLE001 - without monitor data, trust the saved position
+        return True
+    if not monitors:
+        return True
+    probe_x, probe_y = x + min(width, 80) // 2, y + min(height, 40) // 2
+    return any(m["left"] <= probe_x < m["left"] + m["width"] and m["top"] <= probe_y < m["top"] + m["height"]
+               for m in monitors)
+
+
 def monitor_containing(x: int, y: int) -> dict[str, int] | None:
     for monitor in monitor_rects():
         if (monitor["left"] <= x < monitor["left"] + monitor["width"]

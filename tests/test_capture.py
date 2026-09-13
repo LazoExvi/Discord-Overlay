@@ -22,3 +22,18 @@ def test_geometry_helpers_handle_monitors_left_of_the_primary(monkeypatch):
     # Straddles the seam between monitors / hangs below both: not usable.
     assert not capture.region_on_screen(Region(-136, 1089, 775, 508))
     assert not capture.region_on_screen(Region(1500, 900, 800, 500))
+
+
+def test_saved_overlay_positions_off_every_monitor_are_rejected(monkeypatch):
+    from discord_overlay import capture
+
+    monkeypatch.setattr(capture, "monitor_rects", lambda: [
+        {"left": 0, "top": 0, "width": 1920, "height": 1080},
+        {"left": -2560, "top": -139, "width": 2560, "height": 1440},
+    ])
+    assert capture.geometry_on_screen("340x230+100+550")
+    assert capture.geometry_on_screen("280x514+-2400+62")
+    # Positions from the old layout, right of a primary that no longer has a neighbour there.
+    assert not capture.geometry_on_screen("340x230+1982+550")
+    assert not capture.geometry_on_screen("280x514+2136+62")
+    assert not capture.geometry_on_screen("")

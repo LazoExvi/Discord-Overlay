@@ -8,7 +8,7 @@ import tkinter as tk
 from collections.abc import Callable
 from ctypes import wintypes
 
-from ..capture import monitor_containing, parse_geometry, tk_geometry
+from ..capture import geometry_on_screen, monitor_containing, parse_geometry, tk_geometry
 from ..config import Settings, TimerBoard
 from ..encounter import ActorRow
 from ..models import EncounterSnapshot
@@ -120,6 +120,8 @@ class OverlayManager:
         overlay = self.board_overlays.get(board.id)
         if overlay is None or not overlay.winfo_exists():
             geometry = board.geometry if board.positioned and board.geometry else ""
+            if geometry and not geometry_on_screen(geometry):
+                geometry = ""  # saved on a display layout that no longer exists
             if not geometry:
                 geometry = offset_geometry(self._anchor_geometry(), self.settings.timer_boards.index(board))
             overlay = TimerOverlay(self.root, geometry,
@@ -147,6 +149,8 @@ class OverlayManager:
             has_saved_key = bool(saved and placement_key in saved.overlay_positions)
             if geometry and is_timer and not has_saved_key:
                 geometry = offset_geometry(geometry, max(0, index - 1))
+            if geometry and not geometry_on_screen(geometry):
+                geometry = ""
             if not geometry:
                 width, height = INDEPENDENT_SIZES.get(self.settings.timer_visual_size, INDEPENDENT_SIZES["standard"])
                 anchor = parse_geometry(self._anchor_geometry())
@@ -221,6 +225,8 @@ class OverlayManager:
     def _mini_overlay(self) -> MiniMeterOverlay:
         if self.mini is None or not self.mini.winfo_exists():
             geometry = self.settings.mini_overlay_geometry
+            if geometry and not geometry_on_screen(geometry):
+                geometry = ""
             if not geometry:
                 anchor = parse_geometry(self._anchor_geometry())
                 x, y = anchor[2:] if anchor else (40, 80)
