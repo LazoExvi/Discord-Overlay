@@ -18,7 +18,7 @@ from .parser import is_fused_line
 MAX_FILES = 300          # keep the folder bounded; oldest are not pruned, saving just stops
 MIN_INTERVAL = 0.5       # seconds between saves, so a bad minute does not write hundreds of frames
 FEED_FILE = "ocr-lines.log"     # every new line the scanner read, for trigger troubleshooting
-FEED_MAX_BYTES = 5_000_000
+FEED_MAX_BYTES = 5_000_000      # when full, the file rolls over to ocr-lines.1.log and starts again
 _DIGIT = re.compile(r"\d")
 _ZERO_AMOUNT = re.compile(r"\bfor\s+0\s+p", re.IGNORECASE)
 
@@ -60,7 +60,7 @@ class ProblemFrameSaver:
         path = self.directory / FEED_FILE
         try:
             if path.exists() and path.stat().st_size >= FEED_MAX_BYTES:
-                return
+                path.replace(path.with_name("ocr-lines.1.log"))  # keep one older file, never stop logging
             stamp = f"{datetime.now():%Y-%m-%d %H:%M:%S.%f}"[:-3]
             with path.open("a", encoding="utf-8") as handle:
                 for line in lines:

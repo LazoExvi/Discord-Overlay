@@ -55,3 +55,13 @@ def test_saver_rate_limits_and_caps(tmp_path):
     for now, expected in ((1.0, True), (1.2, False), (3.0, True), (9.0, False)):
         saver.note(bad, None)
         assert (saver.flush(frame, [bad], now=now) is not None) is expected, now
+
+
+def test_feed_log_rolls_over_instead_of_stopping(tmp_path, monkeypatch):
+    from discord_overlay import problem_frames
+    monkeypatch.setattr(problem_frames, "FEED_MAX_BYTES", 50)
+    saver = ProblemFrameSaver(tmp_path)
+    saver.log_lines([OCRLine("x" * 60, 0.9, 0)])
+    saver.log_lines([OCRLine("after rollover", 0.9, 0)])
+    assert "after rollover" in (tmp_path / "ocr-lines.log").read_text(encoding="utf-8")
+    assert "xxxx" in (tmp_path / "ocr-lines.1.log").read_text(encoding="utf-8")
