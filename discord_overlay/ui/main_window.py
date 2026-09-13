@@ -546,6 +546,15 @@ class App(ctk.CTk):
         if not shortcuts.is_frozen():
             return
         shortcuts.repair_shortcuts()  # silently repoint shortcuts after a move
+        stale = shortcuts.stale_installs()
+        if stale and not self.settings.stale_install_noticed:
+            self.settings.stale_install_noticed = True
+            self.settings.save()
+            messagebox.showinfo(
+                "Older copy found",
+                f"An older installed copy of {APP_NAME} is still on this PC:\n\n{stale[0].parent}\n\n"
+                "Your shortcuts now point at this version. Remove the old copy from Windows Settings > Apps "
+                "so it cannot be opened by mistake.", parent=self)
         if self.settings.shortcut_prompted:
             return
         self.settings.shortcut_prompted = True

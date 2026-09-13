@@ -135,6 +135,7 @@ class Settings:
     speech_volume: int = 100
     speech_queue_mode: str = "queue"
     shortcut_prompted: bool = False
+    stale_install_noticed: bool = False
     mini_overlay_rows: int = 6
     mini_overlay_opacity: float = 0.9
     mini_overlay_metric: str = "damage"

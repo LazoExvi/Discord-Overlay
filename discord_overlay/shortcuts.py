@@ -31,7 +31,38 @@ def start_menu_dir() -> Path:
 
 
 def desktop_dir() -> Path:
+    """The real Desktop folder, which OneDrive often redirects away from %USERPROFILE%\\Desktop."""
+    if sys.platform == "win32":
+        try:
+            import ctypes
+            from ctypes import wintypes
+
+            folder_id = (ctypes.c_ubyte * 16).from_buffer_copy(
+                b"\x3a\xcc\xbf\xb8\x5c\xdc\x4d\x43\xb2\x9e\x7f\xe9\x9a\x87\xc6\x41")  # FOLDERID_Desktop
+            out = ctypes.c_wchar_p()
+            if ctypes.windll.shell32.SHGetKnownFolderPath(folder_id, 0, None, ctypes.byref(out)) == 0 and out.value:
+                path = Path(out.value)
+                ctypes.windll.ole32.CoTaskMemFree(out)
+                return path
+        except Exception:  # noqa: BLE001 - fall back to the conventional location
+            pass
     return Path(os.environ.get("USERPROFILE", str(Path.home()))) / "Desktop"
+
+
+def all_shortcuts() -> list[Path]:
+    """Every ``Discord Overlay.lnk`` a user might click: Start Menu (any subfolder) and Desktop."""
+    found: list[Path] = []
+    start_menu = start_menu_dir()
+    if start_menu.is_dir():
+        found.extend(sorted(start_menu.rglob(SHORTCUT_NAME)))
+    desktops = {desktop_dir(), Path(os.environ.get("USERPROFILE", str(Path.home()))) / "Desktop"}
+    if os.environ.get("OneDrive"):
+        desktops.add(Path(os.environ["OneDrive"]) / "Desktop")
+    for desktop in sorted(desktops):
+        desktop_link = desktop / SHORTCUT_NAME
+        if desktop_link.is_file():
+            found.append(desktop_link)
+    return found
 
 
 def shortcut_exists(directory: Path) -> bool:
@@ -68,7 +99,10 @@ def create_shortcut(directory: Path) -> Path:
 
 def shortcut_target(directory: Path) -> str | None:
     """The program an existing shortcut launches, or None if there is no shortcut."""
-    link = directory / SHORTCUT_NAME
+    return link_target(directory / SHORTCUT_NAME)
+
+
+def link_target(link: Path) -> str | None:
     if sys.platform != "win32" or not link.is_file():
         return None
     script = ("$shell = New-Object -ComObject WScript.Shell; "
@@ -87,14 +121,21 @@ def repair_shortcuts() -> list[Path]:
         return []
     program = launch_target()[0]
     repaired = []
-    for directory in (start_menu_dir(), desktop_dir()):
-        target = shortcut_target(directory)
+    for link in all_shortcuts():
+        target = link_target(link)
         if target and os.path.normcase(target) != os.path.normcase(program):
             try:
-                repaired.append(create_shortcut(directory))
+                repaired.append(create_shortcut(link.parent))
             except OSError:
                 pass
     return repaired
+
+
+def stale_installs() -> list[Path]:
+    """Older copies of the app that shortcuts or muscle memory might still launch."""
+    program = Path(launch_target()[0])
+    candidates = [Path(os.environ.get("LOCALAPPDATA", "")) / "Programs" / "DiscordOverlay" / "DiscordOverlay.exe"]
+    return [c for c in candidates if c.is_file() and os.path.normcase(str(c)) != os.path.normcase(str(program))]
 
 
 def remove_shortcut(directory: Path) -> bool:
