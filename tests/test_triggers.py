@@ -139,3 +139,13 @@ def test_from_dict_tolerates_bad_values():
                                  "overlay_positions": "bad", "conditions": [{"pattern": "a"}, 5]})
     assert trigger.window_seconds == 0.0 and trigger.region is None and trigger.overlay_positions == {}
     assert len(trigger.conditions) == 1
+
+
+def test_per_event_volumes_default_to_the_main_volume_and_validate():
+    trigger = Trigger.from_dict({"name": "X", "volume": 0.4})
+    assert trigger.ending_volume == 0.4 and trigger.expiration_volume == 0.4 and trigger.speech_volume == 100
+    trigger = Trigger.from_dict({"name": "X", "volume": 0.4, "ending_volume": 1.0, "expiration_volume": 0.1,
+                                 "speech_volume": 35})
+    assert (trigger.ending_volume, trigger.expiration_volume, trigger.speech_volume) == (1.0, 0.1, 35)
+    trigger.speech_volume = 140
+    assert any("Speech volume" in error for error in trigger.validate())

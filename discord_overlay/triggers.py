@@ -94,6 +94,9 @@ class Trigger:
     start_speech: str = ""
     ending_speech: str = ""
     expiration_speech: str = ""
+    ending_volume: float = 0.85       # ending-soon sound
+    expiration_volume: float = 0.85   # expiration sound
+    speech_volume: int = 100          # percent of the global speech volume
     end_pattern: str = ""
     end_mode: str = "contains"
 
@@ -144,6 +147,9 @@ class Trigger:
             start_speech=text("start_speech"),
             ending_speech=text("ending_speech"),
             expiration_speech=text("expiration_speech"),
+            ending_volume=number("ending_volume", number("volume", 0.85)),
+            expiration_volume=number("expiration_volume", number("volume", 0.85)),
+            speech_volume=int(number("speech_volume", 100)),
             end_pattern=text("end_pattern"),
             end_mode=text("end_mode", "contains").casefold(),
         )
@@ -175,6 +181,10 @@ class Trigger:
             errors.append("Cooldown must be between 0 and 3600 seconds.")
         if not 0.0 <= self.volume <= 1.0:
             errors.append("Volume must be between 0 and 100 percent.")
+        if not (0.0 <= self.ending_volume <= 1.0 and 0.0 <= self.expiration_volume <= 1.0):
+            errors.append("Ending-soon and expiration volumes must be between 0 and 100 percent.")
+        if not 0 <= self.speech_volume <= 100:
+            errors.append("Speech volume must be between 0 and 100 percent.")
         if self.retrigger_mode not in RETRIGGER_MODES:
             errors.append("Retrigger behavior is invalid.")
         if self.overlay_layout not in OVERLAY_LAYOUTS:

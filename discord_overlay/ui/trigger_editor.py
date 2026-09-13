@@ -263,6 +263,7 @@ class TriggerEditor(ctk.CTkToplevel):
         self.ending_sound_menu.set(trigger.ending_sound.removeprefix(BUILTIN_PREFIX) or NONE)
         self.ending_sound_menu.grid(row=row, column=1, padx=10, pady=7, sticky="w")
         self._help(body, row, "Optional sound played once at the ending-soon threshold.")
+        self.ending_volume_var = self._volume_row(body, "Ending-soon volume", trigger.ending_volume * 100)
 
         row = self._next()
         self._label(body, "Expiration sound", row)
@@ -270,6 +271,7 @@ class TriggerEditor(ctk.CTkToplevel):
         self.expiration_sound_menu.set(trigger.expiration_sound.removeprefix(BUILTIN_PREFIX) or NONE)
         self.expiration_sound_menu.grid(row=row, column=1, padx=10, pady=7, sticky="w")
         self._help(body, row, "Optional sound played when the countdown reaches zero.")
+        self.expiration_volume_var = self._volume_row(body, "Expiration volume", trigger.expiration_volume * 100)
 
         row = self._next()
         self._label(body, "End-early text", row)
@@ -304,9 +306,22 @@ class TriggerEditor(ctk.CTkToplevel):
         self.start_speech_entry = self._speech_row(body, "On trigger", trigger.start_speech)
         self.ending_speech_entry = self._speech_row(body, "Ending soon", trigger.ending_speech)
         self.expiration_speech_entry = self._speech_row(body, "On expiration", trigger.expiration_speech)
+        self.speech_volume_var = self._volume_row(body, "Speech volume", trigger.speech_volume)
+        self._help(body, self._row, "Percent of the global speech volume set under Settings.")
         theme.note(body, ("GINA-style regex groups such as (?<target>.+?) become {target}. An early-ending regex "
                           "with the same capture ends only that target's timer."), 680).grid(
             row=self._next(), column=1, columnspan=3, padx=10, pady=(2, 18), sticky="ew")
+
+    def _volume_row(self, body, label: str, percent: float) -> ctk.DoubleVar:
+        row = self._next()
+        self._label(body, label, row)
+        var = ctk.DoubleVar(value=round(percent))
+        value_label = ctk.CTkLabel(body, text=f"{var.get():.0f}%", text_color=theme.TEXT, width=50)
+        ctk.CTkSlider(body, from_=0, to=100, number_of_steps=100, variable=var, button_color="#b77a2d",
+                      command=lambda value, lbl=value_label: lbl.configure(text=f"{value:.0f}%")).grid(
+            row=row, column=1, columnspan=2, padx=10, pady=7, sticky="ew")
+        value_label.grid(row=row, column=3, padx=10, pady=7)
+        return var
 
     def _speech_row(self, body, label: str, value: str) -> ctk.CTkEntry:
         row = self._next()
@@ -472,6 +487,9 @@ class TriggerEditor(ctk.CTkToplevel):
         trigger.start_speech = self.start_speech_entry.get().strip()
         trigger.ending_speech = self.ending_speech_entry.get().strip()
         trigger.expiration_speech = self.expiration_speech_entry.get().strip()
+        trigger.ending_volume = self.ending_volume_var.get() / 100.0
+        trigger.expiration_volume = self.expiration_volume_var.get() / 100.0
+        trigger.speech_volume = int(round(self.speech_volume_var.get()))
 
     def _test_overlay(self) -> None:
         preview = copy.deepcopy(self.trigger)

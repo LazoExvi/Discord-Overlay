@@ -54,6 +54,9 @@ class TimerInstance:
     expiration_speech: str
     captures: dict[str, str] = field(default_factory=dict)
     ending_notified: bool = False
+    ending_volume: float = 0.85
+    expiration_volume: float = 0.85
+    speech_volume: int = 100
 
     def remaining(self, now: float) -> float:
         return max(0.0, self.ends_at - now)
@@ -107,7 +110,8 @@ class TimerManager:
             overlay_geometry=trigger.overlay_geometry, placement_key=base_key,
             ending_soon_seconds=trigger.ending_soon_seconds, ending_sound=trigger.ending_sound,
             expiration_sound=trigger.expiration_sound, volume=trigger.volume,
-            ending_speech="", expiration_speech="",
+            ending_speech="", expiration_speech="", ending_volume=trigger.ending_volume,
+            expiration_volume=trigger.expiration_volume, speech_volume=trigger.speech_volume,
         )
         self._fill(timer, trigger, match, key, now, duration)
         self.timers[timer.id] = timer
@@ -133,6 +137,9 @@ class TimerManager:
         timer.ending_sound = trigger.ending_sound
         timer.expiration_sound = trigger.expiration_sound
         timer.volume = trigger.volume
+        timer.ending_volume = trigger.ending_volume
+        timer.expiration_volume = trigger.expiration_volume
+        timer.speech_volume = trigger.speech_volume
         timer.ending_speech = render_template(trigger.ending_speech, trigger, match)
         timer.expiration_speech = render_template(trigger.expiration_speech, trigger, match)
         timer.captures = dict(match.captures)

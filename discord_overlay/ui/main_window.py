@@ -848,9 +848,11 @@ class App(ctk.CTk):
             else:
                 self.alerts.status(f"Audio error: {exc}", "error")
 
-    def speak(self, text: str) -> None:
+    def speak(self, text: str, volume_percent: int = 100) -> None:
+        """Speak at the global speech volume scaled by a trigger's own percentage."""
         s = self.settings
-        self.speech_player.speak(text, s.speech_voice, s.speech_rate, s.speech_volume,
+        volume = round(s.speech_volume * max(0, min(100, volume_percent)) / 100)
+        self.speech_player.speak(text, s.speech_voice, s.speech_rate, volume,
                                  interrupt=s.speech_queue_mode == "interrupt")
 
     def test_speech(self, text: str, voice: str, rate: int, volume: int, mode: str) -> None:
@@ -875,7 +877,7 @@ class App(ctk.CTk):
         self.play_sound(match.sound, match.volume)
         if trigger:
             if trigger.start_speech:
-                self.speak(render_template(trigger.start_speech, trigger, match))
+                self.speak(render_template(trigger.start_speech, trigger, match), trigger.speech_volume)
             self.overlays.render(new_alert=started is not None)
         fired_at = time.strftime("%H:%M:%S")
         self.alerts.mark_fired(match.trigger_id, fired_at)
@@ -884,11 +886,11 @@ class App(ctk.CTk):
     def _timer_notification(self, notification: TimerNotification) -> None:
         timer = notification.timer
         if notification.kind == "ending":
-            self.play_sound(timer.ending_sound, timer.volume)
-            self.speak(timer.ending_speech)
+            self.play_sound(timer.ending_sound, timer.ending_volume)
+            self.speak(timer.ending_speech, timer.speech_volume)
         elif notification.kind == "expired":
-            self.play_sound(timer.expiration_sound, timer.volume)
-            self.speak(timer.expiration_speech)
+            self.play_sound(timer.expiration_sound, timer.expiration_volume)
+            self.speak(timer.expiration_speech, timer.speech_volume)
 
     # -- shutdown -------------------------------------------------------------
 
