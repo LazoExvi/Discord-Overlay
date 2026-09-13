@@ -152,6 +152,14 @@ def merge_similar_names(names, protected=(), minority_share: float = 0.25,
     for name in list(canonical):
         if canonical[name] != name or name in protected_keys:
             continue
+        # A rare fragment that ends exactly one seen name lost more than a letter
+        # or two at the capture edge: "issimo" -> "weratissimo", "ga'duuz" -> "lord ga'duuz".
+        owners = [existing for existing, existing_count in accepted
+                  if existing != name and len(existing) > len(name) and existing.endswith(name)
+                  and counts[name] <= max(2, existing_count * minority_share)]
+        if len(owners) == 1 and len(name) >= 2:
+            canonical[name] = owners[0]
+            continue
         # The player's own name is always a merge target, even when rarely seen by that spelling.
         for key in protected_keys:
             if clipped_head(name, key) or ocr_confusable(name, key):

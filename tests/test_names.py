@@ -38,3 +38,15 @@ def test_frequent_spellings_and_player_names_are_not_snapped_to_npcs():
     # A player whose name is one letter from an NPC keeps their name.
     merged = merge_similar_names(["bone construet"], protected=["bone construet"])
     assert merged["bone construet"] == "bone construet"
+
+
+def test_rare_fragment_ending_exactly_one_name_is_that_name():
+    seen = ["weratissimo"] * 20 + ["lord bigmob"] * 30 + ["issimo", "bigmob"]
+    merged = merge_similar_names(seen)
+    assert merged["issimo"] == "weratissimo"
+    assert merged["bigmob"] == "lord bigmob"
+    # Ambiguous fragments and common spellings stay separate.
+    merged = merge_similar_names(["healer"] * 20 + ["dealer"] * 20 + ["er"])
+    assert merged["er"] == "er"
+    merged = merge_similar_names(["weratissimo"] * 4 + ["issimo"] * 4)
+    assert merged["issimo"] == "issimo"

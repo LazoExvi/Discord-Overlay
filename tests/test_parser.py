@@ -491,3 +491,21 @@ def test_faith_answers_heal_credits_owner_and_self_target():
     assert (event.actor, event.target, event.amount) == ("Ebola", "Ebola", 375)
     event = parse("Your faith answers, healing you for 750 Health!", name="Crit")
     assert (event.actor, event.target, event.amount) == ("Crit", "Crit", 750)
+
+
+def test_verb_glued_to_the_next_name_or_previous_ability_is_split():
+    parser = CombatTextParser("Playername")
+    cases = {
+        "Healer's Slam hitsLord Bigmob for 59 points of damage.": ("Healer", "Slam", "Lord Bigmob", 59),
+        "Healer's Shadow Strikehits Lord Bigmob for 74 points of damage.": ("Healer", "Shadow Strike", "Lord Bigmob", 74),
+        "Healer's Vampirismhits Lord Bigmob for 20 points of damage.": ("Healer", "Vampirism", "Lord Bigmob", 20),
+        "Tanker slashes Lord Bigmob with their ffhand for 64 points of damage.": ("Tanker", "Slashes (Offhand)", "Lord Bigmob", 64),
+        "Tanker slashes Lord Bigmob with their ofhand for 3 points of damage.": ("Tanker", "Slashes (Offhand)", "Lord Bigmob", 3),
+        # Names that merely end in a verb keep their spelling.
+        "Whiplash hits a rat for 5 points of damage.": ("Whiplash", "Hits", "rat", 5),
+        "Backstab hits a rat for 5 points of damage.": ("Backstab", "Hits", "rat", 5),
+    }
+    for text, expected in cases.items():
+        event = parser.parse(text)
+        assert event is not None, text
+        assert (event.actor, event.action, event.target, event.amount) == expected, text

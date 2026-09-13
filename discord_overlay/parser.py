@@ -68,7 +68,7 @@ _MISS = re.compile(
     r"^(?P<actor>You|Your|.+?)\s+(?:try|tries)\s+to\s+.+?\s+(?P<target>.+?),?\s+but\s+miss",
     re.IGNORECASE,
 )
-_OFFHAND = re.compile(r"\s+with\s+(?:your|their|its|his|her)\s+(?P<weapon>of[ft]\w{3,5}|bow|crossbow|sling)\b", re.IGNORECASE)
+_OFFHAND = re.compile(r"\s+with\s+(?:your|their|its|his|her)\s+(?P<weapon>of[ft]\w{3,5}|o?f{1,2}hand|bow|crossbow|sling)\b", re.IGNORECASE)
 # Environmental damage is not combat and must not start or extend an encounter.
 _ENVIRONMENT = re.compile(
     r"\b(?:from|by|due\s+to)\s+(?:falling|a\s+fall|drowning|starvation|hunger|thirst|suffocation)\b"
@@ -176,6 +176,8 @@ _MISREAD_OF = re.compile(r"(\d\s+p\S{3,6})\s*(?:of|ot|o1|0f)\s*(?=[A-Za-z])", re
 _GLUED_DAMAGE = re.compile(r"\b([A-Z][a-z]+)(Damage)\b")
 _MISREAD_YOUR = re.compile(r"^Y[o0][uwv]{1,2}r(?=\s)")   # Yowr / Youwr / Yovr
 _MISREAD_YOU = re.compile(r"^Y[o0][uwv]{1,2}(?=\s)")     # Yow / Yov
+_GLUED_VERB_NAME = re.compile(rf"\b({_VERB_ALTERNATION})(?=[A-Z][a-z])")                      # "hitsLord"
+_GLUED_WORD_VERB = re.compile(r"\b([A-Z][a-z]{2,})(hits|heals)(?=\s+[A-Za-z])")   # "Strikehits", not "Whiplash"
 _GLUED_RANK_VERB = re.compile(rf"\b([A-Za-z]{{3,}})(I{{1,3}}|IV|VI{{0,3}}|V|IX|X)({_VERB_ALTERNATION})(?=\s)")
 
 
@@ -201,6 +203,8 @@ def repair_ocr_spacing(text: str) -> str:
     text = _MISREAD_YOUR.sub("Your", text)
     text = _MISREAD_YOU.sub("You", text)
     text = _GLUED_RANK_VERB.sub(lambda m: f"{m.group(1)} {m.group(2)} {m.group(3)}", text)
+    text = _GLUED_VERB_NAME.sub(r"\1 ", text)
+    text = _GLUED_WORD_VERB.sub(r"\1 \2", text)
     text = _GLUED_ARTICLE.sub(_split_glued_article, text)
     # Player'sFireball / James'Fireball
     text = re.sub(r"^([A-Za-z][A-Za-z'-]*?'s)([A-Za-z])", r"\1 \2", text)
@@ -284,7 +288,7 @@ def _strip_offhand(target: str, action: str) -> tuple[str, str]:
     offhand = _OFFHAND.search(target)
     if offhand:
         weapon = offhand.group("weapon")
-        weapon = "Offhand" if weapon.casefold().startswith("of") else weapon.title()
+        weapon = "Offhand" if weapon.casefold().startswith("of") or weapon.casefold().endswith("hand") else weapon.title()
         return target[:offhand.start()].strip(), f"{action} ({weapon})"
     return target, action
 

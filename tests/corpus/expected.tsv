@@ -3766,7 +3766,7 @@ a Skri'Var tracker's Strike hits Klawg for 10 points of damage.	damage_other|Skr
 a Skri'Var tracker's Strike hits your pet Cirrobulo for 10 points of damage.	damage_in|Skri'Var tracker|Pet|Strike|10|0|0|0|0
 a Skri'Var tracker's Strike hits your pet Porfavor for 10 points of damage.	damage_in|Skri'Var tracker|Pet|Strike|10|0|0|0|0
 a Skri'Var tracker's Strike hits your pet Portavor tor 10 points of damage.	damage_in|Skri'Var tracker|Pet|Strike|10|0|0|0|0
-a Skri'Var tracker's Strike hitsDalic for 10 points of damage.	damage_other|Skri'Var tracker's|hitsDalic|Strike|10|0|0|0|0
+a Skri'Var tracker's Strike hitsDalic for 10 points of damage.	damage_other|Skri'Var tracker|Dalic|Strike|10|0|0|0|0
 a Skri'Var war beetle bites Bend for 10 points of damage.	damage_other|Skri'Var war beetle|Bend|Bites|10|0|0|0|0
 a Skri'Var war beetle bites Bend for 13 points of damage.	damage_other|Skri'Var war beetle|Bend|Bites|13|0|0|0|0
 a Skri'Var war beetle bites Bend for 15 points of damage.	damage_other|Skri'Var war beetle|Bend|Bites|15|0|0|0|0
@@ -7757,7 +7757,7 @@ Dalic's Damage Shield hits Elder Firsttlush for 5 points of damage.	damage_other
 Dalic's Damage Shield hits Freshet Keeper for 5 points of damage.	damage_other|Dalic|Freshet Keeper|Damage Shield|5|0|0|0|1
 Dalic's Damage Shield hits Swarmcaller Skarr'Vokk for 5 points of damage.	damage_other|Dalic|Swarmcaller Skarr'Vokk|Damage Shield|5|0|0|0|1
 Dalic's Damage Shield hits Swarmcaller Skarr'Vokk tor 5 points of damage.	damage_other|Dalic|Swarmcaller Skarr'Vokk|Damage Shield|5|0|0|0|1
-Dalic's Damage Shieldhits a Deepcut basher for 5 points of damage.	damage_other|Dalic's|Shieldhits a Deepcut basher|Damage|5|0|0|0|0
+Dalic's Damage Shieldhits a Deepcut basher for 5 points of damage.	damage_other|Dalic|Deepcut basher|Damage Shield|5|0|0|0|1
 Dalic's Gavel of Light hits a deranged convict for 89 points of Holy Damage.	damage_other|Dalic|deranged convict|Gavel of Light|89|0|0|0|0
 Dalic's Gavel of Light hits a grove mender for 89 points of Holy Damage.	damage_other|Dalic|grove mender|Gavel of Light|89|0|0|0|0
 Dalic's Gavel of Light hits a grove mender tor 89 points of Holy Damage.	damage_other|Dalic|grove mender|Gavel of Light|89|0|0|0|0
@@ -10216,7 +10216,7 @@ Elder Firsttlush hits Dalic for 38 points of damage.	damage_other|Elder Firsttlu
 Elder Firsttlush hits Sugar for 42 points of damage.	damage_other|Elder Firsttlush|Sugar|Hits|42|0|0|0|0
 Emne's Sublime Heal heals Entrari for 1164 dead.	heal|Emne|Entrari|Heal|1164|0|0|0|0
 En unstable oozeling claws Wers for 23 points of damage.	damage_other|En unstable oozeling|Wers|Claws|23|0|0|0|0
-Eniagueborn myrmidon's Damage Shield hitsEntrari for 25 points of damage.	damage_other|Eniagueborn myrmidon|Shield hitsEntrari|Damage Shield|25|0|0|0|1
+Eniagueborn myrmidon's Damage Shield hitsEntrari for 25 points of damage.	damage_other|Eniagueborn myrmidon|Entrari|Damage Shield|25|0|0|0|1
 Enlaari pierces a Plagueborn myrmidon for 64 points of damage. dam	damage_other|Enlaari|Plagueborn myrmidon|Pierces|64|0|0|0|0
 Enneis Holy Strike hits Memory for 29 points of Holy Damage.	damage_other|Enneis Holy Strike|Memory|Hits|29|0|0|0|0
 ent Sugar's Phase Strike hits a Skri'Var taskmaster for 1 point of damage.	damage_other|ent Sugar|Skri'Var taskmaster|Phase Strike|1|0|0|0|0
@@ -10923,7 +10923,7 @@ Entrari's Slice VI hits Vymm for 29 points of damage.	damage_other|Entrari|Vymm|
 Entrari's Slice VI hits Vymm for 36 points of damage.	damage_other|Entrari|Vymm|Slice VI|36|0|0|0|0
 Entrari's Slice VI hits Vymm for 48 points of Bleed Damage.	damage_other|Entrari|Vymm|Slice VI|48|0|0|0|0
 Entrari's Slice VI hits Vymm for 96 points of Bleed Damage.	damage_other|Entrari|Vymm|Slice VI|96|0|0|0|0
-Entrari's Slice VI hitsVym for 29 poiatsof damage.	damage_other|Entrari's|VI hitsVym|Slice|29|0|0|0|0
+Entrari's Slice VI hitsVym for 29 poiatsof damage.	damage_other|Entrari|Vym|Slice VI|29|0|0|0|0
 Entrari's Stab VI hits a Plagueborn myrmidon for 138 points of damage.	damage_other|Entrari|Plagueborn myrmidon|Stab VI|138|0|0|0|0
 Entrari's Stab VI hits a Plagueborn myrmidon for 52 points of damage.	damage_other|Entrari|Plagueborn myrmidon|Stab VI|52|0|0|0|0
 Entrari's Stab VI hits a skeletal servant for 128 points of damage.	damage_other|Entrari|skeletal servant|Stab VI|128|0|0|0|0

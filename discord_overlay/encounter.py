@@ -350,8 +350,33 @@ class EncounterTracker:
         for name, canonical in names.items():
             if canonical == name and len(name) <= 2 and name != PLAYER_TARGET_KEY:
                 names[name] = "unknown"
+        # "Discharge VI hits X": the owner's possessive was clipped off, leaving the
+        # ability as the actor. Credit whoever cast that ability in this encounter.
+        owners = self._ability_owners(names)
+        for name, canonical in list(names.items()):
+            owner = owners.get(name.replace(" ", ""))
+            if canonical == name and owner and owner != name:
+                names[name] = owner
         self._name_map_cache = (cache_tag, names)
         return names
+
+    def _ability_owners(self, names: dict[str, str]) -> dict[str, str]:
+        """Space-free ability key -> canonical actor who used it for most of its events."""
+        users: dict[str, Counter] = {}
+        for event in self.events:
+            if event.kind not in METRIC_KINDS or not event.action:
+                continue
+            actor = self.credited_actor(event).casefold().strip()
+            actor = names.get(actor, actor)
+            key = event.action.replace(" ", "").casefold()
+            if actor and actor != "unknown" and key != actor.replace(" ", ""):
+                users.setdefault(key, Counter())[actor] += 1
+        owners = {}
+        for key, counter in users.items():
+            (owner, count), = counter.most_common(1)
+            if count * 3 >= sum(counter.values()) * 2:
+                owners[key] = owner
+        return owners
 
     @staticmethod
     def _row_type(key: tuple[str, str], events: list[CombatEvent]) -> str:

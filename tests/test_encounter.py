@@ -380,3 +380,17 @@ def test_space_glued_article_and_two_letter_clips_merge():
     names = ["whiplash"] * 40 + ["whip lash"] * 30 + ["bone archer"] * 20 + ["abone archer"] + ["tom"] * 50 + ["om"]
     merged = {k: v for k, v in merge_similar_names(names).items() if k != v}
     assert merged == {"whip lash": "whiplash", "abone archer": "bone archer", "om": "tom"}
+
+
+def test_ability_left_as_actor_is_credited_to_its_caster():
+    # "Discharge VI hits X": the possessive owner was clipped off at the region edge.
+    tracker = EncounterTracker(player_name="Playername", keep_running_totals=True)
+    for _ in range(5):
+        tracker.add(_event("Caster", 100, action="Discharge VI"))
+    tracker.add(_event("Discharge VI", 628, action="Hits"))
+    tracker.add(_event("HolyStrike", 115, action="Hits"))
+    tracker.add(_event("Other", 10, action="Holy Strike"))
+    totals = {row.actor: row.damage for row in tracker.actor_totals()}
+    assert totals["Caster"] == 1128
+    assert totals["Other"] == 125
+    assert "Discharge VI" not in totals and "HolyStrike" not in totals
