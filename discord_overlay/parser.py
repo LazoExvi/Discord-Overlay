@@ -620,5 +620,10 @@ class CombatTextParser:
         if len(value) == 1 and value.islower():
             return "Unknown"
         if re.search(r"\d", value):
+            # "1gar" is a clipped "Sugar" whose torn first letter read as a digit: keep the
+            # tail so the display-time merge can fold it into the full name.
+            stripped = re.sub(r"^\d+", "", value)
+            if re.fullmatch(r"[A-Za-z][A-Za-z'-]{2,}", stripped):
+                return stripped
             return "Unknown"  # no player or mob name contains a digit; this is OCR debris
         return value

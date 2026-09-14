@@ -509,3 +509,12 @@ def test_verb_glued_to_the_next_name_or_previous_ability_is_split():
         event = parser.parse(text)
         assert event is not None, text
         assert (event.actor, event.action, event.target, event.amount) == expected, text
+
+
+def test_leading_digit_debris_keeps_the_name_tail_for_merging():
+    parser = CombatTextParser("Playername")
+    event = parser.parse("1gar's Electric Arc hits a carrion bat for 57 points of Electric Damage.")
+    assert event is not None and event.actor == "gar"
+    # Digits inside a name are still debris.
+    event = parser.parse("Su9ar's Electric Arc hits a carrion bat for 57 points of Electric Damage.")
+    assert event is not None and event.actor == "Unknown"
