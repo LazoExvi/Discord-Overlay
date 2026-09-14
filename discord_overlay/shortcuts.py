@@ -37,8 +37,9 @@ def desktop_dir() -> Path:
             import ctypes
             from ctypes import wintypes
 
+            # FOLDERID_Desktop {B4BFCC3A-DB2C-424C-B029-7FE99A87C641} as a little-endian GUID
             folder_id = (ctypes.c_ubyte * 16).from_buffer_copy(
-                b"\x3a\xcc\xbf\xb8\x5c\xdc\x4d\x43\xb2\x9e\x7f\xe9\x9a\x87\xc6\x41")  # FOLDERID_Desktop
+                bytes.fromhex("3accbfb4" "2cdb" "4c42" "b029" "7fe99a87c641"))
             out = ctypes.c_wchar_p()
             if ctypes.windll.shell32.SHGetKnownFolderPath(folder_id, 0, None, ctypes.byref(out)) == 0 and out.value:
                 path = Path(out.value)
